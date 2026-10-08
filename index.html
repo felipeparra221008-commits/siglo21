@@ -1,11 +1,27 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Siglo XXI</title>
+    <link rel="stylesheet" href="css/indexcss.css">
 </head>
 <body>
+    <div class="contenedor-video">
+  <!-- Video de fondo -->
+  <video autoplay muted loop playsinline class="video-fondo">
+    <source src="img/fondo_tierra.mp4" type="video/mp4">
+    Tu navegador no soporta videos en HTML5.
+  </video>
+
+  <!-- Capa opcional para oscurecer el video y que el texto se lea mejor -->
+  <div class="capa-oscura"></div>
+
+  <!-- Contenido superpuesto -->
+  <div class="contenido">
     <h1>Siglo XXI</h1>
     <p>La ciencia del Siglo XXI</p>
+  </div>
+</div>
 </body>
 </html>

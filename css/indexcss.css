@@ -1,0 +1,49 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body, html {
+  width: 100%;
+  height: 100%;
+  overflow-x: hidden;
+}
+
+.contenedor-video {
+  position: relative;
+  width: 100%;
+  height: 100vh; /* Ocupa toda la altura de la ventana */
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.video-fondo {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* Hace que el video llene el espacio sin deformarse */
+  z-index: -1; /* Envía el video detrás de las demás capas */
+}
+
+.capa-oscura {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.4); /* Capa negra con 40% de opacidad */
+  z-index: 0;
+}
+
+.contenido {
+  position: relative;
+  z-index: 1; /* Pone el texto por encima del video y la capa oscura */
+  color: #fff;
+  text-align: center;
+  font-family: sans-serif;
+}
