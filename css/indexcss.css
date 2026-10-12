@@ -14,6 +14,7 @@ body, html {
   position: relative;
   width: 100%;
   height: 100vh; 
+  height: 100dvh;
   overflow: hidden;
   display: flex;
   align-items: center;
@@ -44,7 +45,11 @@ body, html {
   display: flex;
   flex-direction: column;
   align-items: center;
+  width: 100%;
+  padding: 0 5vw;
+  text-align: center;
   min-height: 100vh;
+  min-height: 100dvh;
   z-index: 1; 
   font-family: sans-serif;
 }
@@ -71,6 +76,15 @@ body, html {
   animation-delay: 0.8s;
 }
 
+.xxi {
+  color: #0B2A6F;
+}
+
+.primer-parrafo {
+  display: inline-block;
+  margin-top: 4vh;
+}
+
 .boton {
   background-color: #2EE6A6;
   border: none;
@@ -86,15 +100,22 @@ body, html {
   transition: scale 0.2s ease; 
 }
 
-.boton:hover {
-  scale: 1.1; 
-  animation-play-state: paused;
+@media (hover: hover) {
+  .boton:hover {
+    scale: 1.1;
+    animation-play-state: paused;
+  }
 }
 
 .nombres {
+  position: absolute;
+  left: 0;
+  bottom: 2vh;
+  width: 100%;
+  padding: 0 5vw;
+  text-align: center;
   color: #e6eaf2bb;
   font-size: 1.5vh;
-  margin-top: 95vh;
 }
 
 @keyframes subir {
@@ -105,4 +126,84 @@ body, html {
 @keyframes respirar {
   0%, 100% { box-shadow: 0 0 1vh rgba(46, 230, 166, 0.35); }
   50%      { box-shadow: 0 0 3vh rgba(46, 230, 166, 0.75); }
+}
+
+@media (max-width: 1024px) {
+  .titulo1 {
+    font-size: min(8vh, 9vw);
+    margin-top: 18vh;
+  }
+
+  .titulo2 {
+    font-size: min(12vh, 13vw);
+  }
+
+  .parrafo {
+    font-size: min(2.6vh, 3.2vw);
+  }
+
+  .boton {
+    font-size: min(2.5vh, 3.4vw);
+    padding: 2vh 4vw;
+    margin-top: 8vh;
+  }
+
+  .nombres {
+    font-size: min(1.5vh, 2vw);
+  }
+}
+
+@media (max-width: 600px) {
+  .titulo1 {
+    font-size: 9vw;
+    margin-top: 16vh;
+  }
+
+  .titulo2 {
+    font-size: 14vw;
+  }
+
+  .parrafo {
+    font-size: 4.2vw;
+  }
+
+  .boton {
+    font-size: 4.2vw;
+    padding: 2vh 6vw;
+    margin-top: 7vh;
+  }
+
+  .nombres {
+    font-size: 3vw;
+  }
+}
+
+@media (max-height: 500px) and (orientation: landscape) {
+  .titulo1 {
+    font-size: 12vh;
+    margin-top: 8vh;
+  }
+
+  .titulo2 {
+    font-size: 18vh;
+  }
+
+  .primer-parrafo {
+    margin-top: 3vh;
+  }
+
+  .parrafo {
+    font-size: 5vh;
+  }
+
+  .boton {
+    font-size: 5vh;
+    padding: 1.5vh 3vh;
+    margin-top: 5vh;
+  }
+
+  .nombres {
+    font-size: 4vh;
+    bottom: 1vh;
+  }
 }
