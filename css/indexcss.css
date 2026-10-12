@@ -7,7 +7,7 @@
 body, html {
   width: 100%;
   height: 100%;
-  overflow-x: hidden;
+  overflow: hidden;
 }
 
 .contenedor-video {
@@ -30,13 +30,13 @@ body, html {
   z-index: -1; 
 }
 
-.capa-oscura {
-  position: absolute;
+.capa_oscura {
+  position: absolute; 
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
-  background: rgba(0, 0, 0, 0.6); 
+  background: rgba(4, 10, 26, 0.6); 
   z-index: 0;
 }
 
@@ -53,16 +53,22 @@ body, html {
   color: #ffffff;
   font-size: 10vh;
   margin-top: 20vh;
+  animation: subir 1s ease-out both;
+  animation-delay: 0.4s;
 }
 
 .titulo2{
   color: #FFFFFF;
   font-size: 15vh;
+  animation: subir 1s ease-out both;
+  animation-delay: 0.6s;
 }
 
 .parrafo {
   color: #e6eaf2bb;
   font-size: 3vh;
+  animation: subir 1s ease-out both;
+  animation-delay: 0.8s;
 }
 
 .boton {
@@ -75,10 +81,28 @@ body, html {
   color: #000000;
   display: inline-block;
   margin-top: 10vh;
+  cursor: pointer;
+  animation: subir 1s ease-out 1s both, respirar 2.5s ease-in-out 1.6s infinite;
+  transition: scale 0.2s ease; 
+}
+
+.boton:hover {
+  scale: 1.1; 
+  animation-play-state: paused;
 }
 
 .nombres {
   color: #e6eaf2bb;
   font-size: 1.5vh;
   margin-top: 95vh;
+}
+
+@keyframes subir {
+  from { opacity: 0; transform: translateY(4vh); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes respirar {
+  0%, 100% { box-shadow: 0 0 1vh rgba(46, 230, 166, 0.35); }
+  50%      { box-shadow: 0 0 3vh rgba(46, 230, 166, 0.75); }
 }
