@@ -346,6 +346,21 @@ body, html {
     z-index: 2;
 }
 
+body {
+  animation: aparecer 0.6s ease backwards;
+  transition: opacity 0.5s ease;
+  background-color: #040a1a;
+}
+
+body.saliendo {
+  opacity: 0;
+}
+
+@keyframes aparecer {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+
 @media (max-width: 1024px) {
   .barra1 {
     font-size: max(18px, min(4vh, 4vw));
