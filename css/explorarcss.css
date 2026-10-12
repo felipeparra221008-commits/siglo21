@@ -38,8 +38,15 @@ body, html {
     cursor: pointer;
 }
 
+.barra2 a {
+  color: #9AA7BD;
+  text-decoration: none;
+}
+
 .aniparrafos {
-    transition: transform 0.3s ease; 
+    display: inline-block;
+    position: relative;
+    transition: transform 0.3s ease;
     vertical-align: middle;
 }
 
