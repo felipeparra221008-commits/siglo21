@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -555,12 +556,12 @@
   </section>
 
   <script type="importmap">
-  {
-    "imports": {
-      "three": "https://cdn.jsdelivr.net/npm/three@0.170.0/build/three.module.js",
-      "three/addons/": "https://cdn.jsdelivr.net/npm/three@0.170.0/examples/jsm/"
+    {
+      "imports": {
+        "three": "https://cdn.jsdelivr.net/npm/three@0.170.0/build/three.module.js",
+        "three/addons/": "https://cdn.jsdelivr.net/npm/three@0.170.0/examples/jsm/"
+      }
     }
-  }
   </script>
 
   <script type="module">
@@ -1320,6 +1321,30 @@
         4 + Math.sin(performance.now() * .0006) * 1.5;
 
       renderBaile.render(escenaBaile, camaraBaile);
+    }
+
+    /* =====================================================
+       CAMBIO AÑADIDO: ABRIR DIRECTAMENTE LA TERCERA ESCENA
+       cuando la URL termina en #bienvenida.
+       ===================================================== */
+    if (window.location.hash === "#bienvenida") {
+      estado = "bienvenida";
+
+      // Ocultar la Tierra y los créditos de la portada.
+      contenedor.style.opacity = "0";
+      creditosPortada.classList.add("oculto");
+
+      // Mantener oculta la escena del robot.
+      pista.classList.remove("visible");
+      pista.style.opacity = "0";
+      pista.style.visibility = "hidden";
+
+      // Ocultar los controles de las escenas anteriores.
+      botonVolver.classList.remove("visible");
+      dialogoRobot.classList.remove("visible");
+
+      // Mostrar directamente la tercera escena.
+      bienvenida.classList.add("visible");
     }
 
     ajustarCamaraBaile();
