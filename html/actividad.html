@@ -8,10 +8,11 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" rel="stylesheet">
     <title>Siglo XXI</title>
+    <link rel="icon" href="../img/icon.png" type="image/png">
 </head>
 <body>
     <div class="barra">
-        <p class="barra1">SIGLO <span style="color: #2F6BFF;">XXI</span></p>
+        <img src="../img/logo.png" alt="Logo" class="logo">
 
         <span class="barra2">
             <a href="contexto.html" style="text-decoration: none;"><span class="aniparrafos">Contexto</span></a>
@@ -25,13 +26,28 @@
     <h1 class="titulo1">Actividad</h1>
     <p class="titulo2">Cinco preguntas sobre el siglo XXI.</p>
 
-    <div class="tarjeta">
-        <p class="texto1_tarjeta">Contexto</p>
-        <p class="texto2_tarjeta">Que define a nuestro siglo</p>
+    <div class="tarjeta_contenedor">
+        <div class="tarjeta">
+            <div class="quiz_juego" id="quiz_juego">
+                <div class="quiz_cabecera">
+                    <p class="quiz_contador" id="quiz_contador"></p>
+                    <div class="quiz_barra"><div class="quiz_progreso" id="quiz_progreso"></div></div>
+                </div>
+                <p class="quiz_pregunta" id="quiz_pregunta"></p>
+                <div class="quiz_opciones" id="quiz_opciones"></div>
+                <p class="quiz_feedback" id="quiz_feedback" aria-live="polite"></p>
+                <button class="boton quiz_boton" id="quiz_siguiente" hidden>Siguiente pregunta →</button>
+            </div>
+
+            <div class="quiz_resultado oculto" id="quiz_resultado">
+                <p class="quiz_puntaje" id="quiz_puntaje"></p>
+                <p class="quiz_mensaje" id="quiz_mensaje"></p>
+                <button class="boton quiz_boton" id="quiz_reiniciar">Jugar de nuevo</button>
+            </div>
+        </div>
     </div>
 
     <div class="frase_contenedor">
-
         <video autoplay loop muted playsinline class="video_fondo">
             <source src="../img/machine.mp4" type="video/mp4">
         </video>
@@ -42,5 +58,11 @@
     </div>
 
     <p class="texto3">Gracias!!</p>
+    <div class="boton_contenedor">
+        <a href="explorar.html"><button class="boton">Volver al menú</button></a>
+    </div>
+    <p class="nombres">Hecho por: Adrian Vargas - Daniel Manios - Angel Polo</p>
+
+    <script src="../javascript/actividadjs.js"></script>
 </body>
 </html>
