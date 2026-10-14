@@ -1,0 +1,17 @@
+body {
+  animation: entrar 1s ease forwards;
+}
+
+body.saliendo {
+  animation: salir 1s ease forwards;
+}
+
+@keyframes entrar {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes salir {
+  from { opacity: 1; }
+  to { opacity: 0; }
+}
