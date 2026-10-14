@@ -1,232 +1,880 @@
+
+/* ============================================
+   SIGLO XXI — PORTADA ESPACIAL
+   Fondo, Tierra, robot, órbita y cinco esferas
+============================================ */
+
 * {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
 
-body, html {
-  width: 100%;
-  height: 100%;
-  overflow: hidden;
+html,
+body {
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
 }
+
+body {
+    background: #020817;
+    font-family: Arial, Helvetica, sans-serif;
+    animation: aparecer-pagina 0.7s ease both;
+    transition: opacity 0.5s ease;
+}
+
+body.saliendo {
+    opacity: 0;
+}
+
+/* FONDO ESPACIAL */
 
 .contenedor_video {
-  position: relative;
-  width: 100%;
-  height: 100vh; 
-  height: 100dvh;
-  overflow: hidden;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+    position: relative;
+    isolation: isolate;
+    width: 100%;
+    height: 100vh;
+    height: 100dvh;
+    overflow: hidden;
+    background:
+        #020817
+        url("../img/fondo_espacio_planetas.png")
+        center / cover no-repeat;
 }
 
+/* El fondo nuevo reemplaza el vídeo antiguo */
 .video_fondo {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  object-fit: cover; 
-  z-index: -1; 
+    display: none;
 }
 
 .capa_oscura {
-  position: absolute; 
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: rgba(4, 10, 26, 0.6); 
-  z-index: 0;
+    position: absolute;
+    inset: 0;
+    z-index: 1;
+    background:
+        linear-gradient(
+            90deg,
+            rgba(2, 8, 23, 0.60) 0%,
+            rgba(2, 8, 23, 0.32) 38%,
+            rgba(2, 8, 23, 0.05) 75%,
+            rgba(2, 8, 23, 0.15) 100%
+        );
+    pointer-events: none;
 }
+
+/* ============================================
+   TEXTO ORIGINAL
+============================================ */
 
 .contenido {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  width: 100%;
-  padding: 0 5vw;
-  text-align: center;
-  min-height: 100vh;
-  min-height: 100dvh;
-  z-index: 1; 
-  font-family: sans-serif;
+    position: absolute;
+    z-index: 5;
+    top: 10%;
+    left: 7%;
+    width: 38%;
+    height: 78%;
+    min-height: 0;
+    padding: 0;
+
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+
+    color: #ffffff;
+    text-align: left;
+    pointer-events: none;
 }
 
-.titulo1{
-  color: #ffffff;
-  font-size: 10vh;
-  margin-top: 20vh;
-  animation: subir 1s ease-out both;
-  animation-delay: 0.4s;
+.contenido a,
+.contenido button {
+    pointer-events: auto;
 }
 
-.titulo2{
-  color: #FFFFFF;
-  font-size: 15vh;
-  animation: subir 1s ease-out both;
-  animation-delay: 0.6s;
+.contenido a {
+    display: inline-block;
+    text-decoration: none;
 }
 
-.parrafo {
-  color: #e6eaf2bb;
-  font-size: 3vh;
-  animation: subir 1s ease-out both;
-  animation-delay: 0.8s;
+/* Primera línea del título */
+.titulo1 {
+    width: 100%;
+    color: #ffffff;
+    font-size: clamp(34px, 4.1vw, 66px);
+    line-height: 1.08;
+    font-weight: 750;
+    margin-top: 0;
+
+    animation: subir 0.9s 0.4s ease both;
+}
+
+/* SIGLO XXI */
+.titulo2 {
+    width: 100%;
+    color: #ffffff;
+    font-size: clamp(48px, 5.2vw, 86px);
+    line-height: 1.08;
+    font-weight: 850;
+    white-space: nowrap;
+
+    animation: subir 0.9s 0.65s ease both;
 }
 
 .xxi {
-  color: #0B2A6F;
+    color: #10baff;
+    text-shadow: 0 0 22px rgba(0, 174, 255, 0.22);
+}
+
+/* Descripción */
+.parrafo {
+    width: 100%;
+    max-width: 570px;
+    color: rgba(235, 243, 255, 0.94);
+    font-size: clamp(15px, 1.4vw, 22px);
+    line-height: 1.48;
+
+    animation: subir 0.9s 0.85s ease both;
 }
 
 .primer-parrafo {
-  display: inline-block;
-  margin-top: 4vh;
+    margin-top: 2.5vh;
 }
 
+/* Botón Entrar */
 .boton {
-  background-color: #2EE6A6;
-  border: none;
-  border-radius: 25px;
-  padding: 2vh 3vh;
-  font-size: 2.5vh;
-  font-weight: bold;
-  color: #000000;
-  display: inline-block;
-  margin-top: 10vh;
-  cursor: pointer;
-  animation: subir 1s ease-out 1s both, respirar 2.5s ease-in-out 1.6s infinite;
-  transition: scale 0.2s ease; 
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    margin-top: 4vh;
+    padding: 15px 27px;
+
+    border: 1px solid rgba(164, 255, 242, 0.8);
+    border-radius: 40px;
+
+    color: #002126;
+    background: linear-gradient(110deg, #20e9ad, #11d8c5);
+
+    font-family: inherit;
+    font-size: clamp(15px, 1.25vw, 20px);
+    font-weight: 750;
+
+    cursor: pointer;
+    box-shadow:
+        0 0 14px rgba(24, 233, 198, 0.42),
+        0 0 34px rgba(24, 233, 198, 0.16);
+
+    animation:
+        subir 0.9s 1s ease both,
+        respirar 3s 2s ease-in-out infinite;
+
+    transition:
+        scale 0.25s ease,
+        box-shadow 0.25s ease;
 }
 
+@media (hover: hover) {
+    .boton:hover {
+        scale: 1.05;
+        box-shadow:
+            0 0 20px rgba(24, 233, 198, 0.65),
+            0 0 45px rgba(24, 233, 198, 0.2);
+    }
+}
+
+/* Conservar la secuencia del JS original */
 .contenedor_video:not(.listo) .titulo1,
 .contenedor_video:not(.listo) .titulo2,
 .contenedor_video:not(.listo) .parrafo,
 .contenedor_video:not(.listo) .boton {
-  animation-play-state: paused;
-}
-
-@media (hover: hover) {
-  .boton:hover {
-    scale: 1.1;
     animation-play-state: paused;
-  }
 }
 
+/* Créditos */
 .nombres {
-  position: absolute;
-  left: 0;
-  bottom: 2vh;
-  width: 100%;
-  padding: 0 5vw;
-  text-align: center;
-  color: #e6eaf2bb;
-  font-size: 1.5vh;
+    position: fixed;
+    z-index: 8;
+    left: 0;
+    bottom: 1.5vh;
+    width: 100%;
+    padding: 0 12px;
+
+    color: rgba(236, 243, 255, 0.85);
+    font-size: clamp(10px, 1.3vh, 13px);
+    text-align: center;
+    pointer-events: none;
 }
 
-body {
-  animation: aparecer 0.6s ease backwards;
-  transition: opacity 0.5s ease;
-  background-color: #040a1a;
+/* ============================================
+   ESCENA DEL ROBOT Y SU ÓRBITA
+============================================ */
+
+.escena-robot {
+    position: absolute;
+    inset: 0;
+    z-index: 3;
+    pointer-events: none;
+
+    /* Radios compartidos por las cinco esferas */
+    --orbit-x: min(18vw, 295px);
+    --orbit-y: min(16vh, 145px);
+    --orbit-diagonal-x: min(12.7vw, 207px);
+    --orbit-diagonal-y: min(10.7vh, 99px);
 }
 
-body.saliendo {
-  opacity: 0;
+/* Línea orbital */
+.orbita-robot {
+    position: absolute;
+    left: 63%;
+    top: 50%;
+
+    width: min(43vw, 650px);
+    height: min(38vh, 350px);
+
+    border: 1.5px solid rgba(46, 204, 255, 0.93);
+    border-radius: 50%;
+
+    transform: translate(-50%, -50%) rotate(-9deg);
+    transform-origin: center;
+
+    box-shadow:
+        0 0 8px rgba(43, 204, 255, 0.35),
+        0 0 23px rgba(25, 148, 255, 0.15),
+        inset 0 0 12px rgba(43, 204, 255, 0.12);
 }
 
-@keyframes aparecer {
-  from { opacity: 0; }
-  to   { opacity: 1; }
+/* ============================================
+   CINCO ESFERAS LUMINOSAS
+============================================ */
+
+.esferas-orbita {
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+}
+
+.esfera {
+    position: absolute;
+    left: 63%;
+    top: 50%;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    width: clamp(54px, 4.8vw, 74px);
+    aspect-ratio: 1;
+    padding: 0;
+
+    border: 1px solid rgba(206, 249, 255, 0.98);
+    border-radius: 50%;
+
+    color: #ffffff;
+    background:
+        radial-gradient(
+            circle at 28% 20%,
+            #ffffff 0%,
+            #e6fbff 5%,
+            #a2f0ff 11%,
+            #47d3ff 22%,
+            #168edb 43%,
+            #07518f 65%,
+            #032546 83%,
+            #010b1b 100%
+        );
+
+    box-shadow:
+        0 0 10px rgba(113, 230, 255, 0.95),
+        0 0 25px rgba(25, 151, 255, 0.48),
+        inset -8px -10px 17px rgba(0, 5, 24, 0.52),
+        inset 3px 3px 8px rgba(255, 255, 255, 0.46);
+
+    cursor: pointer;
+    pointer-events: auto;
+
+    animation: orbitar-esfera 25s linear infinite;
+
+    transition:
+        filter 0.25s ease,
+        box-shadow 0.25s ease;
+}
+
+/* Reflejo blanco para simular cristal */
+.esfera::after {
+    content: "";
+    position: absolute;
+    left: 17%;
+    top: 12%;
+    width: 28%;
+    height: 14%;
+
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.95);
+    filter: blur(2px);
+    transform: rotate(-35deg);
+
+    pointer-events: none;
+}
+
+/* Símbolos de cada tema */
+.esfera .simbolo {
+    position: relative;
+    z-index: 1;
+
+    color: #ffffff;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: clamp(21px, 2.2vw, 30px);
+    font-weight: bold;
+
+    text-shadow:
+        0 0 7px #ffffff,
+        0 0 17px #4bdcff;
+}
+
+/* Nombres, ocultos hasta interactuar */
+.nombre-tema {
+    position: absolute;
+    left: 50%;
+    top: calc(100% + 12px);
+
+    width: max-content;
+    max-width: min(190px, 42vw);
+    padding: 9px 12px;
+
+    border: 1px solid rgba(73, 213, 255, 0.78);
+    border-radius: 11px;
+
+    color: #ffffff;
+    background: rgba(2, 12, 32, 0.97);
+
+    box-shadow: 0 0 20px rgba(0, 160, 255, 0.22);
+
+    font-size: 13px;
+    line-height: 1.35;
+    text-align: center;
+    white-space: normal;
+
+    opacity: 0;
+    visibility: hidden;
+    transform: translate(-50%, 5px);
+
+    transition:
+        opacity 0.22s ease,
+        transform 0.22s ease,
+        visibility 0.22s ease;
+
+    pointer-events: none;
+    z-index: 10;
+}
+
+/* Se muestran con ratón, teclado o selección */
+.esfera:hover .nombre-tema,
+.esfera:focus-visible .nombre-tema,
+.esfera.seleccionada .nombre-tema {
+    opacity: 1;
+    visibility: visible;
+    transform: translate(-50%, 0);
+}
+
+.esfera:hover,
+.esfera:focus-visible,
+.esfera.seleccionada {
+    filter: brightness(1.2);
+    box-shadow:
+        0 0 17px rgba(116, 238, 255, 1),
+        0 0 37px rgba(20, 145, 255, 0.75),
+        inset -8px -10px 16px rgba(0, 5, 24, 0.4);
+}
+
+/* Cinco esferas distribuidas alrededor de la trayectoria */
+.tema-ia {
+    animation-delay: 0s;
+}
+
+.tema-espacio {
+    animation-delay: -5s;
+}
+
+.tema-medicina {
+    animation-delay: -10s;
+}
+
+.tema-conectividad {
+    animation-delay: -15s;
+}
+
+.tema-energia {
+    animation-delay: -20s;
+}
+
+/* Movimiento orbital lento, con variación de profundidad */
+@keyframes orbitar-esfera {
+    0% {
+        transform:
+            translate(-50%, -50%)
+            translate(0, calc(-1 * var(--orbit-y)))
+            scale(0.86);
+        z-index: 1;
+    }
+
+    12.5% {
+        transform:
+            translate(-50%, -50%)
+            translate(
+                var(--orbit-diagonal-x),
+                calc(-1 * var(--orbit-diagonal-y))
+            )
+            scale(0.94);
+        z-index: 1;
+    }
+
+    25% {
+        transform:
+            translate(-50%, -50%)
+            translate(var(--orbit-x), 0)
+            scale(1.07);
+        z-index: 3;
+    }
+
+    37.5% {
+        transform:
+            translate(-50%, -50%)
+            translate(var(--orbit-diagonal-x), var(--orbit-diagonal-y))
+            scale(1.12);
+        z-index: 3;
+    }
+
+    50% {
+        transform:
+            translate(-50%, -50%)
+            translate(0, var(--orbit-y))
+            scale(1.12);
+        z-index: 3;
+    }
+
+    62.5% {
+        transform:
+            translate(-50%, -50%)
+            translate(
+                calc(-1 * var(--orbit-diagonal-x)),
+                var(--orbit-diagonal-y)
+            )
+            scale(1.07);
+        z-index: 3;
+    }
+
+    75% {
+        transform:
+            translate(-50%, -50%)
+            translate(calc(-1 * var(--orbit-x)), 0)
+            scale(1.04);
+        z-index: 3;
+    }
+
+    87.5% {
+        transform:
+            translate(-50%, -50%)
+            translate(
+                calc(-1 * var(--orbit-diagonal-x)),
+                calc(-1 * var(--orbit-diagonal-y))
+            )
+            scale(0.94);
+        z-index: 1;
+    }
+
+    100% {
+        transform:
+            translate(-50%, -50%)
+            translate(0, calc(-1 * var(--orbit-y)))
+            scale(0.86);
+        z-index: 1;
+    }
+}
+
+/* ============================================
+   ROBOT: ENTRADA, SALUDO Y FLOTACIÓN
+============================================ */
+
+.robot-animado {
+    position: absolute;
+    left: 63%;
+    top: 50%;
+
+    width: clamp(210px, 25vw, 380px);
+    max-height: 76vh;
+    height: auto;
+    object-fit: contain;
+
+    opacity: 0;
+    z-index: 2;
+
+    filter:
+        drop-shadow(0 0 15px rgba(39, 184, 255, 0.45))
+        drop-shadow(0 0 35px rgba(12, 104, 255, 0.2));
+
+    transform-origin: center;
+
+    animation:
+        entrada-robot 3.4s 0.55s cubic-bezier(0.18, 0.72, 0.25, 1) forwards,
+        flotar-robot 4s 4s ease-in-out infinite;
+}
+
+/* Se acerca desde lejos */
+@keyframes entrada-robot {
+    0% {
+        opacity: 0;
+        transform: translate(-50%, -50%) scale(0.06);
+    }
+
+    35% {
+        opacity: 0.75;
+    }
+
+    100% {
+        opacity: 1;
+        transform: translate(-50%, -50%) scale(1);
+    }
+}
+
+/* Flotación tranquila al terminar la entrada */
+@keyframes flotar-robot {
+    0%, 100% {
+        transform: translate(-50%, -50%) translateY(0);
+    }
+
+    50% {
+        transform: translate(-50%, -50%) translateY(-11px);
+    }
+}
+
+/* Burbuja del robot */
+.burbuja-robot {
+    position: absolute;
+    left: calc(63% + 105px);
+    top: calc(50% - 185px);
+    z-index: 4;
+
+    max-width: 190px;
+    padding: 10px 14px;
+
+    border: 1px solid #28c9ff;
+    border-radius: 17px 17px 17px 4px;
+
+    color: #ffffff;
+    background: rgba(3, 15, 36, 0.95);
+
+    box-shadow:
+        0 0 13px rgba(0, 174, 255, 0.38),
+        inset 0 0 12px rgba(0, 174, 255, 0.07);
+
+    font-size: 13px;
+    line-height: 1.4;
+
+    opacity: 0;
+    animation: aparecer-burbuja 0.7s 3.1s ease forwards;
+}
+
+@keyframes aparecer-burbuja {
+    to {
+        opacity: 1;
+    }
+}
+
+/* ============================================
+   ANIMACIONES GENERALES
+============================================ */
+
+@keyframes aparecer-pagina {
+    from { opacity: 0; }
+    to   { opacity: 1; }
 }
 
 @keyframes subir {
-  from { opacity: 0; transform: translateY(4vh); }
-  to   { opacity: 1; transform: translateY(0); }
+    from {
+        opacity: 0;
+        transform: translateY(24px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
 
 @keyframes respirar {
-  0%, 100% { box-shadow: 0 0 1vh rgba(46, 230, 166, 0.35); }
-  50%      { box-shadow: 0 0 3vh rgba(46, 230, 166, 0.75); }
+    0%, 100% {
+        box-shadow: 0 0 12px rgba(24, 233, 198, 0.35);
+    }
+
+    50% {
+        box-shadow: 0 0 27px rgba(24, 233, 198, 0.68);
+    }
 }
 
-@media (max-width: 1024px) {
-  .titulo1 {
-    font-size: min(8vh, 9vw);
-    margin-top: 18vh;
-  }
-
-  .titulo2 {
-    font-size: min(12vh, 13vw);
-  }
-
-  .parrafo {
-    font-size: min(2.6vh, 3.2vw);
-  }
-
-  .boton {
-    font-size: min(2.5vh, 3.4vw);
-    padding: 2vh 4vw;
-    margin-top: 8vh;
-  }
-
-  .nombres {
-    font-size: min(1.5vh, 2vw);
-  }
-}
+/* ============================================
+   CELULARES
+============================================ */
 
 @media (max-width: 600px) {
-  .titulo1 {
-    font-size: 9vw;
-    margin-top: 16vh;
-  }
+    .contenedor_video {
+        background-size: auto 100%;
+        background-position: 24% center;
+    }
 
-  .titulo2 {
-    font-size: 14vw;
-  }
+    .capa_oscura {
+        background:
+            linear-gradient(
+                180deg,
+                rgba(2, 8, 23, 0.52) 0%,
+                rgba(2, 8, 23, 0.18) 45%,
+                rgba(2, 8, 23, 0.18) 100%
+            );
+    }
 
-  .parrafo {
-    font-size: 4.2vw;
-  }
+    .contenido {
+        top: 4%;
+        left: 5%;
+        width: 90%;
+        height: 37%;
+        padding: 0;
 
-  .boton {
-    font-size: 4.2vw;
-    padding: 2vh 6vw;
-    margin-top: 7vh;
-  }
+        align-items: center;
+        justify-content: flex-start;
+        text-align: center;
+    }
 
-  .nombres {
-    font-size: 3vw;
-  }
+    .titulo1 {
+        font-size: clamp(28px, 8vw, 40px);
+        line-height: 1.08;
+    }
+
+    .titulo2 {
+        font-size: clamp(39px, 10vw, 52px);
+        line-height: 1.08;
+        white-space: nowrap;
+    }
+
+    .parrafo {
+        max-width: 440px;
+        font-size: clamp(13px, 3.6vw, 17px);
+        line-height: 1.35;
+    }
+
+    .primer-parrafo {
+        margin-top: 1.7vh;
+    }
+
+    .boton {
+        margin-top: 2vh;
+        padding: 12px 21px;
+        font-size: clamp(13px, 3.6vw, 16px);
+    }
+
+    .escena-robot {
+        --orbit-x: 39vw;
+        --orbit-y: 11vh;
+        --orbit-diagonal-x: 27vw;
+        --orbit-diagonal-y: 7.8vh;
+    }
+
+    .orbita-robot {
+        left: 50%;
+        top: 66%;
+        width: 92vw;
+        height: 29vh;
+    }
+
+    .robot-animado {
+        left: 50%;
+        top: 65%;
+        width: clamp(145px, 41vw, 195px);
+        max-height: 42vh;
+    }
+
+    .esfera {
+        left: 50%;
+        top: 66%;
+        width: 46px;
+    }
+
+    .esfera .simbolo {
+        font-size: 19px;
+    }
+
+    .nombre-tema {
+        max-width: 125px;
+        padding: 7px 9px;
+        font-size: 11px;
+    }
+
+    .burbuja-robot {
+        left: calc(50% + 32px);
+        top: calc(65% - 100px);
+        max-width: 135px;
+        padding: 8px 10px;
+        font-size: 11px;
+    }
+
+    .nombres {
+        bottom: 1vh;
+        font-size: 10px;
+    }
 }
 
+/* Pantallas estrechas en horizontal */
 @media (max-height: 500px) and (orientation: landscape) {
-  .titulo1 {
-    font-size: 12vh;
-    margin-top: 8vh;
-  }
+    .contenido {
+        top: 5%;
+        left: 5%;
+        width: 40%;
+        height: 85%;
+    }
 
-  .titulo2 {
-    font-size: 18vh;
-  }
+    .titulo1 {
+        font-size: 7vh;
+    }
 
-  .primer-parrafo {
-    margin-top: 3vh;
-  }
+    .titulo2 {
+        font-size: 10vh;
+    }
 
-  .parrafo {
-    font-size: 5vh;
-  }
+    .primer-parrafo {
+        margin-top: 1.5vh;
+    }
 
-  .boton {
-    font-size: 5vh;
-    padding: 1.5vh 3vh;
-    margin-top: 5vh;
-  }
+    .parrafo {
+        font-size: 3.2vh;
+    }
 
-  .nombres {
-    font-size: 4vh;
-    bottom: 1vh;
-  }
+    .boton {
+        margin-top: 2vh;
+        padding: 1.5vh 3vh;
+        font-size: 3.5vh;
+    }
+
+    .robot-animado {
+        width: min(25vw, 245px);
+    }
+
+    .orbita-robot {
+        height: 55vh;
+    }
+
+    .burbuja-robot {
+        top: 8%;
+    }
 }
 
+/* Accesibilidad: reducir movimiento si se solicita */
+@media (prefers-reduced-motion: reduce) {
+    .robot-animado,
+    .esfera,
+    .burbuja-robot,
+    .titulo1,
+    .titulo2,
+    .parrafo,
+    .boton {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+    }
+}
+
+/* ==========================================
+   CORRECCIÓN: ESFERAS Y LOGOS
+   Evita que las imágenes cubran la portada
+========================================== */
+
+/* Cada esfera debe conservar su forma circular */
+.esfera {
+    position: absolute !important;
+
+    display: block !important;
+    width: clamp(76px, 6vw, 92px) !important;
+    height: clamp(76px, 6vw, 92px) !important;
+    min-width: 0;
+    aspect-ratio: 1 / 1;
+
+    padding: 0 !important;
+    border: 0 !important;
+    border-radius: 50%;
+
+    background-color: transparent !important;
+    background-image: url("../img/esfera_orbita.png") !important;
+    background-position: center !important;
+    background-repeat: no-repeat !important;
+    background-size: 100% 100% !important;
+
+    box-shadow: none;
+    overflow: visible;
+    isolation: isolate;
+}
+
+/* El logo ocupa solo el centro de la esfera */
+.esfera .logo-esfera {
+    position: absolute !important;
+    left: 50% !important;
+    top: 50% !important;
+
+    display: block !important;
+    width: 31% !important;
+    height: 31% !important;
+
+    max-width: 36px;
+    max-height: 36px;
+    min-width: 0;
+
+    object-fit: contain;
+    transform: translate(-50%, -50%) !important;
+
+    filter:
+        brightness(0)
+        invert(1)
+        drop-shadow(0 0 4px rgba(93, 224, 255, 0.95));
+
+    pointer-events: none;
+    user-select: none;
+    z-index: 2;
+}
+
+/* Quitar reflejos CSS adicionales: la esfera ya tiene los suyos */
+.esfera::after {
+    content: none !important;
+}
+
+/* Iluminar suavemente al seleccionar */
+.esfera:hover,
+.esfera:focus-visible,
+.esfera.seleccionada {
+    filter: brightness(1.12);
+    box-shadow:
+        0 0 12px rgba(60, 206, 255, 0.35);
+}
+
+/* Mantener el nombre por encima de la esfera */
+.esfera .nombre-tema {
+    position: absolute;
+    left: 50%;
+    top: calc(100% + 8px);
+    z-index: 10;
+
+    width: max-content;
+    max-width: min(180px, 42vw);
+
+    transform: translate(-50%, 5px);
+}
+
+/* Ajuste para celulares */
+@media (max-width: 600px) {
+    .esfera {
+        width: 62px !important;
+        height: 62px !important;
+    }
+
+    .esfera .logo-esfera {
+        width: 31% !important;
+        height: 31% !important;
+        max-width: 24px;
+        max-height: 24px;
+    }
+}
