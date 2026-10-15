@@ -54,8 +54,7 @@ img {
 ========================================= */
 
 .barra {
-    position: sticky;
-    top: 0vh;
+    position: relative;
     display: flex;
     justify-content: space-between;
     align-items: center;
