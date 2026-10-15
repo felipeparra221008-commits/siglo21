@@ -1,11 +1,248 @@
+
 <!DOCTYPE html>
 <html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Siglo XXI</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Explora las tecnologías que definen el siglo XXI.">
+  <title>SIGLO XXI | Contexto</title>
+  <link rel="stylesheet" href="../css/contexto.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Outfit:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 </head>
+
 <body>
-    <h1>Contexto</h1>
+
+  <!-- 1. BARRA DE NAVEGACIÓN -->
+  <header class="navbar">
+    <a class="logo" href="#inicio">SIGLO <span>XXI</span></a>
+
+    <nav class="nav-links">
+      <a class="active" href="#inicio">Contexto</a>
+      <a href="siglo-xx.html">Siglo XX</a>
+      <a href="eventos.html">Eventos</a>
+      <a href="inventores.html">Inventores</a>
+      <a href="futuro.html">Futuro</a>
+      <a href="actividad.html">Actividad</a>
+    </nav>
+  </header>
+
+  <main id="inicio">
+
+    <!-- 2. HERO PRINCIPAL -->
+    <section class="hero">
+
+    <!-- VIDEO DE FONDO EN LOOP -->
+    <video
+        class="hero-video"
+        autoplay
+        muted
+        loop
+        playsinline
+        preload="metadata"
+        aria-label="Video de una ciudad de noche en timelapse"
+    >
+        <source src="../img/ciudad_noche.mp4" type="video/mp4">
+        Tu navegador no puede reproducir este video.
+    </video>
+
+    <!-- CAPA OSCURA PARA MEJORAR LA LEGIBILIDAD -->
+    <div class="hero-overlay"></div>
+
+    <!-- TÍTULO Y ETIQUETA -->
+    <div class="hero-content">
+        <span class="eyebrow">PARTE 1 · HOY</span>
+        <h1>Contexto: el siglo XXI</h1>
+    </div>
+
+    <!-- INDICADOR VISUAL -->
+    <div class="video-label">
+        <span class="play-icon">▶</span>
+        <span>[VIDEO REAL: ciudad de noche en timelapse]</span>
+    </div>
+
+    </section>
+
+    <!-- 3. INTRODUCCIÓN -->
+    <section class="intro">
+      <p>
+        El siglo XXI es nuestro periodo actual y se caracteriza por
+        rápidos cambios en tecnología, comunicación, economía,
+        política y ciencia.
+      </p>
+    </section>
+
+    <!-- 4. LAS OCHO FUERZAS -->
+    <section class="technologies" id="tecnologias">
+      <div class="section-heading">
+        <span class="eyebrow">TECNOLOGÍA Y SOCIEDAD</span>
+        <h2>Las 8 fuerzas que lo mueven</h2>
+      </div>
+
+      <div class="technology-grid">
+
+        <!-- TARJETA 1 -->
+        <article class="tech-card">
+          <div class="card-image">
+            <img src="../img/persona_redes_sociales.jpg"
+                 alt="Persona usando redes sociales en su celular">
+            <span class="image-label">
+              [FOTO REAL: persona con redes sociales en el celular]
+            </span>
+          </div>
+          <div class="card-content">
+            <h3>Internet y redes sociales</h3>
+            <p>Conectan a gran parte de la humanidad en tiempo real.</p>
+          </div>
+        </article>
+
+        <!-- TARJETA 2 -->
+        <article class="tech-card">
+          <div class="card-image">
+            <img src="../img/smartphone.jpg"
+                 alt="Personas utilizando un teléfono inteligente">
+            <span class="image-label">
+              [FOTO REAL: persona utilizando con smartphone]
+            </span>
+          </div>
+          <div class="card-content">
+            <h3>Teléfonos inteligentes</h3>
+            <p>Un computador, una cámara y un banco en el bolsillo.</p>
+          </div>
+        </article>
+
+        <!-- TARJETA 3 -->
+        <article class="tech-card">
+          <div class="card-image">
+            <img src="../img/servidores.jpg"
+                 alt="Servidores de un centro de datos">
+            <span class="image-label">
+              [FOTO REAL: centro de datos]
+            </span>
+          </div>
+          <div class="card-content">
+            <h3>Computación en la nube</h3>
+            <p>Guardar y procesar datos en servidores remotos en lugar de en tu equipo.</p>
+          </div>
+        </article>
+
+        <!-- TARJETA 4 -->
+        <article class="tech-card">
+          <div class="card-image">
+            <img src="../img/robot_pepper.jpg"
+                 alt="Robot que trabaja con inteligencia artificial">
+            <span class="image-label">
+              [FOTO REAL: robot que trabaja con IA]
+            </span>
+          </div>
+          <div class="card-content">
+            <h3>Inteligencia artificial</h3>
+            <p>Sistemas que aprenden de datos para reconocer, predecir y crear.</p>
+          </div>
+        </article>
+
+        <!-- TARJETA 5 -->
+        <article class="tech-card">
+          <div class="card-image">
+            <img src="../img/cientifico_microscopio.jpg"
+                 alt="Científico trabajando con un microscopio">
+            <span class="image-label">
+              [FOTO REAL: científico con microscopio]
+            </span>
+          </div>
+          <div class="card-content">
+            <h3>Biotecnología</h3>
+            <p>Usar la biología para crear medicinas, alimentos y materiales.</p>
+          </div>
+        </article>
+
+        <!-- TARJETA 6 -->
+        <article class="tech-card">
+          <div class="card-image">
+            <img src="../img/paneles_solares.jpg"
+                 alt="Paneles solares">
+            <span class="image-label">
+              [FOTO REAL: paneles solares]
+            </span>
+          </div>
+          <div class="card-content">
+            <h3>Energías renovables</h3>
+            <p>Solar, eólica e hidráulica para reducir las emisiones.</p>
+          </div>
+        </article>
+
+        <!-- TARJETA 7 -->
+        <article class="tech-card">
+          <div class="card-image">
+            <img src="../img/brazo_robot.jpg"
+                 alt="Brazo robótico trabajando en una fábrica">
+            <span class="image-label">
+              [FOTO REAL: brazo robótico en fábrica]
+            </span>
+          </div>
+          <div class="card-content">
+            <h3>Robótica y automatización</h3>
+            <p>Máquinas que hacen tareas repetitivas o peligrosas.</p>
+          </div>
+        </article>
+
+        <!-- TARJETA 8 -->
+        <article class="tech-card">
+          <div class="card-image">
+            <img src="../img/falcon9.jpg"
+                 alt="Despegue del cohete Falcon 9">
+            <span class="image-label">
+              [FOTO REAL: despegue de un cohete]
+            </span>
+          </div>
+          <div class="card-content">
+            <h3>Exploración espacial privada</h3>
+            <p>Empresas como SpaceX y Blue Origin lanzan cohetes y satélites.</p>
+          </div>
+        </article>
+
+      </div>
+    </section>
+
+    <!-- 5. BANNER DE CONVERGENCIA -->
+    <section class="convergence">
+      <div class="convergence-text">
+        <span class="eyebrow">EL PODER DE LA INTEGRACIÓN</span>
+        <h2>Convergencia de tecnologías</h2>
+        <p>
+          Un aspecto clave es la convergencia: cuando varias tecnologías
+          se combinan, el resultado es mayor que la suma de las partes.
+          Por ejemplo, la inteligencia artificial junto con la robótica
+          y la medicina permite asistir cirugías y analizar imágenes médicas.
+        </p>
+      </div>
+
+      <div class="chips" aria-label="Tecnologías que convergen">
+        <span class="chip">IA</span>
+        <span class="plus">+</span>
+        <span class="chip">Robótica</span>
+        <span class="plus">+</span>
+        <span class="chip">Medicina</span>
+      </div>
+    </section>
+
+    <!-- 6. BOTÓN PARA CONTINUAR -->
+    <div class="next-container">
+      <a class="next-button" href="siglo-xx.html">
+        Siguiente: El siglo XX →
+      </a>
+    </div>
+
+  </main>
+
+  <!-- 7. PIE DE PÁGINA -->
+  <footer class="footer">
+    <p>
+      Hecho por: [nombres del equipo] ·
+      Créditos de imágenes en la página Actividad
+    </p>
+  </footer>
+
 </body>
 </html>
