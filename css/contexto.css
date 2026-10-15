@@ -808,3 +808,23 @@ img {
         line-height: 1.7;
     }
 }
+
+@media screen and (min-width: 1025px) {
+    .barra {
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .logo {
+        width: 120px;
+        height: 50px;
+        flex: 0 0 120px;
+        padding: 0;
+        margin: 0;
+    }
+
+    .barra2 {
+        justify-content: flex-end;
+    }
+}
