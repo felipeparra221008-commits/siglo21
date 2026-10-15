@@ -53,55 +53,68 @@ img {
    2. BARRA DE NAVEGACIÓN
 ========================================= */
 
-.navbar {
-  min-height: 76px;
-  padding: 0 4%;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  gap: 28px;
-
-  background: rgba(5, 7, 13, 0.96);
-  border-bottom: 1px solid var(--border);
-
-  position: sticky;
-  top: 0;
-  z-index: 100;
-  backdrop-filter: blur(16px);
+.barra {
+    position: sticky;
+    top: 0vh;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;            
+    font-family: "Inter", sans-serif;
+    z-index: 1000;
+    height: 8.5vh;
+    border-bottom: 3px solid #2EE6A6;
+    box-sizing: border-box;
 }
 
 .logo {
-  font-size: 1.65rem;
-  font-weight: 800;
-  letter-spacing: -1px;
-  white-space: nowrap;
+    height: 6vh;
+    width: 8vw;
+    padding-inline: 4vw;
 }
 
-.logo span {
-  color: var(--blue);
+.barra2 {
+    color: #9AA7BD;
+    display: flex;
+    gap: 4vw;
+    font-size: 2vh;
+    padding-inline: 4vw;
+    white-space: nowrap;
+    cursor: pointer;
 }
 
-.nav-links {
-  display: flex;
-  align-items: center;
-  gap: 28px;
+.barra2 a {
+    color: #9AA7BD;
+    text-decoration: none;
 }
 
-.nav-links a {
-  color: var(--secondary);
-  font-size: 0.9rem;
-  padding: 24px 0 20px;
-  border-bottom: 3px solid transparent;
-  transition: color 0.2s, border-color 0.2s;
+.aniparrafos {
+    display: inline-block;
+    position: relative;
+    transition: transform 0.3s ease;
+    vertical-align: middle;
 }
 
-.nav-links a:hover,
-.nav-links a.active {
-  color: var(--mint);
+.aniparrafos:hover {
+  transform: scale(1.1); 
 }
 
-.nav-links a.active {
-  border-bottom-color: var(--mint);
+.aniparrafos::after {
+    content: '';
+    position: absolute;
+    bottom: -0.5vh;
+    left: 0;
+    width: 100%;
+    height: 1px;
+    background-color: #2EE6A6;
+    transform: scaleX(0);
+    opacity: 0;
+    transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+.aniparrafos:hover::after {
+    transform: scaleX(1);
+    opacity: 1;
 }
 
 /* =========================================
@@ -405,12 +418,15 @@ img {
 }
 
 /* =========================================
-   7. BOTÓN SIGUIENTE
+   7. BOTONES DE NAVEGACIÓN
 ========================================= */
 
 .next-container {
   display: flex;
   justify-content: center;
+  align-items: center;
+  gap: 18px;
+  flex-wrap: wrap;
   padding: 0 20px 40px;
 }
 
@@ -440,6 +456,35 @@ img {
   box-shadow: 0 0 28px rgba(46, 230, 166, 0.24);
 }
 
+.back-button {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+
+  padding: 15px 34px;
+  min-width: 220px;
+
+  color: #E6EAF2;
+  background: #121C2E;
+  border: 1px solid #22314D;
+  border-radius: 9px;
+
+  font-size: 0.95rem;
+  font-weight: 600;
+  text-align: center;
+
+  transition:
+    background 0.2s ease,
+    border-color 0.2s ease,
+    transform 0.2s ease;
+}
+
+.back-button:hover {
+  background: #172744;
+  border-color: #2F6BFF;
+  transform: translateY(-2px);
+}
+
 /* =========================================
    8. PIE DE PÁGINA
 ========================================= */
@@ -459,122 +504,308 @@ img {
    9. TABLETAS
 ========================================= */
 
-@media (max-width: 1050px) {
-  .navbar {
-    flex-wrap: wrap;
-    padding-top: 16px;
-    padding-bottom: 8px;
-  }
+@media screen and (max-width: 1024px) {
 
-  .nav-links {
-    gap: 18px;
-    flex-wrap: wrap;
-  }
+    /* BARRA DE NAVEGACIÓN */
+    .barra {
+        height: auto;
+        min-height: 75px;
+        padding: 12px 2%;
+        gap: 20px;
+    }
 
-  .nav-links a {
-    padding: 8px 0 12px;
-  }
+    .logo {
+        width: 110px;
+        height: 48px;
+        padding-inline: 0;
+        object-fit: contain;
+        flex-shrink: 0;
+    }
 
-  .technology-grid {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-  }
+    .barra2 {
+        gap: 20px;
+        padding-inline: 0;
+        font-size: 15px;
+        flex-wrap: wrap;
+        justify-content: flex-end;
+    }
 
-  .convergence {
-    flex-direction: column;
-    align-items: flex-start;
-  }
+    .aniparrafos {
+        font-size: inherit;
+    }
+
+    /* HERO PRINCIPAL */
+    .hero {
+        height: 42vw;
+        min-height: 320px;
+        margin: 20px 3% 0;
+    }
+
+    .hero-content {
+        left: 4%;
+        bottom: 30px;
+    }
+
+    .hero h1 {
+        font-size: clamp(2rem, 4.5vw, 3.4rem);
+    }
+
+    .video-label {
+        right: 4%;
+        max-width: 230px;
+    }
+
+    /* INTRODUCCIÓN */
+    .intro {
+        padding: 25px 3%;
+    }
+
+    /* TARJETAS TECNOLÓGICAS */
+    .technologies {
+        padding: 10px 3% 32px;
+    }
+
+    .technology-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 16px;
+    }
+
+    .card-content h3 {
+        font-size: 1.05rem;
+    }
+
+    .card-content p {
+        font-size: 0.88rem;
+    }
+
+    /* CONVERGENCIA */
+    .convergence {
+        margin: 0 3% 30px;
+        padding: 30px;
+        gap: 24px;
+        flex-wrap: wrap;
+    }
+
+    .convergence-text {
+        max-width: 100%;
+    }
+
+    .chips {
+        justify-content: flex-start;
+    }
+
+    /* BOTONES INFERIORES */
+    .next-container {
+        gap: 14px;
+        flex-wrap: wrap;
+    }
 }
 
 /* =========================================
    10. CELULARES
 ========================================= */
 
-@media (max-width: 600px) {
-  .navbar {
-    gap: 10px;
-  }
+@media screen and (max-width: 700px) {
 
-  .logo {
-    font-size: 1.4rem;
-  }
+    /* BARRA DE NAVEGACIÓN */
+    .barra {
+        position: sticky;
+        top: 0;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 10px;
+        padding: 12px 14px;
+        height: auto;
+        min-height: 0;
+        background: #05070D;
+    }
 
-  .nav-links {
-    width: 100%;
-    gap: 8px 18px;
-  }
+    .logo {
+        width: 120px;
+        height: 42px;
+        padding: 0;
+        object-fit: contain;
+    }
 
-  .nav-links a {
-    font-size: 0.78rem;
-  }
+    .barra2 {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-wrap: wrap;
+        gap: 10px 18px;
+        padding: 0;
+        font-size: 13px;
+        white-space: normal;
+    }
 
-  .hero {
-    min-height: 350px;
-    height: 65vh;
-    max-height: 500px;
-    margin: 16px 4% 0;
-  }
+    .barra2 a {
+        display: inline-block;
+    }
 
-  .hero-content {
-    left: 6%;
-    right: 6%;
-    bottom: 28px;
-  }
+    .aniparrafos {
+        transform: none;
+    }
 
-  .hero h1 {
-    font-size: 2.5rem;
-  }
+    .aniparrafos:hover {
+        transform: scale(1.04);
+    }
 
-  .video-label {
-    top: 30%;
-    right: 5%;
-    left: 5%;
-    max-width: none;
-    font-size: 0.7rem;
-  }
+    .aniparrafos::after {
+        bottom: -3px;
+        height: 1px;
+    }
 
-  .intro {
-    padding: 24px 4%;
-  }
+    /* HERO PRINCIPAL */
+    .hero {
+        height: 65vw;
+        min-height: 340px;
+        max-height: 470px;
+        margin: 14px 4% 0;
+        border-radius: 12px;
+    }
 
-  .technologies {
-    padding: 10px 4% 30px;
-  }
+    .hero-video {
+        object-position: center;
+    }
 
-  .technology-grid {
-    grid-template-columns: 1fr;
-    gap: 16px;
-  }
+    .hero-content {
+        left: 6%;
+        right: 6%;
+        bottom: 24px;
+    }
 
-  .card-content h3 {
-    font-size: 1.15rem;
-  }
+    .hero h1 {
+        font-size: clamp(2rem, 8vw, 2.8rem);
+        letter-spacing: -1px;
+    }
 
-  .card-content p {
-    font-size: 0.9rem;
-  }
+    .eyebrow {
+        font-size: 0.7rem;
+        letter-spacing: 1.3px;
+    }
 
-  .convergence {
-    margin: 0 4% 28px;
-    padding: 26px 20px;
-    gap: 24px;
-  }
+    .video-label {
+        top: 30%;
+        left: 5%;
+        right: 5%;
+        max-width: none;
+        font-size: 0.68rem;
+    }
 
-  .chips {
-    gap: 8px;
-  }
+    .play-icon {
+        width: 44px;
+        height: 44px;
+    }
 
-  .chip {
-    padding: 8px 12px;
-  }
+    /* INTRODUCCIÓN */
+    .intro {
+        padding: 22px 4%;
+    }
 
-  .next-button {
-    width: 100%;
-    min-width: 0;
-  }
-}
+    .intro p {
+        font-size: 0.92rem;
+        line-height: 1.75;
+    }
 
-/* Si una imagen no carga, mantiene el fondo oscuro de la tarjeta */
-.card-image img,
-.hero-image {
-  background-color: #121C2E;
+    /* SECCIÓN DE TECNOLOGÍAS */
+    .technologies {
+        padding: 10px 4% 28px;
+    }
+
+    .section-heading {
+        margin-bottom: 18px;
+    }
+
+    .section-heading h2,
+    .convergence h2 {
+        font-size: 1.75rem;
+    }
+
+    .technology-grid {
+        grid-template-columns: 1fr;
+        gap: 16px;
+    }
+
+    .tech-card {
+        border-radius: 12px;
+    }
+
+    .card-image {
+        aspect-ratio: 16 / 9;
+        margin: 10px 10px 0;
+    }
+
+    .card-content {
+        padding: 12px 13px 16px;
+    }
+
+    .card-content h3 {
+        font-size: 1.1rem;
+    }
+
+    .card-content p {
+        font-size: 0.88rem;
+    }
+
+    .image-label {
+        font-size: 0.65rem;
+    }
+
+    /* BANNER DE CONVERGENCIA */
+    .convergence {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 22px;
+        margin: 0 4% 28px;
+        padding: 24px 18px;
+        border-radius: 12px;
+    }
+
+    .convergence-text p {
+        font-size: 0.88rem;
+        line-height: 1.75;
+    }
+
+    .chips {
+        width: 100%;
+        justify-content: center;
+        gap: 8px;
+    }
+
+    .chip {
+        padding: 8px 11px;
+        font-size: 0.82rem;
+    }
+
+    .plus {
+        font-size: 1.1rem;
+    }
+
+    /* BOTONES DE NAVEGACIÓN */
+    .next-container {
+        flex-direction: column;
+        align-items: stretch;
+        gap: 12px;
+        padding: 0 4% 32px;
+    }
+
+    .back-button,
+    .next-button {
+        width: 100%;
+        min-width: 0;
+        padding: 14px 18px;
+        font-size: 0.9rem;
+    }
+
+    /* PIE DE PÁGINA */
+    .footer {
+        padding: 20px 5%;
+    }
+
+    .footer p {
+        font-size: 0.72rem;
+        line-height: 1.7;
+    }
 }
