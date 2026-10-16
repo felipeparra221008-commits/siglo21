@@ -1,11 +1,308 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Siglo XX</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Conoce los acontecimientos e inventos del siglo XX que hicieron posible el siglo XXI.">
+  <title>El siglo XX</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Outfit:wght@500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../css/sigloxx.css">
+  <link rel="icon" href="../img/icon.png" type="image/png">
 </head>
+
 <body>
-    <h1>Siglo XX</h1>
+  <!-- BARRA DE NAVEGACIÓN -->
+  <header class="barra">
+    <a class="logo-enlace" href="explorar.html" aria-label="Ir a la página principal">
+      <img src="../img/logo.png" alt="Logo de SIGLO XXI" class="logo">
+    </a>
+
+    <button class="menu-toggle" type="button" aria-label="Abrir menú de navegación" aria-expanded="false" aria-controls="menu-principal">
+      <span></span><span></span><span></span>
+    </button>
+
+    <nav class="barra2" id="menu-principal" aria-label="Navegación principal">
+      <a href="contexto.html"><span class="aniparrafos">Contexto</span></a>
+      <a href="sigloxx.html" class="activo" aria-current="page"><span class="aniparrafos">Siglo XX</span></a>
+      <a href="eventos.html"><span class="aniparrafos">Eventos</span></a>
+      <a href="inventores.html"><span class="aniparrafos">Inventores</span></a>
+      <a href="futuro.html"><span class="aniparrafos">Futuro</span></a>
+      <a href="actividad.html"><span class="aniparrafos">Actividad</span></a>
+    </nav>
+  </header>
+
+  <main>
+    <!-- ENCABEZADO -->
+    <section class="intro contenedor">
+      <span class="eyebrow">PARTE 2 · ANTES</span>
+      <h1>El siglo XX: <span>de dónde venimos</span></h1>
+      <p>
+        El siglo XX fue un período de transformación sin precedentes, marcado por avances tecnológicos,
+        conflictos globales y profundos cambios sociales y políticos: desde el estallido de las dos guerras
+        mundiales hasta el auge de la Guerra Fría y la globalización. Estuvo definido por la innovación,
+        la destrucción y la búsqueda constante de nuevos modelos de sociedad.
+      </p>
+    </section>
+
+    <!-- ACONTECIMIENTOS HISTÓRICOS -->
+    <section class="seccion contenedor" aria-labelledby="titulo-acontecimientos">
+      <div class="encabezado-seccion">
+        <span class="numero-seccion">01 / HISTORIA</span>
+        <h2 id="titulo-acontecimientos">Acontecimientos previos</h2>
+        <p>Seis momentos que transformaron la política, la sociedad y la relación entre los países.</p>
+      </div>
+
+      <div class="rejilla tarjetas-historia">
+        <article class="tarjeta tarjeta-historia">
+          <div class="marco-imagen">
+            <img src="../img/rumanos_trincheras.jpg" alt="Soldados en trincheras durante la Primera Guerra Mundial" loading="lazy">
+            <span class="etiqueta-imagen">1914–1918</span>
+          </div>
+          <div class="contenido-tarjeta">
+            <span class="chip-anio">1914–1918</span>
+            <h3>Primera Guerra Mundial</h3>
+            <p>El primer conflicto global; introdujo la guerra industrial y transformó el equilibrio político de Europa.</p>
+          </div>
+        </article>
+
+        <article class="tarjeta tarjeta-historia">
+          <div class="marco-imagen">
+            <img src="../img/migrant_mother.jpg" alt="Personas afectadas por la Gran Depresión" loading="lazy">
+            <span class="etiqueta-imagen">1929</span>
+          </div>
+          <div class="contenido-tarjeta">
+            <span class="chip-anio">1929</span>
+            <h3>La Gran Depresión</h3>
+            <p>El colapso de la bolsa de Nueva York desató una crisis económica mundial durante los años treinta.</p>
+          </div>
+        </article>
+
+        <article class="tarjeta tarjeta-historia">
+          <div class="marco-imagen">
+            <img src="../img/segunda-guerra.jpg" alt="Fotografía histórica de la Segunda Guerra Mundial" loading="lazy">
+            <span class="etiqueta-imagen">1939–1945</span>
+          </div>
+          <div class="contenido-tarjeta">
+            <span class="chip-anio">1939–1945</span>
+            <h3>Segunda Guerra Mundial</h3>
+            <p>El conflicto más devastador de la historia; aceleró avances como el radar, la aviación y la producción de penicilina.</p>
+          </div>
+        </article>
+
+        <article class="tarjeta tarjeta-historia">
+          <div class="marco-imagen">
+            <img src="../img/Geneva_Conventions.jpg" alt="Representación de los Convenios de Ginebra y el derecho humanitario" loading="lazy">
+            <span class="etiqueta-imagen">1949</span>
+          </div>
+          <div class="contenido-tarjeta">
+            <span class="chip-anio">1949</span>
+            <h3>Derecho Humanitario Internacional</h3>
+            <p>Los Convenios de Ginebra fijaron reglas para proteger a civiles, heridos y prisioneros durante los conflictos armados.</p>
+          </div>
+        </article>
+
+        <article class="tarjeta tarjeta-historia">
+          <div class="marco-imagen">
+            <img src="../img/buzz_aldrin.jpg" alt="Astronauta del Apolo 11 sobre la superficie lunar" loading="lazy">
+            <span class="etiqueta-imagen">1969</span>
+          </div>
+          <div class="contenido-tarjeta">
+            <span class="chip-anio">20 JUL. 1969</span>
+            <h3>La llegada del hombre a la Luna</h3>
+            <p>La misión Apolo 11 llevó a los primeros seres humanos a la superficie lunar y marcó un hito científico.</p>
+          </div>
+        </article>
+
+        <article class="tarjeta tarjeta-historia">
+          <div class="marco-imagen">
+            <img src="../img/buque_container.jpg" alt="Buques portacontenedores en un puerto internacional" loading="lazy">
+            <span class="etiqueta-imagen">AÑOS 90</span>
+          </div>
+          <div class="contenido-tarjeta">
+            <span class="chip-anio">AÑOS 90</span>
+            <h3>Globalización</h3>
+            <p>El comercio, el transporte y la información conectaron al mundo como nunca; Internet aceleró este proceso.</p>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <!-- INVENTOS -->
+    <section class="seccion contenedor" aria-labelledby="titulo-inventos">
+      <div class="encabezado-seccion">
+        <span class="numero-seccion">02 / INNOVACIÓN</span>
+        <h2 id="titulo-inventos">Inventos que cambiaron el siglo</h2>
+        <p>Toca una tarjeta para ver por qué fue importante.</p>
+      </div>
+
+      <div class="rejilla tarjetas-inventos">
+        <article class="tarjeta tarjeta-invento">
+          <button class="boton-invento" type="button" aria-expanded="false" aria-label="Ver importancia del avión">
+            <span class="marco-imagen">
+              <img src="../img/Wright_flyer.jpg" alt="Wright Flyer, avión de los hermanos Wright" loading="lazy">
+              <span class="etiqueta-imagen">1903</span>
+            </span>
+            <span class="contenido-tarjeta">
+              <span class="chip-anio">1903</span>
+              <span class="titulo-invento">El avión</span>
+              <span class="pista-tarjeta">Ver importancia <span aria-hidden="true">↗</span></span>
+            </span>
+          </button>
+          <div class="detalle-invento">
+            <p><strong>Hermanos Wright.</strong> Revolucionó el transporte: viajar entre continentes pasó de semanas a horas. Su primer vuelo motorizado controlado duró unos 12 segundos.</p>
+          </div>
+        </article>
+
+        <article class="tarjeta tarjeta-invento">
+          <button class="boton-invento" type="button" aria-expanded="false" aria-label="Ver importancia de la penicilina">
+            <span class="marco-imagen">
+              <img src="../img/Alexander_Fleming.jpg" alt="Alexander Fleming en su laboratorio" loading="lazy">
+              <span class="etiqueta-imagen">1928</span>
+            </span>
+            <span class="contenido-tarjeta">
+              <span class="chip-anio">1928</span>
+              <span class="titulo-invento">La penicilina</span>
+              <span class="pista-tarjeta">Ver importancia <span aria-hidden="true">↗</span></span>
+            </span>
+          </button>
+          <div class="detalle-invento">
+            <p><strong>Alexander Fleming.</strong> Su descubrimiento abrió el camino a los antibióticos modernos. Muchas infecciones bacterianas dejaron de ser mortales y los tratamientos médicos se volvieron más seguros.</p>
+          </div>
+        </article>
+
+        <article class="tarjeta tarjeta-invento">
+          <button class="boton-invento" type="button" aria-expanded="false" aria-label="Ver importancia del transistor">
+            <span class="marco-imagen">
+              <img src="../img/Replica-of-first-transistor.jpg" alt="Réplica del primer transistor desarrollado en Bell Labs" loading="lazy">
+              <span class="etiqueta-imagen">1947</span>
+            </span>
+            <span class="contenido-tarjeta">
+              <span class="chip-anio">1947</span>
+              <span class="titulo-invento">El transistor</span>
+              <span class="pista-tarjeta">Ver importancia <span aria-hidden="true">↗</span></span>
+            </span>
+          </button>
+          <div class="detalle-invento">
+            <p><strong>John Bardeen, Walter Brattain y William Shockley.</strong> Más pequeño y eficiente que las válvulas electrónicas, permitió crear dispositivos compactos y es una pieza fundamental de los chips actuales.</p>
+          </div>
+        </article>
+
+        <article class="tarjeta tarjeta-invento">
+          <button class="boton-invento" type="button" aria-expanded="false" aria-label="Ver importancia de la estructura del ADN">
+            <span class="marco-imagen">
+              <img src="../img/ADN.jpg" alt="Modelo de doble hélice de la estructura del ADN" loading="lazy">
+              <span class="etiqueta-imagen">1953</span>
+            </span>
+            <span class="contenido-tarjeta">
+              <span class="chip-anio">1953</span>
+              <span class="titulo-invento">La estructura del ADN</span>
+              <span class="pista-tarjeta">Ver importancia <span aria-hidden="true">↗</span></span>
+            </span>
+          </button>
+          <div class="detalle-invento">
+            <p><strong>James Watson y Francis Crick, con aportes esenciales de Rosalind Franklin y Maurice Wilkins.</strong> El modelo de doble hélice ayudó a explicar cómo se transmite la información genética e impulsó la biología molecular y la biotecnología.</p>
+          </div>
+        </article>
+
+        <article class="tarjeta tarjeta-invento">
+          <button class="boton-invento" type="button" aria-expanded="false" aria-label="Ver importancia de Internet">
+            <span class="marco-imagen">
+              <img src="../img/IPM-arpanet.jpg" alt="Computadora de la época de ARPANET" loading="lazy">
+              <span class="etiqueta-imagen">1969</span>
+            </span>
+            <span class="contenido-tarjeta">
+              <span class="chip-anio">1969</span>
+              <span class="titulo-invento">Internet</span>
+              <span class="pista-tarjeta">Ver importancia <span aria-hidden="true">↗</span></span>
+            </span>
+          </button>
+          <div class="detalle-invento">
+            <p><strong>ARPANET, proyecto impulsado por el Departamento de Defensa de EE. UU.</strong> Conectó computadoras para compartir información. La World Wide Web, creada por Tim Berners-Lee, llegó entre 1989 y 1991.</p>
+          </div>
+        </article>
+
+        <article class="tarjeta tarjeta-invento">
+          <button class="boton-invento" type="button" aria-expanded="false" aria-label="Ver importancia de los cohetes y la tecnología espacial">
+            <span class="marco-imagen">
+              <img src="../img/saturn_V.jpg" alt="Lanzamiento del cohete Saturno V" loading="lazy">
+              <span class="etiqueta-imagen">1957–1969</span>
+            </span>
+            <span class="contenido-tarjeta">
+              <span class="chip-anio">1957–1969</span>
+              <span class="titulo-invento">Cohetes y tecnología espacial</span>
+              <span class="pista-tarjeta">Ver importancia <span aria-hidden="true">↗</span></span>
+            </span>
+          </button>
+          <div class="detalle-invento">
+            <p><strong>Desarrollo colectivo de miles de científicos e ingenieros.</strong> Desde el Sputnik hasta el Apolo 11, la tecnología espacial abrió posibilidades para las comunicaciones satelitales, el GPS, el pronóstico del clima y la observación de la Tierra.</p>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <!-- VIDEO DESTACADO -->
+
+<section class="video-destacado">
+    <div class="video-contenedor">
+        <iframe
+            src="https://www.youtube.com/embed/nOcDftgR5UQ"
+            title="Apollo 11: Landing on the Moon - NASA"
+            loading="lazy"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+            referrerpolicy="strict-origin-when-cross-origin"
+            allowfullscreen>
+        </iframe>
+    </div>
+
+    <p class="video-fuente">Fuente: NASA</p>
+</section>
+
+
+    <!-- NAVEGACIÓN ENTRE PÁGINAS -->
+    <div class="siguiente-contenedor contenedor">
+      <a href="eventos.html" class="boton-siguiente">Siguiente: Eventos del siglo XXI <span aria-hidden="true">→</span></a>
+    </div>
+  </main>
+
+  <footer class="pie-pagina">
+    <p>Hecho por: <span>Adrian Vargas - Daniel Manios - Angel Polo</span></p>
+    <p>Créditos de imágenes en la página <a href="actividad.html">Actividad</a>.</p>
+  </footer>
+
+  <script>
+    // Menú desplegable para pantallas pequeñas.
+    const menuToggle = document.querySelector('.menu-toggle');
+    const menuPrincipal = document.querySelector('.barra2');
+
+    menuToggle.addEventListener('click', () => {
+      const estaAbierto = menuPrincipal.classList.toggle('menu-abierto');
+      menuToggle.classList.toggle('menu-activo', estaAbierto);
+      menuToggle.setAttribute('aria-expanded', String(estaAbierto));
+      menuToggle.setAttribute('aria-label', estaAbierto ? 'Cerrar menú de navegación' : 'Abrir menú de navegación');
+      document.body.classList.toggle('menu-bloqueado', estaAbierto);
+    });
+
+    // Cierra el menú móvil al seleccionar una página.
+    menuPrincipal.querySelectorAll('a').forEach((enlace) => {
+      enlace.addEventListener('click', () => {
+        menuPrincipal.classList.remove('menu-abierto');
+        menuToggle.classList.remove('menu-activo');
+        menuToggle.setAttribute('aria-expanded', 'false');
+        menuToggle.setAttribute('aria-label', 'Abrir menú de navegación');
+        document.body.classList.remove('menu-bloqueado');
+      });
+    });
+
+    // Las tarjetas de inventos muestran u ocultan su explicación al tocarlas.
+    document.querySelectorAll('.boton-invento').forEach((boton) => {
+      boton.addEventListener('click', () => {
+        const tarjeta = boton.closest('.tarjeta-invento');
+        const mostrarDetalle = tarjeta.classList.toggle('detalle-abierto');
+        boton.setAttribute('aria-expanded', String(mostrarDetalle));
+      });
+    });
+  </script>
 </body>
 </html>
