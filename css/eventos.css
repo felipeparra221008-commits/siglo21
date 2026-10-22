@@ -31,6 +31,21 @@ body.menu-bloqueado { overflow: hidden; }
 a { color: inherit; }
 button { font: inherit; }
 
+body {
+animation: aparecer 0.6s ease backwards;
+transition: opacity 0.5s ease;
+background-color: #040a1a;
+}
+
+body.saliendo {
+opacity: 0;
+}
+
+@keyframes aparecer {
+from { opacity: 0; }
+to   { opacity: 1; }
+}
+
 /* BARRA: se mantienen las clases y medidas de las páginas anteriores */
 .barra {
     position: sticky;

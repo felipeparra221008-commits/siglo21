@@ -20,6 +20,21 @@ body {
     background-color: #040a1a;
 }
 
+body {
+animation: aparecer 0.6s ease backwards;
+transition: opacity 0.5s ease;
+background-color: #040a1a;
+}
+
+body.saliendo {
+opacity: 0;
+}
+
+@keyframes aparecer {
+from { opacity: 0; }
+to   { opacity: 1; }
+}
+
 .barra {
     position: relative;
     display: flex;
@@ -201,7 +216,7 @@ body {
   color: #000000;
   background: #2EE6A6;
   border: 1px solid #2EE6A6;
-  border-radius: 10px;
+  border-radius: 25px;
 
   font-size: 0.95rem;
   font-weight: 700;
@@ -216,35 +231,4 @@ body {
 .next-button:hover {
   transform: translateY(-2px);
   box-shadow: 0 0 28px rgba(6, 96, 240, 0.25);
-}
-
-.back-button {
-  display: inline-flex;
-  justify-content: center;
-  align-items: center;
-
-  padding: 17px 34px;
-  min-width: 12vw;
-
-  color: #E6EAF2;
-  background: #121C2E;
-  border: 1px solid #22314D;
-  border-radius: 10px;
-
-  font-size: 0.95rem;
-  font-weight: 600;
-  text-align: center;
-  font-family: "Inter", sans-serif;
-  text-decoration: none;
-
-  transition:
-    background 0.2s ease,
-    border-color 0.2s ease,
-    transform 0.2s ease;
-}
-
-.back-button:hover {
-  background: #172744;
-  border-color: #2F6BFF;
-  transform: translateY(-2px);
 }
