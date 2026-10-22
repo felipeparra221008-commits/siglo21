@@ -112,8 +112,23 @@ to   { opacity: 1; }
     opacity: 0;
     transition: transform 0.3s ease, opacity 0.3s ease;
 }
+
+.aniparrafos.activo {
+  color: #2EE6A6;
+}
+
+.aniparrafos.activo::after {
+  height: 2px;
+  transform: scaleX(1);
+  opacity: 1;
+}
+
 .barra2 a:hover .aniparrafos::after,
-.barra2 a.activo .aniparrafos::after { transform: scaleX(1); opacity: 1; }
+.barra2 a.activo .aniparrafos::after { 
+    transform: scaleX(1); 
+    opacity: 1; 
+
+}
 .menu-toggle { display: none; }
 
 .contenido-principal { width: min(1240px, 92%); margin: 0 auto; }

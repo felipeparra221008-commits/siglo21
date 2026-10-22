@@ -68,26 +68,21 @@ a {
 
 /* BARRA DE NAVEGACIÓN: estructura personalizada */
 .barra {
-  position: sticky;
-  top: 0;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  width: 100%;
-  min-height: 76px;
-  padding: 0 4%;
-  gap: 24px;
-  font-family: "Inter", sans-serif;
-  z-index: 1000;
-  box-sizing: border-box;
-  background-color: var(--fondo);
-  border-bottom: 1px solid var(--borde);
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;            
+    font-family: "Inter", sans-serif;
+    z-index: 1000;
+    height: 8.5vh;
+    border-bottom: 3px solid #2EE6A6;
+    box-sizing: border-box;
 }
 
 .logo-enlace {
   display: inline-flex;
   align-items: center;
-  flex: 0 0 120px;
   text-decoration: none;
 }
 
@@ -147,6 +142,16 @@ a {
   transform-origin: left;
   opacity: 0;
   transition: transform .3s ease, opacity .3s ease;
+}
+
+.aniparrafos.activo {
+  color: #2EE6A6;
+}
+
+.aniparrafos.activo::after {
+  height: 2px;
+  transform: scaleX(1);
+  opacity: 1;
 }
 
 .barra2 a:hover .aniparrafos::after,

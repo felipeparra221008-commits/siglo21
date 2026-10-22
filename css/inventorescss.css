@@ -98,6 +98,16 @@ to   { opacity: 1; }
     opacity: 1;
 }
 
+.aniparrafos.activo {
+  color: #2EE6A6;
+}
+
+.aniparrafos.activo::after {
+  height: 2px;
+  transform: scaleX(1);
+  opacity: 1;
+}
+
 .titulo {
     position: sticky;
     display: flex;
