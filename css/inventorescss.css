@@ -242,3 +242,11 @@ to   { opacity: 1; }
   transform: translateY(-2px);
   box-shadow: 0 0 28px rgba(6, 96, 240, 0.25);
 }
+
+.pie-pagina {
+    border-top: 1px solid var(--borde); 
+    text-align: center; 
+    font-size: 0.9rem; 
+    color: #9AA7BD;
+    margin-top: -2vh;
+}
