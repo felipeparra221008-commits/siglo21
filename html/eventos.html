@@ -3,9 +3,283 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Siglo XXI</title>
+    <meta name="description" content="Conoce los acontecimientos que han transformado la sociedad durante el siglo XXI.">
+    <title>Eventos y sociedad | SIGLO XXI</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Outfit:wght@500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../css/eventos.css">
 </head>
 <body>
-    <h1>Eventos y sociedad</h1>
+    <!-- BARRA DE NAVEGACIÓN -->
+    <header class="barra">
+        <a class="logo-enlace" href="explorar.html" aria-label="Ir a la página principal">
+            <img src="../img/logo.png" alt="Logo SIGLO XXI" class="logo">
+        </a>
+
+        <button class="menu-toggle" type="button" aria-label="Abrir menú de navegación" aria-expanded="false" aria-controls="menu-principal">
+            <span></span><span></span><span></span>
+        </button>
+
+        <nav class="barra2" id="menu-principal" aria-label="Navegación principal">
+            <a href="contexto.html"><span class="aniparrafos">Contexto</span></a>
+            <a href="sigloxx.html"><span class="aniparrafos">Siglo XX</span></a>
+            <a href="eventos.html" class="activo" aria-current="page"><span class="aniparrafos">Eventos</span></a>
+            <a href="inventores.html"><span class="aniparrafos">Inventores</span></a>
+            <a href="futuro.html"><span class="aniparrafos">Futuro</span></a>
+            <a href="actividad.html"><span class="aniparrafos">Actividad</span></a>
+        </nav>
+    </header>
+
+    <main class="contenido-principal">
+        <!-- ENCABEZADO -->
+        <section class="encabezado-pagina">
+            <span class="etiqueta-seccion">PARTE 3 · 2000 – HOY</span>
+            <h1>Eventos importantes del siglo XXI</h1>
+            <p>Elige un año para ver qué pasó.</p>
+        </section>
+
+        <!-- LÍNEA DE TIEMPO -->
+        <section class="seccion-timeline" aria-label="Línea de tiempo de acontecimientos">
+            <div class="timeline-scroll">
+                <div class="timeline-anos" id="timeline-anos" role="group" aria-label="Seleccionar un año">
+                    <button class="ano-btn" type="button" data-evento="0">2000–10</button>
+                    <button class="ano-btn" type="button" data-evento="1">2001</button>
+                    <button class="ano-btn" type="button" data-evento="2">2003</button>
+                    <button class="ano-btn" type="button" data-evento="3">2007</button>
+                    <button class="ano-btn" type="button" data-evento="4">2008</button>
+                    <button class="ano-btn" type="button" data-evento="5">2010</button>
+                    <button class="ano-btn" type="button" data-evento="6">2015</button>
+                    <button class="ano-btn activo" type="button" data-evento="7" aria-pressed="true">2020</button>
+                    <button class="ano-btn" type="button" data-evento="8">2022</button>
+                    <button class="ano-btn" type="button" data-evento="9">2022–26</button>
+                </div>
+            </div>
+            <p class="ayuda-desplazamiento">En celular, desliza horizontalmente para explorar los años.</p>
+
+            <article class="panel-evento" id="panel-evento" aria-live="polite">
+                <div class="evento-visual">
+                    <div class="marco-imagen">
+                        <img id="evento-imagen" src="../img/evento-covid-2020.jpg" alt="Persona de salud aplicando una vacuna" loading="lazy">
+                        <div class="imagen-placeholder" id="imagen-placeholder">
+                            <span class="icono-camara" aria-hidden="true">▣</span>
+                            <span id="placeholder-texto">[FOTO REAL: persona de salud aplicando una vacuna]</span>
+                        </div>
+                    </div>
+                    <p class="credito-imagen" id="evento-credito">Foto: CDC</p>
+                </div>
+                <div class="evento-informacion">
+                    <span class="chip-ano" id="evento-ano">2020</span>
+                    <h2 id="evento-titulo">Pandemia de COVID-19</h2>
+                    <p id="evento-texto">La OMS declaró la pandemia el 11 de marzo de 2020. En menos de un año se autorizaron las primeras vacunas de ARNm, gracias a décadas de investigación de Karikó y Weissman.</p>
+                    <div class="controles-evento">
+                        <button class="boton-secundario" id="evento-anterior" type="button">← Anterior</button>
+                        <button class="boton-secundario" id="evento-siguiente" type="button">Siguiente →</button>
+                    </div>
+                </div>
+            </article>
+        </section>
+
+        <!-- SOCIEDAD ACTUAL -->
+        <section class="seccion-sociedad">
+            <div class="encabezado-seccion">
+                <span class="etiqueta-seccion">UNA MIRADA AL PRESENTE</span>
+                <h2>¿Cómo está organizada nuestra sociedad actual?</h2>
+                <p>Nuestra sociedad se caracteriza por su complejidad y dinamismo, influenciada por factores como la tecnología, la globalización y la diversidad cultural, además de problemas ambientales y crisis climáticas.</p>
+            </div>
+
+            <div class="mapa-conceptual" aria-label="Mapa conceptual interactivo de la sociedad actual">
+                <div class="nodo-raiz-columna">
+                    <div class="nodo-raiz">Sociedad actual</div>
+                </div>
+                <div class="ramas-mapa">
+                    <section class="grupo-rama">
+                        <button class="nodo-rama" type="button" aria-expanded="false">Características principales</button>
+                        <div class="hojas-rama">
+                            <button class="nodo-hoja" type="button" aria-expanded="false" data-explicacion="Lo que pasa en un país se conoce y afecta al mundo en minutos.">Tecnología y globalización</button>
+                            <button class="nodo-hoja resaltado" type="button" aria-expanded="true" data-explicacion="Cuidar los recursos hoy para no comprometer el futuro.">Sostenibilidad</button>
+                            <button class="nodo-hoja" type="button" aria-expanded="false" data-explicacion="Las redes y la información digital permiten opinar, organizarse y exigir.">Participación ciudadana</button>
+                        </div>
+                    </section>
+                    <section class="grupo-rama">
+                        <button class="nodo-rama" type="button" aria-expanded="false">Cambios relevantes</button>
+                        <div class="hojas-rama">
+                            <button class="nodo-hoja" type="button" aria-expanded="false" data-explicacion="Movimientos sociales digitales, nuevas formas de comunicación política y también desinformación.">Ámbito social y político</button>
+                            <button class="nodo-hoja" type="button" aria-expanded="false" data-explicacion="Teletrabajo, automatización y nuevas profesiones; hay que aprender toda la vida.">Ámbito laboral</button>
+                        </div>
+                    </section>
+                    <section class="grupo-rama">
+                        <button class="nodo-rama" type="button" aria-expanded="false">Más importantes</button>
+                        <div class="hojas-rama">
+                            <button class="nodo-hoja" type="button" aria-expanded="false" data-explicacion="Economía digital, comercio en línea y empleos ligados a la tecnología.">Economía</button>
+                            <button class="nodo-hoja" type="button" aria-expanded="false" data-explicacion="La IA, la robótica y la biotecnología cambian cómo trabajamos, nos curamos y aprendemos.">Tecnología</button>
+                            <button class="nodo-hoja" type="button" aria-expanded="false" data-explicacion="Cambio climático, energías renovables y economía circular.">Medio ambiente</button>
+                        </div>
+                    </section>
+                </div>
+                <div class="explicacion-mapa" id="explicacion-mapa" aria-live="polite">
+                    <span class="explicacion-titulo" id="explicacion-titulo">Sostenibilidad</span>
+                    <p id="explicacion-texto">Cuidar los recursos hoy para no comprometer el futuro.</p>
+                </div>
+            </div>
+        </section>
+
+        <div class="navegacion-siguiente">
+            <a class="boton-principal" href="inventores.html">Siguiente: Inventores <span aria-hidden="true">→</span></a>
+        </div>
+    </main>
+
+    <footer class="pie-pagina">
+        <p>Hecho por: <span>Adrian Vargas - Daniel Manios - Angel Polo</span></p>
+        <p>Créditos de imágenes en la página <a href="actividad.html">Actividad</a>.</p>
+    </footer>
+
+    <script>
+        const eventos = [
+            {
+                ano: '2000–2010', titulo: 'Revolución digital',
+                texto: 'Internet pasó de ser una novedad a convertirse en una necesidad cotidiana. Los buscadores, las redes sociales —como Facebook, creado en 2004, y YouTube, en 2005— y el comercio electrónico transformaron la forma de comunicarnos y comprar.',
+                imagen: '../img/persona_computador.jpg', alt: 'Persona frente a un computador de los años 2000', placeholder: '[Persona frente a un computador de los años 2000]', credito: 'Foto: Wikimedia Commons'
+            },
+            {
+                ano: '2001', titulo: 'Atentados del 11 de septiembre',
+                texto: 'Los atentados del 11 de septiembre en Estados Unidos cambiaron las políticas de seguridad global, los controles en los viajes en avión y las relaciones internacionales. Sus consecuencias políticas y sociales se extendieron durante las décadas siguientes.',
+                imagen: '../img/Tribute_in_Light.jpg', alt: 'Homenaje con luces en memoria de las víctimas del 11 de septiembre', placeholder: '[Memorial Tribute in Light en Nueva York]', credito: 'Foto: Wikimedia Commons'
+            },
+            {
+                ano: '2003', titulo: 'Avances en genética',
+                texto: 'La finalización del Proyecto Genoma Humano permitió identificar y estudiar con mayor precisión la información genética. Este avance abrió nuevas posibilidades para la investigación biomédica y el desarrollo de la medicina genómica.',
+                imagen: '../img/Proyecto-Genoma-Humano.jpg', alt: 'Investigación y secuenciación genética', placeholder: '[Investigación genética]', credito: 'Foto: NHGRI / genome.gov'
+            },
+            {
+                ano: '2007', titulo: 'Llegada del iPhone',
+                texto: 'La presentación del iPhone popularizó una nueva forma de usar los teléfonos móviles, al combinar pantalla táctil, acceso a internet y aplicaciones en un solo dispositivo. Los teléfonos inteligentes cambiaron la comunicación y el acceso a la información.',
+                imagen: '../img/usando_celular.jpg', alt: 'Persona usando un teléfono móvil con pantalla táctil', placeholder: '[Persona usando un celular con pantalla táctil]', credito: 'Foto: Pexels'
+            },
+            {
+                ano: '2008', titulo: 'Crisis financiera mundial',
+                texto: 'La crisis, originada en el mercado hipotecario de Estados Unidos, se extendió a numerosos países. La quiebra de Lehman Brothers en septiembre de 2008 se convirtió en uno de los símbolos de una recesión que afectó el empleo, el crédito y la economía mundial.',
+                imagen: '../img/Wall_Street.jpg', alt: 'Edificios del distrito financiero de Nueva York', placeholder: '[Wall Street]', credito: 'Foto: Wikimedia Commons / Unsplash'
+            },
+            {
+                ano: '2010', titulo: 'Ascenso de China',
+                texto: 'China se convirtió en la segunda economía del mundo en 2010 y consolidó su papel en la manufactura, el comercio y la tecnología. Su crecimiento modificó las cadenas globales de producción y su influencia en la economía internacional.',
+                imagen: '../img/skyline.jpg', alt: 'Panorama urbano de Shanghái', placeholder: '[Panorama urbano de Shanghái]', credito: 'Foto: Unsplash'
+            },
+            {
+                ano: '2015', titulo: 'Acuerdo de París',
+                texto: 'En la Conferencia de las Naciones Unidas sobre el Cambio Climático, casi 200 países adoptaron el Acuerdo de París. Se comprometieron a limitar el calentamiento global muy por debajo de 2 °C y a realizar esfuerzos para limitarlo a 1,5 °C.',
+                imagen: '../img/COP21.jpg', alt: 'Representantes en una conferencia internacional sobre el clima', placeholder: '[Sesión de la COP21]', credito: 'Foto: Wikimedia Commons'
+            },
+            {
+                ano: '2020', titulo: 'Pandemia de COVID-19',
+                texto: 'La OMS declaró la pandemia el 11 de marzo de 2020. En menos de un año se autorizaron las primeras vacunas de ARNm, gracias a décadas de investigación de Katalin Karikó y Drew Weissman. La emergencia transformó la salud pública, la educación y el trabajo.',
+                imagen: '../img/vacuna.jpg', alt: 'Persona de salud aplicando una vacuna', placeholder: '[Persona de salud aplicando una vacuna]', credito: 'Foto: CDC'
+            },
+            {
+                ano: '2022', titulo: 'Auge de la inteligencia artificial',
+                texto: 'El lanzamiento público de ChatGPT en noviembre de 2022 acercó la inteligencia artificial generativa a millones de personas. Al mismo tiempo, herramientas como AlphaFold demostraron el potencial de la IA para apoyar la investigación científica, por ejemplo en el estudio de proteínas.',
+                imagen: '../img/usando_ia.jpg', alt: 'Persona utilizando un asistente de inteligencia artificial en un computador', placeholder: '[persona usando un asistente de IA en el computador]', credito: 'Foto: Unsplash'
+            },
+            {
+                ano: '2022–2026', titulo: 'Misiones Artemis',
+                texto: 'Artemis I, en 2022, probó la nave Orion sin tripulación alrededor de la Luna. En abril de 2026, Artemis II llevó a cuatro astronautas en un viaje alrededor de la Luna, marcando el regreso de seres humanos a una misión lunar tripulada después de más de cinco décadas.',
+                imagen: '../img/Artemis_ii.jpg', alt: 'Nave Orion o lanzamiento de la misión Artemis', placeholder: '[lanzamiento de Artemis II]', credito: 'Foto: NASA'
+            }
+        ];
+
+        const botonesAnos = [...document.querySelectorAll('.ano-btn')];
+        const imagenEvento = document.getElementById('evento-imagen');
+        const placeholder = document.getElementById('imagen-placeholder');
+        let indiceActual = 7;
+
+        function mostrarEvento(indice) {
+            indiceActual = (indice + eventos.length) % eventos.length;
+            const evento = eventos[indiceActual];
+            const panel = document.getElementById('panel-evento');
+            panel.classList.add('cambiando');
+
+            botonesAnos.forEach((boton, i) => {
+                const activo = i === indiceActual;
+                boton.classList.toggle('activo', activo);
+                boton.setAttribute('aria-pressed', String(activo));
+            });
+
+            window.setTimeout(() => {
+                document.getElementById('evento-ano').textContent = evento.ano;
+                document.getElementById('evento-titulo').textContent = evento.titulo;
+                document.getElementById('evento-texto').textContent = evento.texto;
+                document.getElementById('evento-credito').textContent = evento.credito;
+                document.getElementById('placeholder-texto').textContent = evento.placeholder;
+                imagenEvento.alt = evento.alt;
+                imagenEvento.onerror = () => {
+                    imagenEvento.style.display = 'none';
+                    placeholder.classList.remove('oculto');
+                };
+                imagenEvento.onload = () => {
+                    imagenEvento.style.display = 'block';
+                    placeholder.classList.add('oculto');
+                };
+                imagenEvento.style.display = 'none';
+                placeholder.classList.remove('oculto');
+                imagenEvento.src = evento.imagen;
+                panel.classList.remove('cambiando');
+            }, 150);
+        }
+
+        botonesAnos.forEach((boton) => {
+            boton.addEventListener('click', () => mostrarEvento(Number(boton.dataset.evento)));
+        });
+        document.getElementById('evento-anterior').addEventListener('click', () => mostrarEvento(indiceActual - 1));
+        document.getElementById('evento-siguiente').addEventListener('click', () => mostrarEvento(indiceActual + 1));
+
+        // El mapa muestra una sola explicación a la vez.
+        const hojas = [...document.querySelectorAll('.nodo-hoja')];
+        const explicacionTitulo = document.getElementById('explicacion-titulo');
+        const explicacionTexto = document.getElementById('explicacion-texto');
+        hojas.forEach((hoja) => {
+            hoja.addEventListener('click', () => {
+                hojas.forEach((otra) => {
+                    otra.classList.remove('resaltado');
+                    otra.setAttribute('aria-expanded', 'false');
+                });
+                hoja.classList.add('resaltado');
+                hoja.setAttribute('aria-expanded', 'true');
+                explicacionTitulo.textContent = hoja.textContent.trim();
+                explicacionTexto.textContent = hoja.dataset.explicacion;
+                document.getElementById('explicacion-mapa').classList.add('visible');
+            });
+        });
+
+        // Menú adaptable para móviles.
+        const menuToggle = document.querySelector('.menu-toggle');
+        const menuPrincipal = document.getElementById('menu-principal');
+        menuToggle.addEventListener('click', () => {
+            const abierto = menuToggle.getAttribute('aria-expanded') === 'true';
+            menuToggle.setAttribute('aria-expanded', String(!abierto));
+            menuToggle.setAttribute('aria-label', abierto ? 'Abrir menú de navegación' : 'Cerrar menú de navegación');
+            menuPrincipal.classList.toggle('menu-abierto', !abierto);
+            document.body.classList.toggle('menu-bloqueado', !abierto);
+        });
+        menuPrincipal.querySelectorAll('a').forEach((enlace) => {
+            enlace.addEventListener('click', () => {
+                menuPrincipal.classList.remove('menu-abierto');
+                menuToggle.setAttribute('aria-expanded', 'false');
+                menuToggle.setAttribute('aria-label', 'Abrir menú de navegación');
+                document.body.classList.remove('menu-bloqueado');
+            });
+        });
+
+        // Si una fotografía no está en img/, se conserva un marcador visual en lugar de un icono roto.
+        imagenEvento.onerror = () => {
+            imagenEvento.style.display = 'none';
+            placeholder.classList.remove('oculto');
+        };
+        imagenEvento.onload = () => {
+            imagenEvento.style.display = 'block';
+            placeholder.classList.add('oculto');
+        };
+        imagenEvento.src = eventos[indiceActual].imagen;
+    </script>
 </body>
 </html>
