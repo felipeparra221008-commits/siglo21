@@ -46,12 +46,17 @@ to   { opacity: 1; }
     height: 8.5vh;
     border-bottom: 3px solid #2EE6A6;
     box-sizing: border-box;
+    padding-inline: 4vw;
 }
 
 .logo {
-    height: 6vh;
-    width: 8vw;
-    padding-inline: 4vw;
+    display: block;
+    height: clamp(38px, 6vh, 50px);
+    width: clamp(90px, 8vw, 120px);
+    max-width: 100%;
+    padding: 0;
+    object-fit: contain;
+    object-position: left center;
 }
 
 .barra2 {
@@ -59,7 +64,6 @@ to   { opacity: 1; }
     display: flex;
     gap: 4vw;
     font-size: 2vh;
-    padding-inline: 4vw;
     white-space: nowrap;
     cursor: pointer;
 }
@@ -249,4 +253,429 @@ to   { opacity: 1; }
     font-size: 0.9rem; 
     color: #9AA7BD;
     margin-top: -2vh;
+}
+
+/* =========================================================
+   ADAPTACIÓN RESPONSIVE
+   Se añaden ajustes de distribución sin alterar el diseño base.
+   ========================================================= */
+
+/* Evita que tarjetas, textos y elementos amplios generen desbordamiento. */
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+.imagen {
+    min-width: 0;
+    max-width: 100%;
+}
+
+.texto {
+    min-width: 0;
+    overflow-wrap: anywhere;
+}
+
+.texto1_tarjetas,
+.texto2_tarjetas,
+.texto3_tarjetas,
+.texto4_tarjetas {
+    overflow-wrap: anywhere;
+}
+
+/* Portátiles y pantallas medianas: navegación flexible y tarjetas fluidas. */
+@media (max-width: 1100px) {
+    .barra {
+        height: auto;
+        min-height: 72px;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        gap: 8px 16px;
+        padding: 10px 3%;
+    }
+
+    .barra > a:first-child {
+        display: flex;
+        align-items: center;
+        flex: 0 0 auto;
+        min-width: 0;
+    }
+
+    .logo {
+        width: clamp(90px, 12vw, 120px);
+        height: auto;
+        max-height: 48px;
+        padding: 0;
+        object-fit: contain;
+    }
+
+    .barra2 {
+        flex: 1 1 60%;
+        min-width: 0;
+        justify-content: flex-end;
+        flex-wrap: wrap;
+        gap: 10px clamp(12px, 1.8vw, 22px);
+        padding: 0;
+        font-size: clamp(0.78rem, 1.25vw, 0.95rem);
+        white-space: normal;
+    }
+
+    .tarjeta_padre {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: clamp(22px, 3vw, 40px);
+        padding: 32px 4%;
+    }
+
+    .tarjeta {
+        height: auto;
+        min-height: 340px;
+        padding: 16px;
+        gap: 16px;
+        min-width: 0;
+    }
+
+    .imagen {
+        flex: 0 0 38%;
+        width: 38%;
+        height: auto;
+        min-height: 220px;
+        align-self: stretch;
+        object-fit: cover;
+    }
+
+    .texto {
+        flex: 1 1 0;
+    }
+
+    .texto1_tarjetas {
+        font-size: clamp(0.72rem, 1vw, 0.9rem);
+        padding: 6px 10px;
+    }
+
+    .texto2_tarjetas {
+        font-size: clamp(1.1rem, 1.7vw, 1.5rem);
+        line-height: 1.25;
+    }
+
+    .texto3_tarjetas {
+        font-size: clamp(0.8rem, 1.05vw, 0.95rem);
+        line-height: 1.55;
+    }
+
+    .texto4_tarjetas {
+        font-size: clamp(0.85rem, 1.1vw, 1rem);
+        line-height: 1.4;
+    }
+
+    .titulo1 {
+        font-size: clamp(2.2rem, 4.8vw, 3.5rem);
+        line-height: 1.15;
+    }
+
+    .parrafo1 {
+        font-size: clamp(0.95rem, 1.6vw, 1.1rem);
+        line-height: 1.55;
+        margin-top: -1.5vh;
+    }
+}
+
+/* Tabletas y celulares grandes: una columna de tarjetas, más legible. */
+@media (max-width: 760px) {
+    .barra {
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 10px;
+        padding: 12px 4% 14px;
+    }
+
+    .barra > a:first-child {
+        flex: 0 0 auto;
+        justify-content: center;
+    }
+
+    .logo {
+        width: clamp(105px, 24vw, 140px);
+        max-height: 48px;
+    }
+
+    .barra2 {
+        width: 100%;
+        flex: 0 1 auto;
+        justify-content: center;
+        gap: 10px clamp(12px, 3vw, 22px);
+        font-size: clamp(0.82rem, 2vw, 0.95rem);
+    }
+
+    .titulo {
+        position: static;
+        padding-inline: 5%;
+    }
+
+    .titulo1 {
+        margin: 26px 0 20px;
+        font-size: clamp(1.8rem, 6.5vw, 2.8rem);
+        line-height: 1.2;
+        overflow-wrap: anywhere;
+    }
+
+    .parrafo1 {
+        padding-inline: 5%;
+        margin-top: 0;
+        margin-bottom: 12px;
+        font-size: clamp(0.9rem, 2.4vw, 1.05rem);
+        line-height: 1.6;
+    }
+
+    .tarjeta_padre {
+        grid-template-columns: minmax(0, 1fr);
+        gap: 24px;
+        padding: 24px 5%;
+    }
+
+    .tarjeta {
+        height: auto;
+        min-height: 300px;
+        padding: clamp(14px, 3vw, 20px);
+        gap: clamp(14px, 3vw, 22px);
+    }
+
+    .imagen {
+        flex-basis: 36%;
+        width: 36%;
+        min-height: 240px;
+        max-height: none;
+    }
+
+    .texto1_tarjetas {
+        font-size: 0.78rem;
+        padding: 6px 10px;
+    }
+
+    .texto2_tarjetas {
+        font-size: clamp(1.15rem, 3.5vw, 1.5rem);
+        line-height: 1.25;
+        margin-bottom: 10px;
+    }
+
+    .texto3_tarjetas {
+        font-size: clamp(0.88rem, 2.2vw, 0.98rem);
+        line-height: 1.6;
+    }
+
+    .texto4_tarjetas {
+        font-size: 0.9rem;
+        line-height: 1.4;
+        margin-top: 12px;
+    }
+
+    .next-container {
+        padding: 0 5% 32px;
+        margin-top: 20px;
+    }
+
+    .next-button {
+        max-width: 100%;
+        min-width: 0;
+        padding: 14px 24px;
+        font-size: 0.95rem;
+    }
+
+    .pie-pagina {
+        margin-top: 0;
+        padding: 18px 5%;
+        font-size: 0.82rem;
+        line-height: 1.5;
+    }
+}
+
+/* Celulares estrechos: imagen arriba y texto debajo para evitar columnas apretadas. */
+@media (max-width: 520px) {
+    .barra2 {
+        column-gap: 13px;
+        row-gap: 9px;
+        font-size: 0.82rem;
+    }
+
+    .aniparrafos::after {
+        bottom: -4px;
+    }
+
+    .titulo {
+        padding-inline: 5%;
+    }
+
+    .titulo1 {
+        font-size: clamp(1.65rem, 7.8vw, 2.35rem);
+        margin-top: 24px;
+        margin-bottom: 16px;
+    }
+
+    .parrafo1 {
+        padding-inline: 5%;
+        font-size: 0.92rem;
+    }
+
+    .tarjeta_padre {
+        gap: 20px;
+        padding: 22px 5%;
+    }
+
+    .tarjeta {
+        flex-direction: column;
+        height: auto;
+        min-height: 0;
+        gap: 12px;
+        padding: 12px;
+        border-radius: 16px;
+    }
+
+    .tarjeta:hover {
+        transform: none;
+    }
+
+    .imagen {
+        flex: 0 0 auto;
+        width: 100%;
+        height: auto;
+        min-height: 0;
+        aspect-ratio: 16 / 10;
+        border-radius: 12px;
+    }
+
+    .texto {
+        width: 100%;
+    }
+
+    .texto1_tarjetas {
+        font-size: 0.75rem;
+        padding: 6px 10px;
+        margin: 3px 0 5px;
+    }
+
+    .texto2_tarjetas {
+        font-size: clamp(1.12rem, 5vw, 1.4rem);
+        margin-top: 8px;
+        margin-bottom: 10px;
+    }
+
+    .texto3_tarjetas {
+        font-size: 0.9rem;
+        line-height: 1.65;
+        margin-top: 0;
+    }
+
+    .texto4_tarjetas {
+        margin-top: 10px;
+        margin-bottom: 4px;
+        font-size: 0.9rem;
+    }
+
+    .next-button {
+        width: 100%;
+        padding: 14px 18px;
+    }
+}
+
+/* Teléfonos muy estrechos y dispositivos de poca altura. */
+@media (max-width: 360px) {
+    .barra {
+        padding-inline: 3%;
+    }
+
+    .barra2 {
+        column-gap: 10px;
+        font-size: 0.76rem;
+    }
+
+    .tarjeta_padre {
+        padding-inline: 4%;
+    }
+
+    .tarjeta {
+        padding: 10px;
+    }
+
+    .texto3_tarjetas {
+        font-size: 0.86rem;
+    }
+
+    .next-button {
+        font-size: 0.88rem;
+        padding-inline: 12px;
+    }
+}
+
+@media (max-height: 500px) and (min-width: 761px) {
+    .barra {
+        height: auto;
+        min-height: 64px;
+        padding-block: 8px;
+    }
+
+    .tarjeta {
+        height: auto;
+        min-height: 300px;
+    }
+}
+
+/* Escritorio amplio: evita recortes en tarjetas con textos largos. */
+@media (min-width: 1101px) {
+    .tarjeta_padre {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: clamp(28px, 4vw, 64px);
+    }
+
+    .tarjeta {
+        height: auto;
+        min-height: clamp(360px, 42vh, 520px);
+        padding: clamp(16px, 1.5vw, 24px);
+        gap: clamp(18px, 2vw, 32px);
+        min-width: 0;
+    }
+
+    .imagen {
+        flex: 0 0 38%;
+        width: 38%;
+        height: auto;
+        min-height: 300px;
+        align-self: stretch;
+        object-fit: cover;
+    }
+
+    .texto {
+        flex: 1 1 0;
+        min-width: 0;
+    }
+
+    .texto1_tarjetas {
+        font-size: clamp(0.82rem, 0.75vw, 1rem);
+    }
+
+    .texto2_tarjetas {
+        font-size: clamp(1.25rem, 1.6vw, 1.8rem);
+        line-height: 1.25;
+    }
+
+    .texto3_tarjetas {
+        font-size: clamp(0.9rem, 0.85vw, 1rem);
+        line-height: 1.6;
+    }
+
+    .texto4_tarjetas {
+        font-size: clamp(0.9rem, 0.95vw, 1.1rem);
+        line-height: 1.4;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+        scroll-behavior: auto !important;
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+    }
 }
