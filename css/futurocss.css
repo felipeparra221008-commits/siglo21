@@ -775,21 +775,52 @@ to   { opacity: 1; translate: 0 0; }
 
 @media (max-width: 700px) {
 .barra {
-  flex-direction: column;
   height: auto;
-  padding-top: 1.2vh;
-  background-color: #040a1a;
+  min-height: 0;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 10px 18px;
+  padding: 12px 4% 14px;
+}
+
+.barra > a:first-child {
+  display: flex;
+  flex: 0 0 100%;
+  justify-content: center;
+  align-items: center;
+}
+
+.logo {
+  display: block;
+  width: clamp(110px, 20vw, 145px);
+  height: auto;
+  max-height: 50px;
+  padding: 0;
+  object-fit: contain;
+  object-position: center;
+  max-width: 100%;
 }
 
 .barra2 {
-  box-sizing: border-box;
   width: 100%;
-  overflow-x: auto;
-  justify-content: flex-start;
-  gap: 6vw;
-  padding: 1.2vh 4vw;
-  font-size: clamp(13px, 3.8vw, 16px);
-  scrollbar-width: none;
+  max-width: 100%;
+  min-width: 0;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 10px clamp(12px, 2.5vw, 24px);
+  padding: 0;
+  font-size: clamp(0.82rem, 1.7vw, 0.95rem);
+  white-space: normal;
+  row-gap: 10px;
+}
+
+.barra2 a {
+  padding: 4px 0;
+  min-width: 0;
+}
+
+.aniparrafos::after {
+  bottom: -4px;
 }
 
 .futuro_principal {
