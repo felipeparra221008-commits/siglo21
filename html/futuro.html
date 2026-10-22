@@ -3,9 +3,275 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Siglo XXI</title>
+    <meta name="description" content="Qué se espera para el futuro: inteligencia artificial, medicina personalizada, computadores cuánticos, energía sostenible, robótica y exploración espacial.">
+    <link rel="stylesheet" href="../css/futurocss.css">
+    <link rel="stylesheet" href="../css/transicion.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" rel="stylesheet">
+    <title>Futuro | Siglo XXI</title>
+    <link rel="icon" href="../img/icon.png" type="image/png">
 </head>
 <body>
-    <h1>Futuro</h1>
+    <div class="barra">
+        <img src="../img/logo.png" alt="Logo" class="logo">
+
+        <span class="barra2">
+            <a href="contexto.html" style="text-decoration: none;"><span class="aniparrafos">Contexto</span></a>
+            <a href="sigloxx.html" style="text-decoration: none;"><span class="aniparrafos">Siglo XX</span></a>
+            <a href="eventos.html" style="text-decoration: none;"><span class="aniparrafos">Eventos</span></a>
+            <a href="inventores.html" style="text-decoration: none;"><span class="aniparrafos">Inventores</span></a>
+            <a href="futuro.html" style="text-decoration: none;" aria-current="page"><span class="aniparrafos activo">Futuro</span></a>
+            <a href="actividad.html" style="text-decoration: none;"><span class="aniparrafos">Actividad</span></a>
+        </span>
+    </div>
+
+    <main class="futuro_principal">
+
+        <section class="futuro_hero">
+            <div class="futuro_cabecera">
+                <h1 class="titulo1">¿Qué se espera para el futuro?</h1>
+            </div>
+            <div class="acordeon">
+
+                <!-- 1. INTELIGENCIA ARTIFICIAL -->
+                <details class="acordeon_item" name="futuro" open>
+                    <summary class="acordeon_resumen">Inteligencia artificial</summary>
+                    <div class="acordeon_cuerpo">
+                        <div class="acordeon_info">
+                            <p class="acordeon_texto">La inteligencia artificial reúne sistemas que aprenden de datos para reconocer patrones, predecir resultados y crear contenido. Podría convertirse en una herramienta habitual para la investigación, la educación, la medicina y la ingeniería, como hoy lo son Internet o el computador.</p>
+                            <p class="acordeon_texto">Ya hay señales de ese camino: AlphaFold, creado por DeepMind, predice la forma tridimensional de las proteínas. Por ese trabajo, Demis Hassabis y John Jumper recibieron el Nobel de Química 2024, junto a David Baker.</p>
+                            <ul class="tema_chips">
+                                <li class="tema_chip">Investigación</li>
+                                <li class="tema_chip">Educación</li>
+                                <li class="tema_chip">Medicina</li>
+                                <li class="tema_chip">Ingeniería</li>
+                            </ul>
+                            <ul class="tema_lista">
+                                <li><strong>Investigación:</strong> acelera el análisis de datos científicos complejos.</li>
+                                <li><strong>Educación:</strong> puede adaptar explicaciones y ejercicios al ritmo de cada estudiante.</li>
+                                <li><strong>Medicina:</strong> apoya el análisis de imágenes médicas y la asistencia en cirugías.</li>
+                                <li><strong>Ingeniería:</strong> ayuda a diseñar, simular y probar soluciones con más rapidez.</li>
+                            </ul>
+                            <p class="tema_nota">La condición: usarla de forma responsable, cuidando la privacidad y verificando sus resultados.</p>
+                        </div>
+                        <figure class="tema_figura">
+                            <img src="../img/alphaflod.jpg" alt="Estructura 3D de una proteína generada por AlphaFold" class="tema_marco">
+                        </figure>
+                    </div>
+                </details>
+
+                <!-- 2. MEDICINA PERSONALIZADA -->
+                <details class="acordeon_item" name="futuro">
+                    <summary class="acordeon_resumen">Medicina personalizada</summary>
+                    <div class="acordeon_cuerpo">
+                        <div class="acordeon_info">
+                            <p class="acordeon_texto">La medicina personalizada busca dejar de tratar a todas las personas igual y adaptar la prevención y el tratamiento a las características de cada una, empezando por sus genes. La combinación de genética, IA y biotecnología podría permitir tratamientos cada vez más adaptados a cada persona.</p>
+                            <p class="acordeon_texto">Las bases ya existen: en 2003 se completó la secuenciación del genoma humano; CRISPR-Cas9, de Jennifer Doudna y Emmanuelle Charpentier (Nobel de Química 2020), permite editar genes; y los estudios de Katalin Karikó y Drew Weissman sobre el ARNm (Nobel de Medicina 2023) hicieron posibles las vacunas contra la COVID-19.</p>
+                            <ul class="tema_chips">
+                                <li class="tema_chip">Genoma humano · 2003</li>
+                                <li class="tema_chip">CRISPR-Cas9</li>
+                                <li class="tema_chip">Vacunas de ARNm</li>
+                            </ul>
+                            <ul class="tema_lista">
+                                <li><strong>Diagnóstico:</strong> detectar enfermedades antes y con más precisión.</li>
+                                <li><strong>Tratamiento:</strong> elegir terapias según el perfil genético de cada paciente.</li>
+                                <li><strong>Prevención:</strong> identificar riesgos y actuar a tiempo.</li>
+                            </ul>
+                            <p class="tema_nota">El reto: que estos avances sean accesibles para todos y que los datos genéticos, que son muy personales, estén protegidos.</p>
+                        </div>
+                        <figure class="tema_figura">
+                            <img src="../img/vacuna.jpeg" alt="Estructura 3D de una proteína generada por AlphaFold" class="tema_marco">
+                        </figure>
+                    </div>
+                </details>
+
+                <!-- 3. COMPUTADORES CUÁNTICOS -->
+                <details class="acordeon_item" name="futuro">
+                    <summary class="acordeon_resumen">Computadores cuánticos</summary>
+                    <div class="acordeon_cuerpo">
+                        <div class="acordeon_info">
+                            <p class="acordeon_texto">Los computadores cuánticos usan fenómenos de la física cuántica para procesar cierta información de manera distinta a los computadores tradicionales. Un bit común vale 0 o 1; un bit cuántico (qubit) puede combinar ambos estados, lo que para algunos problemas abre otras formas de calcular.</p>
+                            <p class="acordeon_texto">No reemplazarán a los equipos de hoy: podrían ser útiles para ciertos problemas científicos y tecnológicos difíciles de resolver con computadores tradicionales. Su base experimental recibió el Nobel de Física 2025, otorgado a John Clarke, Michel Devoret y John Martinis por sus experimentos con fenómenos cuánticos en circuitos eléctricos.</p>
+                            <ul class="tema_chips">
+                                <li class="tema_chip">Nobel de Física 2025</li>
+                                <li class="tema_chip">Qubits</li>
+                                <li class="tema_chip">Circuitos eléctricos</li>
+                            </ul>
+                            <ul class="tema_lista">
+                                <li><strong>Química y materiales:</strong> simular cómo se comportan moléculas complejas.</li>
+                                <li><strong>Optimización:</strong> buscar la mejor solución entre muchísimas posibilidades.</li>
+                                <li><strong>Seguridad digital:</strong> podría obligar a renovar los sistemas de cifrado actuales.</li>
+                            </ul>
+                            <p class="tema_nota">Es una tecnología en desarrollo: sus aplicaciones prácticas todavía se están investigando.</p>
+                        </div>
+                        <figure class="tema_figura">
+                            <img src="../img/compu_cuantica.jpg" alt="Estructura 3D de una proteína generada por AlphaFold" class="tema_marco">
+                        </figure>
+                    </div>
+                </details>
+
+                <!-- 4. ENERGÍA SOSTENIBLE -->
+                <details class="acordeon_item" name="futuro">
+                    <summary class="acordeon_resumen">Energía sostenible</summary>
+                    <div class="acordeon_cuerpo">
+                        <div class="acordeon_info">
+                            <p class="acordeon_texto">El futuro energético apunta a producir más energía limpia y a poder guardarla. Se espera seguir desarrollando mejores baterías, energías renovables (solar, eólica e hidráulica) y sistemas de almacenamiento para reducir las emisiones que aceleran el cambio climático.</p>
+                            <p class="acordeon_texto">En el Acuerdo de París (2015), casi 200 países se comprometieron a limitar el calentamiento global muy por debajo de 2 °C, con la meta de 1,5 °C. A esto se suman nuevos materiales, como las estructuras metal-orgánicas (MOF) de Omar Yaghi (Nobel de Química 2025, con Susumu Kitagawa y Richard Robson), capaces de capturar gases y agua del aire.</p>
+                            <ul class="tema_chips">
+                                <li class="tema_chip">Acuerdo de París · 2015</li>
+                                <li class="tema_chip">Baterías</li>
+                                <li class="tema_chip">Renovables</li>
+                                <li class="tema_chip">Materiales MOF</li>
+                            </ul>
+                            <ul class="tema_lista">
+                                <li><strong>Renovables:</strong> solar, eólica e hidráulica para reducir las emisiones.</li>
+                                <li><strong>Baterías y almacenamiento:</strong> guardar la energía cuando sobra para usarla cuando falta.</li>
+                                <li><strong>Economía circular:</strong> reutilizar y reciclar recursos en lugar de desecharlos.</li>
+                            </ul>
+                            <p class="tema_nota">La idea central: cuidar los recursos hoy para no comprometer el futuro.</p>
+                        </div>
+                        <figure class="tema_figura">
+                            <img src="../img/aereogeneradores.jpg" alt="Estructura 3D de una proteína generada por AlphaFold" class="tema_marco">
+                        </figure>
+                    </div>
+                </details>
+
+                <!-- 5. ROBÓTICA -->
+                <details class="acordeon_item" name="futuro">
+                    <summary class="acordeon_resumen">Robótica</summary>
+                    <div class="acordeon_cuerpo">
+                        <div class="acordeon_info">
+                            <p class="acordeon_texto">Los robots podrían asumir más tareas en fábricas, laboratorios, hospitales y otros entornos, sobre todo las repetitivas o peligrosas. Cuando se combinan con inteligencia artificial, pueden adaptarse mejor a lo que ocurre a su alrededor.</p>
+                            <p class="acordeon_texto">Esa convergencia de IA, robótica y medicina ya permite asistir cirugías. Al mismo tiempo, la automatización transforma el trabajo: aparecen nuevas profesiones y se vuelve necesario aprender durante toda la vida.</p>
+                            <ul class="tema_chips">
+                                <li class="tema_chip">Fábricas</li>
+                                <li class="tema_chip">Laboratorios</li>
+                                <li class="tema_chip">Hospitales</li>
+                                <li class="tema_chip">Tareas peligrosas</li>
+                            </ul>
+                            <ul class="tema_lista">
+                                <li><strong>Fábricas:</strong> producción más precisa y segura.</li>
+                                <li><strong>Laboratorios:</strong> repetir experimentos con exactitud.</li>
+                                <li><strong>Hospitales:</strong> apoyo en procedimientos médicos y cirugías asistidas.</li>
+                                <li><strong>Entornos de riesgo:</strong> reemplazar a las personas en tareas peligrosas.</li>
+                            </ul>
+                            <p class="tema_nota">El reto: preparar a las personas con nuevas habilidades para el trabajo del futuro.</p>
+                        </div>
+                        <figure class="tema_figura">
+                            <img src="../img/robot_fabrica.jpg" alt="Estructura 3D de una proteína generada por AlphaFold" class="tema_marco">
+                        </figure>
+                    </div>
+                </details>
+
+                <!-- 6. EXPLORACIÓN ESPACIAL -->
+                <details class="acordeon_item" name="futuro">
+                    <summary class="acordeon_resumen">Exploración espacial</summary>
+                    <div class="acordeon_cuerpo">
+                        <div class="acordeon_info">
+                            <p class="acordeon_texto">Tras Artemis II (abril de 2026), la NASA prepara futuras misiones a la superficie lunar y, a más largo plazo, a Marte. Artemis II despegó el 1 de abril y amerizó el 10 de abril de 2026: cuatro astronautas viajaron alrededor de la Luna, en la primera misión tripulada fuera de la órbita terrestre desde Apolo 17, en 1972.</p>
+                            <p class="acordeon_texto">El espacio ya no es solo cosa de agencias públicas: empresas como SpaceX y Blue Origin lanzan cohetes y satélites, y la reutilización de cohetes reduce el costo de llegar allá. Los satélites, además, sostienen las comunicaciones, el GPS, el pronóstico del clima y la observación de la Tierra.</p>
+                            <ul class="tema_chips">
+                                <li class="tema_chip">Artemis II</li>
+                                <li class="tema_chip">Luna</li>
+                                <li class="tema_chip">Marte</li>
+                                <li class="tema_chip">Satélites</li>
+                            </ul>
+                            <ul class="tema_lista">
+                                <li><strong>Luna:</strong> volver a la superficie lunar con nuevas misiones.</li>
+                                <li><strong>Marte:</strong> el objetivo a más largo plazo.</li>
+                                <li><strong>Empresas privadas:</strong> cohetes reutilizables que abaratan los lanzamientos.</li>
+                                <li><strong>Satélites:</strong> comunicaciones, GPS, clima y observación de la Tierra.</li>
+                            </ul>
+                            <p class="tema_nota">Artemis I (2022) ya había probado la nave Orion sin tripulación.</p>
+                        </div>
+                        <figure class="tema_figura">
+                            <img src="../img/tripulacion_artemis.jpg" alt="Estructura 3D de una proteína generada por AlphaFold" class="tema_marco">
+                        </figure>
+                    </div>
+                </details>
+            </div>
+
+            <figure class="futuro_figura">
+                <video class="futuro_imagen" width="1600" height="1000" autoplay loop muted playsinline aria-label="La Luna vista desde la nave Orion durante la misión Artemis II">
+                <source src="../img/luna_artemis.mp4" type="video/mp4">
+                </video>
+
+                <figcaption class="futuro_pie">Video: NASA</figcaption>
+            </figure>
+        </section>
+
+        <section class="conclusion">
+            <h2 class="titulo2">Conclusión</h2>
+
+            <div class="conclusion_padre">
+                <article class="conclusion_tarjeta">
+                    <p class="chip chip_logros">Logros</p>
+                    <p class="conclusion_texto">Nuestro siglo se caracteriza por un cambio tecnológico acelerado, con innovaciones como Internet, teléfonos inteligentes, inteligencia artificial, biotecnología y energías renovables que han transformado nuestra vida diaria.</p>
+                    <ul class="tema_lista conclusion_lista">
+                        <li><strong>Comunicación:</strong> Internet y los teléfonos inteligentes conectan a gran parte de la humanidad.</li>
+                        <li><strong>Salud:</strong> vacunas de ARNm, edición genética con CRISPR y biotecnología.</li>
+                        <li><strong>Ciencia:</strong> IA que resuelve problemas complejos, como predecir la forma de las proteínas.</li>
+                        <li><strong>Espacio:</strong> el regreso de las misiones tripuladas a la Luna con Artemis II.</li>
+                    </ul>
+                </article>
+
+                <article class="conclusion_tarjeta">
+                    <p class="chip chip_desafios">Desafíos</p>
+                    <p class="conclusion_texto">Estos avances traen desafíos en privacidad, desigualdad, medio ambiente y uso responsable de la ciencia. El futuro requiere no solo crear nuevas tecnologías, sino usarlas de forma responsable y beneficiosa para la sociedad.</p>
+                    <ul class="tema_lista conclusion_lista">
+                        <li><strong>Privacidad:</strong> proteger los datos personales y genéticos.</li>
+                        <li><strong>Desigualdad:</strong> evitar que los beneficios lleguen solo a unos pocos.</li>
+                        <li><strong>Medio ambiente:</strong> frenar el cambio climático y cuidar los recursos.</li>
+                        <li><strong>Uso responsable:</strong> enfrentar la desinformación y usar la ciencia con ética.</li>
+                    </ul>
+                </article>
+
+                <article class="conclusion_tarjeta">
+                    <p class="chip chip_reto">El gran reto</p>
+                    <p class="conclusion_texto">El gran desafío del siglo XXI es lograr que la innovación sea más avanzada, segura, sostenible y accesible para todos.</p>
+                    <p class="conclusion_texto conclusion_extra">No basta con inventar más rápido: importa a quién llega cada invento y qué huella deja en el planeta. Por eso, cada avance debería medirse por cuánto mejora la vida de las personas.</p>
+                </article>
+            </div>
+        </section>
+
+        <section class="pilares">
+            <h3 class="titulo3">Cuatro ideas para llevarnos del siglo XXI</h3>
+
+            <div class="pilares_grid">
+                <article class="pilar">
+                    <p class="pilar_numero">01</p>
+                    <h4 class="pilar_titulo">Avanzada</h4>
+                    <p class="pilar_texto">Seguir investigando y creando soluciones a problemas reales de la salud, la energía y el conocimiento.</p>
+                </article>
+
+                <article class="pilar">
+                    <p class="pilar_numero">02</p>
+                    <h4 class="pilar_titulo">Segura</h4>
+                    <p class="pilar_texto">Proteger la privacidad y los datos de las personas, y verificar lo que producen las nuevas tecnologías.</p>
+                </article>
+
+                <article class="pilar">
+                    <p class="pilar_numero">03</p>
+                    <h4 class="pilar_titulo">Sostenible</h4>
+                    <p class="pilar_texto">Cuidar los recursos y el clima para que las próximas generaciones también puedan innovar.</p>
+                </article>
+
+                <article class="pilar">
+                    <p class="pilar_numero">04</p>
+                    <h4 class="pilar_titulo">Accesible</h4>
+                    <p class="pilar_texto">Lograr que los beneficios de la ciencia lleguen a todos y no solo a unos pocos.</p>
+                </article>
+            </div>
+        </section>
+
+        <div class="boton_contenedor">
+            <a class="boton" href="actividad.html">Siguiente: Actividad <span>→</span></a>
+        </div>
+
+        <p class="nombres">Hecho por: Adrian Vargas - Daniel Manios - Angel Polo</p>
+    </main>
+
+    <script src="../javascript/transicion.js" defer></script>
 </body>
 </html>
