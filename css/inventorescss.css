@@ -98,39 +98,6 @@ body {
     font-weight: 600;
 }
 
-.titulo2 {
-    display: inline-block;
-    position: relative;
-    font-family: "Inter", sans-serif;
-    color: #9AA7BD;
-    font-size: 1.5vh;
-    font-weight: 400;
-    cursor: pointer;
-    transition: transform 0.3s ease; 
-}
-
-.titulo2:hover {
-  transform: scale(1.1); 
-}
-
-.titulo2::after {
-    content: '';
-    position: absolute;
-    bottom: -0.5vh;
-    left: 0;
-    width: 100%;
-    height: 1px;
-    background-color: #2EE6A6;
-    transform: scaleX(0);
-    opacity: 0;
-    transition: transform 0.3s ease, opacity 0.3s ease;
-}
-
-.titulo2:hover::after {
-    transform: scaleX(1);
-    opacity: 1;
-}
-
 .parrafo1 {
     font-family: "Inter", sans-serif;
     color: #9AA7BD;
@@ -210,4 +177,74 @@ body {
     color: #2EE6A6;
     font-size: 2vh;
     font-weight: 600;
+}
+
+.next-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 18px;
+  flex-wrap: wrap;
+  padding: 0 20px 40px;
+  margin-top: 3vh;
+}
+
+
+.next-button {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+
+  padding: 17px 34px;
+  min-width: 12vw;
+
+  color: #000000;
+  background: #2EE6A6;
+  border: 1px solid #2EE6A6;
+  border-radius: 10px;
+
+  font-size: 0.95rem;
+  font-weight: 700;
+  text-align: center;
+  text-decoration: none;
+  font-family: "Inter", sans-serif;
+
+  box-shadow: 0 0 22px rgba(6, 96, 240, 0.1);
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.next-button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 0 28px rgba(6, 96, 240, 0.25);
+}
+
+.back-button {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+
+  padding: 17px 34px;
+  min-width: 12vw;
+
+  color: #E6EAF2;
+  background: #121C2E;
+  border: 1px solid #22314D;
+  border-radius: 10px;
+
+  font-size: 0.95rem;
+  font-weight: 600;
+  text-align: center;
+  font-family: "Inter", sans-serif;
+  text-decoration: none;
+
+  transition:
+    background 0.2s ease,
+    border-color 0.2s ease,
+    transform 0.2s ease;
+}
+
+.back-button:hover {
+  background: #172744;
+  border-color: #2F6BFF;
+  transform: translateY(-2px);
 }

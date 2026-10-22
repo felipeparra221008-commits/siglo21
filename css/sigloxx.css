@@ -181,21 +181,11 @@ a {
 }
 
 .intro {
-  padding-top: clamp(64px, 9vw, 120px);
+  padding-top: 3vh;
   padding-bottom: clamp(46px, 6vw, 78px);
   max-width: calc(var(--ancho-maximo) - 100px);
   margin-left: max(5%, calc((100% - var(--ancho-maximo)) / 2));
   margin-right: auto;
-}
-
-.eyebrow,
-.numero-seccion {
-  display: inline-block;
-  color: var(--verde);
-  font-size: .8rem;
-  font-weight: 600;
-  letter-spacing: .14em;
-  text-transform: uppercase;
 }
 
 .intro h1 {
