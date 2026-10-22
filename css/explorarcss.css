@@ -366,6 +366,12 @@ body.saliendo {
     padding-inline: 3vw;
   }
 
+  .logo {
+    height: 6vh;
+    width: 8vw;
+    padding-inline: 4vw;
+}
+
   .barra2 {
     font-size: max(12px, min(2vh, 1.7vw));
     gap: 2vw;
@@ -420,6 +426,12 @@ body.saliendo {
     padding-top: 1.2vh;
     background-color: #040a1a;
   }
+
+  .logo {
+    height: 6vh;
+    width: 8vw;
+    padding-inline: 4vw;
+}
 
   .barra1 {
     margin: 0;
