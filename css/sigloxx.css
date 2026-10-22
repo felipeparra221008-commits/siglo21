@@ -25,8 +25,14 @@
 }
 
 html {
-  scroll-behavior: smooth;
-  scroll-padding-top: 100px;
+    overflow-x: hidden;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+    background-color: #040a1a;
+}
+
+html::-webkit-scrollbar {
+    display: none;
 }
 
 body {

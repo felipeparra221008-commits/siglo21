@@ -23,8 +23,14 @@ box-sizing: border-box;
 }
 
 html {
-scroll-behavior: smooth;
-scroll-padding-top: 90px;
+    overflow-x: hidden;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+    background-color: #040a1a;
+}
+
+html::-webkit-scrollbar {
+    display: none;
 }
 
 body {
