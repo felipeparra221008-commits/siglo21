@@ -18,7 +18,7 @@ body, html {
     font-family: "Inter", sans-serif;
     z-index: 1000;
     height: 8.5vh;
-    border-bottom: 3px solid #2EE6A6;
+    border-bottom: 3px solid #66E6FF;
     box-sizing: border-box;
     background-color: #040a1a;
 }
@@ -30,7 +30,7 @@ body, html {
 }
 
 .barra2 {
-    color: #9AA7BD;
+    color: #9FB3D1;
     display: flex;
     gap: 4vw;
     font-size: 2vh;
@@ -40,7 +40,7 @@ body, html {
 }
 
 .barra2 a {
-    color: #9AA7BD;
+    color: #9FB3D1;
     text-decoration: none;
 }
 
@@ -62,7 +62,7 @@ body, html {
     left: 0;
     width: 100%;
     height: 1px;
-    background-color: #2EE6A6;
+    background-color: #66E6FF;
     transform: scaleX(0);
     opacity: 0;
     transition: transform 0.3s ease, opacity 0.3s ease;
@@ -74,7 +74,7 @@ body, html {
 }
 
 .aniparrafos.activo {
-    color: #2EE6A6;
+    color: #66E6FF;
 }
 
 .aniparrafos.activo::after {
@@ -84,80 +84,111 @@ body, html {
 }
 
 
+/* Mismo ancho y colores que Contexto, Antecedentes, Eventos e Inventores,
+   alineado con el recuadro de arriba (css/recuadro-modulo.css) */
 .futuro_principal {
-    width: 100%;
-    padding: 5vh 5vw 0;
+    --menu-cian: #66E6FF;
+    --menu-azul: #1E6BFF;
+    --menu-titulo: #F6F8FF;
+    --menu-texto: #9FB3D1;
+    --menu-texto-franja: #dce5f5;
+    --menu-borde-franja: rgba(102, 230, 255, .35);
+    --menu-borde-activo: rgba(102, 230, 255, .75);
+    --futuro-borde: #1d3a8a;
+    --futuro-fondo: rgba(8, 20, 50, 0.6);
     box-sizing: border-box;
-    background: radial-gradient(60vw 50vh at 20% 0%, rgba(47, 107, 255, 0.2), transparent 70%);
-    background-repeat: no-repeat;
+    width: min(1100px, 88vw);
+    margin-inline: auto;
+    padding: 0;
+    font-family: "Inter", sans-serif;
 }
 
+/* Subtítulos: mismo tamaño, color y letra que en las demás secciones */
+.subtitulo {
+    margin: 0 0 18px;
+    color: var(--menu-titulo);
+    font-family: "Outfit", sans-serif;
+    font-size: clamp(1.5rem, 2.2vw, 2rem);
+    font-weight: 700;
+    line-height: 1.2;
+    letter-spacing: -0.4px;
+}
+
+/* ---------- Subtítulo y descripción: como en Eventos e Inventores ---------- */
+
+.futuro_intro {
+    padding: 44px 0 0;
+}
+
+.futuro_intro .subtitulo {
+    margin-bottom: 8px;
+}
+
+.descripcion {
+    margin: 0;
+    color: var(--menu-texto);
+    font-size: 1rem;
+    line-height: 1.6;
+    text-align: justify;
+    -webkit-hyphens: manual;
+    hyphens: manual;
+}
+
+/* Franja de lectura (la conclusión), igual que la de «¿Qué es el siglo XXI?» */
+.banda-texto {
+    padding: 22px 28px;
+    border: 1px solid var(--menu-borde-franja);
+    border-radius: 12px;
+    background:
+        linear-gradient(180deg, #66E6FF, rgba(102, 230, 255, .25)) left top / 3px 100% no-repeat,
+        linear-gradient(100deg, rgba(3, 9, 22, .9) 0%, rgba(6, 16, 36, .82) 55%, rgba(8, 22, 46, .66) 100%);
+    transition: transform 0.25s ease, border-color 0.25s ease, box-shadow 0.25s ease;
+}
+
+.banda-texto p {
+    margin: 0;
+    color: var(--menu-texto-franja);
+    font-size: 1.02rem;
+    line-height: 1.8;
+    text-align: justify;
+    -webkit-hyphens: manual;
+    hyphens: manual;
+}
+
+/* ---------- Seis temas ---------- */
 
 .futuro_hero {
-    display: grid;
-    grid-template-columns: 1.15fr 1fr;
-    grid-template-rows: auto 1fr;
-    grid-template-areas:
-        "cabecera figura"
-        "acordeon figura";
-    column-gap: 3vw;
-    align-items: start;
-}
-
-.futuro_cabecera {
-    grid-area: cabecera;
-}
-
-.futuro_etiqueta {
-    font-family: "Inter", sans-serif;
-    color: #2EE6A6;
-    font-size: 1.9vh;
-    font-weight: 700;
-    letter-spacing: 0.14em;
-    text-transform: uppercase;
-    margin: 0 0 1.2vh;
-    animation: subir 0.7s ease backwards;
-}
-
-.titulo1 {
-    font-family: "Inter", sans-serif;
-    color: #ffffff;
-    font-size: 5.5vh;
-    font-weight: 800;
-    line-height: 1.1;
-    margin: 0 0 3vh;
-    animation: subir 0.7s ease 0.1s backwards;
+    padding: 24px 0 0;
 }
 
 .acordeon {
-    grid-area: acordeon;
     display: flex;
     flex-direction: column;
-    gap: 1.2vh;
+    gap: 12px;
 }
 
 .acordeon_item {
-    border: 1px solid #1d3a8a;
-    border-radius: 10px;
-    background-color: rgba(8, 20, 50, 0.6);
+    border: 1px solid var(--futuro-borde);
+    border-radius: 12px;
+    background-color: var(--futuro-fondo);
     transition: border-color 0.3s ease, box-shadow 0.3s ease;
     animation: subir 0.6s ease backwards;
 }
 
-.acordeon_item:nth-child(1) { animation-delay: 0.2s; }
-.acordeon_item:nth-child(2) { animation-delay: 0.28s; }
-.acordeon_item:nth-child(3) { animation-delay: 0.36s; }
-.acordeon_item:nth-child(4) { animation-delay: 0.44s; }
-.acordeon_item:nth-child(5) { animation-delay: 0.52s; }
-.acordeon_item:nth-child(6) { animation-delay: 0.6s; }
+.acordeon_item:nth-child(1) { animation-delay: 0.1s; }
+.acordeon_item:nth-child(2) { animation-delay: 0.16s; }
+.acordeon_item:nth-child(3) { animation-delay: 0.22s; }
+.acordeon_item:nth-child(4) { animation-delay: 0.28s; }
+.acordeon_item:nth-child(5) { animation-delay: 0.34s; }
+.acordeon_item:nth-child(6) { animation-delay: 0.4s; }
 
 .acordeon_item:hover {
-    border-color: #2F6BFF;
+    border-color: var(--menu-azul);
 }
 
 .acordeon_item[open] {
-    border-color: #2F6BFF;
-    box-shadow: 0 0 2.5vh rgba(47, 107, 255, 0.25);
+    border-color: var(--menu-azul);
+    box-shadow: 0 0 20px rgba(30, 107, 255, 0.25);
 }
 
 .acordeon_resumen {
@@ -165,11 +196,12 @@ body, html {
     display: block;
     list-style: none;
     cursor: pointer;
-    padding: 1.7vh 4vw 1.7vh 1.6vw;
-    font-family: "Inter", sans-serif;
-    color: #ffffff;
-    font-size: 2.3vh;
-    font-weight: 600;
+    padding: 16px 56px 16px 24px;
+    color: var(--menu-titulo);
+    font-family: "Outfit", sans-serif;
+    font-size: 1.2rem;
+    font-weight: 700;
+    line-height: 1.3;
 }
 
 .acordeon_resumen::-webkit-details-marker {
@@ -177,21 +209,22 @@ body, html {
 }
 
 .acordeon_resumen:focus-visible {
-    outline: 2px solid #2EE6A6;
+    outline: 2px solid var(--menu-cian);
     outline-offset: -2px;
-    border-radius: 10px;
+    border-radius: 12px;
 }
 
+/* Signo + / − a la derecha del título */
 .acordeon_resumen::before,
 .acordeon_resumen::after {
     content: '';
     position: absolute;
     top: 50%;
-    right: 1.6vw;
-    width: 1.6vh;
+    right: 24px;
+    width: 14px;
     height: 2px;
     border-radius: 2px;
-    background-color: #2F6BFF;
+    background-color: var(--menu-azul);
     transform: translateY(-50%);
     transition: transform 0.3s ease;
 }
@@ -204,14 +237,14 @@ body, html {
     transform: translateY(-50%) rotate(0deg);
 }
 
-/* ---------- Contenido ampliado del acordeón ---------- */
-
+/* Dos párrafos a la izquierda y la foto a la derecha, centrada respecto al texto */
 .acordeon_cuerpo {
     display: grid;
-    grid-template-columns: 1.1fr 0.9fr;
-    gap: 2vh 1.6vw;
-    align-items: start;
-    padding: 0 1.6vw 2.4vh;
+    grid-template-columns: minmax(0, 1.45fr) minmax(0, 1fr);
+    grid-template-areas: "info figura";
+    gap: 28px;
+    align-items: center;
+    padding: 4px 24px 24px;
 }
 
 .acordeon_item[open] .acordeon_cuerpo {
@@ -219,134 +252,31 @@ body, html {
 }
 
 .acordeon_info {
+    grid-area: info;
     display: flex;
     flex-direction: column;
-    gap: 1.6vh;
+    gap: 14px;
     min-width: 0;
 }
 
 .acordeon_texto {
-    font-family: "Inter", sans-serif;
-    color: #c5d0e6;
-    font-size: 1.8vh;
+    margin: 0;
+    color: var(--menu-texto-franja);
+    font-size: .95rem;
     font-weight: 400;
-    line-height: 1.6;
-    max-width: 65ch;
-    margin: 0;
-    padding: 0;
-}
-
-.tema_chips {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 0.8vh 0.6vw;
-    margin: 0;
-    padding: 0;
-    list-style: none;
-}
-
-.tema_chip {
-    font-family: "Inter", sans-serif;
-    font-size: 1.4vh;
-    font-weight: 600;
-    color: #7FB2FF;
-    border: 1px solid #7FB2FF;
-    border-radius: 999px;
-    padding: 0.6vh 0.9vw;
-}
-
-.tema_lista {
-    display: flex;
-    flex-direction: column;
-    gap: 0.9vh;
-    margin: 0;
-    padding: 0;
-    list-style: none;
-}
-
-.tema_lista li {
-    position: relative;
-    padding-left: 1.3vw;
-    font-family: "Inter", sans-serif;
-    font-size: 1.7vh;
-    font-weight: 400;
-    line-height: 1.55;
-    color: #c5d0e6;
-}
-
-.tema_lista li::before {
-    content: '';
-    position: absolute;
-    left: 0;
-    top: 0.7em;
-    width: 0.7vh;
-    height: 0.7vh;
-    border-radius: 50%;
-    background-color: #2F6BFF;
-}
-
-.tema_lista strong {
-    color: #ffffff;
-    font-weight: 600;
-}
-
-.tema_nota {
-    font-family: "Inter", sans-serif;
-    font-size: 1.6vh;
-    line-height: 1.55;
-    color: #9AA7BD;
-    margin: 0;
-    padding: 0.6vh 0 0.6vh 1vw;
-    border-left: 3px solid #2F6BFF;
+    line-height: 1.7;
+    text-align: justify;
+    -webkit-hyphens: manual;
+    hyphens: manual;
 }
 
 .tema_figura {
+    grid-area: figura;
     margin: 0;
+    min-width: 0;
 }
 
-.tema_marco {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    gap: 1vh;
-    box-sizing: border-box;
-    width: 100%;
-    aspect-ratio: 4 / 3;
-    padding: 2vh 1.2vw;
-    text-align: center;
-    border: 1.5px dashed #2F6BFF;
-    border-radius: 12px;
-    background: linear-gradient(145deg, rgba(11, 42, 111, 0.55), rgba(8, 20, 51, 0.9));
-}
-
-.tema_icono {
-    width: 4vh;
-    height: 4vh;
-    fill: none;
-    stroke: #7FB2FF;
-    stroke-width: 1.6;
-    stroke-linecap: round;
-    stroke-linejoin: round;
-}
-
-.tema_etiqueta {
-    font-family: "Inter", sans-serif;
-    font-size: 1.3vh;
-    font-weight: 700;
-    letter-spacing: 0.14em;
-    text-transform: uppercase;
-    color: #2EE6A6;
-}
-
-.tema_descripcion {
-    font-family: "Inter", sans-serif;
-    font-size: 1.6vh;
-    line-height: 1.45;
-    color: #c5d0e6;
-    max-width: 28ch;
-}
-
+/* Todas las fotos con la misma proporción, sin deformarse */
 .tema_imagen {
     display: block;
     width: 100%;
@@ -354,241 +284,29 @@ body, html {
     aspect-ratio: 4 / 3;
     object-fit: cover;
     box-sizing: border-box;
-    border: 1px solid #1d3a8a;
+    border: 1px solid var(--futuro-borde);
     border-radius: 12px;
     background-color: #081433;
 }
 
-.tema_pie {
-    font-family: "Inter", sans-serif;
-    color: #9AA7BD;
-    font-size: 1.4vh;
-    font-weight: 400;
-    line-height: 1.4;
-    margin-top: 0.8vh;
+/* La foto de la tripulación es vertical: el recorte deja ver las caras */
+.tema_imagen--vertical {
+    object-position: center 22%;
 }
 
-/* ---------- Imagen principal (Artemis II) ---------- */
-
-.futuro_figura {
-    grid-area: figura;
-    position: sticky;
-    top: 12vh;
-    margin: 0;
-    animation: aparecer 0.8s ease 0.3s backwards;
-}
-
-.futuro_imagen {
-    display: block;
-    width: 100%;
-    height: auto;
-    aspect-ratio: 16 / 10;
-    object-fit: cover;
-    box-sizing: border-box;
-    border: 1px solid #1d3a8a;
-    border-radius: 14px;
-    background-color: #081433;
-}
-
-.futuro_pie {
-    font-family: "Inter", sans-serif;
-    color: #9AA7BD;
-    font-size: 1.4vh;
-    font-weight: 400;
-    text-align: right;
-    margin-top: 1vh;
-}
-
-/* ---------- Conclusión ---------- */
+/* ---------- Conclusión: un solo bloque de lectura, y el final de la página ---------- */
 
 .conclusion {
-    margin-top: 8vh;
+    padding: 48px 0;
 }
 
-.titulo2 {
-    font-family: "Inter", sans-serif;
-    color: #ffffff;
-    font-size: 4.5vh;
-    font-weight: 800;
-    margin: 0 0 2.5vh;
-}
-
-.conclusion_padre {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 2vh 2vw;
-    width: 100%;
-    align-items: stretch;
-}
-
-.conclusion_tarjeta {
-    border: 1px solid #1d3a8a;
-    border-radius: 10px;
-    background-color: rgba(8, 20, 50, 0.6);
-    padding: 3vh 1.6vw;
-    box-sizing: border-box;
-    transition: transform 0.3s ease, border-color 0.3s ease;
-}
-
-.conclusion_tarjeta:hover {
-    transform: scale(1.03);
-    border-color: #2F6BFF;
-}
-
-.chip {
-    display: inline-block;
-    font-family: "Inter", sans-serif;
-    font-size: 1.4vh;
-    font-weight: 700;
-    letter-spacing: 0.06em;
-    text-transform: uppercase;
-    padding: 0.8vh 1.1vw;
-    border-radius: 999px;
-    margin: 0 0 2vh;
-}
-
-.chip_logros {
-    background-color: #2F6BFF;
-    color: #ffffff;
-}
-
-.chip_desafios {
-    background-color: #FF4D5E;
-    color: #040a1a;
-}
-
-.chip_reto {
-    background-color: #2EE6A6;
-    color: #040a1a;
-}
-
-.conclusion_texto {
-    font-family: "Inter", sans-serif;
-    color: #c5d0e6;
-    font-size: 1.9vh;
-    font-weight: 400;
-    line-height: 1.6;
-    margin: 0;
-}
-
-.conclusion_extra {
-    margin-top: 2vh;
-}
-
-.conclusion_lista {
-    margin-top: 2vh;
-}
-
-/* ---------- Cuatro pilares ---------- */
-
-.pilares {
-    margin-top: 8vh;
-}
-
-.titulo3 {
-    font-family: "Inter", sans-serif;
-    color: #ffffff;
-    font-size: 3.2vh;
-    font-weight: 700;
-    margin: 0 0 2.5vh;
-}
-
-.pilares_grid {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 2vh 1.4vw;
-    width: 100%;
-}
-
-.pilar {
-    border: 1px solid #1d3a8a;
-    border-radius: 10px;
-    background: linear-gradient(160deg, rgba(11, 42, 111, 0.45), rgba(8, 20, 50, 0.6));
-    padding: 2.6vh 1.3vw;
-    box-sizing: border-box;
-    transition: transform 0.3s ease, border-color 0.3s ease;
-}
-
-.pilar:hover {
-    transform: translateY(-0.6vh);
-    border-color: #2F6BFF;
-}
-
-.pilar_numero {
-    font-family: "Inter", sans-serif;
-    font-size: 1.4vh;
-    font-weight: 700;
-    letter-spacing: 0.14em;
-    color: #2EE6A6;
-    margin: 0 0 1vh;
-}
-
-.pilar_titulo {
-    font-family: "Inter", sans-serif;
-    font-size: 2.4vh;
-    font-weight: 700;
-    color: #ffffff;
-    margin: 0 0 1vh;
-}
-
-.pilar_texto {
-    font-family: "Inter", sans-serif;
-    font-size: 1.7vh;
-    font-weight: 400;
-    line-height: 1.55;
-    color: #c5d0e6;
-    margin: 0;
-}
-
-/* ---------- Botón y pie ---------- */
-
-.boton_contenedor {
-    display: flex;
-    justify-content: center;
-    margin: 6vh 0 4vh;
-}
-
-.boton {
-    display: inline-block;
-    font-family: "Inter", sans-serif;
-    font-size: 2vh;
-    font-weight: 600;
-    color: #040a1a;
-    background-color: #2EE6A6;
-    padding: 1.6vh 2.6vw;
-    border-radius: 999px;
-    text-decoration: none;
-    cursor: pointer;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-.boton:hover {
-    transform: scale(1.1);
-    box-shadow: 0 0 2.5vh rgba(46, 230, 166, 0.45);
-}
-
-.boton:focus-visible {
-    outline: 2px solid #ffffff;
-    outline-offset: 3px;
-}
-
-.boton span {
-    display: inline-block;
-    transition: transform 0.3s ease;
-}
-
-.boton:hover span {
-    transform: translateX(0.4vw);
-}
-
-.nombres {
-    font-family: "Inter", sans-serif;
-    color: #9AA7BD;
-    font-size: 1.6vh;
-    text-align: center;
-    margin: 0;
-    padding: 3vh 0;
-    border-top: 1px solid #1d3a8a;
+/* Misma elevación que la franja de Contexto */
+@media (hover: hover) {
+    .banda-texto:hover {
+        transform: translateY(-4px);
+        border-color: var(--menu-borde-activo);
+        box-shadow: 0 8px 28px rgba(30, 107, 255, 0.14);
+    }
 }
 
 body {
@@ -615,14 +333,6 @@ body.saliendo {
   from { opacity: 0; translate: 0 -0.8vh; }
   to   { opacity: 1; translate: 0 0; }
 }
-@supports (animation-timeline: view()) {
-  .conclusion_tarjeta,
-  .pilar {
-    animation: subir linear backwards;
-    animation-timeline: view();
-    animation-range: entry 0% entry 70%;
-  }
-}
 
 @media (max-width: 1024px) {
   .barra2 {
@@ -631,143 +341,27 @@ body.saliendo {
     padding-inline: 3vw;
   }
 
-  .futuro_hero {
-    grid-template-columns: 1fr;
-    grid-template-rows: auto;
-    grid-template-areas:
-        "cabecera"
-        "figura"
-        "acordeon";
-    row-gap: 3vh;
+  /* Mismo ancho que el recuadro en tabletas */
+  .futuro_principal {
+    width: 92vw;
   }
 
-  .futuro_figura {
-    position: static;
-  }
-
-  .futuro_imagen {
-    aspect-ratio: 16 / 9;
-    max-height: 42vh;
-  }
-
-  .futuro_etiqueta {
-    font-size: max(12px, min(1.9vh, 2vw));
-  }
-
-  .titulo1 {
-    font-size: max(24px, min(5.5vh, 6vw));
-    margin-bottom: 0;
-  }
-
-  .acordeon_resumen {
-    font-size: max(15px, min(2.3vh, 2.6vw));
-    padding: 1.8vh 7vw 1.8vh 2.5vw;
-  }
-
-  .acordeon_resumen::before,
-  .acordeon_resumen::after {
-    right: 2.5vw;
+  .futuro_intro {
+    padding-top: 36px;
   }
 
   .acordeon_cuerpo {
-    gap: 2vh 3vw;
-    padding: 0 2.5vw 2.4vh;
+    grid-template-columns: minmax(0, 1.2fr) minmax(0, 1fr);
+    gap: 22px;
+    padding: 4px 20px 22px;
   }
 
-  .acordeon_texto {
-    font-size: max(13px, min(1.8vh, 2.2vw));
+  .acordeon_resumen {
+    padding-left: 20px;
   }
 
-  .tema_chip {
-    font-size: max(11px, min(1.4vh, 1.8vw));
-    padding: 0.6vh 1.6vw;
-  }
-
-  .tema_lista li {
-    font-size: max(13px, min(1.7vh, 2.1vw));
-    padding-left: 3vw;
-  }
-
-  .tema_lista li::before {
-    width: 6px;
-    height: 6px;
-  }
-
-  .tema_nota {
-    font-size: max(12px, min(1.6vh, 2vw));
-    padding-left: 2vw;
-  }
-
-  .tema_etiqueta {
-    font-size: max(11px, min(1.3vh, 1.7vw));
-  }
-
-  .tema_descripcion {
-    font-size: max(12px, min(1.6vh, 2vw));
-  }
-
-  .tema_icono {
-    width: max(24px, 4vh);
-    height: max(24px, 4vh);
-  }
-
-  .tema_pie {
-    font-size: max(11px, min(1.4vh, 1.8vw));
-  }
-
-  .futuro_pie {
-    font-size: max(11px, min(1.4vh, 1.8vw));
-  }
-
-  .titulo2 {
-    font-size: max(22px, min(4.5vh, 5vw));
-  }
-
-  .titulo3 {
-    font-size: max(18px, min(3.2vh, 4vw));
-  }
-
-  .conclusion_tarjeta {
-    padding: 2.5vh 2vw;
-  }
-
-  .chip {
-    font-size: max(11px, min(1.4vh, 1.7vw));
-    padding: 0.8vh 1.8vw;
-  }
-
-  .conclusion_texto {
-    font-size: max(13px, min(1.9vh, 2.1vw));
-  }
-
-  .pilares_grid {
-    grid-template-columns: repeat(2, 1fr);
-    gap: 2vh 2vw;
-  }
-
-  .pilar {
-    padding: 2.4vh 2.4vw;
-  }
-
-  .pilar_numero {
-    font-size: max(11px, min(1.4vh, 1.7vw));
-  }
-
-  .pilar_titulo {
-    font-size: max(16px, min(2.4vh, 2.8vw));
-  }
-
-  .pilar_texto {
-    font-size: max(13px, min(1.7vh, 2.1vw));
-  }
-
-  .boton {
-    font-size: max(14px, min(2vh, 2.4vw));
-    padding: 1.6vh 4vw;
-  }
-
-  .nombres {
-    font-size: max(12px, min(1.6vh, 1.9vw));
+  .conclusion {
+    padding: 40px 0;
   }
 }
 
@@ -790,144 +384,69 @@ body.saliendo {
     scrollbar-width: none;
   }
 
-  .futuro_principal {
-    padding: 3vh 5vw 0;
+  /* Celulares: mismos tamaños que Contexto (css/contexto.css, máx. 700 px) */
+  .subtitulo {
+    margin-bottom: 14px;
+    font-size: 1.4rem;
   }
 
-  .futuro_etiqueta {
-    font-size: clamp(11px, 3.2vw, 14px);
+  .futuro_intro {
+    padding-top: 28px;
   }
 
-  .titulo1 {
-    font-size: clamp(24px, 7.5vw, 40px);
+  .futuro_intro .subtitulo {
+    margin-bottom: 6px;
   }
 
-  .futuro_imagen {
-    max-height: 30vh;
+  .descripcion {
+    font-size: .95rem;
+  }
+
+  .banda-texto {
+    padding: 16px 18px 17px 20px;
+    border-radius: 10px;
+  }
+
+  .banda-texto p {
+    font-size: 0.95rem;
+    line-height: 1.75;
+  }
+
+  .futuro_hero {
+    padding-top: 20px;
   }
 
   .acordeon_resumen {
-    font-size: clamp(15px, 4.4vw, 20px);
-    padding: 1.8vh 12vw 1.8vh 4vw;
+    padding: 14px 48px 14px 16px;
+    font-size: 1.05rem;
   }
 
   .acordeon_resumen::before,
   .acordeon_resumen::after {
-    right: 4.5vw;
-    width: 14px;
+    right: 16px;
   }
 
+  /* La foto arriba y la explicación debajo, a lo ancho del tema */
   .acordeon_cuerpo {
-    grid-template-columns: 1fr;
-    gap: 2.4vh;
-    padding: 0 4vw 2.4vh;
+    grid-template-columns: minmax(0, 1fr);
+    grid-template-areas:
+      "figura"
+      "info";
+    gap: 16px;
+    padding: 0 16px 18px;
   }
 
   .acordeon_texto {
-    font-size: clamp(13px, 3.8vw, 17px);
-  }
-
-  .tema_chip {
-    font-size: clamp(11px, 3vw, 13px);
-    padding: 0.7vh 3vw;
-  }
-
-  .tema_lista li {
-    font-size: clamp(13px, 3.7vw, 16px);
-    padding-left: 5vw;
-  }
-
-  .tema_nota {
-    font-size: clamp(12px, 3.4vw, 15px);
-    padding-left: 3.5vw;
-  }
-
-  .tema_etiqueta {
-    font-size: clamp(11px, 3vw, 13px);
-  }
-
-  .tema_descripcion {
-    font-size: clamp(12px, 3.5vw, 15px);
-  }
-
-  .tema_pie {
-    font-size: clamp(11px, 3vw, 13px);
-  }
-
-  .futuro_pie {
-    font-size: clamp(11px, 3vw, 13px);
+    font-size: .93rem;
   }
 
   .conclusion {
-    margin-top: 6vh;
-  }
-
-  .titulo2 {
-    font-size: clamp(22px, 7vw, 34px);
-  }
-
-  .titulo3 {
-    font-size: clamp(18px, 5.6vw, 26px);
-  }
-
-  .conclusion_padre {
-    grid-template-columns: 1fr;
-    gap: 2.5vh;
-  }
-
-  .conclusion_tarjeta {
-    padding: 3vh 5vw;
-  }
-
-  .chip {
-    font-size: clamp(11px, 3vw, 13px);
-    padding: 0.8vh 4vw;
-  }
-
-  .conclusion_texto {
-    font-size: clamp(14px, 4vw, 18px);
-  }
-
-  .pilares {
-    margin-top: 6vh;
-  }
-
-  .pilares_grid {
-    grid-template-columns: 1fr;
-    gap: 2.5vh;
-  }
-
-  .pilar {
-    padding: 3vh 5vw;
-  }
-
-  .pilar_numero {
-    font-size: clamp(11px, 3vw, 13px);
-  }
-
-  .pilar_titulo {
-    font-size: clamp(17px, 5vw, 22px);
-  }
-
-  .pilar_texto {
-    font-size: clamp(14px, 4vw, 17px);
-  }
-
-  .boton {
-    font-size: clamp(14px, 4vw, 18px);
-    padding: 1.8vh 7vw;
-  }
-
-  .nombres {
-    font-size: clamp(12px, 3.4vw, 15px);
+    padding: 34px 0;
   }
 }
 
 @media (hover: none) {
-  .aniparrafos:hover,
-  .conclusion_tarjeta:hover,
-  .pilar:hover,
-  .boton:hover {
+  .aniparrafos:hover {
     transform: none;
   }
 
@@ -937,10 +456,6 @@ body.saliendo {
 
   .aniparrafos.activo:hover::after {
     opacity: 1;
-  }
-
-  .boton:hover span {
-    transform: none;
   }
 }
 

@@ -1,0 +1,95 @@
+/* =====================================================================
+   Recuadro de Futuro: animación de la misión Artemis (html/futuro.html)
+   La sección es alta y el recuadro queda fijo mientras el scroll avanza
+   los cuadros. Etiqueta, título y capa oscura: css/recuadro-modulo.css.
+   ===================================================================== */
+
+.recorrido {
+    --alto-barra: 8.5vh;
+    --margen: 16px;
+    --alto-recuadro: clamp(340px, 34vw, 480px);
+    --fondo: #040a1a;
+    position: relative;
+    height: 320vh;
+    background: var(--fondo);
+    font-family: "Inter", sans-serif;
+    color: #f6f8ff;
+}
+
+/* El recuadro: mismos bordes y márgenes que el de los demás módulos */
+/* En computador: mismo ancho y margen que los demás recuadros, centrado en la pantalla mientras se desliza */
+.recorrido__escena {
+    position: sticky;
+    top: calc(var(--alto-barra) + (100vh - var(--alto-barra) - var(--alto-recuadro)) / 2);
+    box-sizing: border-box;
+    width: min(1100px, 88vw);
+    height: var(--alto-recuadro);
+    margin: 0 auto;
+    overflow: hidden;
+    isolation: isolate;
+    border: 1px solid rgba(102, 230, 255, .22);
+    border-radius: 16px;
+    /* Primer cuadro de inmediato, antes de que cargue el resto */
+    background: var(--fondo) url("../img/artemis/escritorio/001.webp") center / cover no-repeat;
+}
+/* Separación respecto al recuadro con la imagen de Futuro (css/recuadro-modulo.css) */
+.recorrido { margin-top: 28px; }
+/* Pantallas verticales (celulares): el recuadro ocupa casi toda la pantalla, por los cuadros verticales */
+@media (max-aspect-ratio: 1/1) {
+    .recorrido { height: 400vh; }
+    .recorrido__escena {
+        top: calc(var(--alto-barra) + var(--margen));
+        width: 92%;
+        height: calc(100vh - var(--alto-barra) - 2 * var(--margen));
+        background-image: url("../img/artemis/celular/001.webp");
+    }
+}
+@supports (height: 100svh) {
+    @media (max-aspect-ratio: 1/1) {
+        .recorrido__escena { height: calc(100svh - var(--alto-barra) - 2 * var(--margen)); }
+    }
+}
+
+.recorrido__lienzo {
+    position: absolute;
+    inset: 0;
+    z-index: -2;
+    width: 100%;
+    height: 100%;
+    display: block;
+}
+
+/* Barra de avance de la misión */
+.recorrido__avance {
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    height: 3px;
+    background: rgba(159, 179, 209, .2);
+}
+.recorrido__avance span {
+    display: block;
+    height: 100%;
+    width: 100%;
+    background: #66E6FF;
+    transform: scaleX(0);
+    transform-origin: left;
+    box-shadow: 0 0 8px rgba(102, 230, 255, .7);
+}
+
+.recorrido__credito {
+    position: absolute;
+    right: 2.5vw;
+    bottom: 2.2vh;
+    margin: 0;
+    color: rgba(220, 229, 245, .7);
+    font-size: 11px;
+}
+
+/* Celulares: márgenes y bordes como el recuadro de los demás módulos */
+@media (max-width: 700px) {
+    .recorrido { --margen: 12px; }
+    .recorrido__escena { border-radius: 12px; }
+    .recorrido__credito { display: none; }
+}

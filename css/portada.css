@@ -1,0 +1,232 @@
+/* =====================================================================
+   SIGLO XXI — Portada: Tierra 3D → robot bailando → sala de bienvenida
+   Página: bienvenida.html  ·  Lógica: javascript/portada.js + portada3d.js
+   ===================================================================== */
+
+:root {
+  --font-display: "Space Grotesk", "Segoe UI", system-ui, sans-serif;
+  --font-body: "Inter", "Segoe UI", system-ui, -apple-system, sans-serif;
+}
+
+*, *::before, *::after { box-sizing: border-box; }
+html, body { margin: 0; height: 100%; }
+body {
+  overflow: hidden; background: #020713; color: #fff;
+  font-family: var(--font-body); -webkit-font-smoothing: antialiased;
+}
+img, svg, canvas { display: block; max-width: 100%; }
+button { font: inherit; color: inherit; cursor: pointer; }
+[hidden] { display: none !important; }
+.sr-only { position: absolute !important; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }
+
+/* Basada en bienvenida_celulares_optimizada.html: mismas escenas, fondos y
+   tiempos de transición; acabados y controles refinados. */
+.portada { position: fixed; inset: 0; z-index: 50; overflow: hidden; background: #020713; color: #fff; isolation: isolate; }
+
+/* Parte 1: Tierra */
+.portada__espacio { position: absolute; inset: 0; z-index: 1; cursor: grab; touch-action: none; transition: opacity 1.2s ease; }
+.portada__espacio:active { cursor: grabbing; }
+.portada__tierra { display: block; width: 100%; height: 100%; outline: none; }
+.portada__tierra:focus-visible { box-shadow: inset 0 0 0 2px rgba(102, 230, 255, .55); }
+.portada.sin-webgl .portada__espacio { background: url("../img/poster.jpg") center / cover no-repeat; cursor: pointer; }
+
+.portada__creditos {
+  position: absolute; z-index: 20; left: 50%; bottom: max(14px, env(safe-area-inset-bottom)); transform: translateX(-50%);
+  width: max-content; max-width: calc(100% - 24px); margin: 0;
+  color: rgba(255, 255, 255, .82); font-size: clamp(9px, .72vw, 11px); line-height: 1.4; letter-spacing: .02em; text-align: center;
+  text-shadow: 0 1px 5px rgba(0, 0, 0, .9); pointer-events: none; transition: opacity .4s ease, visibility .4s;
+}
+.portada__creditos.oculto { opacity: 0; visibility: hidden; }
+
+/* Omitir: invisible salvo con el teclado (no altera la escena). */
+.portada__omitir {
+  position: absolute; z-index: 90; top: max(12px, env(safe-area-inset-top)); right: 12px; padding: .55rem 1rem; border-radius: 999px;
+  background: #e9fbff; color: #06152d; font-size: 13px; font-weight: 600; text-decoration: none; transform: translateY(-220%);
+}
+.portada__omitir:focus-visible { transform: none; }
+
+/* Mensaje de estado («Acercándonos a la Tierra…») */
+.portada__mensaje {
+  position: absolute; z-index: 30; left: 50%; bottom: max(28px, env(safe-area-inset-bottom)); transform: translateX(-50%) translateY(8px);
+  width: max-content; max-width: 90%; padding: 9px 16px; border: 1px solid rgba(130, 202, 255, .27); border-radius: 24px;
+  background: rgba(3, 19, 38, .85); color: #d9efff; text-align: center; font-size: clamp(12px, 1.2vw, 14px); line-height: 1.45;
+  opacity: 0; pointer-events: none; transition: opacity .4s ease, transform .4s ease; backdrop-filter: blur(8px); -webkit-backdrop-filter: blur(8px);
+}
+.portada__mensaje.visible { opacity: 1; transform: translateX(-50%) translateY(0); }
+.portada__error {
+  position: absolute; z-index: 80; left: 50%; top: 50%; transform: translate(-50%, -50%); width: min(90%, 420px); padding: 15px;
+  border: 1px solid #42749b; border-radius: 12px; background: #09162b; color: #eaf7ff; font-size: 14px; line-height: 1.6; text-align: center;
+}
+
+/* Parte 2: robot y plataforma sobre el fondo futurista original */
+.portada__pista {
+  position: absolute; inset: 0; z-index: 2; overflow: hidden; opacity: 0; visibility: hidden;
+  background: #020713 url("../img/portada/fondo-robot-1600.jpg") center / cover no-repeat;
+  transition: opacity 1s ease, visibility 1s ease;
+}
+.portada__pista::after { /* profundidad: viñeta suave para que el robot destaque */
+  content: ""; position: absolute; inset: 0; z-index: 3; pointer-events: none;
+  background: radial-gradient(ellipse 70% 75% at 50% 55%, transparent 55%, rgba(2, 7, 19, .55) 100%);
+}
+.portada__pista.visible { opacity: 1; visibility: visible; }
+.portada__baile { position: absolute; inset: 0; z-index: 2; display: block; width: 100%; height: 100%; pointer-events: none; }
+
+/* Botones circulares (flechas) */
+.portada__flecha {
+  position: absolute; z-index: 35; top: max(14px, env(safe-area-inset-top)); left: max(14px, env(safe-area-inset-left));
+  display: grid; place-items: center; width: 46px; height: 46px; padding: 0; border-radius: 50%;
+  border: 1px solid rgba(102, 230, 255, .8); background: rgba(6, 21, 45, .88); box-shadow: 0 0 18px rgba(7, 139, 255, .33);
+  color: #fff; cursor: pointer; transition: background .2s ease, transform .2s ease, box-shadow .2s ease;
+}
+.portada__flecha svg { width: 22px; height: 22px; }
+.portada__flecha:hover { background: #09254b; transform: translateY(-1px); box-shadow: 0 0 24px rgba(7, 139, 255, .55); }
+.portada__flecha--bienvenida { z-index: 60; }
+
+/* Sonido: activar si el navegador lo bloqueó y silenciar (sin pausar: el baile sigue sincronizado) */
+.portada__sonido { position: absolute; z-index: 36; top: max(14px, env(safe-area-inset-top)); right: max(14px, env(safe-area-inset-right)); display: flex; gap: 8px; align-items: center; }
+.portada__musica, .portada__silencio {
+  display: inline-flex; align-items: center; gap: 8px; min-height: 46px; border: 1px solid rgba(126, 223, 255, .55);
+  border-radius: 999px; background: rgba(7, 22, 47, .9); color: #fff; cursor: pointer; font-size: 14px; font-weight: 600;
+  transition: background .2s ease, border-color .2s ease;
+}
+.portada__musica { padding: 0 18px 0 14px; border-color: #66e6ff; box-shadow: 0 0 18px rgba(7, 139, 255, .35); animation: pulso 2.2s ease-in-out infinite; }
+.portada__silencio { width: 46px; justify-content: center; padding: 0; }
+.portada__musica svg, .portada__silencio svg { width: 20px; height: 20px; }
+.portada__musica:hover, .portada__silencio:hover { background: #09254b; border-color: #66e6ff; }
+.portada__silencio .i-x, .portada__silencio[aria-pressed="true"] .i-onda { display: none; }
+.portada__silencio[aria-pressed="true"] .i-x { display: block; }
+@keyframes pulso { 50% { box-shadow: 0 0 28px rgba(7, 139, 255, .7); } }
+
+/* Diálogo de dos opciones */
+.portada__dialogo {
+  position: absolute; z-index: 40; left: 50%; bottom: max(22px, calc(env(safe-area-inset-bottom) + 16px)); transform: translate(-50%, 10px);
+  width: min(440px, calc(100% - 32px)); padding: 18px 20px 20px; border-radius: 22px;
+  border: 1px solid rgba(101, 228, 255, .6); background: linear-gradient(135deg, rgba(6, 24, 43, .9), rgba(17, 24, 58, .9));
+  box-shadow: 0 0 24px rgba(22, 140, 255, .22), 0 24px 50px -20px rgba(0, 0, 0, .7), inset 0 0 18px rgba(27, 220, 255, .05);
+  backdrop-filter: blur(10px); -webkit-backdrop-filter: blur(10px); text-align: center;
+  opacity: 0; transition: opacity .45s ease, transform .45s ease;
+}
+.portada__dialogo.visible { opacity: 1; transform: translate(-50%, 0); }
+.portada__dialogo::after { /* «cola» del globo apuntando hacia el robot */
+  content: ""; position: absolute; left: 50%; top: -8px; width: 14px; height: 14px; transform: translateX(-50%) rotate(225deg);
+  background: #0b1a36; border-right: 1px solid rgba(101, 228, 255, .6); border-bottom: 1px solid rgba(101, 228, 255, .6);
+}
+.portada__dialogo-texto { margin: 0 0 14px; color: #f2fbff; font-family: var(--font-display); font-size: clamp(15px, 1.3vw, 18px); font-weight: 500; line-height: 1.4; }
+.portada__dialogo-botones { display: flex; flex-wrap: wrap; justify-content: center; gap: 10px; }
+.portada__btn {
+  display: inline-flex; align-items: center; justify-content: center; gap: 8px; min-height: 46px; padding: 0 18px; border-radius: 999px;
+  font: 600 14px/1 var(--font-display); letter-spacing: .02em; cursor: pointer; transition: transform .2s ease, background .2s ease, box-shadow .2s ease;
+}
+/* Ambas opciones comparten diseño y tamaño (el de «Sí, continuar»). */
+.portada__dialogo-botones .portada__btn { flex: 1 1 0; min-width: 150px; max-width: 190px; }
+.portada__btn--si, .portada__btn--no { border: 1px solid #66e6ff; background: #e9fbff; color: #06152d; box-shadow: 0 0 18px rgba(7, 139, 255, .35); }
+.portada__btn--si:hover, .portada__btn--no:hover { transform: translateY(-1px); box-shadow: 0 0 28px rgba(7, 139, 255, .6); }
+.portada__btn:focus-visible, .portada__flecha:focus-visible, .portada__silencio:focus-visible, .portada__musica:focus-visible, .portada__comenzar:focus-visible { outline: 2px solid #66E6FF; outline-offset: 3px; }
+
+/* Parte 3: sala de bienvenida original */
+.portada__bienvenida {
+  position: absolute; inset: 0; z-index: 45; display: flex; align-items: center; justify-content: center; overflow: hidden;
+  background: #020713 url("../img/portada/fondo-bienvenida-1600.jpg") center / cover no-repeat;
+  opacity: 0; visibility: hidden; transition: opacity .8s ease, visibility .8s ease;
+}
+.portada__bienvenida.visible { opacity: 1; visibility: visible; }
+.portada__bienvenida::after {
+  content: ""; position: absolute; inset: 0; pointer-events: none;
+  background: radial-gradient(ellipse at center, rgba(2, 7, 19, .02) 20%, rgba(2, 7, 19, .2) 75%, rgba(2, 7, 19, .52) 100%);
+}
+.portada__bienvenida-contenido {
+  position: relative; z-index: 1; display: flex; flex-direction: column; align-items: center; justify-content: center;
+  width: min(94vw, 1200px); gap: clamp(18px, 3vh, 30px); padding: 24px; text-align: center;
+}
+/* El texto del holograma ocupa solo el centro de la imagen (≈16–84 % del ancho, 9–73 % del alto):
+   el tamaño de la imagen (--hw) se elige para que el texto use ≈55–60 % del ancho en computador
+   (≈70 % en tableta y ≈83 % en celular, para que la frase de abajo se lea bien) y nunca más de ≈40 % del alto; los márgenes negativos
+   recortan su borde transparente. */
+.portada__holograma {
+  --hw: min(88vw, 1250px, 145vh);
+  display: block; flex-shrink: 0; width: var(--hw); max-width: none; height: auto; object-fit: contain;
+  margin: calc(var(--hw) * -.03) 0 calc(var(--hw) * -.09);
+  filter: drop-shadow(0 0 14px rgba(16, 191, 255, .33));
+}
+.portada__comenzar {
+  position: relative; z-index: 2; display: inline-flex; align-items: center; justify-content: center; gap: 12px;
+  min-height: 44px; padding: 0 22px; border: 1px solid #66e6ff; border-radius: 999px;
+  background: linear-gradient(135deg, rgba(6, 21, 45, .92), rgba(16, 32, 80, .92));
+  box-shadow: 0 0 18px rgba(7, 139, 255, .33), inset 0 0 15px rgba(5, 207, 255, .1);
+  color: #e9fbff; font: 700 clamp(11px, .8vw, 13px)/1 var(--font-display); letter-spacing: .12em; text-transform: uppercase; text-decoration: none;
+  transition: transform .25s ease, box-shadow .25s ease;
+}
+.portada__comenzar:hover { transform: translateY(-2px); box-shadow: 0 0 30px rgba(7, 139, 255, .55), inset 0 0 18px rgba(5, 207, 255, .15); }
+
+/* Pantallas pequeñas: fondos de 800 px (≈50 KB en vez de 1,6 MB cada PNG original) */
+@media (max-width: 900px) {
+  .portada__pista { background-image: url("../img/portada/fondo-robot-800.jpg"); }
+  .portada__bienvenida { background-image: url("../img/portada/fondo-bienvenida-800.jpg"); }
+}
+
+/* Celulares (mismos ajustes que el archivo optimizado) */
+@media (max-width: 600px) {
+  .portada__flecha { top: max(10px, env(safe-area-inset-top)); left: max(10px, env(safe-area-inset-left)); width: 42px; height: 42px; }
+  .portada__sonido { top: max(10px, env(safe-area-inset-top)); right: max(10px, env(safe-area-inset-right)); }
+  .portada__musica, .portada__silencio { min-height: 42px; }
+  .portada__silencio { width: 42px; }
+  .portada__musica { font-size: 13px; padding: 0 14px 0 11px; }
+  .portada__dialogo { padding: 14px 14px 16px; }
+  .portada__dialogo-texto { font-size: 14px; margin-bottom: 12px; }
+  .portada__btn { min-height: 44px; padding: 0 14px; font-size: 13px; }
+  .portada__bienvenida-contenido { width: 100%; gap: 22px; padding: 20px 12px; }
+  .portada__holograma { --hw: min(122vw, 145vh); }
+}
+/* «Comenzar recorrido» crece de forma continua con la pantalla: pequeño y discreto en celular
+   (siempre más pequeño que «SIGLO XXI») y, desde 1100 px, igual que en computador. */
+@media (max-width: 1100px) {
+  .portada__comenzar {
+    min-height: clamp(34px, 1.4vw + 28.6px, 44px);
+    padding: 0 clamp(12px, 1.4vw + 6.6px, 22px);
+    font-size: clamp(9px, .28vw + 7.9px, 11px);
+  }
+}
+@media (max-width: 600px) and (orientation: portrait) {
+  .portada__bienvenida-contenido { gap: clamp(12px, 2.5vh, 20px); padding: 64px 14px 24px; }
+  .portada__holograma { --hw: min(122vw, 760px); }
+}
+@media (max-height: 520px) and (orientation: landscape) {
+  .portada__dialogo { bottom: max(10px, env(safe-area-inset-bottom)); width: min(420px, 60vw); }
+  .portada__dialogo::after { display: none; }
+}
+@media (min-width: 601px) and (max-width: 1100px) {
+  .portada__holograma { --hw: min(103vw, 1050px, 145vh); }
+}
+@media (min-width: 1600px) {
+  .portada__bienvenida-contenido { width: min(90vw, 1450px); }
+  .portada__holograma { --hw: min(78vw, 1500px, 140vh); }
+  .portada__dialogo { width: 480px; }
+}
+/* ---------- Globo del robot (javascript/portada.js) ----------
+   Mientras habla no lleva botones; con la pregunta aparecen «¡Vamos!» y «Más tarde». */
+.portada__dialogo { cursor: pointer; }
+.portada__dialogo.pregunta { cursor: default; }
+.portada__dialogo-texto { transition: opacity .22s ease; }
+.portada__dialogo.cambiando .portada__dialogo-texto { opacity: 0; }
+.portada__dialogo:not(.pregunta) .portada__dialogo-texto { margin-bottom: 0; }
+.portada__dialogo-botones[hidden] { display: none; }
+
+/* Pantallas horizontales: el globo va a la derecha del robot, a la altura de su cabeza,
+   con la cola apuntando hacia él (en las verticales sigue abajo, bajo sus pies). */
+@media (min-aspect-ratio: 5/4) {
+  .portada__dialogo {
+    left: calc(50% + 30vh); right: auto; top: 14vh; bottom: auto;
+    width: min(340px, calc(50% - 30vh - 24px));
+    transform: translate(0, 8px);
+    text-align: left;
+  }
+  .portada__dialogo.visible { transform: translate(0, 0); }
+  .portada__dialogo::after { display: block; left: -8px; top: 26px; transform: rotate(135deg); }
+  .portada__dialogo-botones { justify-content: flex-start; flex-wrap: nowrap; }
+  .portada__dialogo-botones .portada__btn { min-width: 0; padding: 0 12px; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .portada__espacio, .portada__pista, .portada__bienvenida, .portada__mensaje, .portada__dialogo { transition-duration: .01ms; }
+  .portada__musica { animation: none; }
+}

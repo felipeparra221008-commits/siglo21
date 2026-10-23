@@ -1,0 +1,137 @@
+/* =====================================================================
+   Navegación entre módulos: flechas laterales y transición de página
+   (javascript/navegacion-modulos.js). Paleta del sitio: azul noche,
+   cian #66E6FF y azul eléctrico #1E6BFF.
+   ===================================================================== */
+
+/* ---------- Transición nativa entre páginas (Chrome, Edge, Safari) ---------- */
+@view-transition { navigation: auto; }
+
+/* La barra se queda quieta; el resto de la página es lo que cambia. */
+.barra { view-transition-name: nm-barra; }
+
+::view-transition-old(root),
+::view-transition-new(root) {
+    animation-duration: .42s;
+    animation-timing-function: cubic-bezier(.4, 0, .2, 1);
+}
+html:active-view-transition-type(adelante)::view-transition-old(root) { animation-name: nm-salir-izq; }
+html:active-view-transition-type(adelante)::view-transition-new(root) { animation-name: nm-entrar-der; }
+html:active-view-transition-type(atras)::view-transition-old(root) { animation-name: nm-salir-der; }
+html:active-view-transition-type(atras)::view-transition-new(root) { animation-name: nm-entrar-izq; }
+
+/* El recuadro de cada módulo (css/recuadro-modulo.css) comparte nombre en las 6 páginas:
+   se queda en su lugar y su video y su título se funden con los del siguiente módulo. */
+::view-transition-group(nm-recuadro) {
+    animation-duration: .5s;
+    animation-timing-function: cubic-bezier(.4, 0, .2, 1);
+}
+::view-transition-old(nm-recuadro),
+::view-transition-new(nm-recuadro) {
+    animation-duration: .5s;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* Si se llegó con las flechas, no se suma el «aparecer» propio de la página (css/transicion.css):
+   ni durante la transición ni al terminar, para que no se repita sobre toda la página.
+   La salida por un enlace (body.saliendo, javascript/transicion.js) sigue funcionando. */
+html.nm-transicion body,
+html.nm-llegada body:not(.saliendo) { animation: none !important; }
+
+@keyframes nm-salir-izq  { to   { opacity: 0; transform: translateX(-36px); } }
+@keyframes nm-salir-der  { to   { opacity: 0; transform: translateX(36px); } }
+@keyframes nm-entrar-der { from { opacity: 0; transform: translateX(36px); } }
+@keyframes nm-entrar-izq { from { opacity: 0; transform: translateX(-36px); } }
+
+/* ---------- Respaldo para navegadores sin transición nativa ---------- */
+html.nm-saliendo.nm-adelante body { animation: nm-salir-izq .28s cubic-bezier(.4, 0, .2, 1) forwards !important; }
+html.nm-saliendo.nm-atras body    { animation: nm-salir-der .28s cubic-bezier(.4, 0, .2, 1) forwards !important; }
+html.nm-entrando.nm-adelante body { animation: nm-entrar-der .42s cubic-bezier(.4, 0, .2, 1) both !important; }
+html.nm-entrando.nm-atras body    { animation: nm-entrar-izq .42s cubic-bezier(.4, 0, .2, 1) both !important; }
+
+/* ---------- Flechas: círculos con una flechita, dentro del recuadro del módulo ---------- */
+.nm-flechas { position: fixed; inset: 0; z-index: 1100; pointer-events: none; }
+.nm-flechas--recuadro { position: absolute; z-index: 5; }
+
+.nm-flecha {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 48px;
+    height: 48px;
+    padding: 0;
+    border: 1px solid rgba(102, 230, 255, .6);
+    border-radius: 50%;
+    background: rgba(4, 10, 26, .55);
+    -webkit-backdrop-filter: blur(8px);
+    backdrop-filter: blur(8px);
+    box-shadow: 0 8px 24px -10px rgba(0, 0, 0, .8);
+    color: #f6f8ff;
+    cursor: pointer;
+    pointer-events: auto;
+    transition: background .2s ease, border-color .2s ease, box-shadow .2s ease, opacity .2s ease, transform .2s ease;
+}
+.nm-flecha--izq { left: 22px; }
+.nm-flecha--der { right: 22px; }
+.nm-flecha svg { width: 20px; height: 20px; }
+
+.nm-flecha:hover:not(:disabled),
+.nm-flecha:focus-visible {
+    background: #1E6BFF;
+    border-color: #66E6FF;
+    box-shadow: 0 0 22px rgba(102, 230, 255, .45);
+    transform: translateY(-50%) scale(1.06);
+}
+.nm-flecha:focus-visible { outline: 2px solid #66E6FF; outline-offset: 3px; }
+
+/* Nombre del módulo de destino al pasar el mouse o con el teclado */
+.nm-flecha__texto {
+    position: absolute;
+    top: 50%;
+    padding: 6px 12px;
+    border: 1px solid rgba(102, 230, 255, .4);
+    border-radius: 999px;
+    background: rgba(4, 10, 26, .92);
+    color: #f6f8ff;
+    font: 600 13px/1 "Inter", system-ui, sans-serif;
+    letter-spacing: .02em;
+    white-space: nowrap;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity .2s ease, transform .2s ease;
+}
+.nm-flecha--izq .nm-flecha__texto { left: calc(100% + 10px); transform: translate(-6px, -50%); }
+.nm-flecha--der .nm-flecha__texto { right: calc(100% + 10px); transform: translate(6px, -50%); }
+.nm-flecha:hover .nm-flecha__texto,
+.nm-flecha:focus-visible .nm-flecha__texto { opacity: 1; transform: translate(0, -50%); }
+
+/* Primer y último módulo: la flecha se ve apagada y no hace nada */
+.nm-flecha:disabled { opacity: .3; cursor: default; box-shadow: none; }
+
+/* Mientras cambia de módulo no se aceptan más pulsaciones */
+.nm-ocupado .nm-flecha { pointer-events: none; }
+
+/* Celulares: círculos más pequeños en las esquinas superiores del recuadro, lejos del título */
+@media (max-width: 700px) {
+    .nm-flecha { top: 12px; transform: none; width: 38px; height: 38px; }
+    .nm-flecha:hover:not(:disabled), .nm-flecha:focus-visible { transform: scale(1.06); }
+    .nm-flecha--izq { left: 12px; }
+    .nm-flecha--der { right: 12px; }
+    .nm-flecha svg { width: 17px; height: 17px; }
+    .nm-flecha__texto { display: none; }
+}
+@media (hover: none) {
+    .nm-flecha__texto { display: none; }
+}
+
+/* ---------- Movimiento reducido: cambio inmediato, sin animación ---------- */
+@media (prefers-reduced-motion: reduce) {
+    ::view-transition-group(*),
+    ::view-transition-old(*),
+    ::view-transition-new(*) { animation: none !important; }
+    html.nm-saliendo body, html.nm-entrando body { animation: none !important; }
+}

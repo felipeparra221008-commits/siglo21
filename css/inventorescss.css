@@ -1,12 +1,8 @@
+/* La barra de desplazamiento se muestra igual que en Contexto, Antecedentes y Eventos:
+   así la página tiene el mismo ancho y la transición entre secciones no se corre de lado. */
 html {
     overflow-x: hidden;
-    scrollbar-width: none;
-    -ms-overflow-style: none;
     background-color: #040a1a;
-}
-
-html::-webkit-scrollbar {
-    display: none;
 }
 
 body {
@@ -29,7 +25,7 @@ body {
     font-family: "Inter", sans-serif;
     z-index: 1000;
     height: 8.5vh;
-    border-bottom: 3px solid #2EE6A6;
+    border-bottom: 3px solid #66E6FF;
     box-sizing: border-box;
 }
 
@@ -72,7 +68,7 @@ body {
     left: 0;
     width: 100%;
     height: 1px;
-    background-color: #2EE6A6;
+    background-color: #66E6FF;
     transform: scaleX(0);
     opacity: 0;
     transition: transform 0.3s ease, opacity 0.3s ease;
@@ -83,75 +79,52 @@ body {
     opacity: 1;
 }
 
-.titulo {
-    position: sticky;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding-inline: 4vw;
+/* Mismo ancho que el recuadro y que Contexto, Antecedentes y Eventos */
+.intro-inventores,
+.tarjeta_padre {
+    box-sizing: border-box;
+    width: min(1100px, 88vw);
+    margin-inline: auto;
 }
 
-.titulo1 {
+/* SUBTÍTULO Y DESCRIPCIÓN: mismas medidas y colores que css/contexto.css */
+.intro-inventores {
+    padding: 44px 0 0;
     font-family: "Inter", sans-serif;
-    color: #ffffff;
-    font-size: 6vh;
-    font-weight: 600;
 }
 
-.titulo2 {
-    display: inline-block;
-    position: relative;
-    font-family: "Inter", sans-serif;
-    color: #9AA7BD;
-    font-size: 1.5vh;
-    font-weight: 400;
-    cursor: pointer;
-    transition: transform 0.3s ease; 
+.subtitulo {
+    margin: 0 0 8px;
+    color: #F6F8FF;
+    font-family: "Outfit", sans-serif;
+    font-size: clamp(1.5rem, 2.2vw, 2rem);
+    font-weight: 700;
+    line-height: 1.2;
+    letter-spacing: -0.4px;
 }
 
-.titulo2:hover {
-  transform: scale(1.1); 
+.descripcion {
+    margin: 0;
+    color: #9FB3D1;
+    font-size: 1rem;
+    line-height: 1.6;
+    text-align: justify;
+    -webkit-hyphens: manual;
+    hyphens: manual;
 }
 
-.titulo2::after {
-    content: '';
-    position: absolute;
-    bottom: -0.5vh;
-    left: 0;
-    width: 100%;
-    height: 1px;
-    background-color: #2EE6A6;
-    transform: scaleX(0);
-    opacity: 0;
-    transition: transform 0.3s ease, opacity 0.3s ease;
-}
-
-.titulo2:hover::after {
-    transform: scaleX(1);
-    opacity: 1;
-}
-
-.parrafo1 {
-    font-family: "Inter", sans-serif;
-    color: #9AA7BD;
-    font-size: 2vh;
-    padding-inline: 4vw;
-    margin-top: -4vh;
-    font-weight: 500;
-}
-
+/* TARJETAS: se conserva su diseño; la altura se adapta al texto para que nunca se corte */
 .tarjeta_padre {
     display: grid;
-    grid-template-columns: repeat(2 , 1fr);
+    grid-template-columns: repeat(2, minmax(0, 1fr));
     gap: 10vh;
-    padding: 4vh 5vw;
-    box-sizing: border-box; 
-    width: 100%;
+    padding: 24px 0 48px;
 }
 
 .tarjeta {
-    height: 45vh;
+    min-height: 45vh;
     display: flex;
+    align-items: stretch;
     padding: 1.5vw;
     gap: 3vw;
     box-sizing: border-box;
@@ -163,17 +136,27 @@ body {
     transition: transform 0.3s ease;
 }
 
-.tarjeta:hover {
-  transform: scale(1.1); 
+/* Mismo movimiento de siempre, solo con mouse (en celular no se queda «pegado») */
+@media (hover: hover) {
+    .tarjeta:hover {
+        transform: scale(1.1);
+    }
 }
 
+/* Foto vertical de tamaño fijo en todas las tarjetas, sin deformarse */
 .imagen {
+    flex: 0 0 40%;
+    width: 40%;
+    height: auto;
+    aspect-ratio: 2 / 3;
+    align-self: flex-start;
     border-radius: 20px;
-    width: 100%;     
-    height: 100%;         
-     object-fit: cover;
+    object-fit: cover;
 }
+
 .texto {
+    flex: 1;
+    min-width: 0;
     font-family: "Inter", sans-serif;
     display: flex;
     flex-direction: column;
@@ -201,13 +184,103 @@ body {
     color: #9AA7BD;
     font-size: 1.8vh;
     font-weight: 500;
+    line-height: 1.6;
     margin-top: -0.5vh;
+    text-align: justify;
+    -webkit-hyphens: manual;
+    hyphens: manual;
 }
 
+/* Reconocimiento en el cian del menú (antes verde menta) */
 .texto4_tarjetas {
     margin-top: auto;
     margin-bottom: 0;
-    color: #2EE6A6;
+    color: #66E6FF;
     font-size: 2vh;
     font-weight: 600;
+}
+
+/* TABLETAS: una tarjeta por fila */
+@media screen and (max-width: 1024px) {
+    .intro-inventores,
+    .tarjeta_padre {
+        width: 92vw;
+    }
+
+    .intro-inventores {
+        padding-top: 36px;
+    }
+
+    .tarjeta_padre {
+        grid-template-columns: minmax(0, 1fr);
+        gap: 28px;
+        padding-bottom: 40px;
+    }
+
+    .tarjeta {
+        min-height: 0;
+        padding: 16px;
+        gap: 22px;
+    }
+
+    .imagen {
+        flex-basis: 32%;
+        width: 32%;
+    }
+
+    /* Con una tarjeta por fila, el mismo efecto pero menor para que no se salga de la pantalla */
+    @media (hover: hover) {
+        .tarjeta:hover { transform: scale(1.03); }
+    }
+
+    .texto2_tarjetas { font-size: 1.45rem; }
+    .texto3_tarjetas { font-size: 0.95rem; }
+    .texto1_tarjetas { font-size: 0.8rem; padding: 5px 12px; }
+    .texto4_tarjetas { font-size: 1rem; }
+}
+
+/* CELULARES: la foto arriba y el texto debajo, a lo ancho de la tarjeta */
+@media screen and (max-width: 700px) {
+    .intro-inventores {
+        padding-top: 28px;
+    }
+
+    .subtitulo {
+        margin-bottom: 6px;
+        font-size: 1.4rem;
+    }
+
+    .descripcion {
+        font-size: .95rem;
+    }
+
+    .tarjeta_padre {
+        gap: 20px;
+        padding: 20px 0 32px;
+    }
+
+    .tarjeta {
+        flex-direction: column;
+        padding: 12px;
+        gap: 14px;
+        border-radius: 16px;
+    }
+
+    .imagen {
+        flex: none;
+        width: 100%;
+        aspect-ratio: 4 / 3;
+        object-position: center 22%;
+        border-radius: 12px;
+    }
+
+    .texto { padding: 0 0 4px; }
+    .texto1_tarjetas { margin: 0; }
+    .texto2_tarjetas { margin: 10px 0 8px; font-size: 1.3rem; line-height: 1.25; }
+    .texto3_tarjetas { margin: 0 0 12px; font-size: 0.92rem; line-height: 1.65; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .tarjeta { transition: none; }
+    .tarjeta:hover { transform: none; }
 }

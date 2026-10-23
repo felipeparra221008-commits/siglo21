@@ -12,7 +12,7 @@
   --azul-profundo: #0B2A6F;
   --texto: #E6EAF2;
   --texto-secundario: #9AA7BD;
-  --verde: #2EE6A6;
+  --verde: #66E6FF;
   --coral: #FF4D5E;
   --radio: 16px;
   --ancho-maximo: 1240px;
@@ -180,18 +180,71 @@ a {
   margin-inline: auto;
 }
 
+/* Mismo ancho, colores y subtítulos que «Contexto: el siglo XXI» (css/contexto.css),
+   alineados con el recuadro de arriba (css/recuadro-modulo.css) */
+.intro,
+.seccion {
+  --menu-cian: #66E6FF;
+  --menu-titulo: #F6F8FF;
+  --menu-texto: #9FB3D1;
+  --menu-texto-franja: #dce5f5;
+  --menu-borde: rgba(159, 179, 209, .2);
+  --menu-borde-franja: rgba(102, 230, 255, .35);
+  --menu-borde-activo: rgba(102, 230, 255, .75);
+
+  box-sizing: border-box;
+  width: min(1100px, 88vw);
+  margin-inline: auto;
+}
+
 .intro {
-  padding-top: clamp(64px, 9vw, 120px);
-  padding-bottom: clamp(46px, 6vw, 78px);
-  max-width: calc(var(--ancho-maximo) - 100px);
-  margin-left: max(5%, calc((100% - var(--ancho-maximo)) / 2));
-  margin-right: auto;
+  padding: 44px 0 0;
+}
+
+.subtitulo {
+  margin: 0 0 18px;
+  color: var(--menu-titulo);
+  font-family: "Outfit", sans-serif;
+  font-size: clamp(1.5rem, 2.2vw, 2rem);
+  font-weight: 700;
+  line-height: 1.2;
+  letter-spacing: -0.4px;
+}
+
+/* Franja del párrafo: igual que la de «¿Qué es el siglo XXI?» */
+.banda-texto {
+  padding: 22px 28px;
+  border: 1px solid var(--menu-borde-franja);
+  border-radius: 12px;
+  background:
+    linear-gradient(180deg, #66E6FF, rgba(102, 230, 255, .25)) left top / 3px 100% no-repeat,
+    linear-gradient(100deg, rgba(3, 9, 22, .9) 0%, rgba(6, 16, 36, .82) 55%, rgba(8, 22, 46, .66) 100%);
+  transition:
+    transform 0.25s ease,
+    border-color 0.25s ease,
+    box-shadow 0.25s ease;
+}
+
+.banda-texto p {
+  margin: 0;
+  color: var(--menu-texto-franja);
+  font-size: 1.02rem;
+  line-height: 1.8;
+}
+
+/* Párrafos justificados y con guion de corte, como en Contexto */
+.banda-texto p,
+.contenido-tarjeta p,
+.detalle-invento p {
+  text-align: justify;
+  -webkit-hyphens: auto;
+  hyphens: auto;
 }
 
 .eyebrow,
 .numero-seccion {
   display: inline-block;
-  color: var(--verde);
+  color: #66E6FF;
   font-size: .8rem;
   font-weight: 600;
   letter-spacing: .14em;
@@ -213,58 +266,62 @@ a {
   color: var(--azul-claro);
 }
 
-.intro p {
-  max-width: 760px;
-  color: var(--texto);
-  font-size: clamp(1rem, .4vw + .9rem, 1.15rem);
-  line-height: 1.8;
+/* Separación entre bloques igual que en Contexto */
+.seccion {
+  padding: 48px 0 0;
 }
 
-.seccion {
-  padding-top: 26px;
-  margin-bottom: clamp(68px, 8vw, 108px);
+.seccion:last-of-type {
+  padding-bottom: 48px;
 }
 
 .encabezado-seccion {
-  margin-bottom: 28px;
-  max-width: 760px;
+  margin-bottom: 20px;
 }
 
-.encabezado-seccion h2 {
-  margin: 8px 0 8px;
-  color: #fff;
-  font-family: "Outfit", sans-serif;
-  font-size: clamp(1.8rem, 3vw + .5rem, 2.7rem);
-  font-weight: 700;
-  line-height: 1.2;
+/* Con descripción debajo, el subtítulo queda más cerca de ella */
+.encabezado-seccion .subtitulo {
+  margin-bottom: 8px;
 }
 
 .encabezado-seccion p {
-  color: var(--texto-secundario);
+  color: var(--menu-texto);
   font-size: 1rem;
+  line-height: 1.6;
 }
 
-/* TARJETAS HISTÓRICAS E INVENTOS */
+/* TARJETAS HISTÓRICAS E INVENTOS: mismo fondo, borde y elevación que las de Contexto */
 .rejilla {
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
-  gap: 24px;
+  gap: 18px;
 }
 
 .tarjeta {
   min-width: 0;
   overflow: hidden;
-  border: 1px solid var(--borde);
-  border-radius: var(--radio);
-  background: var(--superficie);
-  box-shadow: 0 12px 32px rgb(0 0 0 / 12%);
-  transition: transform .3s ease, border-color .3s ease, box-shadow .3s ease;
+  border: 1px solid var(--menu-borde);
+  border-radius: 14px;
+  background: linear-gradient(100deg, rgba(3, 9, 22, .9) 0%, rgba(11, 23, 48, .82) 100%);
+  transition:
+    transform 0.25s ease,
+    border-color 0.25s ease,
+    box-shadow 0.25s ease;
 }
 
-.tarjeta:hover {
-  transform: translateY(-5px);
-  border-color: rgb(127 178 255 / 55%);
-  box-shadow: 0 16px 38px rgb(0 0 0 / 22%);
+/* Elevación al pasar el mouse (solo con mouse: en celular no se queda «pegada») */
+@media (hover: hover) {
+  .tarjeta:hover,
+  .banda-texto:hover {
+    transform: translateY(-4px);
+    border-color: var(--menu-borde-activo);
+    box-shadow: 0 8px 28px rgba(30, 107, 255, 0.14);
+  }
+}
+
+/* Invento abierto: borde de énfasis, también visible en celular */
+.tarjeta-invento.detalle-abierto {
+  border-color: var(--menu-borde-franja);
 }
 
 .marco-imagen {
@@ -283,6 +340,12 @@ a {
   filter: grayscale(100%);
   transition: filter .5s ease, transform .5s ease;
 }
+
+/* Fotos verticales: el recorte se centra en las caras y objetos principales */
+.marco-imagen img[src*="migrant_mother"] { object-position: center 28%; }
+.marco-imagen img[src*="Alexander_Fleming"] { object-position: center 22%; }
+.marco-imagen img[src*="buzz_aldrin"] { object-position: center 40%; }
+.marco-imagen img[src*="saturn_V"] { object-position: center 30%; }
 
 .tarjeta:hover .marco-imagen img,
 .tarjeta:focus-within .marco-imagen img {
@@ -306,40 +369,36 @@ a {
 }
 
 .contenido-tarjeta {
-  padding: clamp(18px, 2vw, 25px);
+  padding: 14px 16px 18px;
 }
 
-.chip-anio {
-  display: inline-flex;
-  align-items: center;
-  margin-bottom: 10px;
-  color: var(--verde);
-  font-size: .78rem;
-  font-weight: 600;
-  letter-spacing: .1em;
-  line-height: 1.4;
-}
-
-.contenido-tarjeta h3 {
+.contenido-tarjeta h3,
+.titulo-invento {
   margin-bottom: 8px;
-  color: #fff;
+  color: var(--menu-titulo);
   font-family: "Outfit", sans-serif;
-  font-size: 1.22rem;
-  font-weight: 600;
+  font-size: 1.12rem;
+  font-weight: 700;
   line-height: 1.3;
 }
 
 .contenido-tarjeta p,
 .detalle-invento p {
-  color: var(--texto-secundario);
-  font-size: .95rem;
-  line-height: 1.7;
+  color: var(--menu-texto);
+  font-size: .88rem;
+  line-height: 1.65;
 }
 
 /* INVENTOS: explicación desplegable al tocar una tarjeta */
 .tarjeta-invento {
   display: flex;
   flex-direction: column;
+  cursor: pointer;
+}
+
+/* Al abrir un invento solo crece esa tarjeta; las de su fila mantienen su tamaño */
+.tarjetas-inventos {
+  align-items: start;
 }
 
 .boton-invento {
@@ -356,47 +415,25 @@ a {
 
 .boton-invento:focus-visible,
 .menu-toggle:focus-visible,
-.boton-siguiente:focus-visible,
 .barra2 a:focus-visible {
-  outline: 2px solid var(--verde);
+  outline: 2px solid #66E6FF;
   outline-offset: 4px;
 }
 
 .boton-invento .contenido-tarjeta {
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
+  display: block;
 }
 
 .titulo-invento {
   display: block;
-  margin-bottom: 10px;
-  color: #fff;
-  font-family: "Outfit", sans-serif;
-  font-size: clamp(1.2rem, 1.2vw + .7rem, 1.6rem);
-  font-weight: 600;
-  line-height: 1.25;
-}
-
-.pista-tarjeta {
-  display: inline-flex;
-  gap: 8px;
-  align-items: center;
-  color: var(--azul-claro);
-  font-size: .82rem;
-  font-weight: 600;
-}
-
-.pista-tarjeta span {
-  color: var(--verde);
-  transition: transform .25s ease;
+  margin-bottom: 0;
 }
 
 .detalle-invento {
   display: grid;
   grid-template-rows: 0fr;
   opacity: 0;
-  padding-inline: clamp(18px, 2vw, 25px);
+  padding-inline: 16px;
   transition: opacity .25s ease, padding .25s ease;
 }
 
@@ -405,107 +442,14 @@ a {
 }
 
 .detalle-invento strong {
-  color: var(--texto);
+  color: var(--menu-texto-franja);
   font-weight: 600;
 }
 
 .tarjeta-invento.detalle-abierto .detalle-invento {
   grid-template-rows: 1fr;
   opacity: 1;
-  padding-bottom: 24px;
-}
-
-.tarjeta-invento.detalle-abierto .pista-tarjeta span {
-  transform: rotate(45deg);
-}
-
-/* VIDEO DESTACADO */
-.video-seccion {
-  margin-top: 8px;
-}
-
-.video-destacado {
-  width: 100%;
-  margin: 0 auto;
-}
-
-.video-destacado video {
-  width: 100%;
-  aspect-ratio: 16 / 9;
-  object-fit: cover;
-  border: 1px solid var(--borde);
-  border-radius: var(--radio);
-  background: linear-gradient(135deg, #172943, #263953, #0B2A6F);
-  box-shadow: 0 18px 55px rgb(0 0 0 / 25%);
-}
-
-.video-destacado figcaption {
-  margin-top: 12px;
-  color: var(--texto-secundario);
-  font-size: .9rem;
-  text-align: center;
-}
-
-/* BOTÓN SIGUIENTE */
-.siguiente-contenedor {
-  display: flex;
-  justify-content: center;
-  padding: 0 0 90px;
-}
-
-.boton-siguiente {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  gap: 12px;
-  padding: .9rem 1.8rem;
-  border: 1px solid var(--verde);
-  border-radius: 999px;
-  color: var(--fondo);
-  background: var(--verde);
-  font-size: 1rem;
-  font-weight: 600;
-  text-align: center;
-  text-decoration: none;
-  transition: transform .25s ease, box-shadow .25s ease, background .25s ease;
-}
-
-.boton-siguiente:hover {
-  transform: translateY(-3px);
-  background: #62f0bf;
-  box-shadow: 0 8px 28px rgb(46 230 166 / 20%);
-}
-
-.boton-siguiente span {
-  font-size: 1.2rem;
-  transition: transform .25s ease;
-}
-
-.boton-siguiente:hover span {
-  transform: translateX(4px);
-}
-
-/* PIE DE PÁGINA */
-.pie-pagina {
-  display: flex;
-  flex-wrap: wrap;
-  align-items: center;
-  justify-content: center;
-  gap: 8px 18px;
-  padding: 28px 5%;
-  border-top: 1px solid var(--borde);
-  color: var(--texto-secundario);
-  font-size: .9rem;
-  text-align: center;
-}
-
-.pie-pagina a {
-  color: var(--azul-claro);
-  text-decoration: none;
-}
-
-.pie-pagina a:hover {
-  color: var(--verde);
+  padding-bottom: 18px;
 }
 
 /* ================================
@@ -537,27 +481,26 @@ a {
     width: 92%;
   }
 
+  /* Mismo ancho que el recuadro y que Contexto en tabletas */
+  .intro,
+  .seccion {
+    width: 92vw;
+  }
+
   .intro {
-    width: 92%;
-    margin-inline: auto;
-    padding-top: 78px;
+    padding-top: 36px;
+  }
+
+  .seccion {
+    padding-top: 40px;
+  }
+
+  .seccion:last-of-type {
+    padding-bottom: 40px;
   }
 
   .rejilla {
-    gap: 18px;
-  }
-
-  .contenido-tarjeta {
-    padding: 18px;
-  }
-
-  .contenido-tarjeta h3 {
-    font-size: 1.12rem;
-  }
-
-  .contenido-tarjeta p,
-  .detalle-invento p {
-    font-size: .9rem;
+    gap: 16px;
   }
 }
 
@@ -627,66 +570,72 @@ a {
     bottom: -5px;
   }
 
-  .contenedor,
-  .intro {
+  .contenedor {
     width: 90%;
-  }
-
-  .intro {
-    padding-top: 64px;
-    padding-bottom: 42px;
   }
 
   .intro h1 {
     font-size: clamp(2.35rem, 8vw, 3.5rem);
   }
 
-  .intro p {
-    font-size: 1rem;
-    line-height: 1.75;
-  }
-
-  .seccion {
-    padding-top: 18px;
-    margin-bottom: 68px;
-  }
-
-  .encabezado-seccion h2 {
-    font-size: clamp(1.75rem, 6vw, 2.3rem);
-  }
-
   .rejilla {
     grid-template-columns: repeat(2, minmax(0, 1fr));
     gap: 16px;
   }
+}
+
+/* Celulares: mismos tamaños que Contexto (css/contexto.css, máx. 700 px) */
+@media screen and (max-width: 700px) {
+  .intro {
+    padding-top: 28px;
+  }
+
+  .seccion {
+    padding-top: 34px;
+  }
+
+  .seccion:last-of-type {
+    padding-bottom: 30px;
+  }
+
+  .subtitulo {
+    margin-bottom: 14px;
+    font-size: 1.4rem;
+  }
+
+  .encabezado-seccion .subtitulo {
+    margin-bottom: 6px;
+  }
+
+  .encabezado-seccion p {
+    font-size: .95rem;
+  }
+
+  .banda-texto {
+    padding: 16px 18px 17px 20px;
+    border-radius: 10px;
+  }
+
+  .banda-texto p {
+    font-size: 0.95rem;
+    line-height: 1.75;
+  }
+
+  .tarjeta {
+    border-radius: 12px;
+  }
 
   .contenido-tarjeta {
-    padding: 16px;
+    padding: 12px 13px 16px;
   }
 
-  .contenido-tarjeta h3 {
-    font-size: 1.05rem;
-  }
-
-  .contenido-tarjeta p,
-  .detalle-invento p {
-    font-size: .88rem;
-  }
-
-  .chip-anio {
-    font-size: .72rem;
-  }
-
+  .contenido-tarjeta h3,
   .titulo-invento {
-    font-size: 1.15rem;
+    font-size: 1.1rem;
   }
 
-  .pista-tarjeta {
-    font-size: .76rem;
-  }
-
-  .siguiente-contenedor {
-    padding-bottom: 68px;
+  .detalle-invento {
+    padding-inline: 13px;
   }
 }
 
@@ -708,13 +657,8 @@ a {
     height: 42px;
   }
 
-  .contenedor,
-  .intro {
+  .contenedor {
     width: 90%;
-  }
-
-  .intro {
-    padding-top: 54px;
   }
 
   .intro h1 {
@@ -723,40 +667,11 @@ a {
 
   .rejilla {
     grid-template-columns: minmax(0, 1fr);
-    gap: 18px;
+    gap: 16px;
   }
 
   .marco-imagen {
     aspect-ratio: 16 / 9;
-  }
-
-  .contenido-tarjeta {
-    padding: 19px;
-  }
-
-  .contenido-tarjeta h3 {
-    font-size: 1.18rem;
-  }
-
-  .contenido-tarjeta p,
-  .detalle-invento p {
-    font-size: .94rem;
-  }
-
-  .titulo-invento {
-    font-size: 1.3rem;
-  }
-
-  .boton-siguiente {
-    width: 100%;
-    padding: .9rem 1rem;
-    font-size: .92rem;
-  }
-
-  .pie-pagina {
-    flex-direction: column;
-    gap: 4px;
-    font-size: .82rem;
   }
 }
 
@@ -827,56 +742,11 @@ a {
     animation-duration: .01ms !important;
     animation-iteration-count: 1 !important;
   }
-}
 
-/* VIDEO DESTACADO: APOLO 11 */
-.video-destacado {
-    width: 100%;
-    max-width: 1100px;
-    margin: 4rem auto;
-}
-
-.video-contenedor {
-    position: relative;
-    width: 100%;
-    aspect-ratio: 16 / 9;
-    overflow: hidden;
-    border: 1px solid #22314D;
-    border-radius: 1rem;
-    background-color: #121C2E;
-    box-shadow: 0 10px 35px rgba(0, 0, 0, 0.3);
-}
-
-.video-contenedor iframe {
-    position: absolute;
-    inset: 0;
-    width: 100%;
-    height: 100%;
-    border: 0;
-}
-
-.video-fuente {
-    margin-top: 0.8rem;
-    color: #9AA7BD;
-    font-family: "Inter", sans-serif;
-    font-size: 0.95rem;
-    text-align: center;
-}
-
-/* Ajustes para tabletas */
-@media screen and (max-width: 1024px) {
-    .video-destacado {
-        margin: 3rem auto;
-    }
-}
-
-/* Ajustes para celulares */
-@media screen and (max-width: 720px) {
-    .video-destacado {
-        margin: 2rem auto;
-    }
-
-    .video-contenedor {
-        border-radius: 0.75rem;
-    }
+  /* Sin elevación ni zoom de imagen al pasar el mouse */
+  .tarjeta:hover,
+  .banda-texto:hover,
+  .tarjeta:hover .marco-imagen img {
+    transform: none !important;
+  }
 }

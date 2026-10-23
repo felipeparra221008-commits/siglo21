@@ -4,12 +4,16 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Conoce los acontecimientos que han transformado la sociedad durante el siglo XXI.">
-    <title>Eventos y sociedad | SIGLO XXI</title>
+    <title>Eventos | SIGLO XXI</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Outfit:wght@500;600;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="../css/eventos.css">
     <link rel="icon" href="../img/icon.png" type="image/png">
+    <link rel="stylesheet" href="../css/recuadro-modulo.css">
+    <link rel="stylesheet" href="../css/barra-comun.css">
+    <link rel="stylesheet" href="../css/navegacion-modulos.css">
+    <script src="../javascript/navegacion-modulos.js"></script>
 </head>
 <body>
     <!-- BARRA DE NAVEGACIÓN -->
@@ -24,7 +28,7 @@
 
         <nav class="barra2" id="menu-principal" aria-label="Navegación principal">
             <a href="contexto.html"><span class="aniparrafos">Contexto</span></a>
-            <a href="sigloxx.html"><span class="aniparrafos">Siglo XX</span></a>
+            <a href="sigloxx.html"><span class="aniparrafos">Antecedentes</span></a>
             <a href="eventos.html" class="activo" aria-current="page"><span class="aniparrafos">Eventos</span></a>
             <a href="inventores.html"><span class="aniparrafos">Inventores</span></a>
             <a href="futuro.html"><span class="aniparrafos">Futuro</span></a>
@@ -32,12 +36,22 @@
         </nav>
     </header>
 
+    <!-- RECUADRO DEL MÓDULO: imagen de img/menu_imagenes, oscura hasta que se pasa el cursor o se toca (css/recuadro-modulo.css) -->
+    <section class="recuadro-modulo recuadro-modulo--imagen">
+        <div class="recuadro-modulo__fondo" aria-hidden="true"><img class="recuadro-modulo__imagen" src="../img/menu_imagenes/web/eventos-1600.webp" srcset="../img/menu_imagenes/web/eventos-800.webp 800w, ../img/menu_imagenes/web/eventos-1600.webp 1600w" sizes="(max-width: 700px) 92vw, 1100px" alt="" decoding="async" fetchpriority="high"></div>
+        <div class="recuadro-modulo__brillo" aria-hidden="true"></div>
+        <div class="recuadro-modulo__capa"></div>
+        <div class="recuadro-modulo__contenido">
+            <h1 class="recuadro-modulo__titulo">Eventos importantes del siglo XXI</h1>
+        </div>
+    </section>
+
     <main class="contenido-principal">
-        <!-- ENCABEZADO -->
-        <section class="encabezado-pagina">
-            <span class="etiqueta-seccion">PARTE 3 · 2000 – HOY</span>
-            <h1>Eventos importantes del siglo XXI</h1>
-            <p>Elige un año para ver qué pasó.</p>
+
+        <!-- ENCABEZADO: subtítulo con el mismo estilo que Contexto y Antecedentes -->
+        <section class="encabezado-pagina" aria-labelledby="titulo-hitos">
+            <h2 class="subtitulo" id="titulo-hitos">Hitos que transformaron el siglo XXI</h2>
+            <p>Re&shy;co&shy;rre los mo&shy;men&shy;tos más im&shy;por&shy;tan&shy;tes del siglo XXI. Elige un año para des&shy;cu&shy;brir qué ocu&shy;rrió y cómo ese mo&shy;mento trans&shy;formó nues&shy;tro mundo.</p>
         </section>
 
         <!-- LÍNEA DE TIEMPO -->
@@ -61,8 +75,8 @@
             <article class="panel-evento" id="panel-evento" aria-live="polite">
                 <div class="evento-visual">
                     <div class="marco-imagen">
-                        <img id="evento-imagen" src="../img/vacuna.jpg" alt="Persona de salud aplicando una vacuna" loading="eager">
-                        <div class="imagen-placeholder" id="imagen-placeholder">
+                        <img id="evento-imagen" src="../img/eventos/vacuna-1200.webp" srcset="../img/eventos/vacuna-640.webp 640w, ../img/eventos/vacuna-1200.webp 1200w" sizes="(max-width: 720px) 92vw, 640px" width="1200" height="900" alt="Persona de salud aplicando una vacuna" decoding="async" fetchpriority="high">
+                        <div class="imagen-placeholder oculto" id="imagen-placeholder">
                             <span class="icono-camara" aria-hidden="true">▣</span>
                             <span id="placeholder-texto">[FOTO REAL: persona de salud aplicando una vacuna]</span>
                         </div>
@@ -70,23 +84,19 @@
                     <p class="credito-imagen" id="evento-credito">Foto: CDC</p>
                 </div>
                 <div class="evento-informacion">
-                    <span class="chip-ano" id="evento-ano">2020</span>
                     <h2 id="evento-titulo">Pandemia de COVID-19</h2>
-                    <p id="evento-texto">La OMS declaró la pandemia el 11 de marzo de 2020. En menos de un año se autorizaron las primeras vacunas de ARNm, gracias a décadas de investigación de Karikó y Weissman.</p>
-                    <div class="controles-evento">
-                        <button class="boton-secundario" id="evento-anterior" type="button">← Anterior</button>
-                        <button class="boton-secundario" id="evento-siguiente" type="button">Siguiente →</button>
-                    </div>
+                    <p id="evento-texto">La OMS declaró la pandemia el 11 de marzo de 2020. En menos de un año se autorizaron las primeras vacunas de ARNm, gracias a décadas de investigación de Katalin Karikó y Drew Weissman. La emergencia transformó la salud pública, la educación y el trabajo.</p>
                 </div>
             </article>
         </section>
 
         <!-- SOCIEDAD ACTUAL -->
-        <section class="seccion-sociedad">
+        <section class="seccion-sociedad" aria-labelledby="titulo-sociedad">
             <div class="encabezado-seccion">
-                <span class="etiqueta-seccion">UNA MIRADA AL PRESENTE</span>
-                <h2>¿Cómo está organizada nuestra sociedad actual?</h2>
-                <p>Nuestra sociedad se caracteriza por su complejidad y dinamismo, influenciada por factores como la tecnología, la globalización y la diversidad cultural, además de problemas ambientales y crisis climáticas.</p>
+                <h2 class="subtitulo" id="titulo-sociedad">¿Cómo está organizada nuestra sociedad actual?</h2>
+                <div class="banda-texto">
+                    <p>Nues&shy;tra so&shy;cie&shy;dad se ca&shy;rac&shy;te&shy;riza por su com&shy;ple&shy;ji&shy;dad y di&shy;na&shy;mismo, in&shy;fluen&shy;ciada por fac&shy;to&shy;res como la tec&shy;no&shy;lo&shy;gía, la glo&shy;ba&shy;li&shy;za&shy;ción y la di&shy;ver&shy;si&shy;dad cul&shy;tu&shy;ral, ade&shy;más de pro&shy;ble&shy;mas am&shy;bien&shy;ta&shy;les y cri&shy;sis cli&shy;má&shy;ti&shy;cas.</p>
+                </div>
             </div>
 
             <div class="mapa-conceptual" aria-label="Mapa conceptual interactivo de la sociedad actual">
@@ -124,68 +134,60 @@
                 </div>
             </div>
         </section>
-
-        <div class="navegacion-siguiente">
-            <a class="boton-principal" href="inventores.html">Siguiente: Inventores <span aria-hidden="true">→</span></a>
-        </div>
     </main>
 
-    <footer class="pie-pagina">
-        <p>Hecho por: <span>Adrian Vargas - Daniel Manios - Angel Polo</span></p>
-        <p>Créditos de imágenes en la página <a href="actividad.html">Actividad</a>.</p>
-    </footer>
 
     <script>
         const eventos = [
             {
                 ano: '2000–2010', titulo: 'Revolución digital',
-                texto: 'Internet pasó de ser una novedad a convertirse en una necesidad cotidiana. Los buscadores, las redes sociales —como Facebook, creado en 2004, y YouTube, en 2005— y el comercio electrónico transformaron la forma de comunicarnos y comprar.',
-                imagen: '../img/persona_computador.jpg', alt: 'Persona frente a un computador de los años 2000', placeholder: '[Persona frente a un computador de los años 2000]', credito: 'Foto: Wikimedia Commons'
+                texto: 'Internet pasó de ser una novedad a convertirse en una necesidad cotidiana. Los buscadores, las redes sociales, como Facebook, creado en 2004, y YouTube, en 2005, y el comercio electrónico transformaron la forma de comunicarnos y comprar.',
+                foto: 'persona_computador', soloPequena: true, alt: 'Persona frente a un computador de los años 2000', placeholder: '[Persona frente a un computador de los años 2000]', credito: 'Foto: Wikimedia Commons'
             },
             {
                 ano: '2001', titulo: 'Atentados del 11 de septiembre',
                 texto: 'Los atentados del 11 de septiembre en Estados Unidos cambiaron las políticas de seguridad global, los controles en los viajes en avión y las relaciones internacionales. Sus consecuencias políticas y sociales se extendieron durante las décadas siguientes.',
-                imagen: '../img/Tribute_in_Light.jpg', alt: 'Homenaje con luces en memoria de las víctimas del 11 de septiembre', placeholder: '[Memorial Tribute in Light en Nueva York]', credito: 'Foto: Wikimedia Commons'
+                foto: 'Tribute_in_Light', alt: 'Homenaje con luces en memoria de las víctimas del 11 de septiembre', placeholder: '[Memorial Tribute in Light en Nueva York]', credito: 'Foto: Wikimedia Commons'
             },
             {
                 ano: '2003', titulo: 'Avances en genética',
                 texto: 'La finalización del Proyecto Genoma Humano permitió identificar y estudiar con mayor precisión la información genética. Este avance abrió nuevas posibilidades para la investigación biomédica y el desarrollo de la medicina genómica.',
-                imagen: '../img/Proyecto-Genoma-Humano.jpg', alt: 'Investigación y secuenciación genética', placeholder: '[Investigación genética]', credito: 'Foto: NHGRI / genome.gov'
+                foto: 'Proyecto-Genoma-Humano', alt: 'Investigación y secuenciación genética', placeholder: '[Investigación genética]', credito: 'Foto: NHGRI / genome.gov'
             },
             {
                 ano: '2007', titulo: 'Llegada del iPhone',
                 texto: 'La presentación del iPhone popularizó una nueva forma de usar los teléfonos móviles, al combinar pantalla táctil, acceso a internet y aplicaciones en un solo dispositivo. Los teléfonos inteligentes cambiaron la comunicación y el acceso a la información.',
-                imagen: '../img/usando_celular.jpg', alt: 'Persona usando un teléfono móvil con pantalla táctil', placeholder: '[Persona usando un celular con pantalla táctil]', credito: 'Foto: Pexels'
+                foto: 'usando_celular', alt: 'Persona usando un teléfono móvil con pantalla táctil', placeholder: '[Persona usando un celular con pantalla táctil]', credito: 'Foto: Pexels'
             },
             {
                 ano: '2008', titulo: 'Crisis financiera mundial',
                 texto: 'La crisis, originada en el mercado hipotecario de Estados Unidos, se extendió a numerosos países. La quiebra de Lehman Brothers en septiembre de 2008 se convirtió en uno de los símbolos de una recesión que afectó el empleo, el crédito y la economía mundial.',
-                imagen: '../img/Wall_Street.jpg', alt: 'Edificios del distrito financiero de Nueva York', placeholder: '[Wall Street]', credito: 'Foto: Unsplash'
+                foto: 'Wall_Street', alt: 'Edificios del distrito financiero de Nueva York', placeholder: '[Wall Street]', credito: 'Foto: Unsplash'
             },
             {
                 ano: '2010', titulo: 'Ascenso de China',
                 texto: 'China se convirtió en la segunda economía del mundo en 2010 y consolidó su papel en la manufactura, el comercio y la tecnología. Su crecimiento modificó las cadenas globales de producción y su influencia en la economía internacional.',
-                imagen: '../img/skyline.jpg', alt: 'Panorama urbano de Shanghái', placeholder: '[Panorama urbano de Shanghái]', credito: 'Foto: Pexels'
+                foto: 'skyline', alt: 'Panorama urbano de Shanghái', placeholder: '[Panorama urbano de Shanghái]', credito: 'Foto: Pexels'
             },
             {
                 ano: '2015', titulo: 'Acuerdo de París',
                 texto: 'En la Conferencia de las Naciones Unidas sobre el Cambio Climático, casi 200 países adoptaron el Acuerdo de París. Se comprometieron a limitar el calentamiento global muy por debajo de 2 °C y a realizar esfuerzos para limitarlo a 1,5 °C.',
-                imagen: '../img/COP21.jpg', alt: 'Representantes en una conferencia internacional sobre el clima', placeholder: '[Sesión de la COP21]', credito: 'Foto: Wikimedia Commons'
+                foto: 'COP21', alt: 'Representantes en una conferencia internacional sobre el clima', placeholder: '[Sesión de la COP21]', credito: 'Foto: Wikimedia Commons'
             },
             {
                 ano: '2020', titulo: 'Pandemia de COVID-19',
                 texto: 'La OMS declaró la pandemia el 11 de marzo de 2020. En menos de un año se autorizaron las primeras vacunas de ARNm, gracias a décadas de investigación de Katalin Karikó y Drew Weissman. La emergencia transformó la salud pública, la educación y el trabajo.',
-                imagen: '../img/vacuna.jpg', alt: 'Persona de salud aplicando una vacuna', placeholder: '[Persona de salud aplicando una vacuna]', credito: 'Foto: CDC'
+                foto: 'vacuna', alt: 'Persona de salud aplicando una vacuna', placeholder: '[Persona de salud aplicando una vacuna]', credito: 'Foto: CDC'
             },
             {
                 ano: '2022', titulo: 'Auge de la inteligencia artificial',
                 texto: 'El lanzamiento público de ChatGPT en noviembre de 2022 acercó la inteligencia artificial generativa a millones de personas. Al mismo tiempo, herramientas como AlphaFold demostraron el potencial de la IA para apoyar la investigación científica, por ejemplo en el estudio de proteínas.',
-                imagen: '../img/usando_ia.jpg', alt: 'Persona utilizando un asistente de inteligencia artificial en un computador', placeholder: '[persona usando un asistente de IA en el computador]', credito: 'Foto: Unsplash'
+                foto: 'usando_ia', alt: 'Persona utilizando un asistente de inteligencia artificial en un computador', placeholder: '[persona usando un asistente de IA en el computador]', credito: 'Foto: Unsplash'
             },
             {
                 ano: '2022–2026', titulo: 'Misiones Artemis',
                 texto: 'Artemis I, en 2022, probó la nave Orion sin tripulación alrededor de la Luna. En abril de 2026, Artemis II llevó a cuatro astronautas en un viaje alrededor de la Luna, marcando el regreso de seres humanos a una misión lunar tripulada después de más de cinco décadas.',
-                imagen: '../img/Artemis_ii.jpg', alt: 'Nave Orion o lanzamiento de la misión Artemis', placeholder: '[lanzamiento de Artemis II]', credito: 'Foto: NASA'
+                foto: 'Artemis_ii', alt: 'Nave Orion o lanzamiento de la misión Artemis', placeholder: '[lanzamiento de Artemis II]', credito: 'Foto: NASA'
             }
         ];
 
@@ -193,11 +195,68 @@
         const imagenEvento = document.getElementById('evento-imagen');
         const placeholder = document.getElementById('imagen-placeholder');
         let indiceActual = 7;
+        let pedido = 0;
+
+        // Fotos optimizadas en img/eventos/ (640 y 1200 px; los originales siguen en img/).
+        const RUTA = '../img/eventos/';
+        function fuente(evento) {
+            if (evento.soloPequena) return { src: RUTA + evento.foto + '-640.webp', srcset: '' };
+            return {
+                src: RUTA + evento.foto + '-1200.webp',
+                srcset: RUTA + evento.foto + '-640.webp 640w, ' + RUTA + evento.foto + '-1200.webp 1200w'
+            };
+        }
+
+        // Cada foto se pide una sola vez (con el mismo srcset y sizes, el navegador la reutiliza de su caché).
+        const precargas = new Map();
+        function precargar(indice) {
+            const evento = eventos[(indice + eventos.length) % eventos.length];
+            if (precargas.has(evento)) return precargas.get(evento);
+            const f = fuente(evento);
+            const img = new Image();
+            img.sizes = imagenEvento.sizes;
+            if (f.srcset) img.srcset = f.srcset;
+            img.src = f.src;
+            const lista = img.decode().then(() => true, () => false);
+            precargas.set(evento, lista);
+            return lista;
+        }
+
+        // Guiones de corte por sílabas (como en Contexto): el texto justificado no deja huecos grandes.
+        const VOCALES = 'aeiouáéíóúü';
+        const INSEPARABLES = ['pl', 'pr', 'bl', 'br', 'fl', 'fr', 'cl', 'cr', 'gl', 'gr', 'tr', 'dr', 'kl', 'kr', 'ch', 'll', 'rr'];
+        function partirPalabra(palabra) {
+            if (palabra.length < 6 || /^.+[A-Z]/.test(palabra)) return palabra;
+            const l = palabra.toLowerCase();
+            const grupos = [];
+            for (let i = 0; i < l.length;) {
+                if (VOCALES.includes(l[i])) { const ini = i; while (i < l.length && VOCALES.includes(l[i])) i++; grupos.push([ini, i]); } else i++;
+            }
+            const cortes = [];
+            for (let k = 0; k < grupos.length - 1; k++) {
+                const a = grupos[k][1], c = l.slice(a, grupos[k + 1][0]);
+                const p = c.length === 1 ? a
+                    : c.length === 2 ? (INSEPARABLES.includes(c) ? a : a + 1)
+                    : c.length === 3 ? (INSEPARABLES.includes(c.slice(1)) ? a + 1 : a + 2)
+                    : a + 2;
+                if (p >= 2 && l.length - p >= 3) cortes.push(p);
+            }
+            return cortes.reverse().reduce((s, p) => s.slice(0, p) + '­' + s.slice(p), palabra);
+        }
+        const conGuiones = (texto) => texto.replace(/\p{L}+/gu, partirPalabra);
+
+        function mostrarError(evento) {
+            console.error('No se pudo cargar la imagen:', imagenEvento.currentSrc || imagenEvento.src);
+            imagenEvento.style.display = 'none';
+            placeholder.classList.remove('oculto');
+            document.getElementById('placeholder-texto').textContent = evento.placeholder;
+        }
 
         function mostrarEvento(indice) {
             indiceActual = (indice + eventos.length) % eventos.length;
             const evento = eventos[indiceActual];
             const panel = document.getElementById('panel-evento');
+            const este = ++pedido;
             panel.classList.add('cambiando');
 
             botonesAnos.forEach((boton, i) => {
@@ -206,36 +265,37 @@
                 boton.setAttribute('aria-pressed', String(activo));
             });
 
-            window.setTimeout(() => {
-                document.getElementById('evento-ano').textContent = evento.ano;
+            // El texto cambia tras el desvanecimiento; la foto, cuando ya está lista (sin parpadeo).
+            const lista = precargar(indiceActual);
+            const pausa = new Promise((r) => window.setTimeout(r, 150));
+            Promise.all([lista, pausa]).then(([ok]) => {
+                if (este !== pedido) return;      // el usuario ya eligió otro año
                 document.getElementById('evento-titulo').textContent = evento.titulo;
-                document.getElementById('evento-texto').textContent = evento.texto;
+                document.getElementById('evento-texto').textContent = conGuiones(evento.texto);
                 document.getElementById('evento-credito').textContent = evento.credito;
-                document.getElementById('placeholder-texto').textContent = evento.placeholder;
                 imagenEvento.alt = evento.alt;
-                imagenEvento.onerror = () => {
-                    console.error('No se pudo cargar la imagen:', imagenEvento.src);
-                    imagenEvento.style.display = 'none';
-                    placeholder.classList.remove('oculto');
-                    document.getElementById('placeholder-texto').textContent =
-                        evento.placeholder + ' — No se encontró el archivo: ' + evento.imagen;
-                };
-                imagenEvento.onload = () => {
+                if (ok) {
+                    const f = fuente(evento);
+                    if (f.srcset) imagenEvento.srcset = f.srcset; else imagenEvento.removeAttribute('srcset');
+                    imagenEvento.src = f.src;
                     imagenEvento.style.display = 'block';
                     placeholder.classList.add('oculto');
-                };
-                imagenEvento.style.display = 'none';
-                placeholder.classList.remove('oculto');
-                imagenEvento.src = evento.imagen;
+                } else {
+                    mostrarError(evento);
+                }
                 panel.classList.remove('cambiando');
-            }, 150);
+                // Se preparan los años vecinos para que aparezcan al instante.
+                precargar(indiceActual - 1);
+                precargar(indiceActual + 1);
+            });
         }
 
         botonesAnos.forEach((boton) => {
-            boton.addEventListener('click', () => mostrarEvento(Number(boton.dataset.evento)));
+            const indice = Number(boton.dataset.evento);
+            boton.addEventListener('click', () => mostrarEvento(indice));
+            // Al acercar el mouse, el dedo o el teclado, la foto empieza a descargarse antes del clic.
+            ['pointerenter', 'pointerdown', 'focus'].forEach((tipo) => boton.addEventListener(tipo, () => precargar(indice), { passive: true }));
         });
-        document.getElementById('evento-anterior').addEventListener('click', () => mostrarEvento(indiceActual - 1));
-        document.getElementById('evento-siguiente').addEventListener('click', () => mostrarEvento(indiceActual + 1));
 
         // El mapa muestra una sola explicación a la vez.
         const hojas = [...document.querySelectorAll('.nodo-hoja')];
@@ -274,19 +334,14 @@
             });
         });
 
-        // Si una fotografía no está en img/, se conserva un marcador visual en lugar de un icono roto.
-        imagenEvento.onerror = () => {
-            console.error('No se pudo cargar la imagen:', imagenEvento.src);
-            imagenEvento.style.display = 'none';
-            placeholder.classList.remove('oculto');
-            document.getElementById('placeholder-texto').textContent =
-                eventos[indiceActual].placeholder + ' — No se encontró el archivo: ' + eventos[indiceActual].imagen;
-        };
-        imagenEvento.onload = () => {
-            imagenEvento.style.display = 'block';
-            placeholder.classList.add('oculto');
-        };
-        imagenEvento.src = eventos[indiceActual].imagen;
+        // Si una fotografía no carga, se conserva un marcador visual en lugar de un icono roto.
+        imagenEvento.onerror = () => mostrarError(eventos[indiceActual]);
+        document.getElementById('evento-texto').textContent = conGuiones(eventos[indiceActual].texto);
+        // La foto inicial (2020) ya viene en el HTML; cuando termina, se preparan sus vecinas.
+        const prepararVecinas = () => { precargar(indiceActual - 1); precargar(indiceActual + 1); };
+        if (imagenEvento.complete) prepararVecinas(); else imagenEvento.addEventListener('load', prepararVecinas, { once: true });
     </script>
+    <script src="../javascript/recorrido-visitas.js" defer></script>
+    <script src="../javascript/barra-comun.js" defer></script>
 </body>
 </html>

@@ -1,12 +1,8 @@
+/* La barra de desplazamiento se muestra igual que en Contexto, Antecedentes y Eventos:
+   así la página tiene el mismo ancho y la transición entre secciones no se corre de lado. */
 html {
     overflow-x: hidden;
-    scrollbar-width: none;
-    -ms-overflow-style: none;
     background-color: #040a1a;
-}
-
-html::-webkit-scrollbar {
-    display: none;
 }
 
 body {
@@ -29,7 +25,7 @@ body {
     font-family: "Inter", sans-serif;
     z-index: 1000;
     height: 8.5vh;
-    border-bottom: 3px solid #2EE6A6;
+    border-bottom: 3px solid #66E6FF;
     box-sizing: border-box;
 }
 
@@ -40,7 +36,7 @@ body {
 }
 
 .barra2 {
-    color: #9AA7BD;
+    color: #9FB3D1;
     display: flex;
     gap: 4vw;
     font-size: 2vh;
@@ -50,7 +46,7 @@ body {
 }
 
 .barra2 a {
-    color: #9AA7BD;
+    color: #9FB3D1;
     text-decoration: none;
 }
 
@@ -72,7 +68,7 @@ body {
     left: 0;
     width: 100%;
     height: 1px;
-    background-color: #2EE6A6;
+    background-color: #66E6FF;
     transform: scaleX(0);
     opacity: 0;
     transition: transform 0.3s ease, opacity 0.3s ease;
@@ -95,7 +91,7 @@ body {
 .titulo2 {
     font-family: "Inter", sans-serif;
     font-size: 2vh;
-    color: #9AA7BD;
+    color: #9FB3D1;
     text-align: center;
     margin-top: -3vh;
 }
@@ -107,10 +103,32 @@ body {
     align-items: center;
 }
 
+/* Bloque de preguntas: centrado, separado de la franja como en las demás secciones,
+   y en celular con el mismo ancho que la franja (92vw) */
+.tarjeta_contenedor {
+    margin-top: 44px;
+}
+
+/* Introducción: mismo color, tamaño y justificado que las descripciones de las otras secciones,
+   con el mismo ancho que el bloque de preguntas para que ambos queden alineados */
+.intro_actividad {
+    box-sizing: border-box;
+    width: min(770px, 92vw);
+    margin: 0 0 20px;
+    color: #9FB3D1;
+    font-family: "Inter", sans-serif;
+    font-size: 1rem;
+    line-height: 1.6;
+    text-align: justify;
+    -webkit-hyphens: manual;
+    hyphens: manual;
+}
+
 .tarjeta {
+    box-sizing: border-box;
     min-height: 35vh;
     height: auto;
-    width: clamp(18rem, 55vw, 60rem);
+    width: min(770px, 92vw);
     padding: 3vh 2.5vw;
     background-color: rgba(12, 30, 80, 0.6);
     display: flex;
@@ -121,8 +139,13 @@ body {
     overflow: hidden;
     border-radius: 10px;
     background-position: center;
-    border: 1px solid #331daf;
-    margin-top: 1vh;
+    border: 1px solid #1E6BFF;
+}
+
+@media screen and (max-width: 700px) {
+    .tarjeta_contenedor { margin-top: 28px; }
+    .intro_actividad { margin-bottom: 16px; font-size: .95rem; }
+    .tarjeta { padding: 18px 16px; }
 }
 
 .frase_contenedor {
@@ -178,19 +201,22 @@ body {
 .texto2_frase {  
     font-family: "Inter", sans-serif;
     font-style: italic;
-    color: #9AA7BD;
+    color: #9FB3D1;
     font-size: 1.8vh;
     font-weight: 500;
     margin-top: -2vh;
 }
 
+/* «Gracias!!»: mismo tamaño, color y letra que los subtítulos de las otras secciones */
 .texto3 {
-    font-family: "Inter", sans-serif;
-    font-size: 3.5vh;
-    font-weight: 600;
-    color: #ffffff;
+    font-family: "Outfit", sans-serif;
+    font-size: clamp(1.5rem, 2.2vw, 2rem);
+    font-weight: 700;
+    line-height: 1.2;
+    letter-spacing: -0.4px;
+    color: #F6F8FF;
     text-align: center;
-    margin: 4vh 0 0 0;
+    margin: 44px 0 0 0;
 }
 
 .boton_contenedor {
@@ -198,11 +224,52 @@ body {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    margin-top: 2vh;
+    margin: 18px 0 48px;
+}
+
+/* «Volver al menú»: copia exacta del botón «Comenzar recorrido» de la portada (css/portada.css, .portada__comenzar) */
+.boton.boton--menu {
+    box-sizing: border-box;
+    position: relative;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    min-height: 44px;
+    padding: 0 22px;
+    border: 1px solid #66e6ff;
+    border-radius: 999px;
+    background: linear-gradient(135deg, rgba(6, 21, 45, .92), rgba(16, 32, 80, .92));
+    box-shadow: 0 0 18px rgba(7, 139, 255, .33), inset 0 0 15px rgba(5, 207, 255, .1);
+    color: #e9fbff;
+    font: 700 clamp(11px, .8vw, 13px)/1 "Space Grotesk", "Segoe UI", system-ui, sans-serif;
+    letter-spacing: .12em;
+    text-transform: uppercase;
+    text-decoration: none;
+    animation: subir 0.5s ease-out 1s both;
+    transition: transform .25s ease, box-shadow .25s ease;
+}
+
+@media (hover: hover) {
+    .boton.boton--menu:hover {
+        scale: 1;
+        transform: translateY(-2px);
+        box-shadow: 0 0 30px rgba(7, 139, 255, .55), inset 0 0 18px rgba(5, 207, 255, .15);
+    }
+}
+
+.boton.boton--menu:focus-visible {
+    outline: 2px solid #66E6FF;
+    outline-offset: 3px;
+}
+
+@media screen and (max-width: 700px) {
+    .texto3 { font-size: 1.4rem; margin-top: 34px; }
+    .boton.boton--menu { min-height: 40px; padding: 0 18px; font-size: 11px; }
 }
 
 .boton {
-    background-color: #2EE6A6;
+    background-color: #66E6FF;
     border: none;
     border-radius: 25px;
     padding: 1.2vh 1.7vh;
@@ -228,17 +295,10 @@ body {
 }
 
 @keyframes respirar {
-  0%, 100% { box-shadow: 0 0 0.3vh rgba(46, 230, 166, 0.35); }
-  50%      { box-shadow: 0 0 1.2vh rgba(46, 230, 166, 0.75); }
+  0%, 100% { box-shadow: 0 0 0.3vh rgba(102, 230, 255, 0.35); }
+  50%      { box-shadow: 0 0 1.2vh rgba(102, 230, 255, 0.75); }
 }
 
-.nombres {
-    margin: auto 0 0 0;
-    padding: 4vh 5vw 2vh 5vw;
-    text-align: center;
-    color: #e6eaf2bb;
-    font-size: 1.5vh;
-}
 
 .oculto {
     display: none;
@@ -258,7 +318,7 @@ body {
 }
  
 .quiz_contador {
-    color: #9AA7BD;
+    color: #9FB3D1;
     font-size: 1.8vh;
     white-space: nowrap;
     margin: 0;
@@ -275,7 +335,7 @@ body {
 .quiz_progreso {
     height: 100%;
     width: 0%;
-    background-color: #2EE6A6;
+    background-color: #66E6FF;
     border-radius: 1vh;
     transition: width 0.4s ease;
 }
@@ -323,8 +383,8 @@ body {
 }
  
 .quiz_opcion.correcta {
-    border-color: #2EE6A6;
-    background-color: rgba(46, 230, 166, 0.15);
+    border-color: #66E6FF;
+    background-color: rgba(102, 230, 255, 0.15);
     color: #ffffff;
 }
  
@@ -337,12 +397,12 @@ body {
 .quiz_feedback {
     font-family: "Inter", sans-serif;
     font-size: 1.9vh;
-    color: #9AA7BD;
+    color: #9FB3D1;
     margin: 2vh 0 0 0;
 }
  
 .quiz_feedback.bien {
-    color: #2EE6A6;
+    color: #66E6FF;
 }
  
 .quiz_feedback.mal {
@@ -371,7 +431,7 @@ body {
 }
  
 .quiz_mensaje {
-    color: #9AA7BD;
+    color: #9FB3D1;
     font-size: 2.2vh;
     margin: 1vh 0 2vh 0;
 }

@@ -4,12 +4,16 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description" content="Conoce los acontecimientos e inventos del siglo XX que hicieron posible el siglo XXI.">
-  <title>El siglo XX</title>
+  <title>Antecedentes | Siglo XXI</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Outfit:wght@500;600;700;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="../css/sigloxx.css">
   <link rel="icon" href="../img/icon.png" type="image/png">
+    <link rel="stylesheet" href="../css/recuadro-modulo.css">
+    <link rel="stylesheet" href="../css/barra-comun.css">
+    <link rel="stylesheet" href="../css/navegacion-modulos.css">
+    <script src="../javascript/navegacion-modulos.js"></script>
 </head>
 
 <body>
@@ -25,7 +29,7 @@
 
     <nav class="barra2" id="menu-principal" aria-label="Navegación principal">
       <a href="contexto.html"><span class="aniparrafos">Contexto</span></a>
-      <a href="sigloxx.html" class="activo" aria-current="page"><span class="aniparrafos">Siglo XX</span></a>
+      <a href="sigloxx.html" class="activo" aria-current="page"><span class="aniparrafos">Antecedentes</span></a>
       <a href="eventos.html"><span class="aniparrafos">Eventos</span></a>
       <a href="inventores.html"><span class="aniparrafos">Inventores</span></a>
       <a href="futuro.html"><span class="aniparrafos">Futuro</span></a>
@@ -34,242 +38,201 @@
   </header>
 
   <main>
-    <!-- ENCABEZADO -->
-    <section class="intro contenedor">
-      <span class="eyebrow">PARTE 2 · ANTES</span>
-      <h1>El siglo XX: <span>de dónde venimos</span></h1>
-      <p>
-        El siglo XX fue un período de transformación sin precedentes, marcado por avances tecnológicos,
-        conflictos globales y profundos cambios sociales y políticos: desde el estallido de las dos guerras
-        mundiales hasta el auge de la Guerra Fría y la globalización. Estuvo definido por la innovación,
-        la destrucción y la búsqueda constante de nuevos modelos de sociedad.
-      </p>
+    <!-- RECUADRO DEL MÓDULO: imagen de img/menu_imagenes, oscura hasta que se pasa el cursor o se toca (css/recuadro-modulo.css) -->
+    <section class="recuadro-modulo recuadro-modulo--imagen">
+      <div class="recuadro-modulo__fondo" aria-hidden="true"><img class="recuadro-modulo__imagen" src="../img/menu_imagenes/web/antecedentes-1600.webp" srcset="../img/menu_imagenes/web/antecedentes-800.webp 800w, ../img/menu_imagenes/web/antecedentes-1600.webp 1600w" sizes="(max-width: 700px) 92vw, 1100px" alt="" decoding="async" fetchpriority="high"></div>
+      <div class="recuadro-modulo__brillo" aria-hidden="true"></div>
+      <div class="recuadro-modulo__capa"></div>
+      <div class="recuadro-modulo__contenido">
+        <h1 class="recuadro-modulo__titulo">Antecedentes: <span>de dónde venimos</span></h1>
+      </div>
+    </section>
+
+    <!-- HISTORIA: subtítulo y franja como «¿Qué es el siglo XXI?» de Contexto -->
+    <section class="intro" aria-labelledby="titulo-historia">
+      <h2 class="subtitulo" id="titulo-historia">Historia</h2>
+      <div class="banda-texto">
+        <p>El siglo XX fue un pe&shy;ríodo de trans&shy;for&shy;ma&shy;ción sin pre&shy;ce&shy;den&shy;tes, mar&shy;cado por avan&shy;ces tec&shy;no&shy;ló&shy;gi&shy;cos, con&shy;flic&shy;tos glo&shy;ba&shy;les y pro&shy;fun&shy;dos cam&shy;bios so&shy;cia&shy;les y po&shy;lí&shy;ti&shy;cos: desde el es&shy;ta&shy;llido de las dos gue&shy;rras mun&shy;dia&shy;les hasta el auge de la Gue&shy;rra Fría y la glo&shy;ba&shy;li&shy;za&shy;ción. Es&shy;tuvo de&shy;fi&shy;nido por la in&shy;no&shy;va&shy;ción, la des&shy;truc&shy;ción y la bús&shy;queda cons&shy;tante de nue&shy;vos mo&shy;de&shy;los de so&shy;cie&shy;dad.</p>
+      </div>
     </section>
 
     <!-- ACONTECIMIENTOS HISTÓRICOS -->
-    <section class="seccion contenedor" aria-labelledby="titulo-acontecimientos">
+    <section class="seccion" aria-labelledby="titulo-acontecimientos">
       <div class="encabezado-seccion">
-        <span class="numero-seccion">01 / HISTORIA</span>
-        <h2 id="titulo-acontecimientos">Acontecimientos previos</h2>
-        <p>Seis momentos que transformaron la política, la sociedad y la relación entre los países.</p>
+        <h2 class="subtitulo" id="titulo-acontecimientos">Acontecimientos más importantes</h2>
+        <p>Seis mo&shy;men&shy;tos que trans&shy;for&shy;ma&shy;ron la po&shy;lí&shy;tica, la so&shy;cie&shy;dad y la re&shy;la&shy;ción entre los paí&shy;ses.</p>
       </div>
 
       <div class="rejilla tarjetas-historia">
         <article class="tarjeta tarjeta-historia">
           <div class="marco-imagen">
-            <img src="../img/rumanos_trincheras.jpg" alt="Soldados en trincheras durante la Primera Guerra Mundial" loading="lazy">
+            <img src="../img/antecedentes/rumanos_trincheras-800.webp" srcset="../img/antecedentes/rumanos_trincheras-480.webp 480w, ../img/antecedentes/rumanos_trincheras-800.webp 800w" sizes="(max-width: 480px) 92vw, (max-width: 720px) 46vw, 360px" width="800" height="575" decoding="async" alt="Soldados en trincheras durante la Primera Guerra Mundial" loading="lazy">
             <span class="etiqueta-imagen">1914–1918</span>
           </div>
           <div class="contenido-tarjeta">
-            <span class="chip-anio">1914–1918</span>
             <h3>Primera Guerra Mundial</h3>
-            <p>El primer conflicto global; introdujo la guerra industrial y transformó el equilibrio político de Europa.</p>
+            <p>El pri&shy;mer con&shy;flicto glo&shy;bal; in&shy;tro&shy;dujo la gue&shy;rra in&shy;dus&shy;trial y trans&shy;formó el equi&shy;li&shy;brio po&shy;lí&shy;tico de Eu&shy;ropa.</p>
           </div>
         </article>
 
         <article class="tarjeta tarjeta-historia">
           <div class="marco-imagen">
-            <img src="../img/migrant_mother.jpg" alt="Personas afectadas por la Gran Depresión" loading="lazy">
+            <img src="../img/antecedentes/migrant_mother-800.webp" srcset="../img/antecedentes/migrant_mother-480.webp 480w, ../img/antecedentes/migrant_mother-800.webp 800w" sizes="(max-width: 480px) 92vw, (max-width: 720px) 46vw, 360px" width="800" height="995" decoding="async" alt="Personas afectadas por la Gran Depresión" loading="lazy">
             <span class="etiqueta-imagen">1929</span>
           </div>
           <div class="contenido-tarjeta">
-            <span class="chip-anio">1929</span>
             <h3>La Gran Depresión</h3>
-            <p>El colapso de la bolsa de Nueva York desató una crisis económica mundial durante los años treinta.</p>
+            <p>El co&shy;lapso de la bolsa de Nueva York de&shy;sató una cri&shy;sis eco&shy;nó&shy;mica mun&shy;dial du&shy;rante los años treinta.</p>
           </div>
         </article>
 
         <article class="tarjeta tarjeta-historia">
           <div class="marco-imagen">
-            <img src="../img/segunda-guerra.jpg" alt="Fotografía histórica de la Segunda Guerra Mundial" loading="lazy">
+            <img src="../img/antecedentes/segunda-guerra-800.webp" srcset="../img/antecedentes/segunda-guerra-480.webp 480w, ../img/antecedentes/segunda-guerra-800.webp 800w" sizes="(max-width: 480px) 92vw, (max-width: 720px) 46vw, 360px" width="800" height="640" decoding="async" alt="Fotografía histórica de la Segunda Guerra Mundial" loading="lazy">
             <span class="etiqueta-imagen">1939–1945</span>
           </div>
           <div class="contenido-tarjeta">
-            <span class="chip-anio">1939–1945</span>
             <h3>Segunda Guerra Mundial</h3>
-            <p>El conflicto más devastador de la historia; aceleró avances como el radar, la aviación y la producción de penicilina.</p>
+            <p>El con&shy;flicto más de&shy;vas&shy;ta&shy;dor de la his&shy;to&shy;ria; ace&shy;leró avan&shy;ces como el radar, la avia&shy;ción y la pro&shy;duc&shy;ción de pe&shy;ni&shy;ci&shy;lina.</p>
           </div>
         </article>
 
         <article class="tarjeta tarjeta-historia">
           <div class="marco-imagen">
-            <img src="../img/Geneva_Conventions.jpg" alt="Representación de los Convenios de Ginebra y el derecho humanitario" loading="lazy">
+            <img src="../img/antecedentes/Geneva_Conventions-800.webp" srcset="../img/antecedentes/Geneva_Conventions-480.webp 480w, ../img/antecedentes/Geneva_Conventions-800.webp 800w" sizes="(max-width: 480px) 92vw, (max-width: 720px) 46vw, 360px" width="800" height="539" decoding="async" alt="Representación de los Convenios de Ginebra y el derecho humanitario" loading="lazy">
             <span class="etiqueta-imagen">1949</span>
           </div>
           <div class="contenido-tarjeta">
-            <span class="chip-anio">1949</span>
             <h3>Derecho Humanitario Internacional</h3>
-            <p>Los Convenios de Ginebra fijaron reglas para proteger a civiles, heridos y prisioneros durante los conflictos armados.</p>
+            <p>Los Con&shy;ve&shy;nios de Gi&shy;ne&shy;bra fi&shy;ja&shy;ron re&shy;glas para pro&shy;te&shy;ger a ci&shy;vi&shy;les, he&shy;ri&shy;dos y pri&shy;sio&shy;ne&shy;ros du&shy;rante los con&shy;flic&shy;tos ar&shy;ma&shy;dos.</p>
           </div>
         </article>
 
         <article class="tarjeta tarjeta-historia">
           <div class="marco-imagen">
-            <img src="../img/buzz_aldrin.jpg" alt="Astronauta del Apolo 11 sobre la superficie lunar" loading="lazy">
-            <span class="etiqueta-imagen">1969</span>
+            <img src="../img/antecedentes/buzz_aldrin-800.webp" srcset="../img/antecedentes/buzz_aldrin-480.webp 480w, ../img/antecedentes/buzz_aldrin-800.webp 800w" sizes="(max-width: 480px) 92vw, (max-width: 720px) 46vw, 360px" width="800" height="840" decoding="async" alt="Astronauta del Apolo 11 sobre la superficie lunar" loading="lazy">
+            <span class="etiqueta-imagen">20 JUL. 1969</span>
           </div>
           <div class="contenido-tarjeta">
-            <span class="chip-anio">20 JUL. 1969</span>
             <h3>La llegada del hombre a la Luna</h3>
-            <p>La misión Apolo 11 llevó a los primeros seres humanos a la superficie lunar y marcó un hito científico.</p>
+            <p>La mi&shy;sión Apolo 11 llevó a los pri&shy;me&shy;ros seres hu&shy;ma&shy;nos a la su&shy;per&shy;fi&shy;cie lunar y marcó un hito cien&shy;tí&shy;fico.</p>
           </div>
         </article>
 
         <article class="tarjeta tarjeta-historia">
           <div class="marco-imagen">
-            <img src="../img/buque_container.jpg" alt="Buques portacontenedores en un puerto internacional" loading="lazy">
+            <img src="../img/antecedentes/buque_container-800.webp" srcset="../img/antecedentes/buque_container-480.webp 480w, ../img/antecedentes/buque_container-800.webp 800w" sizes="(max-width: 480px) 92vw, (max-width: 720px) 46vw, 360px" width="800" height="450" decoding="async" alt="Buques portacontenedores en un puerto internacional" loading="lazy">
             <span class="etiqueta-imagen">AÑOS 90</span>
           </div>
           <div class="contenido-tarjeta">
-            <span class="chip-anio">AÑOS 90</span>
             <h3>Globalización</h3>
-            <p>El comercio, el transporte y la información conectaron al mundo como nunca; Internet aceleró este proceso.</p>
+            <p>El co&shy;mer&shy;cio, el trans&shy;porte y la in&shy;for&shy;ma&shy;ción co&shy;nec&shy;ta&shy;ron al mundo como nunca; In&shy;ter&shy;net ace&shy;leró este pro&shy;ceso.</p>
           </div>
         </article>
       </div>
     </section>
 
     <!-- INVENTOS -->
-    <section class="seccion contenedor" aria-labelledby="titulo-inventos">
+    <section class="seccion" aria-labelledby="titulo-inventos">
       <div class="encabezado-seccion">
-        <span class="numero-seccion">02 / INNOVACIÓN</span>
-        <h2 id="titulo-inventos">Inventos que cambiaron el siglo</h2>
-        <p>Toca una tarjeta para ver por qué fue importante.</p>
+        <h2 class="subtitulo" id="titulo-inventos">Inventos que cambiaron el siglo</h2>
+        <p>Toca una tar&shy;jeta para ver por qué fue im&shy;por&shy;tante.</p>
       </div>
 
       <div class="rejilla tarjetas-inventos">
         <article class="tarjeta tarjeta-invento">
           <button class="boton-invento" type="button" aria-expanded="false" aria-label="Ver importancia del avión">
             <span class="marco-imagen">
-              <img src="../img/Wright_flyer.jpg" alt="Wright Flyer, avión de los hermanos Wright" loading="lazy">
+              <img src="../img/antecedentes/Wright_flyer-800.webp" srcset="../img/antecedentes/Wright_flyer-480.webp 480w, ../img/antecedentes/Wright_flyer-800.webp 800w" sizes="(max-width: 480px) 92vw, (max-width: 720px) 46vw, 360px" width="800" height="477" decoding="async" alt="Wright Flyer, avión de los hermanos Wright" loading="lazy">
               <span class="etiqueta-imagen">1903</span>
             </span>
             <span class="contenido-tarjeta">
-              <span class="chip-anio">1903</span>
               <span class="titulo-invento">El avión</span>
-              <span class="pista-tarjeta">Ver importancia <span aria-hidden="true">↗</span></span>
             </span>
           </button>
           <div class="detalle-invento">
-            <p><strong>Hermanos Wright.</strong> Revolucionó el transporte: viajar entre continentes pasó de semanas a horas. Su primer vuelo motorizado controlado duró unos 12 segundos.</p>
+            <p><strong>Her&shy;ma&shy;nos Wright.</strong> Re&shy;vo&shy;lu&shy;cionó el trans&shy;porte: via&shy;jar entre con&shy;ti&shy;nen&shy;tes pasó de se&shy;ma&shy;nas a horas. Su pri&shy;mer vuelo mo&shy;to&shy;ri&shy;zado con&shy;tro&shy;lado duró unos 12 se&shy;gun&shy;dos.</p>
           </div>
         </article>
 
         <article class="tarjeta tarjeta-invento">
           <button class="boton-invento" type="button" aria-expanded="false" aria-label="Ver importancia de la penicilina">
             <span class="marco-imagen">
-              <img src="../img/Alexander_Fleming.jpg" alt="Alexander Fleming en su laboratorio" loading="lazy">
+              <img src="../img/antecedentes/Alexander_Fleming-800.webp" srcset="../img/antecedentes/Alexander_Fleming-480.webp 480w, ../img/antecedentes/Alexander_Fleming-800.webp 800w" sizes="(max-width: 480px) 92vw, (max-width: 720px) 46vw, 360px" width="800" height="1136" decoding="async" alt="Alexander Fleming en su laboratorio" loading="lazy">
               <span class="etiqueta-imagen">1928</span>
             </span>
             <span class="contenido-tarjeta">
-              <span class="chip-anio">1928</span>
               <span class="titulo-invento">La penicilina</span>
-              <span class="pista-tarjeta">Ver importancia <span aria-hidden="true">↗</span></span>
             </span>
           </button>
           <div class="detalle-invento">
-            <p><strong>Alexander Fleming.</strong> Su descubrimiento abrió el camino a los antibióticos modernos. Muchas infecciones bacterianas dejaron de ser mortales y los tratamientos médicos se volvieron más seguros.</p>
+            <p><strong>Ale&shy;xan&shy;der Fle&shy;ming.</strong> Su des&shy;cu&shy;bri&shy;miento abrió el ca&shy;mino a los an&shy;ti&shy;bió&shy;ti&shy;cos mo&shy;der&shy;nos. Mu&shy;chas in&shy;fec&shy;cio&shy;nes bac&shy;te&shy;ria&shy;nas de&shy;ja&shy;ron de ser mor&shy;ta&shy;les y los tra&shy;ta&shy;mien&shy;tos mé&shy;di&shy;cos se vol&shy;vie&shy;ron más se&shy;gu&shy;ros.</p>
           </div>
         </article>
 
         <article class="tarjeta tarjeta-invento">
           <button class="boton-invento" type="button" aria-expanded="false" aria-label="Ver importancia del transistor">
             <span class="marco-imagen">
-              <img src="../img/Replica-of-first-transistor.jpg" alt="Réplica del primer transistor desarrollado en Bell Labs" loading="lazy">
+              <img src="../img/antecedentes/Replica-of-first-transistor-800.webp" srcset="../img/antecedentes/Replica-of-first-transistor-480.webp 480w, ../img/antecedentes/Replica-of-first-transistor-800.webp 500w" sizes="(max-width: 480px) 92vw, (max-width: 720px) 46vw, 360px" width="500" height="448" decoding="async" alt="Réplica del primer transistor desarrollado en Bell Labs" loading="lazy">
               <span class="etiqueta-imagen">1947</span>
             </span>
             <span class="contenido-tarjeta">
-              <span class="chip-anio">1947</span>
               <span class="titulo-invento">El transistor</span>
-              <span class="pista-tarjeta">Ver importancia <span aria-hidden="true">↗</span></span>
             </span>
           </button>
           <div class="detalle-invento">
-            <p><strong>John Bardeen, Walter Brattain y William Shockley.</strong> Más pequeño y eficiente que las válvulas electrónicas, permitió crear dispositivos compactos y es una pieza fundamental de los chips actuales.</p>
+            <p><strong>John Bar&shy;deen, Wal&shy;ter Brat&shy;tain y Wi&shy;lliam Shoc&shy;kley.</strong> Más pe&shy;queño y efi&shy;ciente que las vál&shy;vu&shy;las elec&shy;tró&shy;ni&shy;cas, per&shy;mi&shy;tió crear dis&shy;po&shy;si&shy;ti&shy;vos com&shy;pac&shy;tos y es una pieza fun&shy;da&shy;men&shy;tal de los chips ac&shy;tua&shy;les.</p>
           </div>
         </article>
 
         <article class="tarjeta tarjeta-invento">
           <button class="boton-invento" type="button" aria-expanded="false" aria-label="Ver importancia de la estructura del ADN">
             <span class="marco-imagen">
-              <img src="../img/ADN.jpg" alt="Modelo de doble hélice de la estructura del ADN" loading="lazy">
+              <img src="../img/antecedentes/ADN-800.webp" srcset="../img/antecedentes/ADN-480.webp 480w, ../img/antecedentes/ADN-800.webp 800w" sizes="(max-width: 480px) 92vw, (max-width: 720px) 46vw, 360px" width="800" height="801" decoding="async" alt="Modelo de doble hélice de la estructura del ADN" loading="lazy">
               <span class="etiqueta-imagen">1953</span>
             </span>
             <span class="contenido-tarjeta">
-              <span class="chip-anio">1953</span>
               <span class="titulo-invento">La estructura del ADN</span>
-              <span class="pista-tarjeta">Ver importancia <span aria-hidden="true">↗</span></span>
             </span>
           </button>
           <div class="detalle-invento">
-            <p><strong>James Watson y Francis Crick, con aportes esenciales de Rosalind Franklin y Maurice Wilkins.</strong> El modelo de doble hélice ayudó a explicar cómo se transmite la información genética e impulsó la biología molecular y la biotecnología.</p>
+            <p><strong>James Wat&shy;son y Fran&shy;cis Crick, con apor&shy;tes esen&shy;cia&shy;les de Ro&shy;sa&shy;lind Fran&shy;klin y Mau&shy;rice Wil&shy;kins.</strong> El mo&shy;delo de doble hé&shy;lice ayudó a ex&shy;pli&shy;car cómo se trans&shy;mite la in&shy;for&shy;ma&shy;ción ge&shy;né&shy;tica e im&shy;pulsó la bio&shy;lo&shy;gía mo&shy;le&shy;cu&shy;lar y la bio&shy;tec&shy;no&shy;lo&shy;gía.</p>
           </div>
         </article>
 
         <article class="tarjeta tarjeta-invento">
           <button class="boton-invento" type="button" aria-expanded="false" aria-label="Ver importancia de Internet">
             <span class="marco-imagen">
-              <img src="../img/IPM-arpanet.jpg" alt="Computadora de la época de ARPANET" loading="lazy">
+              <img src="../img/antecedentes/IPM-arpanet-800.webp" srcset="../img/antecedentes/IPM-arpanet-480.webp 480w, ../img/antecedentes/IPM-arpanet-800.webp 800w" sizes="(max-width: 480px) 92vw, (max-width: 720px) 46vw, 360px" width="800" height="536" decoding="async" alt="Computadora de la época de ARPANET" loading="lazy">
               <span class="etiqueta-imagen">1969</span>
             </span>
             <span class="contenido-tarjeta">
-              <span class="chip-anio">1969</span>
               <span class="titulo-invento">Internet</span>
-              <span class="pista-tarjeta">Ver importancia <span aria-hidden="true">↗</span></span>
             </span>
           </button>
           <div class="detalle-invento">
-            <p><strong>ARPANET, proyecto impulsado por el Departamento de Defensa de EE. UU.</strong> Conectó computadoras para compartir información. La World Wide Web, creada por Tim Berners-Lee, llegó entre 1989 y 1991.</p>
+            <p><strong>ARPANET, pro&shy;yecto im&shy;pul&shy;sado por el De&shy;par&shy;ta&shy;mento de De&shy;fensa de EE. UU.</strong> Co&shy;nectó com&shy;pu&shy;ta&shy;do&shy;ras para com&shy;par&shy;tir in&shy;for&shy;ma&shy;ción. La World Wide Web, creada por Tim Ber&shy;ners-Lee, llegó entre 1989 y 1991.</p>
           </div>
         </article>
 
         <article class="tarjeta tarjeta-invento">
           <button class="boton-invento" type="button" aria-expanded="false" aria-label="Ver importancia de los cohetes y la tecnología espacial">
             <span class="marco-imagen">
-              <img src="../img/saturn_V.jpg" alt="Lanzamiento del cohete Saturno V" loading="lazy">
+              <img src="../img/antecedentes/saturn_V-800.webp" srcset="../img/antecedentes/saturn_V-480.webp 480w, ../img/antecedentes/saturn_V-800.webp 800w" sizes="(max-width: 480px) 92vw, (max-width: 720px) 46vw, 360px" width="800" height="1000" decoding="async" alt="Lanzamiento del cohete Saturno V" loading="lazy">
               <span class="etiqueta-imagen">1957–1969</span>
             </span>
             <span class="contenido-tarjeta">
-              <span class="chip-anio">1957–1969</span>
               <span class="titulo-invento">Cohetes y tecnología espacial</span>
-              <span class="pista-tarjeta">Ver importancia <span aria-hidden="true">↗</span></span>
             </span>
           </button>
           <div class="detalle-invento">
-            <p><strong>Desarrollo colectivo de miles de científicos e ingenieros.</strong> Desde el Sputnik hasta el Apolo 11, la tecnología espacial abrió posibilidades para las comunicaciones satelitales, el GPS, el pronóstico del clima y la observación de la Tierra.</p>
+            <p><strong>De&shy;sa&shy;rro&shy;llo co&shy;lec&shy;tivo de miles de cien&shy;tí&shy;fi&shy;cos e in&shy;ge&shy;nie&shy;ros.</strong> Desde el Sput&shy;nik hasta el Apolo 11, la tec&shy;no&shy;lo&shy;gía es&shy;pa&shy;cial abrió po&shy;si&shy;bi&shy;li&shy;da&shy;des para las co&shy;mu&shy;ni&shy;ca&shy;cio&shy;nes sa&shy;te&shy;li&shy;ta&shy;les, el GPS, el pro&shy;nós&shy;tico del clima y la ob&shy;ser&shy;va&shy;ción de la Tie&shy;rra.</p>
           </div>
         </article>
       </div>
     </section>
-
-    <!-- VIDEO DESTACADO -->
-
-<section class="video-destacado">
-    <div class="video-contenedor">
-        <iframe
-            src="https://www.youtube.com/embed/nOcDftgR5UQ"
-            title="Apollo 11: Landing on the Moon - NASA"
-            loading="lazy"
-            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-            referrerpolicy="strict-origin-when-cross-origin"
-            allowfullscreen>
-        </iframe>
-    </div>
-
-    <p class="video-fuente">Fuente: NASA</p>
-</section>
-
-
-    <!-- NAVEGACIÓN ENTRE PÁGINAS -->
-    <div class="siguiente-contenedor contenedor">
-      <a href="eventos.html" class="boton-siguiente">Siguiente: Eventos del siglo XXI <span aria-hidden="true">→</span></a>
-    </div>
   </main>
 
-  <footer class="pie-pagina">
-    <p>Hecho por: <span>Adrian Vargas - Daniel Manios - Angel Polo</span></p>
-    <p>Créditos de imágenes en la página <a href="actividad.html">Actividad</a>.</p>
-  </footer>
 
   <script>
     // Menú desplegable para pantallas pequeñas.
@@ -295,14 +258,17 @@
       });
     });
 
-    // Las tarjetas de inventos muestran u ocultan su explicación al tocarlas.
-    document.querySelectorAll('.boton-invento').forEach((boton) => {
-      boton.addEventListener('click', () => {
-        const tarjeta = boton.closest('.tarjeta-invento');
+    // Las tarjetas de inventos muestran u ocultan su explicación al tocar cualquier parte de ellas
+    // (el botón interno sigue sirviendo para el teclado y los lectores de pantalla).
+    document.querySelectorAll('.tarjeta-invento').forEach((tarjeta) => {
+      const boton = tarjeta.querySelector('.boton-invento');
+      tarjeta.addEventListener('click', () => {
         const mostrarDetalle = tarjeta.classList.toggle('detalle-abierto');
         boton.setAttribute('aria-expanded', String(mostrarDetalle));
       });
     });
   </script>
+    <script src="../javascript/recorrido-visitas.js" defer></script>
+    <script src="../javascript/barra-comun.js" defer></script>
 </body>
 </html>

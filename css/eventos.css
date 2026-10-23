@@ -1,5 +1,5 @@
 /* =========================================================
-   SIGLO XXI · EVENTOS Y SOCIEDAD
+   SIGLO XXI · EVENTOS
    Paleta compartida con sigloxx.css
    ========================================================= */
 :root {
@@ -11,7 +11,7 @@
     --azul-profundo: #0B2A6F;
     --texto: #E6EAF2;
     --secundario: #9AA7BD;
-    --verde: #2EE6A6;
+    --verde: #66E6FF;
     --rojo: #FF4D5E;
     --radio: 16px;
     --sombra: 0 16px 38px rgba(0, 0, 0, 0.22);
@@ -46,7 +46,7 @@ button { font: inherit; }
     z-index: 1000;
     box-sizing: border-box;
     background-color: #05070D;
-    border-bottom: 3px solid #2EE6A6;
+    border-bottom: 3px solid #66E6FF;
 }
 .logo-enlace { display: flex; align-items: center; flex: 0 0 auto; }
 .logo {
@@ -91,7 +91,7 @@ button { font: inherit; }
     left: 0;
     width: 100%;
     height: 2px;
-    background-color: #2EE6A6;
+    background-color: #66E6FF;
     transform: scaleX(0);
     transform-origin: left;
     opacity: 0;
@@ -101,29 +101,65 @@ button { font: inherit; }
 .barra2 a.activo .aniparrafos::after { transform: scaleX(1); opacity: 1; }
 .menu-toggle { display: none; }
 
-.contenido-principal { width: min(1240px, 92%); margin: 0 auto; }
-.encabezado-pagina { padding: clamp(42px, 6vw, 78px) 0 28px; max-width: 850px; }
-.etiqueta-seccion {
-    display: inline-block;
-    color: var(--verde);
-    font-size: 0.8rem;
-    font-weight: 700;
-    letter-spacing: 0.14em;
-    text-transform: uppercase;
+/* Mismo ancho, colores y subtítulos que «Contexto» y «Antecedentes» (css/contexto.css),
+   alineados con el recuadro de arriba (css/recuadro-modulo.css) */
+.contenido-principal {
+    --menu-cian: #66E6FF;
+    --menu-titulo: #F6F8FF;
+    --menu-texto: #9FB3D1;
+    --menu-texto-franja: #dce5f5;
+    --menu-borde-franja: rgba(102, 230, 255, .35);
+    --menu-borde-activo: rgba(102, 230, 255, .75);
+    width: min(1100px, 88vw);
+    margin: 0 auto;
 }
+.encabezado-pagina { padding: 44px 0 0; }
 h1, h2, h3 { font-family: "Outfit", sans-serif; line-height: 1.12; margin-top: 0; }
-.encabezado-pagina h1 {
-    margin: 12px 0 12px;
-    color: #fff;
-    font-size: clamp(2.2rem, 5vw + 0.5rem, 4rem);
-    font-weight: 800;
-    letter-spacing: -0.035em;
+.subtitulo {
+    margin: 0 0 18px;
+    color: var(--menu-titulo);
+    font-family: "Outfit", sans-serif;
+    font-size: clamp(1.5rem, 2.2vw, 2rem);
+    font-weight: 700;
+    line-height: 1.2;
+    letter-spacing: -0.4px;
 }
-.encabezado-pagina p, .encabezado-seccion > p {
-    color: var(--texto);
-    font-size: clamp(1rem, 0.4vw + 0.9rem, 1.15rem);
-    line-height: 1.7;
+/* Subtítulo con descripción debajo (igual que en Antecedentes) */
+.encabezado-pagina .subtitulo { margin-bottom: 8px; }
+.encabezado-pagina p {
+    margin: 0 0 14px;
+    color: var(--menu-texto);
+    font-size: 1rem;
+    line-height: 1.6;
+    text-align: justify;
+    -webkit-hyphens: manual;
+    hyphens: manual;
+}
+/* Franja del párrafo: igual que la de «¿Qué es el siglo XXI?» */
+.banda-texto {
+    padding: 22px 28px;
+    border: 1px solid var(--menu-borde-franja);
+    border-radius: 12px;
+    background:
+        linear-gradient(180deg, #66E6FF, rgba(102, 230, 255, .25)) left top / 3px 100% no-repeat,
+        linear-gradient(100deg, rgba(3, 9, 22, .9) 0%, rgba(6, 16, 36, .82) 55%, rgba(8, 22, 46, .66) 100%);
+    transition: transform 0.25s ease, border-color 0.25s ease, box-shadow 0.25s ease;
+}
+@media (hover: hover) {
+    .banda-texto:hover {
+        transform: translateY(-4px);
+        border-color: var(--menu-borde-activo);
+        box-shadow: 0 8px 28px rgba(30, 107, 255, 0.14);
+    }
+}
+.banda-texto p {
     margin: 0;
+    color: var(--menu-texto-franja);
+    font-size: 1.02rem;
+    line-height: 1.8;
+    text-align: justify;
+    -webkit-hyphens: auto;
+    hyphens: auto;
 }
 
 /* LÍNEA DE TIEMPO */
@@ -147,7 +183,7 @@ h1, h2, h3 { font-family: "Outfit", sans-serif; line-height: 1.12; margin-top: 0
     transition: color 0.25s ease, background 0.25s ease, border-color 0.25s ease, transform 0.25s ease;
 }
 .ano-btn:hover { border-color: var(--azul-claro); color: #fff; transform: translateY(-2px); }
-.ano-btn.activo { background: var(--verde); border-color: var(--verde); color: var(--fondo); box-shadow: 0 0 22px rgba(46, 230, 166, 0.14); }
+.ano-btn.activo { background: var(--menu-cian); border-color: var(--menu-cian); color: #040a1a; box-shadow: 0 0 22px rgba(102, 230, 255, 0.14); }
 .ayuda-desplazamiento { display: none; margin: 0 0 10px; color: var(--secundario); font-size: 0.8rem; }
 
 .panel-evento {
@@ -176,7 +212,7 @@ h1, h2, h3 { font-family: "Outfit", sans-serif; line-height: 1.12; margin-top: 0
     border-radius: 10px;
     background: linear-gradient(135deg, #172b48, #0b1424 72%);
 }
-.marco-imagen img { display: none; width: 100%; height: 100%; object-fit: cover; }
+.marco-imagen img { display: block; width: 100%; height: 100%; object-fit: cover; }
 .imagen-placeholder {
     position: absolute;
     inset: 0;
@@ -195,45 +231,19 @@ h1, h2, h3 { font-family: "Outfit", sans-serif; line-height: 1.12; margin-top: 0
 .icono-camara { color: var(--azul-claro); font-size: 2rem; line-height: 1; }
 .credito-imagen { margin: 7px 0 0; color: var(--secundario); font-size: 0.78rem; }
 .evento-informacion { padding: 4px 4px 4px 0; }
-.chip-ano {
-    display: inline-flex;
-    align-items: center;
-    margin-bottom: 12px;
-    padding: 3px 10px;
-    border-radius: 999px;
-    background: var(--verde);
-    color: var(--fondo);
-    font-size: 0.8rem;
-    font-weight: 700;
-    letter-spacing: 0.08em;
-}
 .evento-informacion h2 { margin-bottom: 12px; color: #fff; font-size: clamp(1.6rem, 3vw + 0.5rem, 2.6rem); font-weight: 700; }
-.evento-informacion > p { margin: 0; color: var(--texto); font-size: clamp(1rem, 0.4vw + 0.9rem, 1.1rem); line-height: 1.7; }
-.controles-evento { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 22px; }
-.boton-secundario {
-    padding: 8px 15px;
-    border: 1px solid #3a5278;
-    border-radius: 999px;
-    background: transparent;
-    color: var(--texto);
-    font-size: 0.85rem;
-    font-weight: 600;
-    cursor: pointer;
-    transition: background 0.2s ease, border-color 0.2s ease, transform 0.2s ease;
-}
-.boton-secundario:hover { background: rgba(47, 107, 255, 0.12); border-color: var(--azul-claro); transform: translateY(-1px); }
+.evento-informacion > p { margin: 0; color: var(--texto); font-size: clamp(1rem, 0.4vw + 0.9rem, 1.1rem); line-height: 1.7; text-align: justify; -webkit-hyphens: manual; hyphens: manual; }
 
 /* SECCIÓN DE SOCIEDAD Y MAPA CONCEPTUAL */
-.seccion-sociedad { margin-top: clamp(64px, 8vw, 100px); }
-.encabezado-seccion { max-width: 900px; margin-bottom: 32px; }
-.encabezado-seccion .etiqueta-seccion { margin-bottom: 12px; }
-.encabezado-seccion h2 { margin: 0 0 14px; color: #fff; font-size: clamp(1.7rem, 3vw + 0.5rem, 2.65rem); font-weight: 700; }
+.seccion-sociedad { margin-top: 48px; }
+.encabezado-seccion { margin-bottom: 24px; }
 .mapa-conceptual {
+    --gap-mapa: clamp(44px, 4vw, 56px);
     position: relative;
     display: grid;
     grid-template-columns: minmax(170px, 0.78fr) minmax(0, 2fr);
     align-items: stretch;
-    gap: clamp(24px, 4vw, 56px);
+    gap: var(--gap-mapa);
     padding: clamp(20px, 3vw, 34px);
     border: 1px solid var(--borde);
     border-radius: var(--radio);
@@ -241,7 +251,9 @@ h1, h2, h3 { font-family: "Outfit", sans-serif; line-height: 1.12; margin-top: 0
     overflow: hidden;
 }
 .nodo-raiz-columna { display: flex; align-items: center; position: relative; }
-.nodo-raiz-columna::after { content: ''; position: absolute; left: calc(100% + 1px); top: 50%; width: clamp(24px, 4vw, 56px); border-top: 1px solid #4165a2; }
+/* Conectores: la línea de «Sociedad actual» llega a un tronco vertical que une las tres ramas,
+   y de él sale un tramo horizontal hacia cada rama (todas a la misma distancia). */
+.nodo-raiz-columna::after { content: ''; position: absolute; left: 100%; top: 50%; width: calc(var(--gap-mapa) - 24px); border-top: 1px solid #4165a2; transform: translateY(-0.5px); }
 .nodo-raiz {
     width: 100%;
     padding: 19px 14px;
@@ -255,9 +267,15 @@ h1, h2, h3 { font-family: "Outfit", sans-serif; line-height: 1.12; margin-top: 0
     text-align: center;
     box-shadow: 0 0 28px rgba(47, 107, 255, 0.12);
 }
-.ramas-mapa { display: flex; flex-direction: column; justify-content: center; gap: 22px; min-width: 0; }
+/* Las tres ramas miden lo mismo: quedan a igual distancia y la central coincide
+   con la mitad de «Sociedad actual» (aunque los conceptos de una rama ocupen dos líneas). */
+.ramas-mapa { display: grid; grid-auto-rows: 1fr; align-content: center; gap: 22px; min-width: 0; }
 .grupo-rama { position: relative; display: grid; grid-template-columns: minmax(165px, 0.85fr) minmax(0, 1.5fr); align-items: center; gap: 24px; }
-.grupo-rama::before { content: ''; position: absolute; right: calc(100% + 1px); top: 50%; width: 25px; border-top: 1px solid #4165a2; }
+.grupo-rama::before { content: ''; position: absolute; right: 100%; top: 50%; width: 24px; border-top: 1px solid #4165a2; transform: translateY(-0.5px); }
+/* Tronco: cada rama dibuja su tramo; la primera empieza en su centro y la última termina en el suyo */
+.grupo-rama::after { content: ''; position: absolute; left: -24px; top: -11px; bottom: -11px; border-left: 1px solid #4165a2; }
+.grupo-rama:first-child::after { top: 50%; }
+.grupo-rama:last-child::after { bottom: 50%; }
 .nodo-rama {
     position: relative;
     min-height: 44px;
@@ -273,7 +291,7 @@ h1, h2, h3 { font-family: "Outfit", sans-serif; line-height: 1.12; margin-top: 0
 }
 .nodo-rama:hover { filter: brightness(1.15); transform: translateY(-1px); }
 .hojas-rama { display: flex; align-items: center; flex-wrap: wrap; gap: 9px; position: relative; }
-.hojas-rama::before { content: ''; position: absolute; right: calc(100% + 1px); top: 50%; width: 24px; border-top: 1px solid #4165a2; }
+.hojas-rama::before { content: ''; position: absolute; right: 100%; top: 50%; width: 24px; border-top: 1px solid #4165a2; transform: translateY(-0.5px); }
 .nodo-hoja {
     position: relative;
     padding: 7px 12px;
@@ -287,40 +305,22 @@ h1, h2, h3 { font-family: "Outfit", sans-serif; line-height: 1.12; margin-top: 0
     transition: border-color 0.2s ease, background 0.2s ease, color 0.2s ease;
 }
 .nodo-hoja:hover { border-color: var(--azul-claro); }
-.nodo-hoja.resaltado { border-color: var(--verde); color: var(--verde); background: rgba(46, 230, 166, 0.07); }
+.nodo-hoja.resaltado { border-color: var(--menu-cian); color: var(--menu-cian); background: rgba(102, 230, 255, 0.07); }
 .explicacion-mapa {
     grid-column: 2;
     justify-self: start;
     width: min(100%, 360px);
     margin-top: -8px;
     padding: 12px 15px;
-    border: 1px solid rgba(46, 230, 166, 0.45);
+    border: 1px solid rgba(102, 230, 255, 0.45);
     border-radius: 10px;
     background: rgba(18, 28, 46, 0.96);
     box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
 }
-.explicacion-titulo { display: block; margin-bottom: 3px; color: var(--verde); font-size: 0.82rem; font-weight: 700; }
+.explicacion-titulo { display: block; margin-bottom: 3px; color: var(--menu-cian); font-size: 0.82rem; font-weight: 700; }
 .explicacion-mapa p { margin: 0; color: var(--secundario); font-size: 0.85rem; line-height: 1.5; }
-.navegacion-siguiente { display: flex; justify-content: center; margin: 48px 0 0; }
-.boton-principal {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    gap: 10px;
-    padding: 14px 29px;
-    border: 1px solid var(--verde);
-    border-radius: 999px;
-    background: var(--verde);
-    color: var(--fondo);
-    font-size: 1rem;
-    font-weight: 700;
-    text-decoration: none;
-    transition: transform 0.25s ease, box-shadow 0.25s ease;
-}
-.boton-principal:hover { transform: translateY(-3px); box-shadow: 0 8px 28px rgba(46, 230, 166, 0.18); }
-.pie-pagina { margin-top: 62px; padding: 24px 4%; border-top: 1px solid var(--borde); color: var(--secundario); text-align: center; font-size: 0.9rem; }
-.pie-pagina p { margin: 0; }
-.separador-pie { padding: 0 8px; color: #52627a; }
+/* Final de la página: mismo espacio que separa las demás secciones */
+.contenido-principal { padding-bottom: 48px; }
 
 /* ESCRITORIO GRANDE: 1025 px en adelante */
 @media screen and (min-width: 1025px) {
@@ -334,9 +334,11 @@ h1, h2, h3 { font-family: "Outfit", sans-serif; line-height: 1.12; margin-top: 0
     .barra { min-height: 72px; gap: 18px; padding-inline: 3%; }
     .logo { width: 108px; height: 46px; flex-basis: 108px; }
     .barra2 { gap: clamp(12px, 1.8vw, 20px); font-size: 0.88rem; }
-    .contenido-principal { width: 93%; }
+    .contenido-principal { width: 92vw; }
+    .encabezado-pagina { padding-top: 36px; }
+    .seccion-sociedad { margin-top: 40px; }
     .panel-evento { grid-template-columns: minmax(0, 1.2fr) minmax(260px, 1fr); }
-    .mapa-conceptual { grid-template-columns: minmax(150px, 0.65fr) minmax(0, 2fr); gap: 35px; }
+    .mapa-conceptual { --gap-mapa: 44px; grid-template-columns: minmax(150px, 0.65fr) minmax(0, 2fr); }
     .grupo-rama { grid-template-columns: minmax(150px, 0.85fr) minmax(0, 1.5fr); gap: 18px; }
 }
 
@@ -386,40 +388,49 @@ h1, h2, h3 { font-family: "Outfit", sans-serif; line-height: 1.12; margin-top: 0
     .barra2.menu-abierto { opacity: 1; visibility: visible; transform: translateY(0); }
     .barra2 a { padding: 16px 4px; border-bottom: 1px solid rgba(34, 49, 77, 0.7); }
     .aniparrafos::after { bottom: -4px; }
-    .contenido-principal { width: 90%; }
-    .encabezado-pagina { padding: 42px 0 24px; }
-    .timeline-scroll { margin-inline: -5.5%; padding-inline: 5.5%; }
+    .contenido-principal { width: 92vw; }
+    .encabezado-pagina { padding-top: 28px; }
+    /* La línea de tiempo se desliza de borde a borde de la pantalla, alineada con el contenido */
+    .timeline-scroll { margin-inline: -4vw; padding-inline: 4vw; }
     .timeline-anos { justify-content: flex-start; gap: 10px; min-width: max-content; }
     .ano-btn { min-width: auto; padding: 8px 14px; }
     .ayuda-desplazamiento { display: block; }
     .panel-evento { grid-template-columns: 1fr; gap: 22px; padding: 14px; }
-    .evento-informacion { padding: 0 2px 2px; }
+    /* El título y el texto empiezan en el mismo borde que la foto y su crédito */
+    .evento-informacion { padding: 0 0 2px; }
     .evento-informacion h2 { font-size: clamp(1.65rem, 6vw, 2.2rem); }
-    .controles-evento { margin-top: 18px; }
-    .seccion-sociedad { margin-top: 62px; }
+    .seccion-sociedad { margin-top: 34px; }
     .mapa-conceptual { display: flex; flex-direction: column; gap: 20px; padding: 18px 14px; }
     .nodo-raiz-columna { width: 100%; justify-content: flex-start; padding-left: 8px; }
-    .nodo-raiz-columna::after { left: 31px; top: calc(100% + 1px); width: 1px; height: 20px; border-top: 0; border-left: 1px solid #4165a2; }
+    /* Celular: una línea vertical baja de «Sociedad actual» y de ella sale un tramo hacia cada rama */
+    .nodo-raiz-columna::after { left: 32px; top: 100%; width: 0; height: 20px; border-top: 0; border-left: 1px solid #4165a2; transform: none; }
     .nodo-raiz { width: min(100%, 260px); }
-    .ramas-mapa { gap: 22px; padding-left: 8px; }
+    .ramas-mapa { grid-auto-rows: auto; gap: 22px; padding-left: 32px; }
     .grupo-rama { display: flex; flex-direction: column; align-items: stretch; gap: 12px; padding-left: 24px; }
-    .grupo-rama::before { right: auto; left: 0; top: 22px; width: 18px; }
+    .grupo-rama::before { right: auto; left: 0; top: 23px; width: 24px; }
+    .grupo-rama::after { left: 0; top: -11px; bottom: -11px; }
+    .grupo-rama:first-child::after { top: 0; }
+    .grupo-rama:last-child::after { bottom: auto; height: 34px; }
     .nodo-rama { align-self: flex-start; width: min(100%, 300px); }
     .hojas-rama { align-items: stretch; flex-direction: column; gap: 8px; padding-left: 16px; }
     .hojas-rama::before { right: auto; left: 0; top: 0; bottom: 0; width: 1px; border-top: 0; background: #4165a2; }
     .nodo-hoja { align-self: flex-start; max-width: 100%; text-align: left; }
     .explicacion-mapa { grid-column: auto; width: 100%; margin: 0; }
-    .navegacion-siguiente { margin-top: 36px; }
-    .pie-pagina { margin-top: 46px; padding: 22px 6%; font-size: 0.82rem; }
+    .contenido-principal { padding-bottom: 34px; }
+}
+
+/* Celulares: mismos tamaños que Contexto (css/contexto.css, máx. 700 px) */
+@media screen and (max-width: 700px) {
+    .subtitulo { margin-bottom: 14px; font-size: 1.4rem; }
+    .encabezado-pagina .subtitulo { margin-bottom: 6px; }
+    .encabezado-pagina p { font-size: .95rem; }
+    .banda-texto { padding: 16px 18px 17px 20px; border-radius: 10px; }
+    .banda-texto p { font-size: 0.95rem; line-height: 1.75; }
 }
 
 /* TELÉFONOS ESTRECHOS */
 @media screen and (max-width: 380px) {
     .logo { width: 92px; height: 40px; flex-basis: 92px; }
-    .encabezado-pagina h1 { font-size: 2.15rem; }
-    .controles-evento { gap: 7px; }
-    .boton-secundario { padding: 8px 11px; }
-    .separador-pie { padding: 0 3px; }
 }
 
 @media (prefers-reduced-motion: reduce) {

@@ -1,0 +1,190 @@
+/* =====================================================================
+   Recuadro de cada módulo: imagen de la sección, capa oscura y título
+   en una franja. Basado en el recuadro original de Contexto.
+   Al cambiar de módulo con las flechas, el recuadro se queda en su
+   sitio y su contenido se funde con el del siguiente (view-transition).
+   Medidas en función de la pantalla (vw) para que los 6 midan lo mismo
+   aunque cada página tenga un contenedor distinto.
+   ===================================================================== */
+
+.recuadro-modulo {
+    position: relative;
+    box-sizing: border-box;
+    width: min(1100px, 88vw);
+    height: clamp(300px, 26vw, 380px);
+    margin: 32px auto 0;
+    overflow: hidden;
+    border: 1px solid rgba(102, 230, 255, .22);
+    border-radius: 16px;
+    background: linear-gradient(135deg, #10274B, #121C2E);
+    isolation: isolate;
+    color: #f6f8ff;
+    font-family: "Inter", system-ui, sans-serif;
+    view-transition-name: nm-recuadro;
+}
+
+.recuadro-modulo__video {
+    position: absolute;
+    inset: 0;
+    z-index: -2;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center 55%;
+    background: #121C2E;
+}
+
+/* ---------- Recuadro con imagen (img/menu_imagenes) ----------
+   Normal: tono oscuro y frío. Al pasar el cursor (o con un toque en celular, clase .activo):
+   vuelve el color, la imagen se acerca un poco y un destello de luz la cruza una vez.
+   Solo se animan filter, transform y opacity para que vaya fluido en cualquier equipo. */
+.recuadro-modulo__fondo {
+    position: absolute;
+    inset: 0;
+    z-index: -2;
+    overflow: hidden;
+    background: #0b1730;
+}
+.recuadro-modulo__imagen {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    filter: grayscale(.7) saturate(.75) brightness(.58) contrast(1.1);
+    transform: scale(1.01);
+    transition: filter .45s ease-out, transform .7s cubic-bezier(.22, 1, .36, 1);
+    will-change: filter, transform;
+}
+.recuadro-modulo--imagen.activo .recuadro-modulo__imagen {
+    filter: none;
+    transform: scale(1.045);
+}
+@media (hover: hover) {
+    .recuadro-modulo--imagen:hover .recuadro-modulo__imagen { filter: none; transform: scale(1.045); }
+}
+
+/* Destello: una franja de luz que cruza el recuadro una sola vez */
+.recuadro-modulo__brillo {
+    position: absolute;
+    inset: 0;
+    z-index: 0;                 /* por encima de la capa oscura y por debajo del texto y las flechas */
+    overflow: hidden;
+    pointer-events: none;
+}
+.recuadro-modulo__brillo::before {
+    content: "";
+    position: absolute;
+    top: -20%;
+    bottom: -20%;
+    left: 0;
+    width: 28%;
+    background: linear-gradient(100deg, transparent 0%, rgba(102, 230, 255, .12) 35%, rgba(255, 255, 255, .32) 50%, rgba(102, 230, 255, .12) 65%, transparent 100%);
+    opacity: 0;
+    transform: translateX(-140%) skewX(-16deg);
+}
+.recuadro-modulo--imagen.activo .recuadro-modulo__brillo::before { animation: recuadro-destello .85s cubic-bezier(.4, 0, .2, 1) 1; }
+@media (hover: hover) {
+    .recuadro-modulo--imagen:hover .recuadro-modulo__brillo::before { animation: recuadro-destello .85s cubic-bezier(.4, 0, .2, 1) 1; }
+}
+@keyframes recuadro-destello {
+    0%   { opacity: 0; transform: translateX(-140%) skewX(-16deg); }
+    15%  { opacity: 1; }
+    85%  { opacity: 1; }
+    100% { opacity: 0; transform: translateX(420%) skewX(-16deg); }
+}
+
+/* Con la imagen en color, la capa oscura se aligera un poco (el texto sigue legible) */
+.recuadro-modulo--imagen .recuadro-modulo__capa { transition: opacity .45s ease-out; }
+.recuadro-modulo--imagen.activo .recuadro-modulo__capa { opacity: .8; }
+@media (hover: hover) {
+    .recuadro-modulo--imagen:hover .recuadro-modulo__capa { opacity: .8; }
+}
+
+/* Movimiento reducido: solo cambia el color, sin acercamiento ni destello */
+@media (prefers-reduced-motion: reduce) {
+    .recuadro-modulo__imagen { transition: filter .3s ease-out; transform: none !important; }
+    .recuadro-modulo__brillo::before { animation: none !important; }
+}
+
+/* Capa oscura para que el texto se lea sobre cualquier video */
+.recuadro-modulo__capa {
+    position: absolute;
+    inset: 0;
+    z-index: -1;
+    background:
+        linear-gradient(90deg, rgba(5, 7, 13, .88) 0%, rgba(5, 7, 13, .52) 48%, rgba(5, 7, 13, .2) 100%),
+        linear-gradient(0deg, rgba(5, 7, 13, .7), transparent 55%);
+}
+
+/* Franja del título: se ajusta al largo de cada título (fit-content) y deja espacio
+   a los lados para las flechas circulares (javascript/navegacion-modulos.js). */
+.recuadro-modulo__contenido {
+    /* Centrada: left/right 0 + margen automático (así puede usar todo el ancho disponible) */
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    margin-inline: auto;
+    width: fit-content;
+    max-width: calc(100% - 184px);
+    padding: 14px 30px 15px;
+    text-align: center;
+    border: 1px solid rgba(102, 230, 255, .26);
+    border-radius: 14px;
+    /* Línea cian fina centrada abajo, como detalle tecnológico */
+    background:
+        linear-gradient(90deg, transparent, #66E6FF, transparent) center bottom / 46% 2px no-repeat,
+        linear-gradient(180deg, rgba(3, 9, 22, .84), rgba(6, 16, 36, .72));
+    box-shadow: 0 14px 34px -16px rgba(0, 0, 0, .85);
+}
+
+.recuadro-modulo__etiqueta {
+    display: inline-block;
+    margin-bottom: 12px;
+    color: #66E6FF;
+    font-size: .77rem;
+    font-weight: 700;
+    letter-spacing: 1.8px;
+    text-transform: uppercase;
+}
+
+.recuadro-modulo__titulo {
+    margin: 0;
+    color: #ffffff;
+    font-family: inherit;
+    font-size: clamp(1.45rem, 2.3vw, 2.25rem);
+    font-weight: 600;
+    line-height: 1.15;
+    letter-spacing: .015em;
+    text-shadow: 0 2px 16px rgba(0, 0, 0, .55);
+    text-wrap: balance;
+}
+.recuadro-modulo__titulo span { color: inherit; }
+
+.recuadro-modulo__frase {
+    margin: 6px auto 0;
+    max-width: 52ch;
+    color: #dce5f5;
+    font-size: clamp(1rem, 1.25vw, 1.2rem);
+    line-height: 1.5;
+    text-shadow: 0 1px 10px rgba(0, 0, 0, .6);
+}
+
+/* Tabletas y computadores pequeños */
+@media (max-width: 1024px) {
+    .recuadro-modulo { width: 92vw; height: max(280px, 36vw); margin: 24px auto 0; }
+    .recuadro-modulo__contenido { max-width: calc(100% - 160px); }
+    .recuadro-modulo__titulo { font-size: clamp(1.35rem, 3vw, 2rem); }
+}
+
+/* Celulares */
+@media (max-width: 700px) {
+    .recuadro-modulo { width: 92vw; height: clamp(260px, 62vw, 420px); margin: 14px auto 0; border-radius: 12px; }
+    .recuadro-modulo__video { object-position: center; }
+    .recuadro-modulo__contenido { max-width: calc(100% - 8vw); padding: 10px 18px 12px; border-radius: 10px; }
+    .recuadro-modulo__titulo { font-size: clamp(1.2rem, 5.4vw, 1.6rem); }
+    .recuadro-modulo__etiqueta { font-size: .7rem; letter-spacing: 1.3px; }
+    .recuadro-modulo__frase { font-size: 15px; }
+}
