@@ -132,7 +132,7 @@ body {
     overflow: hidden;
     border-radius: 20px;
     border: 1px solid #26109f;
-    background-color: rgb(47, 107, 255, 0.1);
+    background: linear-gradient(100deg, rgba(6, 19, 48, 0.9) 0%, rgba(17, 37, 79, 0.82) 100%);
     transition: transform 0.3s ease;
 }
 

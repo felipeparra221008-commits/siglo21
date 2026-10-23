@@ -324,9 +324,7 @@ img {
   flex-direction: column;
   min-width: 0;
   overflow: hidden;
-
   background: linear-gradient(100deg, rgba(3, 9, 22, .9) 0%, rgba(11, 23, 48, .82) 100%);
-
   border: 1px solid var(--menu-borde);
   border-radius: 14px;
 

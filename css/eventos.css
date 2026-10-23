@@ -140,9 +140,7 @@ h1, h2, h3 { font-family: "Outfit", sans-serif; line-height: 1.12; margin-top: 0
     padding: 22px 28px;
     border: 1px solid var(--menu-borde-franja);
     border-radius: 12px;
-    background:
-        linear-gradient(180deg, #66E6FF, rgba(102, 230, 255, .25)) left top / 3px 100% no-repeat,
-        linear-gradient(100deg, rgba(3, 9, 22, .9) 0%, rgba(6, 16, 36, .82) 55%, rgba(8, 22, 46, .66) 100%);
+    background: linear-gradient(100deg, rgba(6, 19, 48, 0.9) 0%, rgba(17, 37, 79, 0.82) 100%);
     transition: transform 0.25s ease, border-color 0.25s ease, box-shadow 0.25s ease;
 }
 @media (hover: hover) {
@@ -195,7 +193,7 @@ h1, h2, h3 { font-family: "Outfit", sans-serif; line-height: 1.12; margin-top: 0
     margin-top: 12px;
     border: 1px solid var(--borde);
     border-radius: var(--radio);
-    background: linear-gradient(115deg, rgba(18, 28, 46, 0.98), rgba(9, 17, 31, 0.98));
+    background: linear-gradient(100deg, rgba(6, 19, 48, 0.9) 0%, rgba(17, 37, 79, 0.82) 100%);
     box-shadow: var(--sombra);
     transition: opacity 0.3s ease, transform 0.3s ease;
 }
@@ -247,7 +245,7 @@ h1, h2, h3 { font-family: "Outfit", sans-serif; line-height: 1.12; margin-top: 0
     padding: clamp(20px, 3vw, 34px);
     border: 1px solid var(--borde);
     border-radius: var(--radio);
-    background: radial-gradient(ellipse at 5% 50%, rgba(11, 42, 111, 0.17), transparent 55%), #080D17;
+    background: linear-gradient(100deg, rgba(6, 19, 48, 0.9) 0%, rgba(17, 37, 79, 0.82) 100%);
     overflow: hidden;
 }
 .nodo-raiz-columna { display: flex; align-items: center; position: relative; }
