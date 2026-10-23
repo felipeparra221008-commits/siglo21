@@ -25,8 +25,14 @@ body {
     color: var(--texto);
     font-family: "Inter", sans-serif;
     line-height: 1.7;
-    overflow-x: hidden;
+    scrollbar-width: none;
 }
+
+body::-webkit-scrollbar {
+    display: none;
+}
+
+
 body.menu-bloqueado { overflow: hidden; }
 a { color: inherit; }
 button { font: inherit; }

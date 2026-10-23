@@ -3,8 +3,12 @@ body, html {
     height: 100%;
     margin: 0;
     padding: 0;
-    overflow-x: hidden;
     background-color: #040a1a;
+    scrollbar-width: none;
+}
+
+body::-webkit-scrollbar {
+    display: none;
 }
 
 .barra {

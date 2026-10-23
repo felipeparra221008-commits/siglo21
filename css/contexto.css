@@ -32,6 +32,11 @@ body {
   color: var(--text);
   font-family: 'Inter', sans-serif;
   line-height: 1.65;
+  scrollbar-width: none;
+}
+
+body::-webkit-scrollbar {
+    display: none;
 }
 
 h1, h2, h3, .logo {
