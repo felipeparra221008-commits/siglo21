@@ -8,19 +8,23 @@
     <link rel="stylesheet" href="../css/transicion.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Outfit:wght@700&display=swap" rel="stylesheet">
     <title>Futuro | Siglo XXI</title>
     <link rel="icon" href="../img/icon.png" type="image/png">
+    <link rel="stylesheet" href="../css/recuadro-modulo.css">
+    <link rel="stylesheet" href="../css/barra-comun.css">
+    <link rel="stylesheet" href="../css/navegacion-modulos.css">
+    <script src="../javascript/navegacion-modulos.js"></script>
 </head>
 <body>
     <div class="barra">
-        <a href="explorar.html" aria-label="Ir a la página principal">
-        <img src="../img/logo.png" alt="Logo SIGLO XXI" class="logo">
+        <a class="logo-enlace" href="explorar.html" aria-label="Ir a la página principal">
+            <img src="../img/logo.png" alt="Logo SIGLO XXI" class="logo">
         </a>
 
         <span class="barra2">
             <a href="contexto.html" style="text-decoration: none;"><span class="aniparrafos">Contexto</span></a>
-            <a href="sigloxx.html" style="text-decoration: none;"><span class="aniparrafos">Siglo XX</span></a>
+            <a href="sigloxx.html" style="text-decoration: none;"><span class="aniparrafos">Antecedentes</span></a>
             <a href="eventos.html" style="text-decoration: none;"><span class="aniparrafos">Eventos</span></a>
             <a href="inventores.html" style="text-decoration: none;"><span class="aniparrafos">Inventores</span></a>
             <a href="futuro.html" style="text-decoration: none;" aria-current="page"><span class="aniparrafos activo">Futuro</span></a>
@@ -28,252 +32,125 @@
         </span>
     </div>
 
+    <!-- RECUADRO DEL MÓDULO: imagen de img/menu_imagenes, oscura hasta que se pasa el cursor o se toca (css/recuadro-modulo.css) -->
+    <section class="recuadro-modulo recuadro-modulo--imagen">
+        <div class="recuadro-modulo__fondo" aria-hidden="true"><img class="recuadro-modulo__imagen" src="../img/menu_imagenes/web/futuro-1600.webp" srcset="../img/menu_imagenes/web/futuro-800.webp 800w, ../img/menu_imagenes/web/futuro-1600.webp 1600w" sizes="(max-width: 700px) 92vw, 1100px" alt="" decoding="async" fetchpriority="high"></div>
+        <div class="recuadro-modulo__brillo" aria-hidden="true"></div>
+        <div class="recuadro-modulo__capa"></div>
+        <div class="recuadro-modulo__contenido">
+            <h1 class="recuadro-modulo__titulo">¿Qué se espera para el futuro?</h1>
+        </div>
+    </section>
+
     <main class="futuro_principal">
 
-        <section class="futuro_hero">
-            <div class="futuro_cabecera">
-                <h1 class="titulo1">¿Qué se espera para el futuro?</h1>
-            </div>
+        <!-- SUBTÍTULO Y DESCRIPCIÓN: mismo estilo que Contexto, Antecedentes, Eventos e Inventores -->
+        <section class="futuro_intro" aria-labelledby="titulo-futuro">
+            <h2 class="subtitulo" id="titulo-futuro">Avances que definirán el mañana</h2>
+            <p class="descripcion">El fu&shy;turo es&shy;tará mar&shy;cado por avan&shy;ces cien&shy;tí&shy;fi&shy;cos y tec&shy;no&shy;ló&shy;gi&shy;cos ca&shy;pa&shy;ces de trans&shy;for&shy;mar nues&shy;tra forma de vivir, apren&shy;der, tra&shy;ba&shy;jar y re&shy;la&shy;cio&shy;nar&shy;nos. Al&shy;gu&shy;nas de estas in&shy;no&shy;va&shy;cio&shy;nes ya están en de&shy;sa&shy;rro&shy;llo, mien&shy;tras que otras to&shy;da&shy;vía re&shy;pre&shy;sen&shy;tan po&shy;si&shy;bi&shy;li&shy;da&shy;des que la cien&shy;cia busca hacer rea&shy;li&shy;dad.</p>
+        </section>
+
+        <!-- SEIS ÁREAS: título, dos párrafos (qué se espera / cómo nos afecta) y su imagen -->
+        <section class="futuro_hero" aria-label="Áreas que transformarán el futuro">
             <div class="acordeon">
 
                 <!-- 1. INTELIGENCIA ARTIFICIAL -->
-                <details class="acordeon_item" name="futuro" open>
+                <details class="acordeon_item" id="futuro-ia" name="futuro" open>
                     <summary class="acordeon_resumen">Inteligencia artificial</summary>
                     <div class="acordeon_cuerpo">
                         <div class="acordeon_info">
-                            <p class="acordeon_texto">La inteligencia artificial reúne sistemas que aprenden de datos para reconocer patrones, predecir resultados y crear contenido. Podría convertirse en una herramienta habitual para la investigación, la educación, la medicina y la ingeniería, como hoy lo son Internet o el computador.</p>
-                            <p class="acordeon_texto">Ya hay señales de ese camino: AlphaFold, creado por DeepMind, predice la forma tridimensional de las proteínas. Por ese trabajo, Demis Hassabis y John Jumper recibieron el Nobel de Química 2024, junto a David Baker.</p>
-                            <ul class="tema_chips">
-                                <li class="tema_chip">Investigación</li>
-                                <li class="tema_chip">Educación</li>
-                                <li class="tema_chip">Medicina</li>
-                                <li class="tema_chip">Ingeniería</li>
-                            </ul>
-                            <ul class="tema_lista">
-                                <li><strong>Investigación:</strong> acelera el análisis de datos científicos complejos.</li>
-                                <li><strong>Educación:</strong> puede adaptar explicaciones y ejercicios al ritmo de cada estudiante.</li>
-                                <li><strong>Medicina:</strong> apoya el análisis de imágenes médicas y la asistencia en cirugías.</li>
-                                <li><strong>Ingeniería:</strong> ayuda a diseñar, simular y probar soluciones con más rapidez.</li>
-                            </ul>
-                            <p class="tema_nota">La condición: usarla de forma responsable, cuidando la privacidad y verificando sus resultados.</p>
+                            <p class="acordeon_texto">Ima&shy;gina sis&shy;te&shy;mas ca&shy;pa&shy;ces de apren&shy;der de los datos para re&shy;co&shy;no&shy;cer pa&shy;tro&shy;nes, pre&shy;de&shy;cir re&shy;sul&shy;ta&shy;dos o crear con&shy;te&shy;nido. Se es&shy;pera que la in&shy;te&shy;li&shy;gen&shy;cia ar&shy;ti&shy;fi&shy;cial se vuelva tan ha&shy;bi&shy;tual en la in&shy;ves&shy;ti&shy;ga&shy;ción, la edu&shy;ca&shy;ción, la me&shy;di&shy;cina o la in&shy;ge&shy;nie&shy;ría como hoy lo son In&shy;ter&shy;net o el com&shy;pu&shy;ta&shy;dor. Ya hay se&shy;ña&shy;les de ese ca&shy;mino: AlphaFold, creado por DeepMind, pre&shy;dice la forma tri&shy;di&shy;men&shy;sio&shy;nal de las pro&shy;teí&shy;nas; por ese tra&shy;bajo, Demis Has&shy;sa&shy;bis y John Jum&shy;per com&shy;par&shy;tie&shy;ron el Nobel de Quí&shy;mica 2024 con David Baker.</p>
+                            <p class="acordeon_texto">Gra&shy;cias a estos avan&shy;ces, los cien&shy;tí&shy;fi&shy;cos po&shy;drían ana&shy;li&shy;zar datos com&shy;ple&shy;jos con mayor ra&shy;pi&shy;dez, los es&shy;tu&shy;dian&shy;tes re&shy;ci&shy;bi&shy;rían ex&shy;pli&shy;ca&shy;cio&shy;nes adap&shy;ta&shy;das a su ritmo, los mé&shy;di&shy;cos con&shy;ta&shy;rían con apoyo para in&shy;ter&shy;pre&shy;tar imá&shy;ge&shy;nes o asis&shy;tir ci&shy;ru&shy;gías, mien&shy;tras que los in&shy;ge&shy;nie&shy;ros po&shy;drían di&shy;se&shy;ñar, si&shy;mu&shy;lar o pro&shy;bar so&shy;lu&shy;cio&shy;nes en menos tiempo. Eso sí, su uso exige res&shy;pon&shy;sa&shy;bi&shy;li&shy;dad: cui&shy;dar la pri&shy;va&shy;ci&shy;dad de las per&shy;so&shy;nas, así como ve&shy;ri&shy;fi&shy;car cada re&shy;sul&shy;tado antes de con&shy;fiar en él.</p>
                         </div>
                         <figure class="tema_figura">
-                            <img src="../img/alphaflod.jpg" alt="Estructura 3D de una proteína generada por AlphaFold" class="tema_marco">
+                            <img src="../img/futuro/alphaflod.webp" width="800" height="451" decoding="async" alt="Estructura 3D de una proteína generada por AlphaFold" class="tema_imagen">
                         </figure>
                     </div>
                 </details>
 
                 <!-- 2. MEDICINA PERSONALIZADA -->
-                <details class="acordeon_item" name="futuro">
+                <details class="acordeon_item" id="futuro-medicina" name="futuro">
                     <summary class="acordeon_resumen">Medicina personalizada</summary>
                     <div class="acordeon_cuerpo">
                         <div class="acordeon_info">
-                            <p class="acordeon_texto">La medicina personalizada busca dejar de tratar a todas las personas igual y adaptar la prevención y el tratamiento a las características de cada una, empezando por sus genes. La combinación de genética, IA y biotecnología podría permitir tratamientos cada vez más adaptados a cada persona.</p>
-                            <p class="acordeon_texto">Las bases ya existen: en 2003 se completó la secuenciación del genoma humano; CRISPR-Cas9, de Jennifer Doudna y Emmanuelle Charpentier (Nobel de Química 2020), permite editar genes; y los estudios de Katalin Karikó y Drew Weissman sobre el ARNm (Nobel de Medicina 2023) hicieron posibles las vacunas contra la COVID-19.</p>
-                            <ul class="tema_chips">
-                                <li class="tema_chip">Genoma humano · 2003</li>
-                                <li class="tema_chip">CRISPR-Cas9</li>
-                                <li class="tema_chip">Vacunas de ARNm</li>
-                            </ul>
-                            <ul class="tema_lista">
-                                <li><strong>Diagnóstico:</strong> detectar enfermedades antes y con más precisión.</li>
-                                <li><strong>Tratamiento:</strong> elegir terapias según el perfil genético de cada paciente.</li>
-                                <li><strong>Prevención:</strong> identificar riesgos y actuar a tiempo.</li>
-                            </ul>
-                            <p class="tema_nota">El reto: que estos avances sean accesibles para todos y que los datos genéticos, que son muy personales, estén protegidos.</p>
+                            <p class="acordeon_texto">¿Y si cada tra&shy;ta&shy;miento se di&shy;se&shy;ñara a la me&shy;dida de quien lo re&shy;cibe? Hacia allí apunta esta área, que busca dejar de tra&shy;tar a todas las per&shy;so&shy;nas por igual para adap&shy;tar la pre&shy;ven&shy;ción y el tra&shy;ta&shy;miento a las ca&shy;rac&shy;te&shy;rís&shy;ti&shy;cas de cada una, em&shy;pe&shy;zando por sus genes. Las bases ya exis&shy;ten: en 2003 se com&shy;pletó la se&shy;cuen&shy;cia&shy;ción del ge&shy;noma hu&shy;mano; más tarde, CRISPR-Cas9, de&shy;sa&shy;rro&shy;llada por Jen&shy;ni&shy;fer Doudna y Em&shy;ma&shy;nue&shy;lle Char&shy;pen&shy;tier (Nobel de Quí&shy;mica 2020), per&shy;mi&shy;tió edi&shy;tar genes, mien&shy;tras que los es&shy;tu&shy;dios de Ka&shy;ta&shy;lin Ka&shy;rikó y Drew Weiss&shy;man sobre el ARNm (Nobel de Me&shy;di&shy;cina 2023) hi&shy;cie&shy;ron po&shy;si&shy;bles las va&shy;cu&shy;nas con&shy;tra la COVID-19.</p>
+                            <p class="acordeon_texto">Al com&shy;bi&shy;nar la ge&shy;né&shy;tica con la in&shy;te&shy;li&shy;gen&shy;cia ar&shy;ti&shy;fi&shy;cial o la bio&shy;tec&shy;no&shy;lo&shy;gía, en el fu&shy;turo sería po&shy;si&shy;ble de&shy;tec&shy;tar en&shy;fer&shy;me&shy;da&shy;des de forma más tem&shy;prana y pre&shy;cisa, ele&shy;gir te&shy;ra&shy;pias según el per&shy;fil ge&shy;né&shy;tico de cada pa&shy;ciente o iden&shy;ti&shy;fi&shy;car ries&shy;gos a tiempo para ac&shy;tuar antes. Sin em&shy;bargo, el reto será doble: lo&shy;grar que estos avan&shy;ces sean ac&shy;ce&shy;si&shy;bles para todos, pero tam&shy;bién pro&shy;te&shy;ger los datos ge&shy;né&shy;ti&shy;cos, que son pro&shy;fun&shy;da&shy;mente per&shy;so&shy;na&shy;les.</p>
                         </div>
                         <figure class="tema_figura">
-                            <img src="../img/vacuna.jpeg" alt="Estructura 3D de una proteína generada por AlphaFold" class="tema_marco">
+                            <img src="../img/futuro/vacuna.webp" width="700" height="466" loading="lazy" decoding="async" alt="Personal de salud atendiendo a un bebé en un hospital" class="tema_imagen">
                         </figure>
                     </div>
                 </details>
 
                 <!-- 3. COMPUTADORES CUÁNTICOS -->
-                <details class="acordeon_item" name="futuro">
+                <details class="acordeon_item" id="futuro-cuanticos" name="futuro">
                     <summary class="acordeon_resumen">Computadores cuánticos</summary>
                     <div class="acordeon_cuerpo">
                         <div class="acordeon_info">
-                            <p class="acordeon_texto">Los computadores cuánticos usan fenómenos de la física cuántica para procesar cierta información de manera distinta a los computadores tradicionales. Un bit común vale 0 o 1; un bit cuántico (qubit) puede combinar ambos estados, lo que para algunos problemas abre otras formas de calcular.</p>
-                            <p class="acordeon_texto">No reemplazarán a los equipos de hoy: podrían ser útiles para ciertos problemas científicos y tecnológicos difíciles de resolver con computadores tradicionales. Su base experimental recibió el Nobel de Física 2025, otorgado a John Clarke, Michel Devoret y John Martinis por sus experimentos con fenómenos cuánticos en circuitos eléctricos.</p>
-                            <ul class="tema_chips">
-                                <li class="tema_chip">Nobel de Física 2025</li>
-                                <li class="tema_chip">Qubits</li>
-                                <li class="tema_chip">Circuitos eléctricos</li>
-                            </ul>
-                            <ul class="tema_lista">
-                                <li><strong>Química y materiales:</strong> simular cómo se comportan moléculas complejas.</li>
-                                <li><strong>Optimización:</strong> buscar la mejor solución entre muchísimas posibilidades.</li>
-                                <li><strong>Seguridad digital:</strong> podría obligar a renovar los sistemas de cifrado actuales.</li>
-                            </ul>
-                            <p class="tema_nota">Es una tecnología en desarrollo: sus aplicaciones prácticas todavía se están investigando.</p>
+                            <p class="acordeon_texto">Mien&shy;tras un bit común solo puede valer 0 o 1, un bit cuán&shy;tico (qubit) puede com&shy;bi&shy;nar ambos es&shy;ta&shy;dos. Gra&shy;cias a esa pro&shy;pie&shy;dad, estas má&shy;qui&shy;nas apro&shy;ve&shy;chan la fí&shy;sica cuán&shy;tica para pro&shy;ce&shy;sar cierta in&shy;for&shy;ma&shy;ción de una ma&shy;nera dis&shy;tinta a la de los com&shy;pu&shy;ta&shy;do&shy;res tra&shy;di&shy;cio&shy;na&shy;les, lo que abre nue&shy;vas for&shy;mas de cal&shy;cu&shy;lar para al&shy;gu&shy;nos pro&shy;ble&shy;mas. De hecho, los ex&shy;pe&shy;ri&shy;men&shy;tos que sen&shy;ta&shy;ron sus bases, rea&shy;li&shy;za&shy;dos con fe&shy;nó&shy;me&shy;nos cuán&shy;ti&shy;cos en cir&shy;cui&shy;tos eléc&shy;tri&shy;cos, re&shy;ci&shy;bie&shy;ron el Nobel de Fí&shy;sica 2025, otor&shy;gado a John Clarke, Mi&shy;chel De&shy;vo&shy;ret y John Mar&shy;ti&shy;nis.</p>
+                            <p class="acordeon_texto">Aun&shy;que no reem&shy;pla&shy;za&shy;rán a los equi&shy;pos de hoy, po&shy;drían re&shy;sol&shy;ver pro&shy;ble&shy;mas cien&shy;tí&shy;fi&shy;cos o tec&shy;no&shy;ló&shy;gi&shy;cos que re&shy;sul&shy;tan muy di&shy;fí&shy;ci&shy;les para los com&shy;pu&shy;ta&shy;do&shy;res tra&shy;di&shy;cio&shy;na&shy;les, como si&shy;mu&shy;lar el com&shy;por&shy;ta&shy;miento de mo&shy;lé&shy;cu&shy;las com&shy;ple&shy;jas para es&shy;tu&shy;diar nue&shy;vos ma&shy;te&shy;ria&shy;les o en&shy;con&shy;trar la mejor so&shy;lu&shy;ción entre mu&shy;chí&shy;si&shy;mas po&shy;si&shy;bi&shy;li&shy;da&shy;des. Ade&shy;más, su lle&shy;gada po&shy;dría obli&shy;gar a re&shy;no&shy;var los sis&shy;te&shy;mas de ci&shy;frado ac&shy;tua&shy;les. Por ahora, se trata de una tec&shy;no&shy;lo&shy;gía en de&shy;sa&shy;rro&shy;llo cuyas apli&shy;ca&shy;cio&shy;nes prác&shy;ti&shy;cas to&shy;da&shy;vía se están in&shy;ves&shy;ti&shy;gando.</p>
                         </div>
                         <figure class="tema_figura">
-                            <img src="../img/compu_cuantica.jpg" alt="Estructura 3D de una proteína generada por AlphaFold" class="tema_marco">
+                            <img src="../img/compu_cuantica.jpg" width="694" height="442" loading="lazy" decoding="async" alt="Computador cuántico con su sistema de enfriamiento y cables" class="tema_imagen">
                         </figure>
                     </div>
                 </details>
 
                 <!-- 4. ENERGÍA SOSTENIBLE -->
-                <details class="acordeon_item" name="futuro">
+                <details class="acordeon_item" id="futuro-energia" name="futuro">
                     <summary class="acordeon_resumen">Energía sostenible</summary>
                     <div class="acordeon_cuerpo">
                         <div class="acordeon_info">
-                            <p class="acordeon_texto">El futuro energético apunta a producir más energía limpia y a poder guardarla. Se espera seguir desarrollando mejores baterías, energías renovables (solar, eólica e hidráulica) y sistemas de almacenamiento para reducir las emisiones que aceleran el cambio climático.</p>
-                            <p class="acordeon_texto">En el Acuerdo de París (2015), casi 200 países se comprometieron a limitar el calentamiento global muy por debajo de 2 °C, con la meta de 1,5 °C. A esto se suman nuevos materiales, como las estructuras metal-orgánicas (MOF) de Omar Yaghi (Nobel de Química 2025, con Susumu Kitagawa y Richard Robson), capaces de capturar gases y agua del aire.</p>
-                            <ul class="tema_chips">
-                                <li class="tema_chip">Acuerdo de París · 2015</li>
-                                <li class="tema_chip">Baterías</li>
-                                <li class="tema_chip">Renovables</li>
-                                <li class="tema_chip">Materiales MOF</li>
-                            </ul>
-                            <ul class="tema_lista">
-                                <li><strong>Renovables:</strong> solar, eólica e hidráulica para reducir las emisiones.</li>
-                                <li><strong>Baterías y almacenamiento:</strong> guardar la energía cuando sobra para usarla cuando falta.</li>
-                                <li><strong>Economía circular:</strong> reutilizar y reciclar recursos en lugar de desecharlos.</li>
-                            </ul>
-                            <p class="tema_nota">La idea central: cuidar los recursos hoy para no comprometer el futuro.</p>
+                            <p class="acordeon_texto">El fu&shy;turo ener&shy;gé&shy;tico apunta a pro&shy;du&shy;cir más ener&shy;gía lim&shy;pia a par&shy;tir de fuen&shy;tes re&shy;no&shy;va&shy;bles, como la solar, la eó&shy;lica o la hi&shy;dráu&shy;lica, así como a al&shy;ma&shy;ce&shy;narla en ba&shy;te&shy;rías para usarla cuando haga falta. A este es&shy;fuerzo se suman nue&shy;vos ma&shy;te&shy;ria&shy;les, entre ellos las es&shy;truc&shy;tu&shy;ras metal-or&shy;gá&shy;ni&shy;cas (MOF) de Omar Yaghi, ca&shy;pa&shy;ces de cap&shy;tu&shy;rar gases e in&shy;cluso agua del aire; su tra&shy;bajo le valió el Nobel de Quí&shy;mica 2025, com&shy;par&shy;tido con Su&shy;sumu Ki&shy;ta&shy;gawa y Ri&shy;chard Rob&shy;son.</p>
+                            <p class="acordeon_texto">El ob&shy;je&shy;tivo de estos avan&shy;ces es re&shy;du&shy;cir las emi&shy;sio&shy;nes que ace&shy;le&shy;ran el cam&shy;bio cli&shy;má&shy;tico, un com&shy;pro&shy;miso que casi 200 paí&shy;ses asu&shy;mie&shy;ron en el Acuerdo de París (2015) al acor&shy;dar li&shy;mi&shy;tar el ca&shy;len&shy;ta&shy;miento glo&shy;bal muy por de&shy;bajo de 2 °C, con la meta de 1,5 °C. En la misma di&shy;rec&shy;ción avanza la eco&shy;no&shy;mía cir&shy;cu&shy;lar, que pro&shy;pone reu&shy;ti&shy;li&shy;zar o re&shy;ci&shy;clar los re&shy;cur&shy;sos en lugar de de&shy;se&shy;char&shy;los. En el fondo, todas estas ini&shy;cia&shy;ti&shy;vas com&shy;par&shy;ten una misma idea: cui&shy;dar los re&shy;cur&shy;sos hoy para no com&shy;pro&shy;me&shy;ter el fu&shy;turo.</p>
                         </div>
                         <figure class="tema_figura">
-                            <img src="../img/aereogeneradores.jpg" alt="Estructura 3D de una proteína generada por AlphaFold" class="tema_marco">
+                            <img src="../img/aereogeneradores.jpg" width="640" height="480" loading="lazy" decoding="async" alt="Aerogeneradores que producen energía eólica" class="tema_imagen">
                         </figure>
                     </div>
                 </details>
 
                 <!-- 5. ROBÓTICA -->
-                <details class="acordeon_item" name="futuro">
+                <details class="acordeon_item" id="futuro-robotica" name="futuro">
                     <summary class="acordeon_resumen">Robótica</summary>
                     <div class="acordeon_cuerpo">
                         <div class="acordeon_info">
-                            <p class="acordeon_texto">Los robots podrían asumir más tareas en fábricas, laboratorios, hospitales y otros entornos, sobre todo las repetitivas o peligrosas. Cuando se combinan con inteligencia artificial, pueden adaptarse mejor a lo que ocurre a su alrededor.</p>
-                            <p class="acordeon_texto">Esa convergencia de IA, robótica y medicina ya permite asistir cirugías. Al mismo tiempo, la automatización transforma el trabajo: aparecen nuevas profesiones y se vuelve necesario aprender durante toda la vida.</p>
-                            <ul class="tema_chips">
-                                <li class="tema_chip">Fábricas</li>
-                                <li class="tema_chip">Laboratorios</li>
-                                <li class="tema_chip">Hospitales</li>
-                                <li class="tema_chip">Tareas peligrosas</li>
-                            </ul>
-                            <ul class="tema_lista">
-                                <li><strong>Fábricas:</strong> producción más precisa y segura.</li>
-                                <li><strong>Laboratorios:</strong> repetir experimentos con exactitud.</li>
-                                <li><strong>Hospitales:</strong> apoyo en procedimientos médicos y cirugías asistidas.</li>
-                                <li><strong>Entornos de riesgo:</strong> reemplazar a las personas en tareas peligrosas.</li>
-                            </ul>
-                            <p class="tema_nota">El reto: preparar a las personas con nuevas habilidades para el trabajo del futuro.</p>
+                            <p class="acordeon_texto">En fá&shy;bri&shy;cas, la&shy;bo&shy;ra&shy;to&shy;rios, hos&shy;pi&shy;ta&shy;les u otros en&shy;tor&shy;nos de riesgo, los ro&shy;bots po&shy;drían asu&shy;mir cada vez más ta&shy;reas, sobre todo las re&shy;pe&shy;ti&shy;ti&shy;vas o pe&shy;li&shy;gro&shy;sas. Al com&shy;bi&shy;narse con la in&shy;te&shy;li&shy;gen&shy;cia ar&shy;ti&shy;fi&shy;cial, ade&shy;más, lo&shy;gran adap&shy;tarse mejor a lo que ocu&shy;rre a su al&shy;re&shy;de&shy;dor. Esta con&shy;ver&shy;gen&shy;cia entre IA, ro&shy;bó&shy;tica y me&shy;di&shy;cina ya per&shy;mite, por ejem&shy;plo, asis&shy;tir ci&shy;ru&shy;gías.</p>
+                            <p class="acordeon_texto">Con su ayuda, la pro&shy;duc&shy;ción puede vol&shy;verse más pre&shy;cisa y se&shy;gura, los ex&shy;pe&shy;ri&shy;men&shy;tos pue&shy;den re&shy;pe&shy;tirse con exac&shy;ti&shy;tud, mien&shy;tras que las per&shy;so&shy;nas dejan de ex&shy;po&shy;nerse a ta&shy;reas pe&shy;li&shy;gro&shy;sas. No obs&shy;tante, la au&shy;to&shy;ma&shy;ti&shy;za&shy;ción tam&shy;bién trans&shy;forma el tra&shy;bajo: sur&shy;gen nue&shy;vas pro&shy;fe&shy;sio&shy;nes, por lo que el reto será pre&shy;pa&shy;rar a las per&shy;so&shy;nas con nue&shy;vas ha&shy;bi&shy;li&shy;da&shy;des a lo largo de toda la vida.</p>
                         </div>
                         <figure class="tema_figura">
-                            <img src="../img/robot_fabrica.jpg" alt="Estructura 3D de una proteína generada por AlphaFold" class="tema_marco">
+                            <img src="../img/robot_fabrica.jpg" width="678" height="452" loading="lazy" decoding="async" alt="Brazos robóticos trabajando en una fábrica" class="tema_imagen">
                         </figure>
                     </div>
                 </details>
 
                 <!-- 6. EXPLORACIÓN ESPACIAL -->
-                <details class="acordeon_item" name="futuro">
+                <details class="acordeon_item" id="futuro-espacio" name="futuro">
                     <summary class="acordeon_resumen">Exploración espacial</summary>
                     <div class="acordeon_cuerpo">
                         <div class="acordeon_info">
-                            <p class="acordeon_texto">Tras Artemis II (abril de 2026), la NASA prepara futuras misiones a la superficie lunar y, a más largo plazo, a Marte. Artemis II despegó el 1 de abril y amerizó el 10 de abril de 2026: cuatro astronautas viajaron alrededor de la Luna, en la primera misión tripulada fuera de la órbita terrestre desde Apolo 17, en 1972.</p>
-                            <p class="acordeon_texto">El espacio ya no es solo cosa de agencias públicas: empresas como SpaceX y Blue Origin lanzan cohetes y satélites, y la reutilización de cohetes reduce el costo de llegar allá. Los satélites, además, sostienen las comunicaciones, el GPS, el pronóstico del clima y la observación de la Tierra.</p>
-                            <ul class="tema_chips">
-                                <li class="tema_chip">Artemis II</li>
-                                <li class="tema_chip">Luna</li>
-                                <li class="tema_chip">Marte</li>
-                                <li class="tema_chip">Satélites</li>
-                            </ul>
-                            <ul class="tema_lista">
-                                <li><strong>Luna:</strong> volver a la superficie lunar con nuevas misiones.</li>
-                                <li><strong>Marte:</strong> el objetivo a más largo plazo.</li>
-                                <li><strong>Empresas privadas:</strong> cohetes reutilizables que abaratan los lanzamientos.</li>
-                                <li><strong>Satélites:</strong> comunicaciones, GPS, clima y observación de la Tierra.</li>
-                            </ul>
-                            <p class="tema_nota">Artemis I (2022) ya había probado la nave Orion sin tripulación.</p>
+                            <p class="acordeon_texto">La hu&shy;ma&shy;ni&shy;dad ha vuelto a mirar hacia la Luna. Tras Ar&shy;te&shy;mis I (2022), que probó la nave Orion sin tri&shy;pu&shy;la&shy;ción, Ar&shy;te&shy;mis II des&shy;pegó el 1 de abril de 2026 con cua&shy;tro as&shy;tro&shy;nau&shy;tas que via&shy;ja&shy;ron al&shy;re&shy;de&shy;dor de la Luna antes de ame&shy;ri&shy;zar el 10 de abril. Fue la pri&shy;mera mi&shy;sión tri&shy;pu&shy;lada fuera de la ór&shy;bita te&shy;rres&shy;tre desde Apolo 17, en 1972. A par&shy;tir de ahí, la NASA pre&shy;para nue&shy;vas mi&shy;sio&shy;nes para vol&shy;ver a la su&shy;per&shy;fi&shy;cie lunar y, a más largo plazo, lle&shy;gar a Marte.</p>
+                            <p class="acordeon_texto">El es&shy;pa&shy;cio, ade&shy;más, ya no es solo cosa de agen&shy;cias pú&shy;bli&shy;cas: em&shy;pre&shy;sas como SpaceX o Blue Ori&shy;gin tam&shy;bién lan&shy;zan co&shy;he&shy;tes y sa&shy;té&shy;li&shy;tes, mien&shy;tras que los co&shy;he&shy;tes reu&shy;ti&shy;li&shy;za&shy;bles aba&shy;ra&shy;tan cada lan&shy;za&shy;miento. Estos avan&shy;ces se sien&shy;ten en la vida dia&shy;ria, pues los sa&shy;té&shy;li&shy;tes sos&shy;tie&shy;nen las co&shy;mu&shy;ni&shy;ca&shy;cio&shy;nes, el GPS, el pro&shy;nós&shy;tico del clima, así como la ob&shy;ser&shy;va&shy;ción de la Tie&shy;rra.</p>
                         </div>
                         <figure class="tema_figura">
-                            <img src="../img/tripulacion_artemis.jpg" alt="Estructura 3D de una proteína generada por AlphaFold" class="tema_marco">
+                            <img src="../img/tripulacion_artemis.jpg" width="350" height="438" loading="lazy" decoding="async" alt="Los cuatro astronautas de la misión Artemis II con sus trajes naranjas" class="tema_imagen tema_imagen--vertical">
                         </figure>
                     </div>
                 </details>
             </div>
-
-            <figure class="futuro_figura">
-                <video class="futuro_imagen" width="1600" height="1000" autoplay loop muted playsinline aria-label="La Luna vista desde la nave Orion durante la misión Artemis II">
-                <source src="../img/luna_artemis.mp4" type="video/mp4">
-                </video>
-
-                <figcaption class="futuro_pie">Video: NASA</figcaption>
-            </figure>
         </section>
 
-        <section class="conclusion">
-            <h2 class="titulo2">Conclusión</h2>
-
-            <div class="conclusion_padre">
-                <article class="conclusion_tarjeta">
-                    <p class="chip chip_logros">Logros</p>
-                    <p class="conclusion_texto">Nuestro siglo se caracteriza por un cambio tecnológico acelerado, con innovaciones como Internet, teléfonos inteligentes, inteligencia artificial, biotecnología y energías renovables que han transformado nuestra vida diaria.</p>
-                    <ul class="tema_lista conclusion_lista">
-                        <li><strong>Comunicación:</strong> Internet y los teléfonos inteligentes conectan a gran parte de la humanidad.</li>
-                        <li><strong>Salud:</strong> vacunas de ARNm, edición genética con CRISPR y biotecnología.</li>
-                        <li><strong>Ciencia:</strong> IA que resuelve problemas complejos, como predecir la forma de las proteínas.</li>
-                        <li><strong>Espacio:</strong> el regreso de las misiones tripuladas a la Luna con Artemis II.</li>
-                    </ul>
-                </article>
-
-                <article class="conclusion_tarjeta">
-                    <p class="chip chip_desafios">Desafíos</p>
-                    <p class="conclusion_texto">Estos avances traen desafíos en privacidad, desigualdad, medio ambiente y uso responsable de la ciencia. El futuro requiere no solo crear nuevas tecnologías, sino usarlas de forma responsable y beneficiosa para la sociedad.</p>
-                    <ul class="tema_lista conclusion_lista">
-                        <li><strong>Privacidad:</strong> proteger los datos personales y genéticos.</li>
-                        <li><strong>Desigualdad:</strong> evitar que los beneficios lleguen solo a unos pocos.</li>
-                        <li><strong>Medio ambiente:</strong> frenar el cambio climático y cuidar los recursos.</li>
-                        <li><strong>Uso responsable:</strong> enfrentar la desinformación y usar la ciencia con ética.</li>
-                    </ul>
-                </article>
-
-                <article class="conclusion_tarjeta">
-                    <p class="chip chip_reto">El gran reto</p>
-                    <p class="conclusion_texto">El gran desafío del siglo XXI es lograr que la innovación sea más avanzada, segura, sostenible y accesible para todos.</p>
-                    <p class="conclusion_texto conclusion_extra">No basta con inventar más rápido: importa a quién llega cada invento y qué huella deja en el planeta. Por eso, cada avance debería medirse por cuánto mejora la vida de las personas.</p>
-                </article>
+        <!-- CONCLUSIÓN: un solo bloque con un párrafo -->
+        <section class="conclusion" aria-labelledby="titulo-conclusion">
+            <h2 class="subtitulo" id="titulo-conclusion">Conclusión</h2>
+            <div class="banda-texto conclusion_bloque">
+                <p>En el siglo XXI, los avan&shy;ces tec&shy;no&shy;ló&shy;gi&shy;cos han trans&shy;for&shy;mado nues&shy;tra forma de co&shy;mu&shy;ni&shy;car&shy;nos, apren&shy;der, cui&shy;dar la salud y com&shy;pren&shy;der el mundo. La in&shy;te&shy;li&shy;gen&shy;cia ar&shy;ti&shy;fi&shy;cial, la bio&shy;tec&shy;no&shy;lo&shy;gía, las ener&shy;gías re&shy;no&shy;va&shy;bles y la ex&shy;plo&shy;ra&shy;ción es&shy;pa&shy;cial ofre&shy;cen nue&shy;vas opor&shy;tu&shy;ni&shy;da&shy;des, pero tam&shy;bién plan&shy;tean de&shy;sa&shy;fíos re&shy;la&shy;cio&shy;na&shy;dos con la pri&shy;va&shy;ci&shy;dad, la de&shy;si&shy;gual&shy;dad y el medio am&shy;biente. Por eso, el ver&shy;da&shy;dero pro&shy;greso con&shy;siste en de&shy;sa&shy;rro&shy;llar tec&shy;no&shy;lo&shy;gías avan&shy;za&shy;das, se&shy;gu&shy;ras, sos&shy;te&shy;ni&shy;bles y ac&shy;ce&shy;si&shy;bles, que se uti&shy;li&shy;cen de ma&shy;nera res&shy;pon&shy;sa&shy;ble y per&shy;mi&shy;tan me&shy;jo&shy;rar la ca&shy;li&shy;dad de vida de las per&shy;so&shy;nas, pro&shy;te&shy;ger los re&shy;cur&shy;sos na&shy;tu&shy;ra&shy;les y lle&shy;var sus be&shy;ne&shy;fi&shy;cios a toda la so&shy;cie&shy;dad.</p>
             </div>
         </section>
-
-        <section class="pilares">
-            <h3 class="titulo3">Cuatro ideas para llevarnos del siglo XXI</h3>
-
-            <div class="pilares_grid">
-                <article class="pilar">
-                    <p class="pilar_numero">01</p>
-                    <h4 class="pilar_titulo">Avanzada</h4>
-                    <p class="pilar_texto">Seguir investigando y creando soluciones a problemas reales de la salud, la energía y el conocimiento.</p>
-                </article>
-
-                <article class="pilar">
-                    <p class="pilar_numero">02</p>
-                    <h4 class="pilar_titulo">Segura</h4>
-                    <p class="pilar_texto">Proteger la privacidad y los datos de las personas, y verificar lo que producen las nuevas tecnologías.</p>
-                </article>
-
-                <article class="pilar">
-                    <p class="pilar_numero">03</p>
-                    <h4 class="pilar_titulo">Sostenible</h4>
-                    <p class="pilar_texto">Cuidar los recursos y el clima para que las próximas generaciones también puedan innovar.</p>
-                </article>
-
-                <article class="pilar">
-                    <p class="pilar_numero">04</p>
-                    <h4 class="pilar_titulo">Accesible</h4>
-                    <p class="pilar_texto">Lograr que los beneficios de la ciencia lleguen a todos y no solo a unos pocos.</p>
-                </article>
-            </div>
-        </section>
-
-        <div class="boton_contenedor">
-            <a class="boton" href="actividad.html">Siguiente: Actividad <span>→</span></a>
-        </div>
-
-        <p class="nombres">Hecho por: Adrian Vargas - Daniel Manios - Angel Polo</p>
     </main>
 
     <script src="../javascript/transicion.js" defer></script>
+    <script src="../javascript/recorrido-visitas.js" defer></script>
+    <script src="../javascript/barra-comun.js" defer></script>
 </body>
 </html>

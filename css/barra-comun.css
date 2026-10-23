@@ -1,0 +1,325 @@
+/* =====================================================================
+   Barra superior igual en todas las páginas (en computador).
+   Modelo: la barra de Antecedentes (css/sigloxx.css). Cada página
+   conserva su CSS; aquí solo se igualan medidas, fondo, logo y enlaces
+   para que la barra y el recuadro de abajo no salten al cambiar de página.
+   En celular, todas usan el menú de Antecedentes: logo + botón de menú
+   que abre los enlaces a pantalla completa (javascript/barra-comun.js
+   crea el botón en las páginas que no lo tienen).
+   ===================================================================== */
+
+@media (min-width: 721px) {
+    html body .barra {
+        position: sticky;
+        top: 0;
+        z-index: 1000;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        box-sizing: border-box;
+        width: 100%;
+        height: 76px;
+        min-height: 76px;
+        padding: 0 4%;
+        gap: 24px;
+        background-color: #05070d;
+        border-bottom: 1px solid #22314d;
+        font-family: "Inter", sans-serif;
+    }
+
+    html body .barra .logo {
+        display: block;
+        width: 120px;
+        height: 50px;
+        padding: 0;
+        margin: 0;
+        object-fit: contain;
+        object-position: left center;
+        flex: 0 0 120px;
+    }
+
+    html body .barra .barra2 {
+        display: flex;
+        align-items: center;
+        justify-content: flex-end;
+        gap: clamp(16px, 2.4vw, 36px);
+        padding: 0;
+        font-size: 15.2px;
+        white-space: nowrap;
+        color: #9aa7bd;
+    }
+    html body .barra .barra2 a { color: #9aa7bd; text-decoration: none; }
+
+    /* Sección actual: texto blanco con la línea verde debajo */
+    html body .barra .barra2 a[aria-current="page"],
+    html body .barra .barra2 a.activo,
+    html body .barra .barra2 .aniparrafos.activo { color: #f6f8ff; }
+    html body .barra .barra2 .aniparrafos::after { bottom: -7px; height: 2px; background-color: #66E6FF; }
+    html body .barra .barra2 a[aria-current="page"] .aniparrafos::after { transform: scaleX(1); opacity: 1; }
+    html body .barra .menu-toggle { display: none; }
+}
+
+/* ---------- Celulares: barra compacta con botón de menú ---------- */
+@media (max-width: 720px) {
+    html body .barra {
+        position: sticky;
+        top: 0;
+        z-index: 1000;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        box-sizing: border-box;
+        width: 100%;
+        height: 66px;
+        min-height: 66px;
+        padding: 0 5%;
+        gap: 12px;
+        background-color: #05070d;
+        border-bottom: 1px solid #22314d;
+        font-family: "Inter", sans-serif;
+    }
+    html body .barra .logo-enlace { flex: 0 0 96px; }
+    html body .barra .logo {
+        display: block;
+        width: 96px;
+        height: 42px;
+        padding: 0;
+        margin: 0;
+        object-fit: contain;
+        object-position: left center;
+        flex: 0 0 96px;
+    }
+
+    html body .barra .menu-toggle {
+        display: block;
+        flex: none;
+        width: 44px;
+        height: 44px;
+        margin-left: auto;
+        padding: 10px;
+        border: 1px solid #22314d;
+        border-radius: 10px;
+        background: transparent;
+        cursor: pointer;
+    }
+    html body .barra .menu-toggle span {
+        display: block;
+        width: 100%;
+        height: 2px;
+        margin: 5px 0;
+        border-radius: 2px;
+        background: #f6f8ff;
+        transition: transform .25s ease, opacity .25s ease;
+    }
+    html body .barra .menu-toggle.menu-activo span:first-child { transform: translateY(7px) rotate(45deg); }
+    html body .barra .menu-toggle.menu-activo span:nth-child(2) { opacity: 0; }
+    html body .barra .menu-toggle.menu-activo span:last-child { transform: translateY(-7px) rotate(-45deg); }
+    html body .barra .menu-toggle:focus-visible { outline: 2px solid #66E6FF; outline-offset: 3px; }
+
+    /* Enlaces a pantalla completa al abrir el menú */
+    html body .barra .barra2 {
+        position: fixed;
+        inset: 0;
+        z-index: 1001;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 25px;
+        box-sizing: border-box;
+        width: 100%;
+        height: 100dvh;
+        padding: 90px 24px 35px;
+        overflow: visible;
+        background: rgb(5 7 13 / 98%);
+        font-size: 1.25rem;
+        white-space: normal;
+        opacity: 0;
+        visibility: hidden;
+        pointer-events: none;
+        transform: translateY(-8px);
+        transition: opacity .25s ease, visibility .25s ease, transform .25s ease;
+    }
+    html body .barra .barra2.menu-abierto { opacity: 1; visibility: visible; pointer-events: auto; transform: none; }
+    html body .barra .barra2 a { padding: 4px 10px; color: #9aa7bd; text-decoration: none; }
+    html body .barra .barra2 a[aria-current="page"],
+    html body .barra .barra2 a.activo,
+    html body .barra .barra2 .aniparrafos.activo { color: #f6f8ff; }
+    /* El botón queda por encima del menú abierto para poder cerrarlo */
+    html body .barra .menu-toggle { position: relative; z-index: 1002; }
+    body.menu-bloqueado { overflow: hidden; }
+}
+
+/* =====================================================================
+   Subtítulos de cada sección (javascript/barra-comun.js)
+   ===================================================================== */
+
+/* Al llegar a un apartado, la barra fija no tapa su título: queda 20 px debajo de ella
+   en todas las páginas (algunas traían su propio margen, que aquí se iguala). */
+html:root { scroll-padding-top: 0; }
+#intro-titulo, #tecnologias-titulo, #dato-titulo,
+#titulo-historia, #titulo-acontecimientos, #titulo-inventos,
+#titulo-hitos, #titulo-sociedad, #titulo-inventores,
+#titulo-futuro, #titulo-conclusion,
+#futuro-ia, #futuro-medicina, #futuro-cuanticos, #futuro-energia, #futuro-robotica, #futuro-espacio,
+#actividad-preguntas {
+    scroll-margin-top: 96px;
+}
+@media (max-width: 720px) {
+    #intro-titulo, #tecnologias-titulo, #dato-titulo,
+    #titulo-historia, #titulo-acontecimientos, #titulo-inventos,
+    #titulo-hitos, #titulo-sociedad, #titulo-inventores,
+    #titulo-futuro, #titulo-conclusion,
+    #futuro-ia, #futuro-medicina, #futuro-cuanticos, #futuro-energia, #futuro-robotica, #futuro-espacio,
+    #actividad-preguntas {
+        scroll-margin-top: 86px;
+    }
+}
+
+.bc-item {
+    position: relative;
+    display: inline-flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* ---------- Computador: panel bajo la sección ---------- */
+@media (min-width: 721px) {
+    html body .barra .bc-sub {
+        position: absolute;
+        top: 100%;
+        left: 50%;
+        z-index: 1003;
+        /* Franja invisible entre la sección y el panel: no se cierra al bajar el mouse */
+        padding-top: 36px;
+        opacity: 0;
+        visibility: hidden;
+        pointer-events: none;
+        transform: translate(calc(-50% + var(--bc-ajuste, 0px)), -6px);
+    }
+    html body .barra .barra2.bc-listo .bc-sub {
+        transition: opacity .22s ease, transform .22s ease, visibility .22s;
+    }
+    html body .barra .bc-item.bc-abierto .bc-sub {
+        opacity: 1;
+        visibility: visible;
+        pointer-events: auto;
+        transform: translate(calc(-50% + var(--bc-ajuste, 0px)), 0);
+    }
+
+    html body .barra .bc-sub__lista {
+        display: flex;
+        flex-direction: column;
+        gap: 2px;
+        box-sizing: border-box;
+        width: max-content;
+        min-width: 230px;
+        max-width: 320px;
+        padding: 8px;
+        border: 1px solid rgba(102, 230, 255, .35);
+        border-radius: 12px;
+        background: rgba(5, 7, 13, .97);
+        box-shadow: 0 18px 40px -12px rgba(0, 0, 0, .85), 0 0 22px rgba(30, 107, 255, .12);
+        white-space: normal;
+    }
+
+    html body .barra .barra2 .bc-sub__enlace {
+        display: block;
+        padding: 9px 12px;
+        border-radius: 8px;
+        color: #9FB3D1;
+        font-family: "Inter", sans-serif;
+        font-size: 14px;
+        line-height: 1.35;
+        text-align: left;
+        text-decoration: none;
+        transition: background-color .2s ease, color .2s ease;
+    }
+    html body .barra .barra2 .bc-sub__enlace:hover,
+    html body .barra .barra2 .bc-sub__enlace:focus-visible {
+        background-color: rgba(30, 107, 255, .16);
+        color: #F6F8FF;
+        outline: none;
+    }
+    html body .barra .barra2 .bc-sub__enlace:focus-visible { box-shadow: inset 0 0 0 1px #66E6FF; }
+
+    /* Temas de Futuro: un nivel más adentro, con una línea fina */
+    html body .barra .barra2 .bc-sub__enlace--tema {
+        position: relative;
+        padding-left: 26px;
+        font-size: 13.5px;
+    }
+    html body .barra .barra2 .bc-sub__enlace--tema::before {
+        content: "";
+        position: absolute;
+        left: 14px;
+        top: 50%;
+        width: 6px;
+        height: 1px;
+        background: #1E6BFF;
+    }
+
+    /* Línea cian bajo la sección mientras su panel está abierto */
+    html body .barra .barra2 .bc-item.bc-abierto .aniparrafos::after { transform: scaleX(1); opacity: 1; }
+}
+
+/* ---------- Celular: la lista se despliega dentro del menú ---------- */
+@media (max-width: 720px) {
+    /* Una sola columna; si una lista abierta no cabe, el menú se desplaza hacia abajo */
+    html body .barra .barra2 {
+        flex-wrap: nowrap;
+        justify-content: safe center;
+        gap: 18px;
+        overflow-x: hidden;
+        overflow-y: auto;
+        overscroll-behavior: contain;
+    }
+    html body .barra .bc-item { width: min(100%, 340px); }
+
+    html body .barra .bc-sub {
+        display: grid;
+        grid-template-rows: 0fr;
+        width: 100%;
+        opacity: 0;
+        visibility: hidden;
+    }
+    html body .barra .barra2.bc-listo .bc-sub {
+        transition: grid-template-rows .3s ease, opacity .25s ease, visibility .3s;
+    }
+    html body .barra .bc-item.bc-abierto .bc-sub {
+        grid-template-rows: 1fr;
+        opacity: 1;
+        visibility: visible;
+    }
+    html body .barra .bc-sub__lista {
+        display: flex;
+        flex-direction: column;
+        min-height: 0;
+        overflow: hidden;
+    }
+
+    html body .barra .barra2 .bc-sub__enlace {
+        display: block;
+        margin-top: 8px;
+        padding: 11px 14px;
+        border: 1px solid rgba(102, 230, 255, .18);
+        border-radius: 10px;
+        background: rgba(11, 23, 48, .6);
+        color: #9FB3D1;
+        font-family: "Inter", sans-serif;
+        font-size: .95rem;
+        line-height: 1.35;
+        text-align: center;
+        text-decoration: none;
+    }
+    html body .barra .barra2 .bc-sub__enlace:active { background: rgba(30, 107, 255, .2); color: #F6F8FF; }
+    html body .barra .barra2 .bc-sub__enlace--tema { font-size: .88rem; padding-block: 9px; }
+
+    /* La sección abierta se resalta igual que la actual */
+    html body .barra .barra2 .bc-item.bc-abierto > a { color: #F6F8FF; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    html body .barra .barra2.bc-listo .bc-sub { transition: none; }
+}

@@ -17,8 +17,11 @@ body, html {
     font-family: "Inter", sans-serif;
     z-index: 1000;
     height: 8.5vh;
-    border-bottom: 3px solid #2EE6A6;
+    border-bottom: 3px solid #66E6FF;
     box-sizing: border-box;
+    /* Fondo de la barra fija: sin él, el contenido se veía pasar por detrás al bajar */
+    background-color: #040a1a;
+    box-shadow: 0 8px 24px -12px rgba(0, 0, 0, .8);
 }
 
 .logo {
@@ -28,7 +31,7 @@ body, html {
 }
 
 .barra2 {
-    color: #9AA7BD;
+    color: #9FB3D1;
     display: flex;
     gap: 4vw;
     font-size: 2vh;
@@ -38,7 +41,7 @@ body, html {
 }
 
 .barra2 a {
-    color: #9AA7BD;
+    color: #9FB3D1;
     text-decoration: none;
 }
 
@@ -60,7 +63,7 @@ body, html {
     left: 0;
     width: 100%;
     height: 1px;
-    background-color: #2EE6A6;
+    background-color: #66E6FF;
     transform: scaleX(0);
     opacity: 0;
     transition: transform 0.3s ease, opacity 0.3s ease;
@@ -82,7 +85,7 @@ body, html {
 
 .menu1 {
     font-family: "Inter", sans-serif;
-    color: #2EE6A6;
+    color: #66E6FF;
     font-size: 2vh;
     margin-top: 5vh;
     font-weight: 500;
@@ -92,7 +95,7 @@ body, html {
     display: inline-block;
     position: relative;
     font-family: "Inter", sans-serif;
-    color: #9AA7BD;
+    color: #9FB3D1;
     font-size: 1.5vh;
     margin-top: 5vh;
     font-weight: 400;
@@ -111,7 +114,7 @@ body, html {
     left: 0;
     width: 100%;
     height: 1px;
-    background-color: #2EE6A6;
+    background-color: #66E6FF;
     transform: scaleX(0);
     opacity: 0;
     transition: transform 0.3s ease, opacity 0.3s ease;
@@ -133,7 +136,7 @@ body, html {
 
 .parrafo1 {
     font-family: "Inter", sans-serif;
-    color: #9AA7BD;
+    color: #9FB3D1;
     font-size: 2vh;
     padding-inline: 4vw;
     margin-top: -2vh;
@@ -158,10 +161,10 @@ body, html {
     position: relative;
     overflow: hidden;
     border-radius: 10px;
-    background-image: url('../img/tierra_espacio.webp');
+    background-image: url('../img/menu/contexto.jpg');
     background-size: cover;
     background-position: center;
-    border: 1px solid #26109f;
+    border: 1px solid rgba(30, 107, 255, .55);
     z-index: 0;
     transition: transform 0.3s ease;
 }
@@ -180,10 +183,10 @@ body, html {
     position: relative;
     overflow: hidden;
     border-radius: 10px;
-    background-image: url('../img/hombre_luna.jpg');
+    background-image: url('../img/menu/antecedentes.jpg');
     background-size: cover;
     background-position: center;
-    border: 1px solid #26109f;
+    border: 1px solid rgba(30, 107, 255, .55);
     z-index: 0;
     transition: transform 0.3s ease;
 }
@@ -202,10 +205,10 @@ body, html {
     position: relative;
     overflow: hidden;
     border-radius: 10px;
-    background-image: url('../img/ciudad.jpg');
+    background-image: url('../img/menu/eventos.jpg');
     background-size: cover;
     background-position: center;
-    border: 1px solid #26109f;
+    border: 1px solid rgba(30, 107, 255, .55);
     z-index: 0;
     transition: transform 0.3s ease;
 }
@@ -224,10 +227,10 @@ body, html {
     position: relative;
     overflow: hidden;
     border-radius: 10px;
-    background-image: url('../img/laboratorio.jpg');
+    background-image: url('../img/menu/inventores.jpg');
     background-size: cover;
     background-position: center;
-    border: 1px solid #26109f;
+    border: 1px solid rgba(30, 107, 255, .55);
     z-index: 0;
     transition: transform 0.3s ease;
 }
@@ -246,10 +249,10 @@ body, html {
     position: relative;
     overflow: hidden;
     border-radius: 10px;
-    background-image: url('../img/artemis2.webp');
+    background-image: url('../img/menu/futuro.jpg');
     background-size: cover;
     background-position: center;
-    border: 1px solid #26109f;
+    border: 1px solid rgba(30, 107, 255, .55);
     z-index: 0;
     transition: transform 0.3s ease;
 }
@@ -268,10 +271,10 @@ body, html {
     position: relative;
     overflow: hidden;
     border-radius: 10px;
-    background-image: url('../img/nasa.jpg');
+    background-image: url('../img/menu/actividad.jpg');
     background-size: cover;
     background-position: center;
-    border: 1px solid #26109f;
+    border: 1px solid rgba(30, 107, 255, .55);
     z-index: 0;
     transition: transform 0.3s ease;
 }
@@ -291,7 +294,7 @@ body, html {
 
 .texto2_tarjetas {  
     font-family: "Inter", sans-serif;
-    color: #9AA7BD;
+    color: #9FB3D1;
     font-size: 1.8vh;
     text-align: center;
     font-weight: 500;
@@ -299,7 +302,7 @@ body, html {
 
 .texto3_tarjetas {
     font-family: "Inter", sans-serif;
-    color: #2EE6A6;
+    color: #66E6FF;
     font-size: 1.8vh;
     text-align: center;
     font-weight: 500;
@@ -313,7 +316,7 @@ body, html {
     left: 0;
     width: 100%;
     height: 2px;
-    background-color: #2EE6A6;
+    background-color: #66E6FF;
     opacity: 0;
     transition: transform 0.5s ease, opacity 0.5s ease;
 }
@@ -345,6 +348,215 @@ body, html {
     z-index: 2;
 }
 
+/* Videos de fondo de las tarjetas (javascript/menu-videos.js los carga al aparecer en pantalla).
+   Van debajo del velo oscuro (::before, z-index 1) y del texto (z-index 2). */
+.tarjeta_padre .tarjeta_video {
+    position: absolute;
+    inset: 0;
+    z-index: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    pointer-events: none;
+}
+
+/* Encabezado del menú: título y texto a la izquierda, tarjeta «Tu recorrido» a la derecha */
+/* Flecha para volver a la portada: mismo brillo y efecto que la flecha de la portada (css/portada.css) */
+.menu > a[aria-label]:hover { background: #09254b !important; transform: translateY(-1px); box-shadow: 0 0 24px rgba(7, 139, 255, .55) !important; }
+.menu > a[aria-label]:focus-visible { outline: 2px solid #66E6FF; outline-offset: 3px; }
+.menu1 { letter-spacing: .14em; }
+
+.encabezado {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) minmax(260px, 330px);
+    gap: 5vw;
+    align-items: center;
+    padding: 0 5vw;
+}
+/* Título amplio en dos líneas: ocupa hasta la mitad de la pantalla sin tocar la tarjeta */
+.encabezado .titulo {
+    padding-inline: 0;
+    margin: 1.5vh 0 0;
+    max-width: none;
+    font-size: clamp(38px, 4.5vw, 64px);
+    line-height: 1.05;
+    letter-spacing: -.02em;
+    text-wrap: initial;
+}
+.encabezado .parrafo1 {
+    padding-inline: 0;
+    margin: 2.4vh 0 0;
+    max-width: none;
+    font-size: clamp(16px, 1.37vw, 19.4px);   /* proporción con el título que deja espacios casi normales */
+    line-height: 1.6;
+    /* El párrafo toma exactamente el ancho del título y se justifica: ambos bordes coinciden.
+       Los guiones de corte (&shy;) evitan que se estiren los espacios entre palabras. */
+    contain: inline-size;
+    text-align: justify;
+    text-align-last: left;
+    hyphens: manual;
+    -webkit-hyphens: manual;
+}
+.encabezado_texto { width: fit-content; max-width: 100%; }
+
+/* Tarjeta «Tu recorrido» */
+.avance {
+    padding: 18px 20px 20px;
+    border: 1px solid rgba(159, 179, 209, .2);
+    border-radius: 16px;
+    background: rgba(11, 23, 48, .55);
+    font-family: "Inter", sans-serif;
+}
+.avance_cabecera {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    gap: 1rem;
+}
+.avance_titulo {
+    margin: 0;
+    color: #9FB3D1;
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: .14em;
+    text-transform: uppercase;
+}
+.avance_conteo {
+    margin: 0;
+    color: #f6f8ff;
+    font-size: 26px;
+    font-weight: 500;
+    letter-spacing: -.01em;
+}
+.avance_segmentos {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    gap: 6px;
+    margin: 14px 0 18px;
+    padding: 0;
+    list-style: none;
+}
+.avance_segmentos li {
+    height: 5px;
+    border-radius: 3px;
+    background: rgba(159, 179, 209, .22);
+    transition: background .3s ease;
+}
+.avance_segmentos li.visto { background: #66E6FF; box-shadow: 0 0 8px rgba(102, 230, 255, .45); }
+.sr-solo { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }
+
+.avance_pie {
+    margin: 0;
+    color: #9FB3D1;
+    font-size: 13px;
+}
+.avance_reiniciar {
+    margin-left: 4px;
+    padding: 0 2px;
+    border: 0;
+    background: transparent;
+    color: #66E6FF;
+    font: 600 13px "Inter", sans-serif;
+    text-decoration: underline;
+    text-underline-offset: 3px;
+    cursor: pointer;
+}
+.avance_reiniciar:hover { color: #f6f8ff; }
+
+/* Etiqueta «Visto» en las tarjetas */
+.tarjeta_padre .tarjeta_visto {
+    position: absolute;
+    top: .7rem;
+    right: .7rem;
+    z-index: 3;
+    padding: 3px 10px 3px 8px;
+    border-radius: 999px;
+    border: 1px solid rgba(102, 230, 255, .5);
+    background: rgba(4, 10, 26, .85);
+    color: #66E6FF;
+    font: 600 11px "Inter", sans-serif;
+    letter-spacing: .04em;
+}
+.tarjeta_padre .tarjeta_visto::before { content: "✓ "; }
+
+@media (max-width: 900px) {
+    .encabezado { grid-template-columns: 1fr; gap: 3vh; align-items: start; }
+}
+@media (max-width: 700px) {
+    .encabezado { padding: 0 5vw; }
+    .avance { padding: 16px; }
+    .avance_conteo { font-size: 22px; }
+    /* Celular: encabezado alineado a la izquierda, con los mismos márgenes laterales que las tarjetas */
+    .menu { padding-inline: 5vw; }
+    .menu > a[aria-label] { width: 36px !important; height: 36px !important; }
+    .encabezado_texto { width: auto; }
+    /* Título en dos líneas fijas: «Un siglo lleno de» / «cambios» */
+    .encabezado .titulo { font-size: clamp(26px, 8vw, 36px); line-height: 1.1; text-align: left; margin-top: .5vh; }
+    .encabezado .titulo .titulo_linea { display: block; white-space: nowrap; }
+    /* Párrafo justificado con guiones del español: bordes parejos a ambos lados */
+    .encabezado .parrafo1 { contain: none; font-size: 15px; line-height: 1.6; max-width: none; margin: 1.8vh 0 0; text-align: justify; text-align-last: left; hyphens: manual; -webkit-hyphens: manual; }
+    .avance_cabecera { align-items: center; }
+}
+
+/* Toda la tarjeta es un enlace: el título queda en una franja al pie */
+.tarjeta_padre > a {
+    justify-content: flex-end;
+    align-items: stretch;
+    color: inherit;
+    text-decoration: none;
+}
+.tarjeta_padre > a:focus-visible {
+    outline: 2px solid #66E6FF;
+    outline-offset: 3px;
+}
+
+/* Velo más suave que antes: ahora la franja es la que da contraste al texto */
+.tarjeta_padre > a::before {
+    background: linear-gradient(180deg, rgba(4, 10, 26, .05) 0%, rgba(4, 10, 26, .18) 45%, rgba(4, 10, 26, .55) 100%);
+}
+
+/* Franja tecnológica del título y el subtítulo */
+.tarjeta_franja {
+    margin: 0 .7rem .7rem;
+    padding: .55rem .9rem .6rem 1.05rem;
+    border-radius: 12px;
+    border: 1px solid rgba(102, 230, 255, .35);
+    background:
+        linear-gradient(180deg, #66E6FF, rgba(102, 230, 255, .25)) left top / 3px 100% no-repeat,
+        linear-gradient(90deg, rgba(102, 230, 255, .85), transparent 55%) left top / 100% 1px no-repeat,
+        linear-gradient(100deg, rgba(3, 9, 22, .9) 0%, rgba(6, 16, 36, .82) 55%, rgba(8, 22, 46, .66) 100%);
+    box-shadow: 0 12px 30px -14px rgba(0, 0, 0, .8), inset 10px 0 18px -14px #66E6FF;
+    text-align: left;
+    transition: border-color .3s ease;
+}
+.tarjeta_padre > a:hover .tarjeta_franja,
+.tarjeta_padre > a:focus-visible .tarjeta_franja {
+    border-color: rgba(102, 230, 255, .75);
+}
+
+.tarjeta_franja .texto1_tarjetas {
+    margin: 0 0 .2rem;
+    text-align: left;
+    font-size: clamp(16px, 2.2vh, 20px);
+    font-weight: 700;
+    line-height: 1.15;
+    letter-spacing: .01em;
+    text-shadow: 0 2px 10px rgba(0, 0, 0, .6);
+}
+.tarjeta_franja .texto2_tarjetas {
+    margin: 0;
+    text-align: left;
+    color: #dce5f5;
+    font-size: clamp(12px, 1.45vh, 14px);
+    line-height: 1.35;
+    text-shadow: 0 1px 6px rgba(0, 0, 0, .6);
+}
+
+@media (max-width: 1024px) {
+    .tarjeta_padre > a { padding: 0; }
+    .tarjeta_franja { margin: 0 .55rem .55rem; padding: .5rem .8rem .55rem .95rem; }
+}
+
 body {
   animation: aparecer 0.6s ease backwards;
   transition: opacity 0.5s ease;
@@ -365,12 +577,6 @@ body.saliendo {
     font-size: max(18px, min(4vh, 4vw));
     padding-inline: 3vw;
   }
-
-  .logo {
-    height: 6vh;
-    width: 30vw;
-    padding-inline: 4vw;
-}
 
   .barra2 {
     font-size: max(12px, min(2vh, 1.7vw));
@@ -420,54 +626,28 @@ body.saliendo {
 }
 
 @media (max-width: 700px) {
-.barra {
-  height: auto;
-  min-height: 0;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 10px 18px;
-  padding: 12px 4% 14px;
-}
+  .barra {
+    flex-direction: column;
+    height: auto;
+    padding-top: 1.2vh;
+    background-color: #040a1a;
+  }
 
-.barra > a:first-child {
-  display: flex;
-  flex: 0 0 100%;
-  justify-content: center;
-  align-items: center;
-}
+  .barra1 {
+    margin: 0;
+    font-size: clamp(20px, 6.5vw, 30px);
+  }
 
-.logo {
-  display: block;
-  width: clamp(110px, 20vw, 145px);
-  height: auto;
-  max-height: 50px;
-  padding: 0;
-  object-fit: contain;
-  object-position: center;
-  max-width: 100%;
-}
-
-.barra2 {
-  width: 100%;
-  max-width: 100%;
-  min-width: 0;
-  justify-content: center;
-  flex-wrap: wrap;
-  gap: 10px clamp(12px, 2.5vw, 24px);
-  padding: 0;
-  font-size: clamp(0.82rem, 1.7vw, 0.95rem);
-  white-space: normal;
-  row-gap: 10px;
-}
-
-.barra2 a {
-  padding: 4px 0;
-  min-width: 0;
-}
-
-.aniparrafos::after {
-  bottom: -4px;
-}
+  .barra2 {
+    box-sizing: border-box;
+    width: 100%;
+    overflow-x: auto;
+    justify-content: flex-start;
+    gap: 6vw;
+    padding: 1.2vh 4vw;
+    font-size: clamp(13px, 3.8vw, 16px);
+    scrollbar-width: none;
+  }
 
   .menu1 {
     font-size: clamp(12px, 3.6vw, 16px);

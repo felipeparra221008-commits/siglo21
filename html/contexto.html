@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -6,11 +7,14 @@
   <meta name="description" content="Conoce ocho fuerzas tecnológicas del siglo XXI y cómo están transformando la sociedad.">
   <title>SIGLO XXI | Contexto</title>
   <link rel="stylesheet" href="../css/contexto.css">
-  <link rel="stylesheet" href="../css/transicion.css">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Outfit:wght@400;500;600;700;800&display=swap" rel="stylesheet">
   <link rel="icon" href="../img/icon.png" type="image/png">
+    <link rel="stylesheet" href="../css/recuadro-modulo.css">
+    <link rel="stylesheet" href="../css/barra-comun.css">
+    <link rel="stylesheet" href="../css/navegacion-modulos.css">
+    <script src="../javascript/navegacion-modulos.js"></script>
 </head>
 
 <body>
@@ -21,198 +25,177 @@
       <img src="../img/logo.png" alt="Logo SIGLO XXI" class="logo">
     </a>
     <span class="barra2">
-      <a href="contexto.html" style="text-decoration: none;"><span class="aniparrafos activo">Contexto</span></a>
-      <a href="sigloxx.html" style="text-decoration: none;"><span class="aniparrafos">Siglo XX</span></a>
+      <a href="contexto.html" style="text-decoration: none;"><span class="aniparrafos">Contexto</span></a>
+      <a href="sigloxx.html" style="text-decoration: none;"><span class="aniparrafos">Antecedentes</span></a>
       <a href="eventos.html" style="text-decoration: none;"><span class="aniparrafos">Eventos</span></a>
       <a href="inventores.html" style="text-decoration: none;"><span class="aniparrafos">Inventores</span></a>
-      <a href="futuro.html" style="text-decoration: none;"><span class="aniparrafos">Futuro</span></a>
+      <a href="futuro.html" style="text-decoration: none;"><span class="aniparrafos">Futuro</span></a>          
       <a href="actividad.html" style="text-decoration: none;"><span class="aniparrafos">Actividad</span></a>
     </span>
   </div>
 
+
   <main id="inicio">
 
-    <!-- 2. HERO PRINCIPAL -->
-    <section class="hero">
-
-      <!-- VIDEO DE FONDO EN LOOP -->
-      <video
-          class="hero-video"
-          autoplay
-          muted
-          loop
-          playsinline
-          preload="metadata"
-          aria-label="Video de una ciudad de noche en timelapse"
-      >
-          <source src="../img/ciudad_noche.mp4" type="video/mp4">
-          Tu navegador no puede reproducir este video.
-      </video>
-
-      <!-- CAPA OSCURA PARA MEJORAR LA LEGIBILIDAD -->
-      <div class="hero-overlay"></div>
-
-      <!-- TÍTULO Y ETIQUETA -->
-      <div class="hero-content">
-          <h1>Contexto: el siglo XXI</h1>
-      </div>
-
+    <!-- 2. RECUADRO DEL MÓDULO: imagen de img/menu_imagenes, oscura hasta que se pasa el cursor o se toca (css/recuadro-modulo.css) -->
+    <section class="recuadro-modulo recuadro-modulo--imagen">
+        <div class="recuadro-modulo__fondo" aria-hidden="true"><img class="recuadro-modulo__imagen" src="../img/menu_imagenes/web/contexto-1600.webp" srcset="../img/menu_imagenes/web/contexto-800.webp 800w, ../img/menu_imagenes/web/contexto-1600.webp 1600w" sizes="(max-width: 700px) 92vw, 1100px" alt="" decoding="async" fetchpriority="high"></div>
+        <div class="recuadro-modulo__brillo" aria-hidden="true"></div>
+        <div class="recuadro-modulo__capa"></div>
+        <div class="recuadro-modulo__contenido">
+            <h1 class="recuadro-modulo__titulo">Contexto: el siglo XXI</h1>
+        </div>
     </section>
 
-    <!-- 3. INTRODUCCIÓN -->
-    <section class="intro" aria-label="Introducción al siglo XXI">
-      <span class="intro-label">UN MUNDO EN TRANSFORMACIÓN</span>
-      <p>
-        El siglo XXI es la época en la que vivimos y se distingue por cambios rápidos en la tecnología, la comunicación, la economía, la política y la ciencia. Muchos avances parten de descubrimientos del siglo XX, pero hoy se conectan y llegan a más personas. Internet, la inteligencia artificial y los nuevos conocimientos científicos transforman cómo aprendemos, trabajamos y nos relacionamos, al mismo tiempo que plantean retos sobre la privacidad, la desigualdad y el uso responsable de los recursos.
-      </p>
+    <!-- 3. ¿QUÉ ES EL SIGLO XXI? -->
+    <section class="intro" aria-labelledby="intro-titulo">
+      <h2 class="subtitulo" id="intro-titulo">¿Qué es el siglo XXI?</h2>
+      <div class="banda-texto">
+        <p>Es la época en la que vi&shy;vi&shy;mos y se dis&shy;tin&shy;gue por cam&shy;bios rá&shy;pi&shy;dos en la tec&shy;no&shy;lo&shy;gía, la co&shy;mu&shy;ni&shy;ca&shy;ción, la eco&shy;no&shy;mía, la po&shy;lí&shy;tica y la cien&shy;cia. Mu&shy;chos avan&shy;ces par&shy;ten de des&shy;cu&shy;bri&shy;mien&shy;tos del siglo XX, pero hoy se co&shy;nec&shy;tan y lle&shy;gan a más per&shy;so&shy;nas. In&shy;ter&shy;net, la in&shy;te&shy;li&shy;gen&shy;cia ar&shy;ti&shy;fi&shy;cial y los nue&shy;vos co&shy;no&shy;ci&shy;mien&shy;tos cien&shy;tí&shy;fi&shy;cos trans&shy;for&shy;man cómo apren&shy;de&shy;mos, tra&shy;ba&shy;ja&shy;mos y nos re&shy;la&shy;cio&shy;na&shy;mos, al mismo tiempo que plan&shy;tean retos sobre la pri&shy;va&shy;ci&shy;dad, la de&shy;si&shy;gual&shy;dad y el uso res&shy;pon&shy;sa&shy;ble de los re&shy;cur&shy;sos.</p>
+      </div>
     </section>
 
-    <!-- 4. LAS OCHO FUERZAS -->
-    <section class="technologies" id="tecnologias">
-      <div class="section-heading">
-        <span class="eyebrow">TECNOLOGÍA Y SOCIEDAD</span>
-        <h2>Las 8 fuerzas que lo mueven</h2>
-      </div>
+    <!-- 4. LAS TECNOLOGÍAS QUE TRANSFORMAN EL SIGLO XXI (imágenes optimizadas en img/contexto/) -->
+    <section class="technologies" id="tecnologias" aria-labelledby="tecnologias-titulo">
+      <h2 class="subtitulo" id="tecnologias-titulo">Las tecnologías que transforman el siglo XXI</h2>
 
       <div class="technology-grid">
 
         <!-- TARJETA 1 -->
         <article class="tech-card">
           <div class="card-image">
-            <img src="../img/persona_redes_sociales.jpg"
+            <img src="../img/contexto/persona_redes_sociales-800.webp"
+                 srcset="../img/contexto/persona_redes_sociales-480.webp 480w, ../img/contexto/persona_redes_sociales-800.webp 800w"
+                 sizes="(max-width: 700px) 92vw, (max-width: 1024px) 46vw, 260px"
+                 width="800" height="533" loading="lazy" decoding="async"
                  alt="Persona usando redes sociales en su celular">
           </div>
           <div class="card-content">
             <h3>Internet y redes sociales</h3>
-            <p>Internet permite comunicarnos y compartir información en segundos, mientras que las redes sociales crean comunidades y facilitan la difusión de noticias e ideas. Su influencia también exige verificar la información y cuidar los datos personales.</p>
+            <p>In&shy;ter&shy;net per&shy;mite co&shy;mu&shy;ni&shy;car&shy;nos y com&shy;par&shy;tir in&shy;for&shy;ma&shy;ción en se&shy;gun&shy;dos, mien&shy;tras que las redes so&shy;cia&shy;les crean co&shy;mu&shy;ni&shy;da&shy;des y fa&shy;ci&shy;li&shy;tan la di&shy;fu&shy;sión de no&shy;ti&shy;cias e ideas. Su in&shy;fluen&shy;cia tam&shy;bién exige ve&shy;ri&shy;fi&shy;car la in&shy;for&shy;ma&shy;ción y cui&shy;dar los datos per&shy;so&shy;na&shy;les.</p>
           </div>
         </article>
 
         <!-- TARJETA 2 -->
         <article class="tech-card">
           <div class="card-image">
-            <img src="../img/smartphone.jpg"
+            <img src="../img/contexto/smartphone-800.webp"
+                 srcset="../img/contexto/smartphone-480.webp 480w, ../img/contexto/smartphone-800.webp 800w"
+                 sizes="(max-width: 700px) 92vw, (max-width: 1024px) 46vw, 260px"
+                 width="800" height="533" loading="lazy" decoding="async"
                  alt="Personas utilizando un teléfono inteligente">
           </div>
           <div class="card-content">
             <h3>Teléfonos inteligentes</h3>
-            <p>Los teléfonos inteligentes reúnen herramientas como cámara, mapas, banca, educación y comunicación en un solo dispositivo. Permiten estudiar, trabajar y resolver tareas desde casi cualquier lugar, aunque conviene protegerlos y mantener hábitos de uso equilibrados.</p>
+            <p>Los te&shy;lé&shy;fo&shy;nos in&shy;te&shy;li&shy;gen&shy;tes reú&shy;nen he&shy;rra&shy;mien&shy;tas como cá&shy;mara, mapas, banca, edu&shy;ca&shy;ción y co&shy;mu&shy;ni&shy;ca&shy;ción en un solo dis&shy;po&shy;si&shy;tivo. Per&shy;mi&shy;ten es&shy;tu&shy;diar, tra&shy;ba&shy;jar y re&shy;sol&shy;ver ta&shy;reas desde casi cual&shy;quier lugar, aun&shy;que con&shy;viene pro&shy;te&shy;ger&shy;los y man&shy;te&shy;ner há&shy;bi&shy;tos de uso equi&shy;li&shy;bra&shy;dos.</p>
           </div>
         </article>
 
         <!-- TARJETA 3 -->
         <article class="tech-card">
           <div class="card-image">
-            <img src="../img/servidores.jpg"
+            <img src="../img/contexto/servidores-800.webp"
+                 srcset="../img/contexto/servidores-480.webp 480w, ../img/contexto/servidores-800.webp 800w"
+                 sizes="(max-width: 700px) 92vw, (max-width: 1024px) 46vw, 260px"
+                 width="800" height="532" loading="lazy" decoding="async"
                  alt="Servidores de un centro de datos">
           </div>
           <div class="card-content">
             <h3>Computación en la nube</h3>
-            <p>La computación en la nube almacena archivos y ejecuta programas en servidores remotos. Así podemos acceder a documentos desde distintos dispositivos y colaborar a distancia, siempre que contemos con conexión y protejamos la información guardada.</p>
+            <p>La com&shy;pu&shy;ta&shy;ción en la nube al&shy;ma&shy;cena ar&shy;chi&shy;vos y eje&shy;cuta pro&shy;gra&shy;mas en ser&shy;vi&shy;do&shy;res re&shy;mo&shy;tos. Así po&shy;de&shy;mos ac&shy;ce&shy;der a do&shy;cu&shy;men&shy;tos desde dis&shy;tin&shy;tos dis&shy;po&shy;si&shy;ti&shy;vos y co&shy;la&shy;bo&shy;rar a dis&shy;tan&shy;cia, siem&shy;pre que con&shy;te&shy;mos con co&shy;ne&shy;xión y pro&shy;te&shy;ja&shy;mos la in&shy;for&shy;ma&shy;ción guar&shy;dada.</p>
           </div>
         </article>
 
         <!-- TARJETA 4 -->
         <article class="tech-card">
           <div class="card-image">
-            <img src="../img/robot_pepper.jpg"
+            <img src="../img/contexto/robot_pepper-800.webp"
+                 srcset="../img/contexto/robot_pepper-480.webp 480w, ../img/contexto/robot_pepper-800.webp 800w"
+                 sizes="(max-width: 700px) 92vw, (max-width: 1024px) 46vw, 260px"
+                 width="800" height="533" loading="lazy" decoding="async"
                  alt="Robot que trabaja con inteligencia artificial">
           </div>
           <div class="card-content">
             <h3>Inteligencia artificial</h3>
-            <p>La inteligencia artificial analiza datos, reconoce patrones, genera contenidos y ayuda a resolver problemas. Se aplica en educación, medicina e investigación, pero sus resultados deben revisarse porque puede equivocarse y generar riesgos relacionados con la privacidad o los sesgos.</p>
+            <p>La in&shy;te&shy;li&shy;gen&shy;cia ar&shy;ti&shy;fi&shy;cial ana&shy;liza datos, re&shy;co&shy;noce pa&shy;tro&shy;nes, ge&shy;nera con&shy;te&shy;ni&shy;dos y ayuda a re&shy;sol&shy;ver pro&shy;ble&shy;mas. Se aplica en edu&shy;ca&shy;ción, me&shy;di&shy;cina e in&shy;ves&shy;ti&shy;ga&shy;ción, pero sus re&shy;sul&shy;ta&shy;dos deben re&shy;vi&shy;sarse por&shy;que puede equi&shy;vo&shy;carse y ge&shy;ne&shy;rar ries&shy;gos re&shy;la&shy;cio&shy;na&shy;dos con la pri&shy;va&shy;ci&shy;dad o los ses&shy;gos.</p>
           </div>
         </article>
 
         <!-- TARJETA 5 -->
         <article class="tech-card">
           <div class="card-image">
-            <img src="../img/cientifico_microscopio.jpg"
+            <img src="../img/contexto/cientifico_microscopio-800.webp"
+                 srcset="../img/contexto/cientifico_microscopio-480.webp 480w, ../img/contexto/cientifico_microscopio-800.webp 800w"
+                 sizes="(max-width: 700px) 92vw, (max-width: 1024px) 46vw, 260px"
+                 width="800" height="1200" loading="lazy" decoding="async"
                  alt="Científico trabajando con un microscopio">
           </div>
           <div class="card-content">
             <h3>Biotecnología</h3>
-            <p>La biotecnología utiliza organismos, células y conocimientos sobre los seres vivos para desarrollar medicamentos, vacunas, cultivos y nuevos materiales. Sus avances ofrecen oportunidades en salud y agricultura, pero necesitan pruebas rigurosas y una evaluación responsable de sus efectos.</p>
+            <p>La bio&shy;tec&shy;no&shy;lo&shy;gía uti&shy;liza or&shy;ga&shy;nis&shy;mos, cé&shy;lu&shy;las y co&shy;no&shy;ci&shy;mien&shy;tos sobre los seres vivos para de&shy;sa&shy;rro&shy;llar me&shy;di&shy;ca&shy;men&shy;tos, va&shy;cu&shy;nas, cul&shy;ti&shy;vos y nue&shy;vos ma&shy;te&shy;ria&shy;les. Sus avan&shy;ces ofre&shy;cen opor&shy;tu&shy;ni&shy;da&shy;des en salud y agri&shy;cul&shy;tura, pero ne&shy;ce&shy;si&shy;tan prue&shy;bas ri&shy;gu&shy;ro&shy;sas y una eva&shy;lua&shy;ción res&shy;pon&shy;sa&shy;ble de sus efec&shy;tos.</p>
           </div>
         </article>
 
         <!-- TARJETA 6 -->
         <article class="tech-card">
           <div class="card-image">
-            <img src="../img/paneles_solares.jpg"
+            <img src="../img/contexto/paneles_solares-800.webp"
+                 srcset="../img/contexto/paneles_solares-480.webp 480w, ../img/contexto/paneles_solares-800.webp 800w"
+                 sizes="(max-width: 700px) 92vw, (max-width: 1024px) 46vw, 260px"
+                 width="800" height="1067" loading="lazy" decoding="async"
                  alt="Paneles solares">
           </div>
           <div class="card-content">
             <h3>Energías renovables</h3>
-            <p>Las energías solar, eólica e hidráulica aprovechan fuentes que se renuevan naturalmente y pueden reducir las emisiones cuando sustituyen combustibles fósiles. Para ampliar su uso se necesitan mejores redes eléctricas, sistemas de almacenamiento y una planificación adecuada.</p>
+            <p>Las ener&shy;gías solar, eó&shy;lica e hi&shy;dráu&shy;lica apro&shy;ve&shy;chan fuen&shy;tes que se re&shy;nue&shy;van na&shy;tu&shy;ral&shy;mente y pue&shy;den re&shy;du&shy;cir las emi&shy;sio&shy;nes cuando sus&shy;ti&shy;tu&shy;yen com&shy;bus&shy;ti&shy;bles fó&shy;si&shy;les. Para am&shy;pliar su uso se ne&shy;ce&shy;si&shy;tan me&shy;jo&shy;res redes eléc&shy;tri&shy;cas, sis&shy;te&shy;mas de al&shy;ma&shy;ce&shy;na&shy;miento y una pla&shy;ni&shy;fi&shy;ca&shy;ción ade&shy;cuada.</p>
           </div>
         </article>
 
         <!-- TARJETA 7 -->
         <article class="tech-card">
           <div class="card-image">
-            <img src="../img/brazo_robot.jpg"
+            <img src="../img/contexto/brazo_robot-800.webp"
+                 srcset="../img/contexto/brazo_robot-480.webp 480w, ../img/contexto/brazo_robot-800.webp 800w"
+                 sizes="(max-width: 700px) 92vw, (max-width: 1024px) 46vw, 260px"
+                 width="800" height="600" loading="lazy" decoding="async"
                  alt="Brazo robótico trabajando en una fábrica">
           </div>
           <div class="card-content">
             <h3>Robótica y automatización</h3>
-            <p>La robótica y la automatización permiten que las máquinas realicen tareas con precisión, especialmente las repetitivas o peligrosas. Se usan en fábricas, laboratorios y algunos procedimientos médicos, y también transforman el empleo y la capacitación que necesitan las personas.</p>
+            <p>La ro&shy;bó&shy;tica y la au&shy;to&shy;ma&shy;ti&shy;za&shy;ción per&shy;mi&shy;ten que las má&shy;qui&shy;nas rea&shy;li&shy;cen ta&shy;reas con pre&shy;ci&shy;sión, es&shy;pe&shy;cial&shy;mente las re&shy;pe&shy;ti&shy;ti&shy;vas o pe&shy;li&shy;gro&shy;sas. Se usan en fá&shy;bri&shy;cas, la&shy;bo&shy;ra&shy;to&shy;rios y al&shy;gu&shy;nos pro&shy;ce&shy;di&shy;mien&shy;tos mé&shy;di&shy;cos, y tam&shy;bién trans&shy;for&shy;man el em&shy;pleo y la ca&shy;pa&shy;ci&shy;ta&shy;ción que ne&shy;ce&shy;si&shy;tan las per&shy;so&shy;nas.</p>
           </div>
         </article>
 
         <!-- TARJETA 8 -->
         <article class="tech-card">
           <div class="card-image">
-            <img src="../img/falcon9.jpg"
+            <img src="../img/contexto/falcon9-800.webp"
+                 srcset="../img/contexto/falcon9-480.webp 480w, ../img/contexto/falcon9-800.webp 800w"
+                 sizes="(max-width: 700px) 92vw, (max-width: 1024px) 46vw, 260px"
+                 width="800" height="533" loading="lazy" decoding="async"
                  alt="Despegue del cohete Falcon 9">
           </div>
           <div class="card-content">
             <h3>Exploración espacial privada</h3>
-            <p>Empresas como SpaceX y Blue Origin desarrollan cohetes y servicios espaciales. Sus lanzamientos ponen satélites en órbita para las comunicaciones, la navegación y la observación terrestre, mientras las nuevas misiones amplían el conocimiento del espacio y plantean retos técnicos, económicos y ambientales.</p>
+            <p>Em&shy;pre&shy;sas como SpaceX y Blue Ori&shy;gin de&shy;sa&shy;rro&shy;llan co&shy;he&shy;tes y ser&shy;vi&shy;cios es&shy;pa&shy;cia&shy;les. Sus lan&shy;za&shy;mien&shy;tos ponen sa&shy;té&shy;li&shy;tes en ór&shy;bita para las co&shy;mu&shy;ni&shy;ca&shy;cio&shy;nes, la na&shy;ve&shy;ga&shy;ción y la ob&shy;ser&shy;va&shy;ción te&shy;rres&shy;tre, mien&shy;tras las nue&shy;vas mi&shy;sio&shy;nes am&shy;plían el co&shy;no&shy;ci&shy;miento del es&shy;pa&shy;cio y plan&shy;tean retos téc&shy;ni&shy;cos, eco&shy;nó&shy;mi&shy;cos y am&shy;bien&shy;ta&shy;les.</p>
           </div>
         </article>
 
       </div>
     </section>
 
-    <!-- 5. BANNER DE CONVERGENCIA -->
-    <section class="convergence">
-      <div class="convergence-text">
-        <span class="eyebrow">EL PODER DE LA INTEGRACIÓN</span>
-        <h2>Convergencia de tecnologías</h2>
-        <p>
-          Una característica clave del siglo XXI es la convergencia tecnológica: distintas herramientas se combinan para resolver problemas con mayor eficacia. En medicina, la inteligencia artificial ayuda a analizar imágenes y detectar patrones, mientras la robótica puede apoyar procedimientos de gran precisión. Estas herramientas complementan el conocimiento de los profesionales, no lo sustituyen.
-        </p>
-      </div>
-
-      <div class="chips" aria-label="Tecnologías que convergen">
-        <span class="chip">IA</span>
-        <span class="plus">+</span>
-        <span class="chip">Robótica</span>
-        <span class="plus">+</span>
-        <span class="chip">Medicina</span>
+    <!-- 5. DATO CURIOSO -->
+    <section class="dato-curioso" aria-labelledby="dato-titulo">
+      <h2 class="subtitulo" id="dato-titulo">DATO CURIOSO</h2>
+      <div class="banda-texto">
+        <p>Una ca&shy;rac&shy;te&shy;rís&shy;tica clave del siglo XXI es la con&shy;ver&shy;gen&shy;cia tec&shy;no&shy;ló&shy;gica: dis&shy;tin&shy;tas tec&shy;no&shy;lo&shy;gías se com&shy;bi&shy;nan para re&shy;sol&shy;ver pro&shy;ble&shy;mas de ma&shy;nera más efi&shy;caz. Por ejem&shy;plo, en me&shy;di&shy;cina, la in&shy;te&shy;li&shy;gen&shy;cia ar&shy;ti&shy;fi&shy;cial ayuda a ana&shy;li&shy;zar imá&shy;ge&shy;nes y de&shy;tec&shy;tar pa&shy;tro&shy;nes, mien&shy;tras que la ro&shy;bó&shy;tica per&shy;mite rea&shy;li&shy;zar pro&shy;ce&shy;di&shy;mien&shy;tos de gran pre&shy;ci&shy;sión. Jun&shy;tas, estas he&shy;rra&shy;mien&shy;tas am&shy;plían las ca&shy;pa&shy;ci&shy;da&shy;des de los pro&shy;fe&shy;sio&shy;na&shy;les y abren nue&shy;vas po&shy;si&shy;bi&shy;li&shy;da&shy;des para la cien&shy;cia y la so&shy;cie&shy;dad.</p>
       </div>
     </section>
 
-    <!-- 6. BOTONES DE NAVEGACIÓN -->
-    <div class="next-container">
-      <a class="back-button" href="explorar.html">
-        ← Volver al menú
-      </a>
-
-      <a class="next-button" href="sigloxx.html">
-        Siguiente: El siglo XX →
-      </a>
-    </div>
-
   </main>
 
-  <!-- 7. PIE DE PÁGINA -->
-  <footer class="footer">
-    <p>
-      Hecho por: Adrián Vargas - Daniel Manios - Angel Polo ·
-    </p>
-  </footer>
 
+    <script src="../javascript/recorrido-visitas.js" defer></script>
+    <script src="../javascript/barra-comun.js" defer></script>
 </body>
 </html>

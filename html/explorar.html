@@ -11,6 +11,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" rel="stylesheet">
     <title>Siglo XXI</title>
     <link rel="icon" href="../img/icon.png" type="image/png">
+    <link rel="stylesheet" href="../css/barra-comun.css">
 </head>
 
 <body>
@@ -19,7 +20,7 @@
 
         <span class="barra2">
             <a href="contexto.html" style="text-decoration: none;"><span class="aniparrafos">Contexto</span></a>
-            <a href="sigloxx.html" style="text-decoration: none;"><span class="aniparrafos">Siglo XX</span></a>
+            <a href="sigloxx.html" style="text-decoration: none;"><span class="aniparrafos">Antecedentes</span></a>
             <a href="eventos.html" style="text-decoration: none;"><span class="aniparrafos">Eventos</span></a>
             <a href="inventores.html" style="text-decoration: none;"><span class="aniparrafos">Inventores</span></a>
             <a href="futuro.html" style="text-decoration: none;"><span class="aniparrafos">Futuro</span></a>
@@ -42,60 +43,96 @@
                 width: 42px;
                 height: 42px;
                 margin-top: 10px;
-                border: 1px solid rgba(255, 255, 255, 0.65);
+                border: 1px solid rgba(102, 230, 255, 0.8);
                 border-radius: 50%;
-                background: rgba(255, 255, 255, 0.08);
+                background: rgba(6, 21, 45, 0.88);
+                box-shadow: 0 0 18px rgba(7, 139, 255, 0.33);
                 color: white;
                 font-size: 25px;
                 line-height: 1;
                 text-decoration: none;
-                transition: background 0.25s ease, transform 0.25s ease;
+                transition: background 0.2s ease, transform 0.2s ease, box-shadow 0.2s ease;
             ">
-            
-        ←</a>
+            <svg aria-hidden="true" viewBox="0 0 24 24" width="20" height="20"><path d="M15 5l-7 7 7 7" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </a>
     </div>
 
-    <h1 class="titulo">Explorar el siglo XXI</h1>
-    <p class="parrafo1">Elige el tema que deseas explorar.</p>
+    <div class="encabezado">
+        <div class="encabezado_texto">
+            <h1 class="titulo"><span class="titulo_linea">Un siglo lleno de</span> <span class="titulo_linea">cambios</span></h1>
+            <p class="parrafo1">Conoce el con&shy;tex&shy;to, des&shy;cu&shy;bre los an&shy;te&shy;ce&shy;den&shy;tes, ex&shy;plo&shy;ra los a&shy;con&shy;te&shy;ci&shy;mien&shy;tos y a quie&shy;nes im&shy;pul&shy;sa&shy;ron los gran&shy;des a&shy;van&shy;ces. Mi&shy;ra ha&shy;cia el fu&shy;tu&shy;ro y pon a prue&shy;ba lo que a&shy;pren&shy;dis&shy;te.</p>
+        </div>
+
+        <!-- Recorrido de los módulos: se marcan como vistos al entrar (javascript/recorrido-visitas.js) -->
+        <aside class="avance" data-avance aria-labelledby="avance-titulo">
+            <div class="avance_cabecera">
+                <p class="avance_titulo" id="avance-titulo">Tu recorrido</p>
+                <p class="avance_conteo" data-conteo>0 de 6</p>
+            </div>
+            <ol class="avance_segmentos" aria-label="Módulos del recorrido">
+                <li data-modulo="contexto" title="Contexto"><span class="sr-solo">Contexto</span></li>
+                <li data-modulo="sigloxx" title="Antecedentes"><span class="sr-solo">Antecedentes</span></li>
+                <li data-modulo="eventos" title="Eventos importantes del siglo XXI"><span class="sr-solo">Eventos importantes del siglo XXI</span></li>
+                <li data-modulo="inventores" title="Inventores"><span class="sr-solo">Inventores</span></li>
+                <li data-modulo="futuro" title="Futuro"><span class="sr-solo">Futuro</span></li>
+                <li data-modulo="actividad" title="Actividad"><span class="sr-solo">Actividad</span></li>
+            </ol>
+            <p class="avance_pie" data-pie>0 % del recorrido completado.</p>
+        </aside>
+    </div>
 
     <div class="tarjeta_padre">
-        <div class="tarjeta1">
-            <p class="texto1_tarjetas">Contexto</p>
-            <p class="texto2_tarjetas">Qué define a nuestro siglo.</p>
-            <a href="contexto.html" style="text-decoration: none;"><p class="texto3_tarjetas">Entrar →</p></a>
-        </div>
+        <a class="tarjeta1" href="contexto.html">
+            <video class="tarjeta_video" data-src="../img/menu/contexto.mp4" poster="../img/menu/contexto.jpg" muted loop playsinline preload="none" aria-hidden="true"></video>
+            <div class="tarjeta_franja">
+                <p class="texto1_tarjetas">Contexto</p>
+                <p class="texto2_tarjetas">Qué define a nuestro siglo.</p>
+            </div>
+        </a>
 
-        <div class="tarjeta2">
-            <p class="texto1_tarjetas">Siglo XX</p>
-            <p class="texto2_tarjetas">Los hechos y los inventos que lo hicieron posible.</p>
-            <a href="sigloxx.html" style="text-decoration: none;"><p class="texto3_tarjetas">Entrar →</p></a>
-        </div>
+        <a class="tarjeta2" href="sigloxx.html">
+            <video class="tarjeta_video" data-src="../img/menu/antecedentes.mp4" poster="../img/menu/antecedentes.jpg" muted loop playsinline preload="none" aria-hidden="true"></video>
+            <div class="tarjeta_franja">
+                <p class="texto1_tarjetas">Antecedentes</p>
+                <p class="texto2_tarjetas">Los hechos y los inventos que lo hicieron posible.</p>
+            </div>
+        </a>
 
-        <div class="tarjeta3">
-            <p class="texto1_tarjetas">Eventos y sociedad</p>
-            <p class="texto2_tarjetas">Del año 2000 hasta hoy y cómo vivimos.</p>
-            <a href="eventos.html" style="text-decoration: none;"><p class="texto3_tarjetas">Entrar →</p></a>
-        </div>
+        <a class="tarjeta3" href="eventos.html">
+            <video class="tarjeta_video" data-src="../img/menu/eventos.mp4" poster="../img/menu/eventos.jpg" muted loop playsinline preload="none" aria-hidden="true"></video>
+            <div class="tarjeta_franja">
+                <p class="texto1_tarjetas">Eventos importantes del siglo XXI</p>
+                <p class="texto2_tarjetas">Del año 2000 hasta hoy y cómo vivimos.</p>
+            </div>
+        </a>
 
-        <div class="tarjeta4">
-            <p class="texto1_tarjetas">Inventores</p>
-            <p class="texto2_tarjetas">Las mentes detrás de los avances.</p>
-            <a href="inventores.html" style="text-decoration: none;"><p class="texto3_tarjetas">Entrar →</p></a>
-        </div>
+        <a class="tarjeta4" href="inventores.html">
+            <video class="tarjeta_video" data-src="../img/menu/inventores.mp4" poster="../img/menu/inventores.jpg" muted loop playsinline preload="none" aria-hidden="true"></video>
+            <div class="tarjeta_franja">
+                <p class="texto1_tarjetas">Inventores</p>
+                <p class="texto2_tarjetas">Las mentes detrás de los avances.</p>
+            </div>
+        </a>
 
-        <div class="tarjeta5">
-            <p class="texto1_tarjetas">Futuro</p>
-            <p class="texto2_tarjetas">Lo que viene y lo que debemos cuidar.</p>
-            <a href="futuro.html" style="text-decoration: none;"><p class="texto3_tarjetas">Entrar →</p></a>
-        </div>
+        <a class="tarjeta5" href="futuro.html">
+            <video class="tarjeta_video" data-src="../img/menu/futuro.mp4" poster="../img/menu/futuro.jpg" muted loop playsinline preload="none" aria-hidden="true"></video>
+            <div class="tarjeta_franja">
+                <p class="texto1_tarjetas">Futuro</p>
+                <p class="texto2_tarjetas">Lo que viene y lo que debemos cuidar.</p>
+            </div>
+        </a>
 
-        <div class="tarjeta6">
-            <p class="texto1_tarjetas">Actividad</p>
-            <p class="texto2_tarjetas">Pon a prueba lo que aprendiste.</p>
-            <a href="actividad.html" style="text-decoration: none;"><p class="texto3_tarjetas">Entrar →</p></a>
-        </div>
+        <a class="tarjeta6" href="actividad.html">
+            <video class="tarjeta_video" data-src="../img/menu/actividad.mp4" poster="../img/menu/actividad.jpg" muted loop playsinline preload="none" aria-hidden="true"></video>
+            <div class="tarjeta_franja">
+                <p class="texto1_tarjetas">Actividad</p>
+                <p class="texto2_tarjetas">Pon a prueba lo que aprendiste.</p>
+            </div>
+        </a>
     </div>
-    <script src="../js/transicion.js" defer></script>
-
+    <script src="../javascript/recorrido-visitas.js" defer></script>
+    <script src="../javascript/menu-videos.js" defer></script>
+    <script src="../javascript/transicion.js" defer></script>
+    <script src="../javascript/barra-comun.js" defer></script>
 </body>
 </html>

@@ -7,29 +7,41 @@
     <link rel="stylesheet" href="../css/transicion.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Outfit:wght@600;700&family=Space+Grotesk:wght@700&display=swap" rel="stylesheet">
     <title>Siglo XXI</title>
     <link rel="icon" href="../img/icon.png" type="image/png">
+    <link rel="stylesheet" href="../css/recuadro-modulo.css">
+    <link rel="stylesheet" href="../css/barra-comun.css">
+    <link rel="stylesheet" href="../css/navegacion-modulos.css">
+    <script src="../javascript/navegacion-modulos.js"></script>
 </head>
 <body>
     <div class="barra">
-    <a href="explorar.html" aria-label="Ir a la página principal">
-      <img src="../img/logo.png" alt="Logo SIGLO XXI" class="logo">
-    </a>
+        <a class="logo-enlace" href="explorar.html" aria-label="Ir a la página principal">
+            <img src="../img/logo.png" alt="Logo SIGLO XXI" class="logo">
+        </a>
 
         <span class="barra2">
             <a href="contexto.html" style="text-decoration: none;"><span class="aniparrafos">Contexto</span></a>
-            <a href="sigloxx.html" style="text-decoration: none;"><span class="aniparrafos">Siglo XX</span></a>
+            <a href="sigloxx.html" style="text-decoration: none;"><span class="aniparrafos">Antecedentes</span></a>
             <a href="eventos.html" style="text-decoration: none;"><span class="aniparrafos">Eventos</span></a>
             <a href="inventores.html" style="text-decoration: none;"><span class="aniparrafos">Inventores</span></a>
             <a href="futuro.html" style="text-decoration: none;"><span class="aniparrafos">Futuro</span></a>
-            <a href="actividad.html" style="text-decoration: none;"><span  class="aniparrafos activo">Actividad</span></a>
+            <a href="actividad.html" style="text-decoration: none;"><span class="aniparrafos">Actividad</span></a>
         </span>
     </div>
-    <h1 class="titulo1">Actividad</h1>
-    <p class="titulo2">Cinco preguntas sobre el siglo XXI.</p>
+    <!-- RECUADRO DEL MÓDULO: imagen de img/menu_imagenes, oscura hasta que se pasa el cursor o se toca (css/recuadro-modulo.css) -->
+    <section class="recuadro-modulo recuadro-modulo--imagen">
+        <div class="recuadro-modulo__fondo" aria-hidden="true"><img class="recuadro-modulo__imagen" src="../img/menu_imagenes/web/actividad-1600.webp" srcset="../img/menu_imagenes/web/actividad-800.webp 800w, ../img/menu_imagenes/web/actividad-1600.webp 1600w" sizes="(max-width: 700px) 92vw, 1100px" alt="" decoding="async" fetchpriority="high"></div>
+        <div class="recuadro-modulo__brillo" aria-hidden="true"></div>
+        <div class="recuadro-modulo__capa"></div>
+        <div class="recuadro-modulo__contenido">
+            <h1 class="recuadro-modulo__titulo">Actividad</h1>
+        </div>
+    </section>
 
     <div class="tarjeta_contenedor">
+        <p class="intro_actividad" id="actividad-preguntas">Pon a prueba lo que has apren&shy;dido. Res&shy;ponde las si&shy;guien&shy;tes pre&shy;gun&shy;tas según lo visto a lo largo de nues&shy;tro re&shy;co&shy;rrido por el siglo XXI.</p>
         <div class="tarjeta">
             <div class="quiz_juego" id="quiz_juego">
                 <div class="quiz_cabecera">
@@ -60,13 +72,14 @@
         </div>
     </div>
 
-    <p class="texto3">Gracias!!</p>
+    <p class="texto3" id="actividad-gracias">Gracias!!</p>
     <div class="boton_contenedor">
-        <a href="explorar.html"><button class="boton">Volver al menú</button></a>
+        <a class="boton boton--menu" href="explorar.html">Volver al menú</a>
     </div>
-    <p class="nombres">Hecho por: Adrian Vargas - Daniel Manios - Angel Polo</p>
 
     <script src="../javascript/actividadjs.js"></script>
-    <script src="../js/transicion.js" defer></script>
+    <script src="../javascript/transicion.js" defer></script>
+    <script src="../javascript/recorrido-visitas.js" defer></script>
+    <script src="../javascript/barra-comun.js" defer></script>
 </body>
 </html>

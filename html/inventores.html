@@ -7,121 +7,111 @@
     <link rel="stylesheet" href="../css/transicion.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Outfit:wght@700&display=swap" rel="stylesheet">
     <title>Siglo XXI</title>
     <link rel="icon" href="../img/icon.png" type="image/png">
+    <link rel="stylesheet" href="../css/recuadro-modulo.css">
+    <link rel="stylesheet" href="../css/barra-comun.css">
+    <link rel="stylesheet" href="../css/navegacion-modulos.css">
+    <script src="../javascript/navegacion-modulos.js"></script>
 </head>
 <body>
     <div class="barra">
-    <a href="explorar.html" aria-label="Ir a la página principal">
-      <img src="../img/logo.png" alt="Logo SIGLO XXI" class="logo">
-    </a>
+        <a class="logo-enlace" href="explorar.html" aria-label="Ir a la página principal">
+            <img src="../img/logo.png" alt="Logo SIGLO XXI" class="logo">
+        </a>
 
         <span class="barra2">
             <a href="contexto.html" style="text-decoration: none;"><span class="aniparrafos">Contexto</span></a>
-            <a href="sigloxx.html" style="text-decoration: none;"><span class="aniparrafos">Siglo XX</span></a>
+            <a href="sigloxx.html" style="text-decoration: none;"><span class="aniparrafos">Antecedentes</span></a>
             <a href="eventos.html" style="text-decoration: none;"><span class="aniparrafos">Eventos</span></a>
-            <a href="inventores.html" style="text-decoration: none;"><span class="aniparrafos activo">Inventores</span></a>
+            <a href="inventores.html" style="text-decoration: none;"><span class="aniparrafos">Inventores</span></a>
             <a href="futuro.html" style="text-decoration: none;"><span class="aniparrafos">Futuro</span></a>
             <a href="actividad.html" style="text-decoration: none;"><span class="aniparrafos">Actividad</span></a>
         </span>
     </div>
 
-    <div class="titulo">
-        <p class="titulo1">Grandes inventores del siglo XXI</p>
-    </div>
-    <p class="parrafo1">Personas cuyas ideas estan cambiandola ciencia, la salud y la tecnologia.</p>
+    <!-- RECUADRO DEL MÓDULO: imagen de img/menu_imagenes, oscura hasta que se pasa el cursor o se toca (css/recuadro-modulo.css) -->
+    <section class="recuadro-modulo recuadro-modulo--imagen">
+        <div class="recuadro-modulo__fondo" aria-hidden="true"><img class="recuadro-modulo__imagen" src="../img/menu_imagenes/web/inventores-1600.webp" srcset="../img/menu_imagenes/web/inventores-800.webp 800w, ../img/menu_imagenes/web/inventores-1600.webp 1600w" sizes="(max-width: 700px) 92vw, 1100px" alt="" decoding="async" fetchpriority="high"></div>
+        <div class="recuadro-modulo__brillo" aria-hidden="true"></div>
+        <div class="recuadro-modulo__capa"></div>
+        <div class="recuadro-modulo__contenido">
+            <h1 class="recuadro-modulo__titulo">Grandes inventores del siglo XXI</h1>
+        </div>
+    </section>
+
+    <!-- SUBTÍTULO Y DESCRIPCIÓN: mismo estilo que Contexto, Antecedentes y Eventos -->
+    <section class="intro-inventores" aria-labelledby="titulo-inventores">
+        <h2 class="subtitulo" id="titulo-inventores">Las mentes que están transformando el futuro</h2>
+        <p class="descripcion">Co&shy;noce a los cien&shy;tí&shy;fi&shy;cos e in&shy;no&shy;va&shy;do&shy;res cuyos des&shy;cu&shy;bri&shy;mien&shy;tos están trans&shy;for&shy;mando la in&shy;te&shy;li&shy;gen&shy;cia ar&shy;ti&shy;fi&shy;cial, la me&shy;di&shy;cina, la ge&shy;né&shy;tica y la tec&shy;no&shy;lo&shy;gía, abriendo nue&shy;vas po&shy;si&shy;bi&shy;li&shy;da&shy;des para la hu&shy;ma&shy;ni&shy;dad.</p>
+    </section>
 
     <div class="tarjeta_padre">
 
         <div class="tarjeta">
-            <img src="../img/demis_hassabis.webp" class="imagen">
+            <img src="../img/demis_hassabis.webp" class="imagen" width="496" height="744" loading="lazy" decoding="async" alt="Demis Hassabis">
             <div class="texto">
                 <p class="texto1_tarjetas">Inteligencia Artificial</p>
                 <p class="texto2_tarjetas">Demis Hassabis</p>
-                <p class="texto3_tarjetas">Científico británico y cofundador de DeepMind. 
-                Su equipo creó sistemas de IA capaces de resolver problemas cientificos complejos, 
-                como predecir la forma de las proteínas. Una de sus creaciones, AlphaFold, predijo 
-                la estructura de más de 200 millones de proteínas, y antes AlphaGo venció al campeón de Go Lee Sedol en 2016.</p>
-                <p class="texto4_tarjetas">Nobel Quimica 2024</p>
+                <p class="texto3_tarjetas">Cien&shy;tí&shy;fico bri&shy;tá&shy;nico y co&shy;fun&shy;da&shy;dor de DeepMind. Su equipo creó sis&shy;te&shy;mas de IA ca&shy;pa&shy;ces de re&shy;sol&shy;ver pro&shy;ble&shy;mas cien&shy;tí&shy;fi&shy;cos com&shy;ple&shy;jos, como pre&shy;de&shy;cir la forma de las pro&shy;teí&shy;nas. Una de sus crea&shy;cio&shy;nes, AlphaFold, pre&shy;dijo la es&shy;truc&shy;tura de más de 200 mi&shy;llo&shy;nes de pro&shy;teí&shy;nas, y antes AlphaGo ven&shy;ció al cam&shy;peón de Go Lee Sedol en 2016.</p>
+                <p class="texto4_tarjetas">Nobel Química 2024</p>
             </div>
         </div>
 
         <div class="tarjeta">
-            <img src="../img/jennifer_emmanuelle.png" class="imagen">
+            <img src="../img/inventores/jennifer_emmanuelle-800.webp" class="imagen" width="800" height="1200" loading="lazy" decoding="async" alt="Jennifer Doudna y Emmanuelle Charpentier">
             <div class="texto">
-                <p class="texto1_tarjetas">Edición Genetica</p>
+                <p class="texto1_tarjetas">Edición Genética</p>
                 <p class="texto2_tarjetas">Jennifer Doudna y Emmanuelle Charpentier</p>
-                <p class="texto3_tarjetas">Cientificas que desarrollaron la tecnología 
-                CRISPR, una herramienta que permite editar genes con gran precisión. En 
-                2012 demostraron que la proteína Cas9 corta el ADN en un punto exacto. Fue el 
-                primer Nobel de ciencias ganado solo por dos mujeres.</p>
-                <p class="texto4_tarjetas">Nobel Quimica 2020</p>
+                <p class="texto3_tarjetas">Cien&shy;tí&shy;fi&shy;cas que de&shy;sa&shy;rro&shy;lla&shy;ron la tec&shy;no&shy;lo&shy;gía CRISPR, una he&shy;rra&shy;mienta que per&shy;mite edi&shy;tar genes con gran pre&shy;ci&shy;sión. En 2012 de&shy;mos&shy;tra&shy;ron que la pro&shy;teína Cas9 corta el ADN en un punto exacto. Fue el pri&shy;mer Nobel de cien&shy;cias ga&shy;nado solo por dos mu&shy;je&shy;res.</p>
+                <p class="texto4_tarjetas">Nobel Química 2020</p>
             </div>
         </div>
 
         <div class="tarjeta">
-            <img src="../img/katalin_drew.png" class="imagen">
+            <img src="../img/inventores/katalin_drew-800.webp" class="imagen" width="800" height="1200" loading="lazy" decoding="async" alt="Katalin Karikó y Drew Weissman">
             <div class="texto">
                 <p class="texto1_tarjetas">Medicina</p>
                 <p class="texto2_tarjetas">Katalin Karikó y Drew Weissman</p>
-                <p class="texto3_tarjetas">Sus investigaciones sobre el ARN mensajero
-                fueron clave para el desarrollo de las vacunas contra la COVID-19. Descubrieron 
-                cómo modificar el ARNm para que el organismo no lo atacara, la base de las vacunas 
-                de Pfizer-BioNTech y Moderna.</p>
+                <p class="texto3_tarjetas">Sus in&shy;ves&shy;ti&shy;ga&shy;cio&shy;nes sobre el ARN men&shy;sa&shy;jero fue&shy;ron clave para el de&shy;sa&shy;rro&shy;llo de las va&shy;cu&shy;nas con&shy;tra la COVID-19. Des&shy;cu&shy;brie&shy;ron cómo mo&shy;di&shy;fi&shy;car el ARNm para que el or&shy;ga&shy;nismo no lo ata&shy;cara, la base de las va&shy;cu&shy;nas de Pfi&shy;zer-BioNTech y Mo&shy;derna.</p>
                 <p class="texto4_tarjetas">Nobel Medicina 2023</p>
             </div>
         </div>
 
         <div class="tarjeta">
-            <img src="../img/martinis.webp" class="imagen">
+            <img src="../img/martinis.webp" class="imagen" width="496" height="744" loading="lazy" decoding="async" alt="John Martinis">
             <div class="texto">
-                <p class="texto1_tarjetas">Fisica Cuántica</p>
+                <p class="texto1_tarjetas">Física Cuántica</p>
                 <p class="texto2_tarjetas">John Martinis</p>
-                <p class="texto3_tarjetas">Físico estadounidense que contribuyó al desarrollo 
-                de la computación cuántica y los qubits superconductores. Sus experimentos de los 
-                años 80 mostraron efectos cuánticos en circuitos eléctricos de tamaño macroscópico. Después 
-                lideró el equipo de Google que presentó el procesador Sycamore, de 53 qubits, en 2019.</p>
-                <p class="texto4_tarjetas">Nobel Fisica 2025</p>
+                <p class="texto3_tarjetas">Fí&shy;sico es&shy;ta&shy;dou&shy;ni&shy;dense que con&shy;tri&shy;buyó al de&shy;sa&shy;rro&shy;llo de la com&shy;pu&shy;ta&shy;ción cuán&shy;tica y los qu&shy;bits su&shy;per&shy;con&shy;duc&shy;to&shy;res. Sus ex&shy;pe&shy;ri&shy;men&shy;tos de los años 80 mos&shy;tra&shy;ron efec&shy;tos cuán&shy;ti&shy;cos en cir&shy;cui&shy;tos eléc&shy;tri&shy;cos de ta&shy;maño ma&shy;cros&shy;có&shy;pico. Des&shy;pués li&shy;deró el equipo de Goo&shy;gle que pre&shy;sentó el pro&shy;ce&shy;sa&shy;dor Syca&shy;more, de 53 qu&shy;bits, en 2019.</p>
+                <p class="texto4_tarjetas">Nobel Física 2025</p>
             </div>
         </div>
 
         <div class="tarjeta">
-            <img src="../img/baker.webp" class="imagen">
+            <img src="../img/baker.webp" class="imagen" width="496" height="744" loading="lazy" decoding="async" alt="David Baker">
             <div class="texto">
                 <p class="texto1_tarjetas">Bioquímica</p>
                 <p class="texto2_tarjetas">David Baker</p>
-                <p class="texto3_tarjetas">Científico que diseñó proteínas de novo, 
-                abriendo nuevas posibilidades en la medicina y la biotecnología. Dirige el Instituto 
-                de Diseño de Proteínas de la Universidad de Washington y creó el software Rosetta. En 2003 
-                diseñó Top7, una proteína que no existía en la naturaleza. Hoy su equipo diseña proteínas para vacunas y medicamentos.</p>
-                <p class="texto4_tarjetas">Nobel Quimica 2024</p>
+                <p class="texto3_tarjetas">Cien&shy;tí&shy;fico que di&shy;señó pro&shy;teí&shy;nas de novo, abriendo nue&shy;vas po&shy;si&shy;bi&shy;li&shy;da&shy;des en la me&shy;di&shy;cina y la bio&shy;tec&shy;no&shy;lo&shy;gía. Di&shy;rige el Ins&shy;ti&shy;tuto de Di&shy;seño de Pro&shy;teí&shy;nas de la Uni&shy;ver&shy;si&shy;dad de Was&shy;hing&shy;ton y creó el soft&shy;ware Ro&shy;setta. En 2003 di&shy;señó Top7, una pro&shy;teína que no exis&shy;tía en la na&shy;tu&shy;ra&shy;leza. Hoy su equipo di&shy;seña pro&shy;teí&shy;nas para va&shy;cu&shy;nas y me&shy;di&shy;ca&shy;men&shy;tos.</p>
+                <p class="texto4_tarjetas">Nobel Química 2024</p>
             </div>
         </div>
 
         <div class="tarjeta">
-            <img src="../img/yaghi.jpg" class="imagen">
+            <img src="../img/yaghi.jpg" class="imagen" width="452" height="678" loading="lazy" decoding="async" alt="Omar Yaghi">
             <div class="texto">
                 <p class="texto1_tarjetas">Química</p>
                 <p class="texto2_tarjetas">Omar Yaghi</p>
-                <p class="texto3_tarjetas">Desarrolló las estructuras metalorgánicas 
-                (MOF), materiales con aplicaciones en energía, medio ambiente y almacenamiento 
-                de gases. Un gramo de algunos MOF tiene una superficie interior similar a la de 
-                un campo de fútbol. Con ellos se puede capturar CO2 o incluso sacar agua del aire del desierto.</p>
-                <p class="texto4_tarjetas">Nobel Quimica 2025</p>
+                <p class="texto3_tarjetas">De&shy;sa&shy;rro&shy;lló las es&shy;truc&shy;tu&shy;ras me&shy;ta&shy;lor&shy;gá&shy;ni&shy;cas (MOF), ma&shy;te&shy;ria&shy;les con apli&shy;ca&shy;cio&shy;nes en ener&shy;gía, medio am&shy;biente y al&shy;ma&shy;ce&shy;na&shy;miento de gases. Un gramo de al&shy;gu&shy;nos MOF tiene una su&shy;per&shy;fi&shy;cie in&shy;te&shy;rior si&shy;mi&shy;lar a la de un campo de fút&shy;bol. Con ellos se puede cap&shy;tu&shy;rar CO2 o in&shy;cluso sacar agua del aire del de&shy;sierto.</p>
+                <p class="texto4_tarjetas">Nobel Química 2025</p>
             </div>
         </div>
     </div>
-    <div class="next-container">
-      <a class="next-button" href="futuro.html">
-        Siguiente: Futuro →
-      </a>
-    </div>
-
-    <footer class="pie-pagina">
-        <p>Hecho por: <span>Adrian Vargas - Daniel Manios - Angel Polo</span></p>
-    </footer>
     
-    <script src="../js/transicion.js" defer></script>
+    <script src="../javascript/transicion.js" defer></script>
+    <script src="../javascript/recorrido-visitas.js" defer></script>
+    <script src="../javascript/barra-comun.js" defer></script>
 </body>
 </html>
